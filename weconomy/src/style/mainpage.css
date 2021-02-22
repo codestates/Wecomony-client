@@ -1,0 +1,28 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro';
+}
+
+.mainContainer {
+  height: 100%;
+  background-color: blue;
+}
+
+.section1 {
+  height: 100vh;
+  background-color: red;
+}
+
+.section2 {
+  height: 100vh;
+  background-color: green;
+}
+/*# sourceMappingURL=mainpage.css.map */

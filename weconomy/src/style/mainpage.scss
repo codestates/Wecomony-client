@@ -1,0 +1,95 @@
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
+}
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro';
+}
+$maincolor : #1474F8;
+$mainBackGroundColor : #EFEFEF;
+
+.mainContainer {
+  height : 100%;
+  background-color : blue;
+}
+.section1 {
+  height : 100vh;
+  background-color : $mainBackGroundColor;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding-left: 50px;
+}
+.section1 .textBox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.section1 .title {
+  font-size: 48px;
+  line-height: 67px;
+  margin: 30px 0px;
+}
+.section1 .textPoint{
+  color: $maincolor;
+}
+
+.section1 .desc {
+  margin: 50px 0px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.section1 .caculator{
+  height: 65vmin;
+}
+
+.mainTopBtn {
+  max-width: 307px;
+  height: 70px;
+  background: $maincolor;
+  margin-top: 60px;
+  border-radius: 5px;
+  padding: 17px;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  outline: 0;
+  border: none;
+}
+
+.section2 {
+  height : 100vh;
+  background-color : orange;
+}
+
+.section3 {
+  height : 100vh;
+  background-color : yellow;
+}
+
+.section4 {
+  height : 100vh;
+  background-color : green;
+}
+
+@media (max-width: 769px){
+  .caculator {
+    display: none;
+  }
+  .title {
+  font-size: 20px;
+  line-height: 45px;
+  white-space: pre-line;
+  }
+}
