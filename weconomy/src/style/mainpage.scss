@@ -26,6 +26,7 @@ $mainBackGroundColor : #EFEFEF;
   text-align: center;
   align-items: center;
   padding-left: 50px;
+  padding-right: 50px;
 }
 .section1 .textBox {
   display: flex;
@@ -33,21 +34,23 @@ $mainBackGroundColor : #EFEFEF;
   text-align: center;
   align-items: center;
 }
-
-.section1 .title {
+@media (min-width: 770px){
+.section1 .MainTitle {
   font-size: 48px;
   line-height: 67px;
   margin: 30px 0px;
+  }
+.section1 .MainDesc {
+  margin: 50px 0px;
+  font-size: 30px;
+  font-weight: 500;
+  }
 }
 .section1 .textPoint{
   color: $maincolor;
 }
 
-.section1 .desc {
-  margin: 50px 0px;
-  font-size: 30px;
-  font-weight: 500;
-}
+
 
 .section1 .caculator{
   height: 65vmin;
@@ -68,28 +71,18 @@ $mainBackGroundColor : #EFEFEF;
   border: none;
 }
 
-.section2 {
-  height : 100vh;
-  background-color : orange;
-}
-
-.section3 {
-  height : 100vh;
-  background-color : yellow;
-}
-
-.section4 {
-  height : 100vh;
-  background-color : green;
-}
-
 @media (max-width: 769px){
   .caculator {
     display: none;
   }
-  .title {
-  font-size: 20px;
+  .section1 .MainTitle {
+  font-size: 33px;
   line-height: 45px;
   white-space: pre-line;
   }
+  .section1 .MainDesc {
+    margin: 50px 0px;
+    font-size: 24px;
+    font-weight: 500;
+    }
 }

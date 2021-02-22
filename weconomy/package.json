@@ -13,6 +13,7 @@
     "@types/react-redux": "^7.1.16",
     "@types/redux": "^3.6.0",
     "@types/redux-saga": "^0.10.5",
+    "animate.css": "^4.1.1",
     "axios": "^0.21.1",
     "eslint-config-react-app": "^6.0.0",
     "graphql": "^15.5.0",
