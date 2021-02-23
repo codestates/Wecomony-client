@@ -1,6 +1,13 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
+import useMedia from '../customhooks/useMedia';
 
 const MainPage: React.FC = () => {
+  const { isMobile } = useMedia();
+
+  useEffect(() => {
+    console.log(isMobile);
+  });
   return (
     <div className="mainContainer">
       <div className="section1">
