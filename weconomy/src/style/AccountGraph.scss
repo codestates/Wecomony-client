@@ -1,0 +1,19 @@
+$maincolor : #1474F8;
+$mainBackGroundColor : #EFEFEF;
+
+
+.graphTop{
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.totalGraph {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.jirFMY {
+  background-color: $mainBackGroundColor;
+}
