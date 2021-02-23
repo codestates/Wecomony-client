@@ -1,0 +1,81 @@
+$maincolor : #1474F8;
+$mainBackGroundColor : #EFEFEF;
+
+.LoginModalOuter {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.insideLoginModal {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  box-sizing: border-box;
+  margin: 200px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color:  white;
+  box-shadow: 0 3px 7px rgb(0 0 0 / 30%);
+}
+
+ .loginModalContents {
+  background-color: white;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+}
+
+.kakaobtn {
+  cursor: pointer;
+  height: 3vmax;
+  border : none;
+  font-weight: 600;
+  outline: 0;
+  border-radius: 5px;
+  background: #FEE525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoLoginbtn {
+  margin-right: 20px
+}
+
+.googlebtn {
+  cursor: pointer;
+  height: 3vmax;
+  border : 1px solid rgb(173, 173, 173);
+  font-weight: 600;
+  outline: 0;
+  border-radius: 5px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginModalTop {
+  color: $maincolor;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.loginModalBottom{
+  height: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
