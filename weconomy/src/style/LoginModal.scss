@@ -79,3 +79,9 @@ $mainBackGroundColor : #EFEFEF;
   flex-direction: column;
   justify-content: space-between;
 }
+
+.insideLoading {
+  display: flex;
+  justify-content: center;
+  margin: 200px auto;
+}
