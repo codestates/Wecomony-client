@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import useMedia from '../customhooks/useMedia';
+import LoginModal from '../component/loginmodal';
 
 const MainPage: React.FC = () => {
   const { isMobile } = useMedia();
@@ -10,6 +11,7 @@ const MainPage: React.FC = () => {
   });
   return (
     <div className="mainContainer">
+      <LoginModal></LoginModal>
       <div className="section1">
         <div className="textBox">
           <h1 className="MainTitle animate__animated animate__fadeInDown">
