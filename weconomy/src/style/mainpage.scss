@@ -12,13 +12,14 @@ body {
 }
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
+$onepage : 100vh;
 
 .mainContainer {
   height : 100%;
   background-color : blue;
 }
 .section1 {
-  height : 100vh;
+  height : $onepage;
   background-color : $mainBackGroundColor;
   display: flex;
   // flex-direction: column;

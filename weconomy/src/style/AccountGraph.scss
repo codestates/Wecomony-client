@@ -1,19 +1,39 @@
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
 
+.left-Account-Container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
 
 .graphTop{
   display: flex;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 1px;
+  background-color: white;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .totalGraph {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  color: rgba(0, 0, 0, 0.815);
 }
 
-.jirFMY {
-  background-color: $mainBackGroundColor;
+.graphBottom {
+  width: 100%;
+  background-color: white;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.titleBottomGraph{
+  display: flex;
+  justify-content: space-evenly;
 }
