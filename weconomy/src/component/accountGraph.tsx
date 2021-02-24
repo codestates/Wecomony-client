@@ -24,7 +24,7 @@ const LabelledChart = ({ label, value }: { label: string; value: number }) => (
       round
       animate={true}
       color="#1474F8"
-      size={{ height: 'small', width: 'xsmall' }}
+      size={{ height: 'xsmall', width: 'xsmall' }}
     />
     <Box align="center">
       <Text>{label}</Text>
@@ -84,7 +84,7 @@ const AccountGraph = () => {
       </div>
       <div className="graphBottom">
         <Grommet theme={grommet}>
-          <Box pad="large" direction="row" gap="medium">
+          <Box pad="large" direction="row" gap="large">
             <LabelledChart label="식비" value={300000} />
             <LabelledChart label="공과금" value={100000} />
             <LabelledChart label="유흥비" value={70000} />
