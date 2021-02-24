@@ -3,12 +3,21 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { successLogin } from '../store/actions/userActions';
 import useMedia from '../customhooks/useMedia';
+import Nav from '../components/nav'
 import LoginModal from '../component/loginmodal';
+
 
 const MainPage: React.FC = () => {
   const { isMobile } = useMedia();
 
+
+  useEffect(() => {
+    console.log(isMobile);
+  });
+  
   return (
+    <>
+    <Nav></Nav>
     <div className="mainContainer">
       <LoginModal></LoginModal>
       <div className="section1">
@@ -51,6 +60,7 @@ const MainPage: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
