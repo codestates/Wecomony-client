@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import useMedia from '../customhooks/useMedia';
+import Nav from '../components/nav'
 
 const MainPage: React.FC = () => {
   const { isMobile } = useMedia();
@@ -8,7 +9,10 @@ const MainPage: React.FC = () => {
   useEffect(() => {
     console.log(isMobile);
   });
+
   return (
+    <>
+    <Nav></Nav>
     <div className="mainContainer">
       <div className="section1">
         <div className="textBox">
@@ -31,6 +35,7 @@ const MainPage: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

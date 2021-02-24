@@ -1,5 +1,4 @@
 
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -34,16 +33,21 @@ $mainBackGroundColor : #EFEFEF;
   text-align: center;
   align-items: center;
 }
+
+
 @media (min-width: 770px){
+
 .section1 .MainTitle {
   font-size: 48px;
   line-height: 67px;
   margin: 30px 0px;
+  z-index:2;
   }
 .section1 .MainDesc {
   margin: 50px 0px;
   font-size: 30px;
   font-weight: 500;
+  z-index:2;
   }
 }
 .section1 .textPoint{
@@ -79,10 +83,12 @@ $mainBackGroundColor : #EFEFEF;
   font-size: 33px;
   line-height: 45px;
   white-space: pre-line;
+
   }
   .section1 .MainDesc {
     margin: 50px 0px;
     font-size: 24px;
     font-weight: 500;
+
     }
 }
