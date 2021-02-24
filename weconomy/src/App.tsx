@@ -5,6 +5,8 @@ import './style/mainpage.scss';
 import './style/LoginModal.scss';
 import './style/AccountPage.scss';
 import './style/AccountGraph.scss';
+import './style/AccountByDay.scss';
+import './style/AccountDetail.scss';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 const App: React.FC = () => {

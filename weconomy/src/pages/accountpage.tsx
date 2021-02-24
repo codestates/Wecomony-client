@@ -1,5 +1,6 @@
 import * as React from 'react';
 import AccountGraph from '../component/accountGraph';
+import AccountByDay from '../component/accountByDay';
 
 const AccountPage: React.FC = () => {
   return (
@@ -7,6 +8,7 @@ const AccountPage: React.FC = () => {
       <div className="notice-Section"></div>
       <div className="content-Section">
         <AccountGraph></AccountGraph>
+        <AccountByDay></AccountByDay>
       </div>
     </div>
   );

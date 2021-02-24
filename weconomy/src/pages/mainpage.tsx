@@ -13,19 +13,29 @@ const MainPage: React.FC = () => {
       <LoginModal></LoginModal>
       <div className="section1">
         <div className="textBox">
+          {isMobile ? <h1 className="MainTitleLogo">Weconomy</h1> : null}
           {isMobile ? (
-            <h1 className="MainTitleLogo animate__animated animate__fadeInDown">
-              Weconomy
+            <h1 className="MainTitle">
+              아직도 <span className="textPoint">가계부</span>가 멀게만
+              느껴지시나요?
             </h1>
-          ) : null}
-          <h1 className="MainTitle animate__animated animate__fadeInDown">
-            아직도 <span className="textPoint">가계부</span>가 멀게만
-            느껴지시나요?
-          </h1>
-          <span className="MainDesc animate__animated animate__fadeInDown">
-            Weconomy와 함께 편리한 <span className="textPoint">가계부</span>를
-            작성해보세요!
-          </span>
+          ) : (
+            <h1 className="MainTitle animate__animated animate__fadeInDown">
+              아직도 <span className="textPoint">가계부</span>가 멀게만
+              느껴지시나요?
+            </h1>
+          )}
+          {isMobile ? (
+            <span className="MainDesc">
+              Weconomy와 함께 편리한 <span className="textPoint">가계부</span>를
+              작성해보세요!
+            </span>
+          ) : (
+            <span className="MainDesc animate__animated animate__fadeInDown">
+              Weconomy와 함께 편리한 <span className="textPoint">가계부</span>를
+              작성해보세요!
+            </span>
+          )}
           {isMobile ? (
             <button className="mainMobileBtn">Weconomy 시작하기</button>
           ) : (

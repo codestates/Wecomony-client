@@ -1,9 +1,10 @@
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
+$onepage : 100vh;
 
 
 .Account-container {
-  height: 100vh;
+  height: $onepage;
   display: flex;
   flex-direction: column;
   background-color: $mainBackGroundColor;
@@ -18,10 +19,9 @@ $mainBackGroundColor : #EFEFEF;
 .content-Section {
   display: flex;
   flex-direction: row;
-  width: 40%;
+  width: 100%;
   margin-top: 5px;
   padding-left: 50px;
   padding-right: 50px;
   height: 90vh;
-  justify-content: center;
 }

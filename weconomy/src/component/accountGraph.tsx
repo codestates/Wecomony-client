@@ -22,6 +22,7 @@ const LabelledChart = ({ label, value }: { label: string; value: number }) => (
       type="bar"
       values={[{ value: [1, value] }]}
       round
+      animate={true}
       color="#1474F8"
       size={{ height: 'small', width: 'xsmall' }}
     />
@@ -42,7 +43,7 @@ const AccountGraph = () => {
     setValue(newValue);
   };
   return (
-    <div>
+    <div className="left-Account-Container">
       <Paper className={classes.root}>
         <Tabs
           value={value}
