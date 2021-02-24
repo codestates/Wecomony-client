@@ -48,6 +48,7 @@ $mainBackGroundColor : #EFEFEF;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .logoLoginbtn {
@@ -78,4 +79,10 @@ $mainBackGroundColor : #EFEFEF;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.insideLoading {
+  display: flex;
+  justify-content: center;
+  margin: 200px auto;
 }
