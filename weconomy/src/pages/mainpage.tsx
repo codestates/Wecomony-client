@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { successLogin } from '../store/actions/userActions';
 import useMedia from '../customhooks/useMedia';
-import Nav from '../components/nav'
+import Nav from '../component/nav'
 import LoginModal from '../component/loginmodal';
 
 

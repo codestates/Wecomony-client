@@ -2,7 +2,6 @@ $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
 $onepage : 100vh;
 
-
 .Account-container {
   height: $onepage;
   display: flex;
@@ -13,7 +12,7 @@ $onepage : 100vh;
 .notice-Section {
   width: 100%;
   height: 10%;
-  background-color: rgb(177, 255, 235);
+  background-color:#dcdde1
 }
 
 .content-Section {

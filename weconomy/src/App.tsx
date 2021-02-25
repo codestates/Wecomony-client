@@ -8,6 +8,7 @@ import './style/AccountPage.scss';
 import './style/AccountGraph.scss';
 import './style/AccountByDay.scss';
 import './style/AccountDetail.scss';
+import './style/AccountSideBar.scss';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 
