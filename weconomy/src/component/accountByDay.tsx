@@ -1,13 +1,12 @@
-import React, { useState, useEffect, ReactEventHandler } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, DateInput, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 import AccountDetail from './accountDetail';
 
 const AccountByDay = () => {
   const [value, setValue] = useState<string>();
-  const onChange = (e: any) => {
-    console.log('onChange', e.value);
-    setValue(e.value);
+  const onChange = (event: any) => {
+    setValue(event.value);
   };
 
   return (

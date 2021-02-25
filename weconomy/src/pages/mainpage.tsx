@@ -1,13 +1,17 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { successLogin } from '../store/actions/userActions';
+import { successLogin, tryLogin } from '../store/actions/userActions';
 import useMedia from '../customhooks/useMedia';
-import Nav from '../component/nav'
+import Nav from '../component/nav';
 import LoginModal from '../component/loginmodal';
 
 const MainPage: React.FC = () => {
   const { isMobile } = useMedia();
+  const dispatch = useDispatch();
+  const onLogin = () => {
+    dispatch(tryLogin());
+  };
 
   useEffect(() => {
     console.log(isMobile);
@@ -46,7 +50,9 @@ const MainPage: React.FC = () => {
             {isMobile ? (
               <button className="mainMobileBtn">Weconomy 시작하기</button>
             ) : (
-              <button className="mainTopBtn">Weconomy 시작하기</button>
+              <button onClick={onLogin} className="mainTopBtn">
+                Weconomy 시작하기
+              </button>
             )}
           </div>
           <div className="imageBox">
