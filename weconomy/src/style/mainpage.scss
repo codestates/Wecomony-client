@@ -11,7 +11,7 @@ body {
 }
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
-$onepage : 100vh;
+$onepage : 100vh; // 무조건 한 페이지
 
 .mainContainer {
   height : 100%;
@@ -45,12 +45,14 @@ $onepage : 100vh;
   line-height: 67px;
   margin: 30px 0px;
   z-index:2;
+  font-family: 'Noto Sans KR', sans-serif;
   }
 .section1 .MainDesc {
   margin: 50px 0px;
   font-size: 30px;
   font-weight: 500;
   z-index:2;
+  font-family: 'Noto Sans KR', sans-serif;
   }
 }
 .section1 .textPoint{
@@ -89,6 +91,7 @@ $onepage : 100vh;
   color: #EFEFEF;
   border: 0;
   outline: 0;
+  z-index:1;
 }
 
 @media (max-width: 769px){

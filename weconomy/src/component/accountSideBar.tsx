@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-const Nav = () => {
+const AccountSideBar = () => {
     const history = useHistory();
   
     const createGroup = ():void => {
@@ -17,20 +17,20 @@ const Nav = () => {
         <nav className= "account__sidebar">
 
           <ul className= "account__profile">
-            <li>
-              <img src= "https://ifh.cc/g/xMR6n6.png" />
+            <li className = "account__list">
+              
               <div className="account__username">유재우</div>
             </li>
-            <li>
-              <img src= "https://ifh.cc/g/xMR6n6.png" />
+            <li className = "account__list">
+              
               <div className="account__username">박준석</div>
             </li>
-            <li>
-              <img src= "https://ifh.cc/g/xMR6n6.png" />
+            <li className = "account__list">
+              
               <div className="account__username">이상철</div>
             </li>
-            <li>
-              <img src= "https://ifh.cc/g/xMR6n6.png" />
+            <li className = "account__list">
+              
               <div className="account__username">김용호</div>
             </li>
           </ul>
@@ -48,4 +48,4 @@ const Nav = () => {
     )
   }
   
-  export default Nav
+  export default AccountSideBar

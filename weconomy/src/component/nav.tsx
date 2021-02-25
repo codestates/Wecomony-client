@@ -44,7 +44,7 @@ const Nav = () => {
       </ul>
 
       <div className= "navbar__handleLogin">
-        <a>로그인</a>
+        <button className="navbar__loginBtn">로그인</button>
       </div>   
 
       <nav className= "sidebar">
