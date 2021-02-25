@@ -29,13 +29,14 @@ const Nav = () => {
 
   return (
     <nav className= "navbar">
+
       <div className= "navbar__logo">
         <a onClick={clickLogo}>
           Weconomy
         </a>
       </div>
 
-    
+
       <ul className= "navbar__menu">
         <li className= "navBtns">가계부 작성하기</li>
         <li className= "navBtns">내 가계부</li>
@@ -64,6 +65,7 @@ const Nav = () => {
       <a href="#" onClick = {toogleBtnSet} className= "navbar__toogleBtn">
         <i className="fas fa-bars"></i>
       </a>
+
     </nav>
   )
 }
