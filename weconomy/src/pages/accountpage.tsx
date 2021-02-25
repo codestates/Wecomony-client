@@ -1,11 +1,16 @@
 import * as React from 'react';
 import AccountGraph from '../component/accountGraph';
 import AccountByDay from '../component/accountByDay';
+import AccountNavBar from '../component/accountNavBar';
+import AccountSideBar from '../component/accountSideBar';
 import Ticker from 'react-ticker';
 import Nav from '../component/nav';
 
+
 const AccountPage: React.FC = () => {
   return (
+    <>
+    <AccountNavBar></AccountNavBar>
     <div className="Account-container">
       <Nav></Nav>
       <div className="notice-Section">
@@ -20,8 +25,10 @@ const AccountPage: React.FC = () => {
       <div className="content-Section">
         <AccountGraph></AccountGraph>
         <AccountByDay></AccountByDay>
+        <AccountSideBar></AccountSideBar>
       </div>
     </div>
+    </>
   );
 };
 

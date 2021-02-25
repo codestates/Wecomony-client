@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 
-const Nav = () => {
+const AccountNavBar = () => {
   const history = useHistory();
 
   const clickLogo = ():void => {
@@ -29,14 +29,13 @@ const Nav = () => {
 
   return (
     <nav className= "navbar">
-
       <div className= "navbar__logo">
         <a onClick={clickLogo}>
           Weconomy
         </a>
       </div>
 
-
+    
       <ul className= "navbar__menu">
         <li className= "navBtns">가계부 작성하기</li>
         <li className= "navBtns">내 가계부</li>
@@ -65,15 +64,8 @@ const Nav = () => {
       <a href="#" onClick = {toogleBtnSet} className= "navbar__toogleBtn">
         <i className="fas fa-bars"></i>
       </a>
-
     </nav>
   )
 }
 
-export default Nav
-
-
-/*
-
-
-*/
+export default AccountNavBar
