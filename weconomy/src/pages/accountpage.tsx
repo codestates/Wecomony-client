@@ -1,18 +1,15 @@
 import * as React from 'react';
 import AccountGraph from '../component/accountGraph';
 import AccountByDay from '../component/accountByDay';
-import AccountNavBar from '../component/accountNavBar';
 import AccountSideBar from '../component/accountSideBar';
 import Ticker from 'react-ticker';
 import Nav from '../component/nav';
 
-
 const AccountPage: React.FC = () => {
   return (
     <>
-    <AccountNavBar></AccountNavBar>
+    <Nav></Nav>
     <div className="Account-container">
-      <Nav></Nav>
       <div className="notice-Section">
         <Ticker offset="run-in" speed={10} mode="await">
           {({ index }) => (

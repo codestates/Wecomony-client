@@ -7,14 +7,13 @@ $maincolor : #1474F8;
     justify-content: space-between;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    margin-bottom: 10px;
     margin-left: 5px;
+    margin-bottom: 1px;
 }
 
-li {
+.account__list {
     display:flex;
     list-style:none;
-    justify-content: space-between;
     padding: 8px;
 }
 
@@ -25,14 +24,16 @@ li {
 }
 
 .account__username {
+    display: flex;
+    align-items: center;
+    padding: 30px;
     font-size: 24px;
-    padding: 18px 100px;
     color: #686de0
 }
 
 
-img {
-    width: 20%;
+.account__image {
+
 }
 
 .account__handleGroup {
@@ -43,8 +44,9 @@ img {
 }
 
 .accountBtns {
+    list-style:none;
     font-size: 24px;
-    padding: 30px;
+    padding: 12px;
 }
 
 .accountBtns:hover {
