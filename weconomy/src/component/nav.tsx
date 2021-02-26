@@ -55,7 +55,12 @@ const Nav: React.FC = () => {
       </div>
 
       <ul className="navbar__menu">
-        <li className="navBtns">가계부 작성하기</li>
+        <li
+          onClick={() => history.push('/createAccountPage')}
+          className="navBtns"
+        >
+          가계부 작성하기
+        </li>
         <li onClick={toAccountPage} className="navBtns">
           내 가계부
         </li>
