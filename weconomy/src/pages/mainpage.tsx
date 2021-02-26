@@ -1,16 +1,18 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { successLogin } from '../store/actions/userActions';
+import { successLogin, tryLogin } from '../store/actions/userActions';
 import useMedia from '../customhooks/useMedia';
-import Nav from '../component/nav'
+import Nav from '../component/nav';
 import LoginModal from '../component/loginmodal';
+import RequestLoginModal from '../component/requestLoginModal';
 
 const MainPage: React.FC = () => {
   const { isMobile } = useMedia();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(isMobile);
+    localStorage.removeItem('kakao_e3993c543a1cd3790143c7b6f2262e63');
   });
 
   return (
@@ -18,6 +20,7 @@ const MainPage: React.FC = () => {
       <Nav></Nav>
       <div className="mainContainer">
         <LoginModal></LoginModal>
+        <RequestLoginModal></RequestLoginModal>
         <div className="section1">
           <div className="textBox">
             {isMobile ? <h1 className="MainTitleLogo">Weconomy</h1> : null}

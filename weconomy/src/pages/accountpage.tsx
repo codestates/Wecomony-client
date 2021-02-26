@@ -2,29 +2,20 @@ import * as React from 'react';
 import AccountGraph from '../component/accountGraph';
 import AccountByDay from '../component/accountByDay';
 import AccountSideBar from '../component/accountSideBar';
-import Ticker from 'react-ticker';
 import Nav from '../component/nav';
 
 const AccountPage: React.FC = () => {
   return (
     <>
-    <Nav></Nav>
-    <div className="Account-container">
-      <div className="notice-Section">
-        <Ticker offset="run-in" speed={10} mode="await">
-          {({ index }) => (
-            <>
-              <h2 style={{ color: 'blue' }}>여러분 아껴씁시다!</h2>
-            </>
-          )}
-        </Ticker>
+      <Nav></Nav>
+      <div className="Account-container">
+        <div className="notice-Section"></div>
+        <div className="content-Section">
+          <AccountGraph></AccountGraph>
+          <AccountByDay></AccountByDay>
+          <AccountSideBar></AccountSideBar>
+        </div>
       </div>
-      <div className="content-Section">
-        <AccountGraph></AccountGraph>
-        <AccountByDay></AccountByDay>
-        <AccountSideBar></AccountSideBar>
-      </div>
-    </div>
     </>
   );
 };
