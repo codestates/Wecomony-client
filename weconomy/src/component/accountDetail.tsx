@@ -7,7 +7,6 @@ const AccountDetail = () => {
     text: string;
     count: number;
   }
-
   const [fakedata, setFakeData] = useState<any>([
     {
       upDown: 'down',

@@ -1,5 +1,4 @@
 
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -12,7 +11,7 @@ body {
 }
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
-$onepage : 100vh;
+$onepage : 100vh; // 무조건 한 페이지
 
 .mainContainer {
   height : 100%;
@@ -37,16 +36,23 @@ $onepage : 100vh;
   text-align: center;
   align-items: center;
 }
+
+
 @media (min-width: 770px){
+
 .section1 .MainTitle {
   font-size: 48px;
   line-height: 67px;
   margin: 30px 0px;
+  z-index:2;
+  font-family: 'Noto Sans KR', sans-serif;
   }
 .section1 .MainDesc {
   margin: 50px 0px;
   font-size: 30px;
   font-weight: 500;
+  z-index:2;
+  font-family: 'Noto Sans KR', sans-serif;
   }
 }
 .section1 .textPoint{
@@ -72,6 +78,7 @@ $onepage : 100vh;
   color: white;
   outline: 0;
   border: none;
+  
 }
 
 .mainMobileBtn{
@@ -84,6 +91,7 @@ $onepage : 100vh;
   color: #EFEFEF;
   border: 0;
   outline: 0;
+  z-index:1;
 }
 
 @media (max-width: 769px){
@@ -100,10 +108,12 @@ $onepage : 100vh;
   font-size: 33px;
   line-height: 45px;
   white-space: pre-line;
+
   }
   .section1 .MainDesc {
     margin: 50px 0px;
     font-size: 24px;
     font-weight: 500;
+
     }
 }

@@ -1,0 +1,179 @@
+$maincolor : #1474F8;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3867d6;
+  padding: 8px 12px;
+  position: fixed;
+  width:100%;
+  z-index: 2;
+  top: 0;
+}
+
+.sidebar {
+  display:none;
+}
+
+.navbar__logo a {
+  font-family: 'Fredoka One', cursive;
+}
+
+.navbar__logo {
+  font-family: 'Fredoka One', cursive;
+  font-size: 32px;
+  color: #f1f2f6
+}
+.navbar__menu{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  color: #f1f2f6;
+  padding-left: 0;
+  width: 30%;
+}
+
+.navbar__menu li:hover {
+  background-color: #778beb;
+  border-radius: 40px;
+}
+.navbar__handleLogin{
+  display: flex;
+  color: #f1f2f6;
+  width: 6%;
+}
+
+.navbar__loginBtn {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  outline: 0;
+  border-radius: 20px;
+}
+.navbar__loginBtn:hover {
+  background-color: #778beb;
+}
+
+.userProfileNav {
+  border-radius: 50px;
+  width: 50%;
+  height: 50%;
+  border: 2px solid white;
+}
+
+.navbar__toogleBtn{
+  display: none;
+  position:absolute;
+  right: 24px;
+  font-size: 20px;
+  color: black;
+}
+.sidebar__menu {
+  display:none;
+  position: relative;
+  flex-direction: column;
+  align-items:center;
+  padding: 20%;
+  transform: translateX(20px);
+  transition: all 800ms
+}
+.sidebar__menu li {
+  list-style: none;
+  margin-top: 50%;
+}
+.sidebar__handleLogin {
+  display:none;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+}
+.sidebar__profile {
+  display:none;
+  position: relative;
+  left: 25%;
+  top: 5%;
+}
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    transform: translateX(20px);
+    height: 100%; // 변경
+    width: 300px;
+    transition: all 0.3s ease-in-out 0s;
+    top:0;
+    right:0;
+  }
+  .navbar__menu {
+    display: none;
+  }
+  .navbar__handleLogin {
+    display: none;
+  }
+  .sidebar.active {
+    transform: translateX(0px);
+    transition: all 0.3s ease-in-out 0s;
+    background-color: #dcdde1;
+    z-index:1;
+  }
+  .sidebar__profile.active {
+    display:flex;
+  }
+
+  .sidebar__image {
+    width: 20%;
+  }
+
+  .sidebar__menu.active {
+ 
+    display:flex;
+    font-size: 1.5rem;
+    transform: translateX(0px);
+  }
+
+  .sidebar__handleLogin.active {
+    display:flex;
+    font-size: 1.5rem;
+    margin-top : 300px;
+
+  }
+
+  .navbar__toogleBtn{
+    display: block;
+    cursor: pointer;
+    z-index:6;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar__menu li {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar__icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar__toogleBtn {
+    display: block;
+  }
+  .navbar__menu.active,
+  .navbar__icons.active {
+    display: flex;
+  }
+}
+
+
