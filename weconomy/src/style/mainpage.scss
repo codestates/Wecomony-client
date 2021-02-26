@@ -1,5 +1,4 @@
 
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -12,13 +11,14 @@ body {
 }
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
+$onepage : 100vh; // 무조건 한 페이지
 
 .mainContainer {
   height : 100%;
   background-color : blue;
 }
 .section1 {
-  height : 100vh;
+  height : $onepage;
   background-color : $mainBackGroundColor;
   display: flex;
   // flex-direction: column;
@@ -28,22 +28,31 @@ $mainBackGroundColor : #EFEFEF;
   padding-left: 50px;
   padding-right: 50px;
 }
+
+
 .section1 .textBox {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
 }
+
+
 @media (min-width: 770px){
+
 .section1 .MainTitle {
   font-size: 48px;
   line-height: 67px;
   margin: 30px 0px;
+  z-index:2;
+  font-family: 'Noto Sans KR', sans-serif;
   }
 .section1 .MainDesc {
   margin: 50px 0px;
   font-size: 30px;
   font-weight: 500;
+  z-index:2;
+  font-family: 'Noto Sans KR', sans-serif;
   }
 }
 .section1 .textPoint{
@@ -69,20 +78,42 @@ $mainBackGroundColor : #EFEFEF;
   color: white;
   outline: 0;
   border: none;
+  
+}
+
+.mainMobileBtn{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 10%;
+  background-color:  $maincolor;
+  font-size: 1.7rem;
+  color: #EFEFEF;
+  border: 0;
+  outline: 0;
+  z-index:1;
 }
 
 @media (max-width: 769px){
   .caculator {
     display: none;
   }
+  .section1 .MainTitleLogo {
+    color: $maincolor;
+    font-weight: 900;
+    margin-bottom: 50px;
+    font-size: 3rem;
+  }
   .section1 .MainTitle {
   font-size: 33px;
   line-height: 45px;
   white-space: pre-line;
+
   }
   .section1 .MainDesc {
     margin: 50px 0px;
     font-size: 24px;
     font-weight: 500;
+
     }
 }

@@ -1,0 +1,66 @@
+$maincolor : #1474F8;
+$mainBackGroundColor : #EFEFEF;
+$onepage : 100vh;
+
+.HelpDesk-Container {
+  height: $onepage;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HelpDesk-input-Container {
+  width: 50%;
+  height: 70%;
+  background-color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.HelpDesk-Title {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.HelpDesk-Buckit {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.helpDesk-btn {
+  background-color: $maincolor;
+  color: #FFFFFF;
+  width: 30%;
+  height: 50px;
+  align-self: center;
+  border: 0;
+  outline: 0;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.helpDesk-notice {
+  align-self: center;
+  font-size: 14px;
+}
+
+@media (max-width: 769px){
+  .HelpDesk-Buckit {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .HelpDesk-input-Container{
+    width: 95%;
+    height: 80%;
+    padding: 10px;
+  }
+  .helpDesk-btn{
+    width: 100%;
+  }
+}
