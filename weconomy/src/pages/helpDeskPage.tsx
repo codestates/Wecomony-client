@@ -2,20 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Nav from '../component/nav';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        width: '25ch',
-      },
-    },
-  }),
-);
+import { Backdrop } from '@material-ui/core';
 
 const HelpDeskPage = () => {
-  const classes = useStyles();
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');

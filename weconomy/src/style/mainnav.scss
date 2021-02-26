@@ -8,6 +8,7 @@ $maincolor : #1474F8;
   position: fixed;
   width:100%;
   z-index: 2;
+  top: 0;
 }
 
 .sidebar {
@@ -47,9 +48,17 @@ $maincolor : #1474F8;
   height: 50px;
   border: 0;
   outline: 0;
+  border-radius: 20px;
 }
 .navbar__loginBtn:hover {
   background-color: #778beb;
+}
+
+.userProfileNav {
+  border-radius: 50px;
+  width: 50%;
+  height: 50%;
+  border: 2px solid white;
 }
 
 .navbar__toogleBtn{
@@ -166,4 +175,5 @@ $maincolor : #1474F8;
     display: flex;
   }
 }
+
 
