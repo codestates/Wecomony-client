@@ -11,11 +11,6 @@ const Nav = () => {
   }
 
   const toogleBtnSet = () => {
-    //const menu = document.querySelector('.navbar__menu') as HTMLFormElement;
-    //const handleLogin = document.querySelector('.navbar__handleLogin') as HTMLFormElement;
-
-    //menu.classList.toggle('active');
-    //handleLogin.classList.toggle('active');
     const side = document.querySelector('.sidebar') as HTMLFormElement;
     const sideMenu = document.querySelector('.sidebar__menu') as HTMLFormElement;
     const sideLogin = document.querySelector('.sidebar__handleLogin') as HTMLFormElement;
