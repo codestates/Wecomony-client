@@ -1,10 +1,15 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import InsideLoginModal from './insideLoginModal';
+import { RootState } from '../store/reducers';
 
 const LoginModal: React.FC = () => {
-  const [isLogin, setLogin] = useState<boolean>(false);
-  return <>{isLogin ? <InsideLoginModal></InsideLoginModal> : null}</>;
+  const isOpen = useSelector(
+    (state: RootState) => state.modalStatus.isLoginModalOpen,
+  );
+
+  return <>{isOpen ? <InsideLoginModal></InsideLoginModal> : null}</>;
 };
 
 export default LoginModal;

@@ -4,17 +4,6 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Backdrop } from '@material-ui/core';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        width: '25ch',
-      },
-    },
-  }),
-);
-
 const HelpDeskPage = () => {
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
@@ -47,7 +36,7 @@ const HelpDeskPage = () => {
             <TextField
               id="outlined-multiline-flexible"
               label="제목"
-              style={{ marginBottom: '20px', background: 'grey' }}
+              style={{ marginBottom: '20px' }}
               onChange={handleTitleChange}
               variant="outlined"
             />

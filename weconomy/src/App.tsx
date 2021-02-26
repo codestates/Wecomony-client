@@ -11,6 +11,7 @@ import './style/AccountByDay.scss';
 import './style/AccountDetail.scss';
 import './style/AccountSideBar.scss';
 import './style/HelpDeskPage.scss';
+import './style/RequestLoginModal.scss';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 

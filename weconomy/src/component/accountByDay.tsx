@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, DateInput, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { base } from 'grommet/themes';
+
 import AccountDetail from './accountDetail';
 
 const AccountByDay = () => {
@@ -12,9 +13,14 @@ const AccountByDay = () => {
   return (
     <div className="center-Account-container">
       <div className="datePicker-Account">
-        <Grommet theme={grommet}>
-          <Box align="center" justify="start" pad="medium">
-            <Box width="medium" gap="medium" focusIndicator={true}>
+        <Grommet theme={base}>
+          <Box
+            align="center"
+            justify="start"
+            pad="medium"
+            focusIndicator={false}
+          >
+            <Box width="medium" gap="medium" focusIndicator={false}>
               <DateInput
                 format="yyyy/mm/dd"
                 value={value}
