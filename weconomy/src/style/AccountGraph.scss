@@ -39,3 +39,19 @@ $mainBackGroundColor : #EFEFEF;
   display: flex;
   justify-content: space-evenly;
 }
+
+@media (max-width: 769px){
+  .left-Account-Container {
+    width: 100%;
+  }
+  .graphBottom {
+    padding: 3px;
+    height: 40%;
+  }
+  .textGraphBottom {
+    size: large;
+  }
+  .left-Account-Container {
+    height: 100vh;
+  }
+}
