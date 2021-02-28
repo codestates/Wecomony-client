@@ -52,3 +52,14 @@ $mainBackGroundColor : #EFEFEF;
   font-size: 1.8rem;
   font-variant-numeric: tabular-nums;
 }
+
+@media (max-width: 769px){ 
+  .center-Account-container {
+    width: 100%;
+  }
+  .center-details-Account {
+    height: 80vh;
+
+  }
+
+}
