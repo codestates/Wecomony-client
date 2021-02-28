@@ -56,8 +56,8 @@ $maincolor : #1474F8;
 
 .userProfileNav {
   border-radius: 50px;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   border: 2px solid white;
 }
 
@@ -169,10 +169,14 @@ $maincolor : #1474F8;
   }
   .navbar__toogleBtn {
     display: block;
+    font-size: 30px;
   }
   .navbar__menu.active,
   .navbar__icons.active {
     display: flex;
+  }
+  .navbar__logo {
+    font-size: 25px;
   }
 }
 

@@ -16,7 +16,6 @@ import './style/HelpDeskPage.scss';
 import './style/CreateAccount.scss';
 import './style/RequestLoginModal.scss';
 
-
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 const App: React.FC = () => {
@@ -27,7 +26,11 @@ const App: React.FC = () => {
         <Route exact path="/" render={() => <Redirect to="/mainpage" />} />
         <Route exact path="/accountpage" render={() => <AccountPage />} />
         <Route exact path="/helpdesk" render={() => <HelpDeskPage />} />
-        <Route exact path="/createAccountPage" render={() => <CreateAccountPage />} />
+        <Route
+          exact
+          path="/createAccountPage"
+          render={() => <CreateAccountPage />}
+        />
       </Switch>
     </>
   );

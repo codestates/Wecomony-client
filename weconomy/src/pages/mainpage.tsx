@@ -9,7 +9,6 @@ import RequestLoginModal from '../component/requestLoginModal';
 
 const MainPage: React.FC = () => {
   const { isMobile } = useMedia();
-  const dispatch = useDispatch();
 
   useEffect(() => {
     localStorage.removeItem('kakao_e3993c543a1cd3790143c7b6f2262e63');
