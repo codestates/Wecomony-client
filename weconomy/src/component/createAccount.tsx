@@ -51,6 +51,7 @@ const [outcome2, setOutcome2] = useState<props>({
  cost: null,
  desc: null
 });
+//
 
 const onChange = (e: any) => {
  setValue(e.value);
