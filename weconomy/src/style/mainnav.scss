@@ -93,6 +93,32 @@ $maincolor : #1474F8;
   left: 25%;
   top: 5%;
 }
+.navbar__handleLogin {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileDropDownOff {
+  display: none;
+}
+
+.profileDropDown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 150px;
+  height: 100px;
+  background-color: white;
+}
+.btnInProfileDrop{
+  height: 50%;
+  width: 100%;
+}
+
+.showDropDown {
+  display: block;
+}
 @media screen and (max-width: 768px) {
   .sidebar {
     display: block;
