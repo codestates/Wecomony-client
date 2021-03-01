@@ -13,7 +13,7 @@ const useMedia = () => {
     query : "(max-width:767px)"
   });
 
-  return { isPc, isTablet, isMobile}
+  return { isPc, isTablet, isMobile }
 
 }
 
