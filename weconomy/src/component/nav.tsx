@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactEventHandler } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { RootState } from '../store/reducers';
@@ -6,8 +6,14 @@ import {
   loginModalOpen,
   requestLoginModalOpen,
 } from '../store/actions/modalActions';
+import { logoutUser } from '../store/actions/userActions';
+import MobileSidebar from '../piececompo/MobileSidebar';
+import removeDropDown from '../util/Nav/dropDown';
+import NavToggleBtnSet from '../util/Nav/NavToggleBtnSet';
+import onClickProfile from '../util/Nav/onClickProfile';
 
 const Nav: React.FC = () => {
+  window.onclick = removeDropDown;
   const history = useHistory();
   const dispatch = useDispatch();
   const openLoginModal = () => {
@@ -17,26 +23,14 @@ const Nav: React.FC = () => {
 
   const toAccountPage = () => {
     if (isLogin) {
-      history.push('/accountpage');
+      history.push('/selectaccount');
     } else {
       dispatch(requestLoginModalOpen());
     }
   };
-  const toogleBtnSet = () => {
-    const side = document.querySelector('.sidebar') as HTMLFormElement;
-    const sideMenu = document.querySelector(
-      '.sidebar__menu',
-    ) as HTMLFormElement;
-    const sideLogin = document.querySelector(
-      '.sidebar__handleLogin',
-    ) as HTMLFormElement;
-    const sideProfile = document.querySelector(
-      '.sidebar__profile',
-    ) as HTMLFormElement;
-    side.classList.toggle('active');
-    sideMenu.classList.toggle('active');
-    sideLogin.classList.toggle('active');
-    sideProfile.classList.toggle('active');
+
+  const toLogOutUser = () => {
+    dispatch(logoutUser());
   };
 
   const userImage = useSelector(
@@ -71,39 +65,29 @@ const Nav: React.FC = () => {
 
       <div className="navbar__handleLogin">
         {isLogin ? (
-          <img
-            className="userProfileNav"
-            src={userImage}
-            alt="유저프로필"
-          ></img>
+          <>
+            <img
+              className="userProfileNav"
+              src={userImage}
+              alt="유저프로필"
+              onClick={onClickProfile}
+            ></img>
+            <div className="profileDropDown">
+              <button onClick={toLogOutUser} className="btnInProfileDrop">
+                로그아웃
+              </button>
+              <button className="btnInProfileDrop">회원탈퇴</button>
+            </div>
+          </>
         ) : (
           <button onClick={openLoginModal} className="navbar__loginBtn">
             로그인
           </button>
         )}
       </div>
+      <MobileSidebar></MobileSidebar>
 
-      <nav className="sidebar">
-        <div className="sidebar__profile">
-          <img
-            className="sidebar__image"
-            src="https://ifh.cc/g/xMR6n6.png"
-          ></img>
-        </div>
-        <ul className="sidebar__menu">
-          <li className="sideBtns">가계부 작성하기</li>
-          <li onClick={toAccountPage} className="sideBtns">
-            내 가계부
-          </li>
-          <li className="sideBtns">문의하기</li>
-        </ul>
-
-        <div className="sidebar__handleLogin">
-          <a>로그인</a>
-        </div>
-      </nav>
-
-      <div onClick={toogleBtnSet} className="navbar__toogleBtn">
+      <div onClick={NavToggleBtnSet} className="navbar__toogleBtn">
         <i className="fas fa-bars"></i>
       </div>
     </nav>

@@ -3,7 +3,7 @@ import MainPage from '../src/pages/mainpage';
 import AccountPage from '../src/pages/accountpage';
 import HelpDeskPage from '../src/pages/helpDeskPage';
 import CreateAccountPage from '../src/pages/createAccountPage';
-
+import SelectAccount from '../src/pages/selectAccount';
 import './style/mainpage.scss';
 import './style/mainnav.scss';
 import './style/LoginModal.scss';
@@ -15,6 +15,7 @@ import './style/AccountSideBar.scss';
 import './style/HelpDeskPage.scss';
 import './style/CreateAccount.scss';
 import './style/RequestLoginModal.scss';
+import './style/SelectAccount.scss';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
@@ -24,6 +25,7 @@ const App: React.FC = () => {
       <Switch>
         <Route path="/mainpage" render={() => <MainPage />} />
         <Route exact path="/" render={() => <Redirect to="/mainpage" />} />
+        <Route exact path="/selectaccount" render={() => <SelectAccount />} />
         <Route exact path="/accountpage" render={() => <AccountPage />} />
         <Route exact path="/helpdesk" render={() => <HelpDeskPage />} />
         <Route

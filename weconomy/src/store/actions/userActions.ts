@@ -1,11 +1,5 @@
-import { IS_LOGIN, SUCCESS_LOGIN, TRY_LOGIN, SAVE_TOKEN, SAVE_USER_DATA } from './constants'
+import { IS_LOGIN, SUCCESS_LOGIN, TRY_LOGIN, SAVE_USER_DATA, SIGN_UP_USER, LOG_OUT_USER } from './constants'
 
-interface types {
-  type: typeof SAVE_TOKEN,
-  payload : {
-    token: string
-  }
-}
 
 export const isLogin = () => {
   return { type : IS_LOGIN }
@@ -19,19 +13,17 @@ export const successLogin = () => {
   return { type : SUCCESS_LOGIN }
 }
 
+export const logoutUser = () => {
+  return { type : LOG_OUT_USER }
+}
+
 export const saveUserData = (data: object) => {
   return { type : SAVE_USER_DATA, data : data }
 }
 
-
-export const saveToken = (token: string): types => {
-  return { 
-    type : SAVE_TOKEN, 
-    payload : {
-      token
-    }
-  }
+export const signUpUser = (data: object) => {
+  return { type : SIGN_UP_USER, data : data}
 }
 
 
-export type UserAction = | ReturnType<typeof isLogin> | ReturnType<typeof successLogin> | ReturnType<typeof tryLogin> | ReturnType<typeof saveToken> | ReturnType<typeof saveUserData>
+export type UserAction = | ReturnType<typeof isLogin> | ReturnType<typeof successLogin> | ReturnType<typeof tryLogin> | ReturnType<typeof saveUserData> | ReturnType<typeof logoutUser>

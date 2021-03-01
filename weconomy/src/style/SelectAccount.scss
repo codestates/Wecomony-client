@@ -1,0 +1,52 @@
+$maincolor : #1474F8;
+$mainBackGroundColor : #EFEFEF;
+$onepage : 100vh; 
+
+.SelectAccount-Container {
+  height:  100vh;
+  background-color: $mainBackGroundColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SelectAccount-Contents {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.SelectAccountBox {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.oneAccountBox {
+  width: 200px;
+  height: 300px;
+  background-color: $mainBackGroundColor;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.AddAccountBox {
+  width: 200px;
+  height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  transition-duration: 0.5s;
+}
+
+.AddAccountBox:hover {
+  background-color: cadetblue;
+}
