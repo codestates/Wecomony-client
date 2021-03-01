@@ -1,4 +1,4 @@
-import { IS_LOGIN, SUCCESS_LOGIN, SAVE_TOKEN, SAVE_USER_DATA } from '../actions/constants'
+import { IS_LOGIN, SUCCESS_LOGIN, SAVE_USER_DATA, LOG_OUT_USER } from '../actions/constants'
 import { UserAction } from '../actions/userActions'
 
 
@@ -46,6 +46,20 @@ const userReducer = (state: Props = initialState, action: any) => {
           nickname : action.data.profile.properties.nickname,
           thumbnail : action.data.profile.properties.thumbnail_image,
           email :  action.data.profile.kakao_account.email
+        }
+      }
+    case LOG_OUT_USER : 
+      return {
+        ...state,
+        isLogin : false,
+        userData : {
+          ...state.userData,
+          id : null,
+          access_token : null,
+          refresh_token : null,
+          nickname : null,
+          thumbnail : null,
+          email : null
         }
       }
     default:

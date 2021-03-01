@@ -6,13 +6,32 @@ import useMedia from '../customhooks/useMedia';
 import Nav from '../component/nav';
 import LoginModal from '../component/loginmodal';
 import RequestLoginModal from '../component/requestLoginModal';
+import axios from 'axios';
 
 const MainPage: React.FC = () => {
   const { isMobile } = useMedia();
 
-  useEffect(() => {
-    localStorage.removeItem('kakao_e3993c543a1cd3790143c7b6f2262e63');
-  });
+  useEffect(() => {});
+
+  const query = `query {
+    userGet{
+      email
+      groups {
+        id
+      }
+    }
+  }`;
+  axios.defaults.withCredentials = true;
+  const getuser = () => {
+    axios
+      .get(
+        'https://sench.projects1faker.com/graphql?query=' +
+          encodeURIComponent(query),
+      )
+      .then((res) => {
+        console.log(res);
+      });
+  };
 
   return (
     <>
