@@ -1,25 +1,38 @@
-import { Box, DateInput, Grommet } from 'grommet';
-import { base } from 'grommet/themes';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
+import 'date-fns';
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
 import React from 'react';
 
 interface props {
-    value:any
-    onChange:any
+  selectedDate:any
+  handleDateChange:any
 }
 
-const Calender: React.FC<props> = ({value, onChange}:props) => {
+const Calender: React.FC<props> = ({selectedDate, handleDateChange}) => {
+
+
     return (
-        <Grommet theme={base}>
-        <Box align="center" justify="start" pad="small">
-          <Box background="#" width="medium" gap="medium">
-            <DateInput
-              format="yyyy/mm/dd"
-              value={value}
-              onChange={onChange}
-            />
-          </Box>
-        </Box>
-      </Grommet>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <Grid container justify="center">
+        <KeyboardDatePicker
+          disableToolbar
+          variant="inline"
+          format="yyyy/MM/dd"
+          margin="normal"
+          id="date-picker-inline"
+          label="날짜를 선택해주세요"
+          value={selectedDate}
+          onChange={handleDateChange}
+          KeyboardButtonProps={{
+            'aria-label': 'change date',
+          }}
+        />
+      </Grid>
+    </MuiPickersUtilsProvider>
     )
 }
 

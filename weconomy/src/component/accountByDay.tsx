@@ -17,7 +17,7 @@ const AccountByDay = () => {
   };
 
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(
-    new Date('2014-08-18T21:11:54'),
+    new Date(),
   );
 
   const handleDateChange = (date: Date | null) => {
@@ -28,28 +28,12 @@ const AccountByDay = () => {
   return (
     <div className="center-Account-container">
       <div className="datePicker-Account">
-        <Grommet theme={base}>
-          <Box
-            align="center"
-            justify="start"
-            pad="medium"
-            focusIndicator={false}
-          >
-            <Box width="medium" gap="medium" focusIndicator={false}>
-              <DateInput
-                format="yyyy/mm/dd"
-                value={value}
-                onChange={onChange}
-              />
-            </Box>
-          </Box>
-        </Grommet>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <Grid container justify="center">
             <KeyboardDatePicker
               disableToolbar
               variant="inline"
-              format="MM/dd/yyyy"
+              format="yyyy/MM/yyyy"
               margin="normal"
               id="date-picker-inline"
               label="날짜를 선택해주세요"

@@ -1,27 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
-import { NativeSelect } from '@material-ui/core';
-import { TextField } from '@material-ui/core';
-import { IconButton } from '@material-ui/core';
-import { Box, DateInput, Grommet } from 'grommet';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import DeleteIcon from '@material-ui/icons/Delete';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import CreateAccountEvents from '../customhooks/useCreateAccountEvents';
 import Calender from '../util/CreateAccount/calender';
 import IncomeOther from '../util/CreateAccount/incomeOther';
 import OutcomeOther from '../util/CreateAccount/outcomeOther';
 
+interface counter {
+  inCounter:any
+  outCounter:any
+  incomeCounter:number
+  outcomeCounter:number
+}
 
 
-const CreateAccount:React.FC= () => {
+const CreateAccount:React.FC<counter> = ({inCounter, outCounter, incomeCounter, outcomeCounter}) => {
   
   interface props {
     category:any
@@ -29,10 +20,6 @@ const CreateAccount:React.FC= () => {
     desc:any 
 }
 
-  
- 
-
-const [value, setValue] = useState<string>(); 
 
 const [income1, setIncome1] = useState<props>({
  category: 10,
@@ -54,10 +41,13 @@ const [outcome2, setOutcome2] = useState<props>({
  cost: null,
  desc: null
 });
-//
 
-const onChange = (e: any) => {
- setValue(e.value);
+const [selectedDate, setSelectedDate] = React.useState<Date | null>(
+  new Date()
+);
+
+const handleDateChange = (date: Date | null) => {
+  setSelectedDate(date);
 };
 
 
@@ -93,25 +83,47 @@ const changeOutcome2 = (e: any) => {
      ...copy
  })
 };
+
+const validCheck = () => {
+    if (incomeCounter === 1) {
+      if (!income1.category || !income1.cost || !income1.desc) {
+        console.log("income1 중에서 작성하지 않은 부분이 있습니다.")
+      } 
+    } else if (incomeCounter > 1) {
+      if (!income2.category || !income2.cost || !income2.desc) {
+        console.log("income2 중에서 작성하지 않은 부분이 있습니다.")
+      }
+    }
+
+    if (outcomeCounter === 1) {
+      if (!outcome1.category || !outcome1.cost || !outcome1.desc) {
+        console.log("outcome1 중에서 작성하지 않은 부분이 있습니다.")
+      } 
+    } else if (outcomeCounter > 1) {
+      if (!outcome2.category || !outcome2.cost || !outcome2.desc) {
+        console.log("outcome2 중에서 작성하지 않은 부분이 있습니다.")
+      }
+    }
+}
   
 
   return (
     <div className="center-createAccount-container">
       <div className="center-createAccount-datePicker">
-        <Calender value= {value} onChange= {onChange} />
+        <Calender selectedDate={selectedDate} handleDateChange={handleDateChange}/>
       </div>
 
       <div className="center-createAccount-select">
         <div className="center-createAccount-income">
           <div className="income-title">수입</div>
-          <IncomeOther category={income1.category} cost={income1.cost} desc={income1.desc} onChange={changeIncome1}
+          <IncomeOther incomeCounter={incomeCounter} inCounter={inCounter} category={income1.category} cost={income1.cost} desc={income1.desc} onChange={changeIncome1}
             category2={income2.category} cost2={income2.cost} desc2={income2.desc} onChange2={changeIncome2}
           />
         </div>
 
         <div className="center-createAccount-outcome">
           <div className="outcome-title">지출</div>
-            <OutcomeOther category={outcome1.category} cost={outcome1.cost} desc={outcome1.desc} onChange={changeOutcome1} 
+            <OutcomeOther outcomeCounter={outcomeCounter} outCounter={outCounter} category={outcome1.category} cost={outcome1.cost} desc={outcome1.desc} onChange={changeOutcome1} 
               category2={outcome2.category} cost2={outcome2.cost} desc2={outcome2.desc} onChange2={changeOutcome2}
             />
         </div>
@@ -119,7 +131,7 @@ const changeOutcome2 = (e: any) => {
 
       <div className="center-createAccount-belowBtns">
         <div className="belowBtns-save">
-          <button className="belowBtns-saveBtn">저장하기</button>
+          <button onClick={validCheck} className="belowBtns-saveBtn">저장하기</button>
         </div>
       </div>
     </div>
