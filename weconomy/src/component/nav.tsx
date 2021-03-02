@@ -31,6 +31,7 @@ const Nav: React.FC = () => {
 
   const toLogOutUser = () => {
     dispatch(logoutUser());
+    history.push('/');
   };
 
   const userImage = useSelector(
@@ -95,8 +96,3 @@ const Nav: React.FC = () => {
 };
 
 export default Nav;
-
-/*
-
-
-*/

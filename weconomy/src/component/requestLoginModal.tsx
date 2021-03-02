@@ -2,7 +2,10 @@ import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/reducers';
 import { RiCloseFill } from 'react-icons/ri';
-import { requestLoginModalClose } from '../store/actions/modalActions';
+import {
+  requestLoginModalClose,
+  loginModalOpen,
+} from '../store/actions/modalActions';
 const RequestLoginModal: React.FC = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector(
@@ -13,6 +16,11 @@ const RequestLoginModal: React.FC = () => {
     dispatch(requestLoginModalClose());
   };
 
+  const toLoginModal = () => {
+    closeModal();
+    dispatch(loginModalOpen());
+  };
+
   return (
     <>
       {isOpen ? (
@@ -21,7 +29,7 @@ const RequestLoginModal: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
             className="insideRequestLoginModal animate__animated animate__fadeIn"
           >
-            <div className="loginModalContents">
+            <div className="RequestLoginModalContents">
               <RiCloseFill
                 onClick={closeModal}
                 className="loginModalClose"
@@ -29,7 +37,9 @@ const RequestLoginModal: React.FC = () => {
               <div className="loginModalTop">Weconomy</div>
               <div className="loginModalBottom">
                 <div>로그인이 필요한 서비스입니다</div>
-                <button>로그인</button>
+                <button className="requestLoginBtn" onClick={toLoginModal}>
+                  로그인
+                </button>
               </div>
             </div>
           </div>

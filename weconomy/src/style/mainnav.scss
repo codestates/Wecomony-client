@@ -49,9 +49,9 @@ $maincolor : #1474F8;
   border: 0;
   outline: 0;
   border-radius: 20px;
-}
-.navbar__loginBtn:hover {
-  background-color: #778beb;
+  &:hover{
+    background-color: #778beb;
+  }
 }
 
 .userProfileNav {
