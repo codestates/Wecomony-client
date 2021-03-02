@@ -12,8 +12,10 @@ $maincolor : #1474F8;
   box-shadow: 0 3px 7px rgb(0 0 0 / 30%);
 }
 .RequestLoginModalContents{
+  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
 }
 

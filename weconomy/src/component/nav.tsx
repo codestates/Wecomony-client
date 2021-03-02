@@ -73,8 +73,8 @@ const Nav: React.FC = () => {
               alt="유저프로필"
               onClick={onClickProfile}
             ></img>
-            <div className="profileDropDown">
-              <button onClick={toLogOutUser} className="btnInProfileDrop">
+            <div className="profileDropDown animate__animated animate__headShake">
+              <button onClick={toLogOutUser} className="btnInProfileDroptop">
                 로그아웃
               </button>
               <button className="btnInProfileDrop">회원탈퇴</button>

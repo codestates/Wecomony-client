@@ -35,18 +35,19 @@ $maincolor : #1474F8;
     display:flex;
     flex-direction:column;
     align-items: center;
-    margin-bottom: 20px;
+    height: 20%;
 }
 
 .accountBtns {
-    list-style:none;
-    font-size: 24px;
-    padding: 12px;
-}
-
-.accountBtns:hover {
-    background-color:$maincolor;
-    border-radius: 20px;
+    width: 70%;
+    height: 30%;
+    margin-bottom: 10px;
+    border: 0;
+    outline: 0;
+    background-color: $maincolor;
+    color :white;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 
