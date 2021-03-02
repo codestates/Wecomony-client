@@ -4,7 +4,6 @@ import { NativeSelect } from '@material-ui/core';
 import { TextField } from '@material-ui/core';
 import { IconButton } from '@material-ui/core';
 import { Box, DateInput, Grommet } from 'grommet';
-import { base } from 'grommet/themes';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -16,18 +15,26 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import CreateAccountEvents from '../customhooks/useCreateAccountEvents';
+import Calender from '../util/CreateAccount/calender';
+import IncomeOther from '../util/CreateAccount/incomeOther';
+import OutcomeOther from '../util/CreateAccount/outcomeOther';
+
+interface counter {
+  inCounter:any
+  incomeCounter:any
+}
 
 
-const CreateAccount = () => {
+const CreateAccount:React.FC<counter> = ({inCounter, incomeCounter}) => {
   
   interface props {
     category:any
     cost:any 
     desc:any 
 }
+
+  
  
-
-
 
 const [value, setValue] = useState<string>(); 
 
@@ -57,21 +64,9 @@ const onChange = (e: any) => {
  setValue(e.value);
 };
 
-const changeIncome1 = (e: any) => {
-const copy = Object.assign(income1)
- copy[e.target.name] = e.target.value
- setIncome1({
-     ...copy
- })
-};
-
-const changeIncome2 = (e: any) => {
- const copy = Object.assign(income2)
- copy[e.target.name] = e.target.value
- setIncome2({
-     ...copy
- })
-};
+const incomeChange = () => {
+  
+}
 
 const changeOutcome1 = (e: any) => {
    const copy = Object.assign(outcome1)
@@ -88,36 +83,24 @@ const changeOutcome2 = (e: any) => {
      ...copy
  })
 };
-
-const addIncomeAcc = () => {
-
-}
-
-const addOutcomeAcc = () => {
-
-}
-
-const deleteAcc = () => {
-
-}
   
 
   return (
     <div className="center-createAccount-container">
       <div className="center-createAccount-datePicker">
+        <Calender value= {value} onChange= {onChange} />
       </div>
 
       <div className="center-createAccount-select">
         <div className="center-createAccount-income">
           <div className="income-title">수입</div>
-          <div className="income-other">
-
-          </div>
+          <IncomeOther incomeCounter={incomeCounter} inCounter={inCounter} category={income1.category} cost={income1.cost} desc={income1.desc} onChange={setIncome1} />
         </div>
 
         <div className="center-createAccount-outcome">
           <div className="outcome-title">지출</div>
           <div className="outcome-other">
+            <OutcomeOther category={outcome1.category} cost={outcome1.cost} desc={outcome1.desc} onChange={setOutcome1} ></OutcomeOther>
         </div>
         </div>
       </div>
