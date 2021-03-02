@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../component/nav';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Backdrop } from '@material-ui/core';
+import LoginModal from '../component/loginmodal';
+import RequestLoginModal from '../component/requestLoginModal';
+import AskNoneSaveModal from '../component/askNoneSave';
 
 const HelpDeskPage = () => {
   const [email, setEmail] = useState('');
@@ -21,6 +22,9 @@ const HelpDeskPage = () => {
     <>
       <Nav></Nav>
       <div className="HelpDesk-Container">
+        <LoginModal></LoginModal>
+        <RequestLoginModal></RequestLoginModal>
+        <AskNoneSaveModal></AskNoneSaveModal>
         <div className="HelpDesk-input-Container">
           <h1 className="HelpDesk-Title">어떻게 도와드릴까요?</h1>
           <div className="HelpDesk-Buckit">

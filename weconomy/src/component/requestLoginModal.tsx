@@ -32,9 +32,9 @@ const RequestLoginModal: React.FC = () => {
             <div className="RequestLoginModalContents">
               <RiCloseFill
                 onClick={closeModal}
-                className="loginModalClose"
+                className="RequestLoginModalClose"
               ></RiCloseFill>
-              <div className="loginModalTop">Weconomy</div>
+              <div className="requestLoginModalTop">Weconomy</div>
               <div className="loginModalBottom">
                 <div>로그인이 필요한 서비스입니다</div>
                 <button className="requestLoginBtn" onClick={toLoginModal}>
