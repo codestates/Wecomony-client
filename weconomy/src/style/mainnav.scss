@@ -1,4 +1,6 @@
 $maincolor : #1474F8;
+$maincolor2 : #EDA28F;
+$koreanFont : 'Noto Sans KR', sans-serif;
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -36,6 +38,10 @@ $maincolor : #1474F8;
 .navbar__menu li:hover {
   background-color: #778beb;
   border-radius: 40px;
+}
+
+.navBtns {
+  padding: 10px;
 }
 .navbar__handleLogin{
   display: flex;
@@ -105,15 +111,38 @@ $maincolor : #1474F8;
 .profileDropDown {
   display: none;
   position: absolute;
-  top: 50px;
+  top: 60px;
   right: 10px;
   width: 150px;
   height: 100px;
-  background-color: white;
+  background-color: $maincolor2;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  padding: 5px
 }
 .btnInProfileDrop{
+  color: #FFFF;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: $maincolor2;
   height: 50%;
   width: 100%;
+  border: 0;
+  outline: 0;
+  letter-spacing: 1px;
+}
+
+.btnInProfileDroptop {
+  color: #FFFF;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: $maincolor2;
+  height: 50%;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  letter-spacing: 1px;
+  border-bottom: 2px solid snow;
 }
 
 .showDropDown {

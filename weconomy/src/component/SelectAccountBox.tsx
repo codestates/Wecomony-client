@@ -4,9 +4,14 @@ import { RootState } from '../store/reducers';
 import { useHistory } from 'react-router-dom';
 
 const SelectAccountBox = () => {
+  const history = useHistory();
   const userImage = useSelector(
     (state: RootState) => state.userStatus.userData?.thumbnail,
   );
+
+  const onClickGroup = () => {
+    history.push('/accountpage');
+  };
   return (
     <div className="SelectAccountBox">
       <div className="oneAccountBox">
@@ -37,7 +42,9 @@ const SelectAccountBox = () => {
             <div className="SelectAccountMemberName">멤버1</div>
           </div>
         </div>
-        <button className="SelectAccountJoinBtn">JOIN</button>
+        <button onClick={onClickGroup} className="SelectAccountJoinBtn">
+          JOIN
+        </button>
       </div>
 
       <div className="AddAccountBox">
