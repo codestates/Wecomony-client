@@ -121,7 +121,7 @@ $maincolor : #1474F8;
 }
 @media screen and (max-width: 768px) {
   .sidebar {
-    display: block;
+    display: none;
     overflow: hidden;
     position: fixed;
     transform: translateX(20px);
@@ -138,6 +138,8 @@ $maincolor : #1474F8;
     display: none;
   }
   .sidebar.active {
+    display:block;
+    position: fixed;
     transform: translateX(0px);
     transition: all 0.3s ease-in-out 0s;
     background-color: #dcdde1;

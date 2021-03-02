@@ -19,13 +19,9 @@ import Calender from '../util/CreateAccount/calender';
 import IncomeOther from '../util/CreateAccount/incomeOther';
 import OutcomeOther from '../util/CreateAccount/outcomeOther';
 
-interface counter {
-  inCounter:any
-  incomeCounter:any
-}
 
 
-const CreateAccount:React.FC<counter> = ({inCounter, incomeCounter}) => {
+const CreateAccount:React.FC= () => {
   
   interface props {
     category:any
@@ -64,9 +60,23 @@ const onChange = (e: any) => {
  setValue(e.value);
 };
 
-const incomeChange = () => {
-  
-}
+
+const changeIncome1 = (e: any) => {
+  const copy = Object.assign(income1)
+  copy[e.target.name] = e.target.value
+  setIncome1({
+      ...copy
+  })
+ };
+
+
+const changeIncome2 = (e: any) => {
+  const copy = Object.assign(income2)
+  copy[e.target.name] = e.target.value
+  setIncome2({
+      ...copy
+  })
+ };
 
 const changeOutcome1 = (e: any) => {
    const copy = Object.assign(outcome1)
@@ -94,14 +104,16 @@ const changeOutcome2 = (e: any) => {
       <div className="center-createAccount-select">
         <div className="center-createAccount-income">
           <div className="income-title">수입</div>
-          <IncomeOther incomeCounter={incomeCounter} inCounter={inCounter} category={income1.category} cost={income1.cost} desc={income1.desc} onChange={setIncome1} />
+          <IncomeOther category={income1.category} cost={income1.cost} desc={income1.desc} onChange={changeIncome1}
+            category2={income2.category} cost2={income2.cost} desc2={income2.desc} onChange2={changeIncome2}
+          />
         </div>
 
         <div className="center-createAccount-outcome">
           <div className="outcome-title">지출</div>
-          <div className="outcome-other">
-            <OutcomeOther category={outcome1.category} cost={outcome1.cost} desc={outcome1.desc} onChange={setOutcome1} ></OutcomeOther>
-        </div>
+            <OutcomeOther category={outcome1.category} cost={outcome1.cost} desc={outcome1.desc} onChange={changeOutcome1} 
+              category2={outcome2.category} cost2={outcome2.cost} desc2={outcome2.desc} onChange2={changeOutcome2}
+            />
         </div>
       </div>
 

@@ -10,15 +10,29 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { FaTrashAlt } from "react-icons/fa";
 
 interface props {
-  inCounter:any
   category:any
+  category2:any
   cost:any
+  cost2:any
   desc:any
+  desc2:any
   onChange:any
-  incomeCounter:any
+  onChange2:any
 }
 
-const IncomeOther:React.FC<props> = ({incomeCounter, inCounter, category, cost, desc, onChange}:props) => {
+const IncomeOther:React.FC<props> = ({ category, category2, cost, cost2, desc, desc2, onChange, onChange2}:props) => {
+
+  const [incomeCounter, setIncomeCounter] = useState<number>(1);
+
+  const inCounter = (message:string) => {
+    if (message === "up" && incomeCounter < 2) {
+      setIncomeCounter(incomeCounter + 1)
+    } else if (message === "down" && incomeCounter > 1){
+      setIncomeCounter(incomeCounter - 1)
+    } else {
+      console.log("asdf")
+    }
+  }
 
   return (
     <>
@@ -84,8 +98,8 @@ const IncomeOther:React.FC<props> = ({incomeCounter, inCounter, category, cost, 
       labelId="demo-simple-select-helper-label"
       id="demo-simple-select-helper"
       name="category"
-      value={category || ''}
-      onChange={onChange}
+      value={category2 || ''}
+      onChange={onChange2}
       style={{width: '150px',textAlign:'center'}}
     >
       <MenuItem value={10}>월급</MenuItem>
@@ -101,9 +115,9 @@ const IncomeOther:React.FC<props> = ({incomeCounter, inCounter, category, cost, 
     label="금액"
     name="cost"
     placeholder="금액을 적어주세요"
-    value={cost || ''}
+    value={cost2 || ''}
     size="small"
-    onChange={onChange}
+    onChange={onChange2}
     variant="outlined"
   />
 </div>
@@ -113,9 +127,9 @@ const IncomeOther:React.FC<props> = ({incomeCounter, inCounter, category, cost, 
     label="수입 내용"
     placeholder="수입 내용에 대한 설명"
     name="desc"
-    value={desc || ''}
+    value={desc2 || ''}
     size="small"
-    onChange={onChange}
+    onChange={onChange2}
     variant="outlined"
   />
 </div>
