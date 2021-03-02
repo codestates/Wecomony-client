@@ -15,7 +15,6 @@ $onepage : 100vh;
   flex-direction: row;
   width: 70%;
   height: 50%;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .SelectAccountBox {
@@ -25,28 +24,110 @@ $onepage : 100vh;
   height: 100%;
   width: 100%;
   align-items: center;
-  justify-content: space-evenly;
 }
 
 .oneAccountBox {
   width: 200px;
   height: 300px;
   background-color: $mainBackGroundColor;
+  padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition-duration: 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  margin-right: 30px;
+  top: 0;
+  &:hover{
+    top: -5px;
+    box-shadow: rgba(0, 0, 0, 0.486) 0px 10px 20px;
+  }
 }
 
 .AddAccountBox {
+  position: relative;
   width: 200px;
   height: 300px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  color: black;
+  color: $maincolor;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 5rem;
-  transition-duration: 0.5s;
+  transition-duration: 0.4s;
+  top: 0;
+  &:hover{
+    top: -5px;
+    box-shadow: rgba(0, 0, 0, 0.486) 0px 10px 20px;
+  }
 }
 
-.AddAccountBox:hover {
-  background-color: cadetblue;
+.titleAddAccountBox {
+  margin-top: 50px;
+  font-size: 1.5rem;
+  color: black;
+  text-align: center;
+}
+
+.titleAccountBox {
+  font-size: 1.5rem;
+  color: black;
+  text-align: center;
+}
+
+.SelectAccountMembers {
+  display: flex;
+  flex-direction: column;
+  height: 170px;
+}
+
+.SelectAccountMemberName {
+
+}
+
+.SelectAccountMemberImg {
+
+  width: 30px;
+  height: 30px;
+  margin-right: 30px;
+  border-radius: 30px;
+  border : solid 2px $maincolor;
+}
+
+.SelectOneMemberBox {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.SelectAccountJoinBtn {
+  &:hover {
+    background-color: #0951b4;
+  }
+  transition-duration: 0.5s;
+  justify-self: flex-end;
+  background-color: $maincolor;
+  width: 100%;
+  height: 13%;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 5px;
+  outline: 0;
+}
+
+@media screen and (max-width: 768px) { 
+  .SelectAccountBox{
+    flex-direction: column;
+
+  }
+  .SelectAccount-Contents{
+    flex-direction: column;
+    align-items: none;
+  }
 }

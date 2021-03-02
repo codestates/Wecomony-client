@@ -39,7 +39,7 @@ $onepage : 100vh;
 
 
 @media (min-width: 770px){
-
+ 
 .section1 .MainTitle {
   font-size: 48px;
   line-height: 67px;
@@ -95,6 +95,10 @@ $onepage : 100vh;
 }
 
 @media (max-width: 769px){
+  .section1 {
+    background-color: white;
+  }
+
   .caculator {
     display: none;
   }

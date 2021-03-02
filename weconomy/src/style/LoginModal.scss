@@ -1,5 +1,6 @@
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
+$mainLogofont : 'Fredoka One', cursive;
 
 .LoginModalOuter {
   z-index: 3;
@@ -67,12 +68,13 @@ $mainBackGroundColor : #EFEFEF;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .loginModalTop {
   color: $maincolor;
   font-size: 2.5rem;
-  font-weight: 700;
+  font-family: $mainLogofont;
 }
 
 .loginModalBottom{
