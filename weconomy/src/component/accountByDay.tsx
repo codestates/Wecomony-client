@@ -33,7 +33,7 @@ const AccountByDay = () => {
             <KeyboardDatePicker
               disableToolbar
               variant="inline"
-              format="yyyy/MM/yyyy"
+              format="yyyy/MM/dd"
               margin="normal"
               id="date-picker-inline"
               label="날짜를 선택해주세요"
@@ -42,6 +42,7 @@ const AccountByDay = () => {
               KeyboardButtonProps={{
                 'aria-label': 'change date',
               }}
+              fullWidth
             />
           </Grid>
         </MuiPickersUtilsProvider>
