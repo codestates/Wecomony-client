@@ -1,11 +1,35 @@
+$maincolor : #1474F8;
+
 .insideRequestLoginModal {
   width: 350px;
   height: 250px;
   position: relative;
   box-sizing: border-box;
   margin: 200px auto;
-  padding: 30px;
+  padding: 15px;
   border-radius: 10px;
   background-color:  white;
   box-shadow: 0 3px 7px rgb(0 0 0 / 30%);
 }
+.RequestLoginModalContents{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.loginModalBottom {
+  display: flex;
+  align-items: center;
+}
+
+.requestLoginBtn {
+  background-color: $maincolor;
+  height: 60%;
+  width: 60%;
+  border-radius: 5px;
+  border : 0;
+  outline: 0;
+  color: white;
+  font-size: 1.3rem;
+}
+
