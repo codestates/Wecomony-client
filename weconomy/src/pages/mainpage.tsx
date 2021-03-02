@@ -9,6 +9,7 @@ import { RootState } from '../store/reducers';
 import Nav from '../component/nav';
 import LoginModal from '../component/loginmodal';
 import RequestLoginModal from '../component/requestLoginModal';
+import AskNoneSaveModal from '../component/askNoneSave';
 import axios from 'axios';
 
 const MainPage: React.FC = () => {
@@ -53,6 +54,7 @@ const MainPage: React.FC = () => {
       <div className="mainContainer">
         <LoginModal></LoginModal>
         <RequestLoginModal></RequestLoginModal>
+        <AskNoneSaveModal></AskNoneSaveModal>
         <div className="section1">
           <div className="textBox">
             {isMobile ? <h1 className="MainTitleLogo">Weconomy</h1> : null}

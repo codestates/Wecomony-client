@@ -5,6 +5,7 @@ import { RootState } from '../store/reducers';
 import {
   loginModalOpen,
   requestLoginModalOpen,
+  askNoneSaveModalOpen,
 } from '../store/actions/modalActions';
 import { logoutUser } from '../store/actions/userActions';
 import MobileSidebar from '../piececompo/MobileSidebar';
@@ -29,6 +30,14 @@ const Nav: React.FC = () => {
     }
   };
 
+  const toCreateAccount = () => {
+    if (isLogin) {
+      history.push('/createAccountPage');
+    } else {
+      dispatch(askNoneSaveModalOpen());
+    }
+  };
+
   const toLogOutUser = () => {
     dispatch(logoutUser());
     history.push('/');
@@ -50,10 +59,7 @@ const Nav: React.FC = () => {
       </div>
 
       <ul className="navbar__menu">
-        <li
-          onClick={() => history.push('/createAccountPage')}
-          className="navBtns"
-        >
+        <li onClick={toCreateAccount} className="navBtns">
           가계부 작성하기
         </li>
         <li onClick={toAccountPage} className="navBtns">
