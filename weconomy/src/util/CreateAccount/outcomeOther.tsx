@@ -10,6 +10,8 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { FaTrashAlt } from "react-icons/fa";
 
 interface props {
+  outcomeCounter:number
+  outCounter:any
   category:any
   category2:any
   cost:any
@@ -20,17 +22,7 @@ interface props {
   onChange2:any
 }
 
-const OutcomeOther:React.FC<props> = ({category, category2, cost, cost2, desc, desc2, onChange, onChange2}:props) => {
-
-    const [outcomeCounter, setOutcomeCounter] = useState<number>(1);
-
-    const outCounter = (message:string) => {
-        if (message === "up" && outcomeCounter < 2) {
-          setOutcomeCounter(outcomeCounter + 1)
-        } else if (message === "down" && outcomeCounter > 1) {
-          setOutcomeCounter(outcomeCounter - 1)
-        }
-      }
+const OutcomeOther:React.FC<props> = ({outcomeCounter, outCounter, category, category2, cost, cost2, desc, desc2, onChange, onChange2}:props) => {
 
   return (
     <>
