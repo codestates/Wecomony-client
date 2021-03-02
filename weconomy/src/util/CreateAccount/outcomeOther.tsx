@@ -11,12 +11,16 @@ import { FaTrashAlt } from "react-icons/fa";
 
 interface props {
   category:any
+  category2:any
   cost:any
+  cost2:any
   desc:any
+  desc2:any
   onChange:any
+  onChange2:any
 }
 
-const OutcomeOther:React.FC<props> = ({category, cost, desc, onChange}:props) => {
+const OutcomeOther:React.FC<props> = ({category, category2, cost, cost2, desc, desc2, onChange, onChange2}:props) => {
 
     const [outcomeCounter, setOutcomeCounter] = useState<number>(1);
 
@@ -30,8 +34,8 @@ const OutcomeOther:React.FC<props> = ({category, cost, desc, onChange}:props) =>
 
   return (
     <>
-    <div className="income-other">
-    <div className="income-category">
+    <div className="outcome-other">
+    <div className="outcome-category">
       <InputLabel id="demo-simple-select-helper-label">카테고리</InputLabel>
       <Select
         labelId="demo-simple-select-helper-label"
@@ -47,7 +51,7 @@ const OutcomeOther:React.FC<props> = ({category, cost, desc, onChange}:props) =>
       </Select>
       <FormHelperText>수입 항목을 골라주세요</FormHelperText>
     </div>
-    <div className="income-cost">
+    <div className="outcome-cost">
       <TextField
         id="outlined-textarea"
         name="cost"
@@ -59,7 +63,7 @@ const OutcomeOther:React.FC<props> = ({category, cost, desc, onChange}:props) =>
         variant="outlined"
       />
     </div>
-    <div className="income-description">
+    <div className="outcome-description">
       <TextField
         id="outlined-textarea"
         name="desc"
@@ -71,7 +75,7 @@ const OutcomeOther:React.FC<props> = ({category, cost, desc, onChange}:props) =>
         variant="outlined"
       />
     </div>
-    <div className="income-addBtn">
+    <div className="outcome-addBtn">
       <IconButton
         onClick={() => {outCounter("up")}}
         color="primary"
@@ -82,8 +86,8 @@ const OutcomeOther:React.FC<props> = ({category, cost, desc, onChange}:props) =>
     </div>
   </div>
 
-  {outcomeCounter === 2 ? <div className="income-other">
-<div className="income-category">
+  {outcomeCounter === 2 ? <div className="outcome-other">
+<div className="outcome-category">
   
     <InputLabel id="demo-simple-select-helper-label">
       카테고리
@@ -92,8 +96,8 @@ const OutcomeOther:React.FC<props> = ({category, cost, desc, onChange}:props) =>
       labelId="demo-simple-select-helper-label"
       id="demo-simple-select-helper"
       name="category"
-      value={category || ''}
-      onChange={onChange}
+      value={category2 || ''}
+      onChange={onChange2}
       style={{width: '150px',textAlign:'center'}}
     >
       <MenuItem value={10}>월급</MenuItem>
@@ -103,31 +107,31 @@ const OutcomeOther:React.FC<props> = ({category, cost, desc, onChange}:props) =>
     <FormHelperText>수입 항목을 골라주세요</FormHelperText>
 
 </div>
-<div className="income-cost">
+<div className="outcome-cost">
   <TextField
     id="outlined-textarea"
     label="금액"
     name="cost"
     placeholder="금액을 적어주세요"
-    value={cost || ''}
+    value={cost2 || ''}
     size="small"
-    onChange={onChange}
+    onChange={onChange2}
     variant="outlined"
   />
 </div>
-<div className="income-description">
+<div className="outcome-description">
   <TextField
     id="outlined-textarea"
     label="수입 내용"
     placeholder="수입 내용에 대한 설명"
     name="desc"
-    value={desc || ''}
+    value={desc2 || ''}
     size="small"
-    onChange={onChange}
+    onChange={onChange2}
     variant="outlined"
   />
 </div>
-<div className="income-addBtn">
+<div className="outcome-addBtn">
   <FaTrashAlt onClick = {() => outCounter("down")}></FaTrashAlt>
 </div>
 </div> : null }

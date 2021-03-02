@@ -7,30 +7,6 @@ import { IoCalculator } from 'react-icons/io5';
 
 const CreateAccountPage: React.FC = () => {
 
-  const [incomeCounter, setIncomeCounter] = useState<number>(1);
-  const [outcomeCounter, setOutcomeCounter] = useState<number>(1);
-
-  const inCounter = (message:string) => {
-    if (message === "up" && incomeCounter < 2) {
-      setIncomeCounter(incomeCounter + 1)
-    } else if (message === "down" && incomeCounter > 1){
-      setIncomeCounter(incomeCounter - 1)
-    } else {
-      console.log("asdf")
-    }
-  }
-
-  const outCounter = (message:string) => {
-    if (message === "up" && outcomeCounter < 2) {
-      setOutcomeCounter(outcomeCounter + 1)
-    } else if (message === "down" && outcomeCounter > 1) {
-      setIncomeCounter(outcomeCounter - 1)
-    }
-  }
-
-
-  
-
   return (
     <>
     <Nav></Nav>
@@ -39,7 +15,7 @@ const CreateAccountPage: React.FC = () => {
           <IoCalculator></IoCalculator>
         </div>
         <div className="createAccount-content">
-          <CreateAccount incomeCounter = {incomeCounter} inCounter={inCounter}></CreateAccount>
+          <CreateAccount></CreateAccount>
         </div>
       </div>
       </>
