@@ -7,6 +7,8 @@ import AskNoneSaveModal from '../component/askNoneSave';
 import AccountSideBar from '../component/accountSideBar';
 import CreateAccount from '../component/createAccount';
 import { IoCalculator } from 'react-icons/io5';
+import ErrorModal from '../component/createErrorModal';
+import SuccessModal from '../component/createSuccessModal';
 
 const CreateAccountPage: React.FC = () => {
 
@@ -34,6 +36,7 @@ const CreateAccountPage: React.FC = () => {
   };
 
 
+
   return (
     <>
       <Nav></Nav>
@@ -41,8 +44,10 @@ const CreateAccountPage: React.FC = () => {
         <LoginModal></LoginModal>
         <RequestLoginModal></RequestLoginModal>
         <AskNoneSaveModal></AskNoneSaveModal>
+        <ErrorModal></ErrorModal>
+        <SuccessModal></SuccessModal>
         <div className="belowBtns-calculator">
-          <IoCalculator></IoCalculator>
+          <IoCalculator ></IoCalculator>
         </div>
         <div className="createAccount-content">
           <CreateAccount incomeCounter={incomeCounter} outcomeCounter={outcomeCounter} inCounter={inCounter} outCounter={outCounter}></CreateAccount>

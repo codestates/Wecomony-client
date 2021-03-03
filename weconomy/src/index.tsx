@@ -28,6 +28,7 @@ const persistor = persistStore(store);
 
 sagaMiddleware.run(rootSaga);
 
+
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>

@@ -17,6 +17,8 @@ import './style/CreateAccount.scss';
 import './style/RequestLoginModal.scss';
 import './style/SelectAccount.scss';
 import './style/AskNoneSaveModal.scss';
+import './style/ErrorModal.scss';
+import './style/SuccessModal.scss';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 

@@ -124,7 +124,9 @@ const OutcomeOther:React.FC<props> = ({outcomeCounter, outCounter, category, cat
   />
 </div>
 <div className="outcome-addBtn">
+  <div className="outcome-addDiv">
   <FaTrashAlt onClick = {() => outCounter("down")}></FaTrashAlt>
+  </div>
 </div>
 </div> : null }
 </>
