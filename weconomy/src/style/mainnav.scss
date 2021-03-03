@@ -46,18 +46,19 @@ $koreanFont : 'Noto Sans KR', sans-serif;
 .navbar__handleLogin{
   display: flex;
   color: #f1f2f6;
-  width: 6%;
+  width: 5%;
+  margin-right: 10px;
 }
 
 .navbar__loginBtn {
   width: 100%;
-  height: 50px;
+  height: 40px;
   border: 0;
   outline: 0;
-  border-radius: 20px;
-  &:hover{
-    background-color: #778beb;
-  }
+  border-radius: 10px;
+  color: $maincolor;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .userProfileNav {
@@ -65,6 +66,20 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   width: 40%;
   height: 40%;
   border: 2px solid white;
+}
+
+.userProfileNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  font-size: 1.5rem;
+  background-color: $maincolor2;
+  color: white;
+  font-weight: 500;
 }
 
 .navbar__toogleBtn{
