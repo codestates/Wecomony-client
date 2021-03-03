@@ -77,7 +77,7 @@ const AccountGraph = () => {
       ) : (
         <div className="graphBottom">
           <Grommet theme={grommet}>
-            <Box pad="large" direction="row" gap="large">
+            <Box pad="small" direction="row" gap="large" align="center">
               <LabelledChart label="식비" value={300000} />
               <LabelledChart label="공과금" value={100000} />
               <LabelledChart label="유흥비" value={70000} />

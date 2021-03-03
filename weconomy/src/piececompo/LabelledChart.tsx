@@ -12,7 +12,7 @@ const LabelledChart = ({ label, value }: { label: string; value: number }) => (
       round
       animate={true}
       color="#1474F8"
-      size={{ height: 'xsmall', width: 'xsmall' }}
+      size={{ height: 'small', width: 'xsmall' }}
     />
     <Box align="center">
       <Text size="medium">{label}</Text>
