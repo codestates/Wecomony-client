@@ -124,7 +124,9 @@ const IncomeOther:React.FC<props> = ({inCounter, incomeCounter, category, catego
   />
 </div>
 <div className="income-addBtn">
+  <div className="income-addDiv">
   <FaTrashAlt onClick = {() => inCounter("down")}></FaTrashAlt>
+  </div>
 </div>
 </div> : null }
 </>

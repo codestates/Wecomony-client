@@ -113,3 +113,23 @@ $onepage : 100vh;
     height: 80px;
     font-size: 30px;
 }
+
+.outcome-addDiv {
+    display:flex;
+    padding: 12px;
+    padding-right: 16px;
+}
+
+.outcome-addDiv:Hover{
+    cursor: pointer;
+}
+
+.income-addDiv {
+    display:flex;
+    padding: 12px;
+    padding-right: 16px;
+}
+
+.income-addDiv:Hover{
+    cursor: pointer;
+}

@@ -26,6 +26,11 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   font-size: 32px;
   color: #f1f2f6
 }
+
+.navbar__logo:hover {
+  cursor: pointer;
+}
+
 .navbar__menu{
   display: flex;
   justify-content: space-between;
@@ -38,11 +43,17 @@ $koreanFont : 'Noto Sans KR', sans-serif;
 .navbar__menu li:hover {
   background-color: #778beb;
   border-radius: 40px;
+  cursor: pointer;
 }
 
 .navBtns {
   padding: 10px;
 }
+
+.navBtns:hover {
+  cursor: pointer;
+}
+
 .navbar__handleLogin{
   display: flex;
   color: #f1f2f6;
