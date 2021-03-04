@@ -37,6 +37,8 @@ const CreateNewAccountModal = () => {
       return setErr('이름은 10 자리를 넘을 수 없습니다');
     } else if (isNaN(Number(cost))) {
       return setErr('금액은 숫자만 입력 가능합니다');
+    } else if (cost.length > 9) {
+      return setErr('너무 큰 액수입니다');
     } else {
       let data = {
         id: userNow?.id,

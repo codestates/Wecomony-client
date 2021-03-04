@@ -19,7 +19,8 @@ function* workerCreateAccount(action: any){
           userId : action.data.id,
           meetId : res.data.data.meetAdd.id
         }
-        axios.post('https://sench.projects1faker.com/multiMeetJoin', body).then((res) => console.log(res))
+        axios.post('https://sench.projects1faker.com/multiMeetJoin', body)
+        .then((res) => console.log(res))
       })
     }
   })

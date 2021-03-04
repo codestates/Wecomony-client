@@ -53,4 +53,5 @@ export const createNewAccountModalClose = () => {
 }
 
 
+
 export type ModalAction = | ReturnType<typeof isLoginModalOpen> | ReturnType<typeof loginModalOpen> | ReturnType<typeof loginModalClose> | ReturnType<typeof requestLoginModalOpen> | ReturnType<typeof requestLoginModalClose> | ReturnType<typeof askNoneSaveModalOpen> | ReturnType<typeof askNoneSaveModalClose> | ReturnType<typeof createErrorModalOpen> | ReturnType<typeof createErrorModalClose> | ReturnType<typeof createSuccessModalOpen> | ReturnType<typeof createSuccessModalClose> | ReturnType<typeof createNewAccountModalOpen> | ReturnType<typeof createSuccessModalClose>
