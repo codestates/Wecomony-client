@@ -30,7 +30,7 @@ $mainBackGroundColor : #EFEFEF;
   width: 100%;
   background-color: white;
   margin-top: 5px;
-  padding: 15px;
+  padding: 10px;
   height: 40%;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
@@ -41,9 +41,7 @@ $mainBackGroundColor : #EFEFEF;
 }
 
 @media (max-width: 769px){
-  .left-Account-Container {
-    width: 100%;
-  }
+
   .graphBottom {
     padding: 3px;
     height: 40%;
@@ -52,6 +50,8 @@ $mainBackGroundColor : #EFEFEF;
     size: large;
   }
   .left-Account-Container {
-    height: 100vh;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 90vh;
   }
 }

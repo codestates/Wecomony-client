@@ -10,6 +10,8 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { FaTrashAlt } from "react-icons/fa";
 
 interface props {
+  inCounter:any
+  incomeCounter:number
   category:any
   category2:any
   cost:any
@@ -20,19 +22,7 @@ interface props {
   onChange2:any
 }
 
-const IncomeOther:React.FC<props> = ({ category, category2, cost, cost2, desc, desc2, onChange, onChange2}:props) => {
-
-  const [incomeCounter, setIncomeCounter] = useState<number>(1);
-
-  const inCounter = (message:string) => {
-    if (message === "up" && incomeCounter < 2) {
-      setIncomeCounter(incomeCounter + 1)
-    } else if (message === "down" && incomeCounter > 1){
-      setIncomeCounter(incomeCounter - 1)
-    } else {
-      console.log("asdf")
-    }
-  }
+const IncomeOther:React.FC<props> = ({inCounter, incomeCounter, category, category2, cost, cost2, desc, desc2, onChange, onChange2}:props) => {
 
   return (
     <>
@@ -134,7 +124,9 @@ const IncomeOther:React.FC<props> = ({ category, category2, cost, cost2, desc, d
   />
 </div>
 <div className="income-addBtn">
+  <div className="income-addDiv">
   <FaTrashAlt onClick = {() => inCounter("down")}></FaTrashAlt>
+  </div>
 </div>
 </div> : null }
 </>

@@ -46,6 +46,9 @@ const Nav: React.FC = () => {
   const userImage = useSelector(
     (state: RootState) => state.userStatus.userData?.thumbnail,
   );
+  const userName = useSelector(
+    (state: RootState) => state.userStatus.userData?.nickname,
+  );
 
   return (
     <nav className="navbar">
@@ -73,12 +76,18 @@ const Nav: React.FC = () => {
       <div className="navbar__handleLogin">
         {isLogin ? (
           <>
-            <img
-              className="userProfileNav"
-              src={userImage}
-              alt="유저프로필"
-              onClick={onClickProfile}
-            ></img>
+            {userImage ? (
+              <img
+                className="userProfileNav"
+                src={userImage}
+                alt="유저프로필"
+                onClick={onClickProfile}
+              ></img>
+            ) : (
+              <div className="userProfileNav" onClick={onClickProfile}>
+                {userName.slice(0, 1)}
+              </div>
+            )}
             <div className="profileDropDown animate__animated animate__headShake">
               <button onClick={toLogOutUser} className="btnInProfileDroptop">
                 로그아웃

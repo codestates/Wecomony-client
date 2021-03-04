@@ -7,6 +7,8 @@ import { tryLogin } from '../store/actions/userActions';
 import { loginModalClose } from '../store/actions/modalActions';
 import { useDispatch } from 'react-redux';
 import KaKaoLogin from 'react-kakao-login';
+import GoogleLogin from 'react-google-login';
+
 const InsideLoginModal: React.FC = () => {
   const dispatch = useDispatch();
   const [token, setToken] = useState<string>('');
@@ -17,6 +19,10 @@ const InsideLoginModal: React.FC = () => {
 
   const getToken = (res: any) => {
     dispatch(tryLogin(res));
+  };
+
+  const responseGoogle = (response: any) => {
+    console.log(response);
   };
 
   return (
@@ -45,10 +51,24 @@ const InsideLoginModal: React.FC = () => {
               </div>
             </KaKaoLogin>
 
-            <button className="googlebtn">
-              <FaGoogle className="logoLoginbtn" />
-              구글 로그인
-            </button>
+
+              <GoogleLogin
+                clientId=""
+                render={(renderProps) => (
+                  <button
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                    className="googlebtn"
+                  >
+              <FaGoogle className="logoLoginbtns" />
+              구글    로그인
+                  </button>
+                )}
+                buttonText="Login"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+              />
           </div>
         </div>
       </div>
