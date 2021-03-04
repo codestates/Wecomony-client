@@ -1,5 +1,5 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
-import { successLogin, saveUserData } from '../actions/userActions';
+import { successLogin, saveUserData, getUserNowGroup } from '../actions/userActions';
 import { loginModalClose } from '../actions/modalActions';
 import axios from 'axios';
 import adduser from '../../graphQuery/adduser';
@@ -19,6 +19,7 @@ function* workerLogin(action: any) {
     action.data.profile.kakao_account.email,
     action.data.profile.properties.thumbnail_image,
   );
+  let groupData: Array<object> = []
   
   const testHasUserQuery = testHasUser(action.data.profile.kakao_account.email);
   try {
@@ -43,8 +44,12 @@ function* workerLogin(action: any) {
       });
       const getUserGroupsQuery = getUserGroups(action.data.id)
     yield axios.post('https://sench.projects1faker.com/graphql?query=' +
-    encodeURIComponent(getUserGroupsQuery)).then((res) => console.log(res))
-      
+    encodeURIComponent(getUserGroupsQuery)).then((res) => {
+      console.log(res.data.data.userGet[0])
+      groupData = res.data.data.userGet[0].Meets
+    
+    })
+    yield put(getUserNowGroup(groupData)) 
     yield put(saveUserData(updateAction.data));
     yield put(successLogin());
     yield put(loginModalClose());
