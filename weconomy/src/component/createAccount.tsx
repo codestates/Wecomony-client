@@ -95,11 +95,31 @@ const CreateAccount: React.FC<counter> = ({
       dispatch(createErrorModalOpen(valid.error))
     } else if (valid.error === "none") {
       dispatch(createSuccessModalOpen())
+      setIncome1({
+        ...income1,
+        category:10,
+        cost:null,
+        desc:null
+      })
+      setIncome2({
+        ...income2,
+        category:10,
+        cost:null,
+        desc:null
+      })
+      setOutcome1({
+        ...outcome1,
+        category:10,
+        cost:null,
+        desc:null
+      })
+      setOutcome2({
+        ...outcome2,
+        category:10,
+        cost:null,
+        desc:null
+      })
     }
-  }
-
-  const resetValue = () =>  {
-    
   }
 
 

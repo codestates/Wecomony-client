@@ -53,8 +53,26 @@ $mainLogofont : 'Fredoka One', cursive;
   margin-bottom: 15px;
 }
 
+.googlebtn {
+  cursor: pointer;
+  height: 3vmax;
+  width: 15vmax;
+  border : none;
+  font-weight: 600;
+  outline: 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
 .logoLoginbtn {
   margin-right: 20px
+}
+
+.logoLoginbtns {
+  margin-right: 28px;
 }
 
 .googlebtn {
@@ -92,6 +110,7 @@ $mainLogofont : 'Fredoka One', cursive;
 }
 
 .loginModalClose {
+  cursor: pointer;
  position: absolute;
  top : 0.2rem;
  right: 0.2rem;

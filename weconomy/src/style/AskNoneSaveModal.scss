@@ -39,6 +39,7 @@ $mainLogofont : 'Fredoka One', cursive;
 }
 
 .askNoneSaveLoginBtn {
+  cursor: pointer;
   width: 80%;
   height: 25%;
   border: 0;
@@ -50,6 +51,7 @@ $mainLogofont : 'Fredoka One', cursive;
 }
 
 .askNoneSaveModalClose {
+  cursor: pointer;
   position: absolute;
   top : 1rem;
   right: 1rem;

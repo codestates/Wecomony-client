@@ -33,6 +33,7 @@ $mainLogofont : 'Fredoka One', cursive;
 }
 
 .requestLoginBtn {
+  cursor: pointer;
   background-color: $maincolor;
   height: 60%;
   width: 60%;
@@ -44,6 +45,7 @@ $mainLogofont : 'Fredoka One', cursive;
 }
 
 .RequestLoginModalClose {
+  cursor: pointer;
   position: absolute;
   top : 1rem;
   right: 1rem;
