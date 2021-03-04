@@ -13,7 +13,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 
 const persistConfig = {
-  key: 'root5',
+  key: 'root7',
   storage,
 };
 
