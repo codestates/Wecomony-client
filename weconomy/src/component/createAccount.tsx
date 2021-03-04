@@ -6,6 +6,7 @@ import OutcomeOther from '../util/CreateAccount/outcomeOther';
 import validCheck from '../util/CreateAccount/useValidCheck';
 import { useDispatch } from 'react-redux';
 import { createErrorModalOpen, createSuccessModalOpen } from '../store/actions/modalActions';
+import hasCreateValue from '../util/CreateAccount/hasCreateValue';
 
 interface counter {
   inCounter: any;
@@ -24,6 +25,12 @@ const CreateAccount: React.FC<counter> = ({
     category: any;
     cost: any;
     desc: any;
+    upDown: string;
+    dateTime:string;
+  }
+
+  interface valueProps {
+    value: Array<string | number>
   }
 
   const dispatch = useDispatch()
@@ -32,28 +39,39 @@ const CreateAccount: React.FC<counter> = ({
     category: 10,
     cost: null,
     desc: null,
+    upDown: "income",
+    dateTime: new Date().toLocaleDateString()
   });
+
   const [income2, setIncome2] = useState<props>({
     category: 10,
     cost: null,
     desc: null,
+    upDown: "income",
+    dateTime: new Date().toLocaleDateString()
   });
+
   const [outcome1, setOutcome1] = useState<props>({
     category: 10,
     cost: null,
     desc: null,
+    upDown: "outcome",
+    dateTime: new Date().toLocaleDateString()
   });
+
   const [outcome2, setOutcome2] = useState<props>({
     category: 10,
     cost: null,
     desc: null,
+    upDown: "outcome",
+    dateTime: new Date().toLocaleDateString()
   });
 
-  const [selectedDate, setSelectedDate] = React.useState<Date | null>(
-    new Date(),
+  const [selectedDate, setSelectedDate] = React.useState<Date>(
+    new Date()
   );
 
-  const handleDateChange = (date: Date | null) => {
+  const handleDateChange = (date: Date) => {
     setSelectedDate(date);
   };
 
@@ -95,6 +113,9 @@ const CreateAccount: React.FC<counter> = ({
       dispatch(createErrorModalOpen(valid.error))
     } else if (valid.error === "none") {
       dispatch(createSuccessModalOpen())
+       const value = hasCreateValue(income1, income2, outcome1, outcome2, selectedDate)
+       
+
       setIncome1({
         ...income1,
         category:10,

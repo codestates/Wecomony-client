@@ -47,7 +47,8 @@ const CreateAccountPage: React.FC = () => {
         <ErrorModal></ErrorModal>
         <SuccessModal></SuccessModal>
         <div className="belowBtns-calculator">
-          <IoCalculator ></IoCalculator>
+          <IoCalculator >
+          </IoCalculator>
         </div>
         <div className="createAccount-content">
           <CreateAccount incomeCounter={incomeCounter} outcomeCounter={outcomeCounter} inCounter={inCounter} outCounter={outCounter}></CreateAccount>
