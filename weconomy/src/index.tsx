@@ -13,7 +13,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 
 const persistConfig = {
-  key: 'root4',
+  key: 'root5',
   storage,
 };
 
@@ -27,7 +27,6 @@ const store = createStore(
 const persistor = persistStore(store);
 
 sagaMiddleware.run(rootSaga);
-
 
 ReactDOM.render(
   <Provider store={store}>

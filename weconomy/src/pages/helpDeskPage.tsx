@@ -33,7 +33,6 @@ const HelpDeskPage = () => {
               label="이메일"
               multiline
               style={{ marginBottom: '20px' }}
-              rowsMax={4}
               onChange={handleEmailChange}
               variant="outlined"
             />

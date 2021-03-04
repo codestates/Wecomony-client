@@ -1,4 +1,3 @@
-import { FaRProject } from 'react-icons/fa';
 import { takeEvery, put, call } from 'redux-saga/effects';
 import { successLogin, saveUserData } from '../actions/userActions';
 import { loginModalClose } from '../actions/modalActions';
@@ -40,7 +39,8 @@ function* workerLogin(action: any) {
               put(loginModalClose());
             });
         } else {
-          updateAction.data.id = res.data.data.userGet.id;
+          console.log(res.data.data.userGet)
+          updateAction.data.id = res.data.data.userGet[0].id;
         }
       });
     yield put(saveUserData(updateAction.data));
