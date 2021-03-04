@@ -36,6 +36,7 @@ const userReducer = (state: Props = initialState, action: any) => {
         isLogin : true
       }
     case SAVE_USER_DATA :
+      console.log(action)
       return {
         ...state,
         userData: {
