@@ -9,7 +9,7 @@ const initialState = {
   createErrorModal : false,
   createSuccessModal: false,
   errorMessage: null,
-  createNewAccountModal : false
+  createNewAccountModal : false,
 }
 
 const modalReducer = (state = initialState, action: any) => {
@@ -75,6 +75,7 @@ const modalReducer = (state = initialState, action: any) => {
         ...state,
         createNewAccountModal : false
       }
+  
       default:
         return state
   }
