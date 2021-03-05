@@ -4,6 +4,8 @@ import AccountByDay from '../component/accountByDay';
 import AccountSideBar from '../component/accountSideBar';
 import NowLoading from '../component/nowLoading';
 import Nav from '../component/nav';
+import AddMemberModal from '../component/addMemberModal';
+import NotAMember from '../component/notAMember';
 import { RootState } from '../store/reducers';
 import useMedia from '../customhooks/useMedia';
 import { useParams } from 'react-router-dom';
@@ -13,7 +15,6 @@ import {
   loadingWorkerStart,
   nowLoadingOff,
 } from '../store/actions/modalActions';
-import AddMemberModal from '../component/addMemberModal';
 
 interface ParamsId {
   id: string;
@@ -35,12 +36,12 @@ const AccountPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(loadingWorkerStart());
-    console.log(groupData[0].Users);
   }, []);
 
   return (
     <>
       <Nav></Nav>
+      {groupData.length === 0 ? <NotAMember></NotAMember> : null}
       <AddMemberModal></AddMemberModal>
       {!isLoading ? (
         <>

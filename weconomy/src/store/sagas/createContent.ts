@@ -9,7 +9,7 @@ function* workerCreateContent (action:any) {
     
     for (let i = 0; i < 4; i++) {
         axios.post('https://sench.projects1faker.com/graphql?query=' +
-        encodeURIComponent(createNewContent(action.data.value[i]))
+        encodeURIComponent(createNewContent(action.value[i]))
         ).then(res => {
             console.log(res)
         })
