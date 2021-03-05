@@ -29,6 +29,8 @@ $onepage : 100vh;
 
 .center-createAccount-datePicker{
     flex-grow:1;
+    display:flex;
+    justify-content: space-around;
 }
 
 .center-createAccount-select {

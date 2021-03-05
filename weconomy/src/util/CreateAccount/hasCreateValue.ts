@@ -2,10 +2,11 @@ interface props {
     cost: any;
     desc: any;
     dateTime:string;
+    meetId:any;
   }
 
 
-const hasCreateValue = (income1:props, income2:props, outcome1:props, outcome2:props, selectedDate:Date) => {
+const hasCreateValue = (income1:props, income2:props, outcome1:props, outcome2:props, selectedDate:Date, selectedMeet:string) => {
     
     const arr = [income1, income2, outcome1, outcome2]
 
@@ -14,6 +15,7 @@ const hasCreateValue = (income1:props, income2:props, outcome1:props, outcome2:p
 
     for (let i = 0; i < 4; i++) {
         if (arr[i].cost !== null || arr[i].desc !== null) {
+            arr[i].meetId = selectedMeet
             arr[i].dateTime = selectedDate.toLocaleDateString()
             arr2.push(arr[i])
         }
