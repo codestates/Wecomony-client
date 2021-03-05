@@ -3,9 +3,13 @@ import { useState, useEffect } from 'react';
 
 const NowLoading: React.FC = () => {
   return (
-    <div className="LoginModalOuter">
+    <div className="LoadingOuter">
       <div className="insideLoading animate__animated animate__fadeIn">
-        <img src="https://ifh.cc/g/Uty5Nn.gif" alt="로딩"></img>
+        <img
+          className="contentLoading"
+          src="https://ifh.cc/g/T5NaCz.gif"
+          alt="로딩"
+        ></img>
       </div>
     </div>
   );

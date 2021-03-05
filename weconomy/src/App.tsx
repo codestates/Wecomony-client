@@ -20,6 +20,7 @@ import './style/AskNoneSaveModal.scss';
 import './style/ErrorModal.scss';
 import './style/SuccessModal.scss';
 import './style/createNewAccountModal.scss';
+import './style/AddMemberModal.scss';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
@@ -30,7 +31,7 @@ const App: React.FC = () => {
         <Route path="/mainpage" render={() => <MainPage />} />
         <Route exact path="/" render={() => <Redirect to="/mainpage" />} />
         <Route exact path="/selectaccount" render={() => <SelectAccount />} />
-        <Route exact path="/accountpage" render={() => <AccountPage />} />
+        <Route exact path="/accountpage/:id" render={() => <AccountPage />} />
         <Route exact path="/helpdesk" render={() => <HelpDeskPage />} />
         <Route
           exact

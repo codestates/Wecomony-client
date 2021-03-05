@@ -4,6 +4,7 @@ const getUserGroups = (id : number) => {
       userGet(where:{id:${id}}){
         Meets{
           id
+          memberNumber
           meetName
           totalcost
           Users{
