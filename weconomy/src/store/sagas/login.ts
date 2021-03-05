@@ -43,6 +43,7 @@ function* workerLogin(action: any) {
         }
       });
       const getUserGroupsQuery = getUserGroups(action.data.id)
+      // 여기서 action.data.id 가져오면 될 듯
     yield axios.post('https://sench.projects1faker.com/graphql?query=' +
     encodeURIComponent(getUserGroupsQuery)).then((res) => {
       console.log(res.data.data.userGet[0])
