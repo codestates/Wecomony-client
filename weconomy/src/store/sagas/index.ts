@@ -4,7 +4,7 @@ import workerCreateAccount from './createAccount'
 import workerCreateContent from './createContent'
 import workerLoading from './loading'
 import workerAddMember from './addMember'
-import { TRY_LOGIN, CREATE_NEW_ACCOUNT, LOADING_WORKER_START, ADD_MEMEBER_WORKER_START } from '../actions/constants'
+import { TRY_LOGIN, CREATE_NEW_ACCOUNT, CREATE_NEW_CONTENT, LOADING_WORKER_START, ADD_MEMEBER_WORKER_START } from '../actions/constants'
 
 function* rootSaga(){
   yield takeEvery(TRY_LOGIN, workerLogin)
