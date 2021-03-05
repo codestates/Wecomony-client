@@ -76,7 +76,7 @@ const Nav: React.FC = () => {
       <div className="navbar__handleLogin">
         {isLogin ? (
           <>
-            {!userImage ? (
+            {userImage ? (
               <img
                 className="userProfileNav"
                 src={userImage}

@@ -36,14 +36,14 @@ const SelectAccountBox = () => {
             <div className="SelectAccountMembers">
               {group.Users.map((member: any) => (
                 <div className="SelectOneMemberBox">
-                  {member.img ? (
+                  {member.img !== 'undefined' ? (
                     <img
                       className="SelectAccountMemberImg"
                       src={member.img}
                       alt="유저프로필"
                     ></img>
                   ) : (
-                    <div className="userProfileNav">
+                    <div className="SelectAccountMemberIcon">
                       {member.email.slice(0, 1).toUpperCase()}
                     </div>
                   )}
