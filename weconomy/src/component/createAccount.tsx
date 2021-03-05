@@ -6,6 +6,9 @@ import OutcomeOther from '../util/CreateAccount/outcomeOther';
 import validCheck from '../util/CreateAccount/useValidCheck';
 import { useDispatch } from 'react-redux';
 import { createErrorModalOpen, createSuccessModalOpen } from '../store/actions/modalActions';
+import hasCreateValue from '../util/CreateAccount/hasCreateValue';
+import SelectMeets from '../util/CreateAccount/selectMeets';
+import { createNewContent } from '../store/actions/contentAction';
 
 interface counter {
   inCounter: any;
@@ -24,36 +27,60 @@ const CreateAccount: React.FC<counter> = ({
     category: any;
     cost: any;
     desc: any;
+    upDown: string;
+    dateTime:string;
+    meetId:any;
   }
 
   const dispatch = useDispatch()
 
   const [income1, setIncome1] = useState<props>({
-    category: 10,
+    category: "월급",
     cost: null,
     desc: null,
-  });
-  const [income2, setIncome2] = useState<props>({
-    category: 10,
-    cost: null,
-    desc: null,
-  });
-  const [outcome1, setOutcome1] = useState<props>({
-    category: 10,
-    cost: null,
-    desc: null,
-  });
-  const [outcome2, setOutcome2] = useState<props>({
-    category: 10,
-    cost: null,
-    desc: null,
+    upDown: "income",
+    dateTime: new Date().toLocaleDateString(),
+    meetId: ""
   });
 
-  const [selectedDate, setSelectedDate] = React.useState<Date | null>(
-    new Date(),
+  const [income2, setIncome2] = useState<props>({
+    category: "월급",
+    cost: null,
+    desc: null,
+    upDown: "income",
+    dateTime: new Date().toLocaleDateString(),
+    meetId: ""
+  });
+
+  const [outcome1, setOutcome1] = useState<props>({
+    category: "월급",
+    cost: null,
+    desc: null,
+    upDown: "outcome",
+    dateTime: new Date().toLocaleDateString(),
+    meetId: ""
+  });
+
+  const [outcome2, setOutcome2] = useState<props>({
+    category: "월급",
+    cost: null,
+    desc: null,
+    upDown: "outcome",
+    dateTime: new Date().toLocaleDateString(),
+    meetId: ""
+  });
+
+  const [selectedDate, setSelectedDate] = React.useState<Date>(
+    new Date()
   );
 
-  const handleDateChange = (date: Date | null) => {
+  const [selectedMeet, setSelectedMeet]  = React.useState<string>('')
+
+  const handleMeetChange = (event: any) => {
+    setSelectedMeet(event.target.value)
+  }
+
+  const handleDateChange = (date: Date) => {
     setSelectedDate(date);
   };
 
@@ -95,6 +122,8 @@ const CreateAccount: React.FC<counter> = ({
       dispatch(createErrorModalOpen(valid.error))
     } else if (valid.error === "none") {
       dispatch(createSuccessModalOpen())
+       const value = hasCreateValue(income1, income2, outcome1, outcome2, selectedDate, selectedMeet)
+       dispatch(createNewContent(value))
       setIncome1({
         ...income1,
         category:10,
@@ -127,10 +156,18 @@ const CreateAccount: React.FC<counter> = ({
   return (
     <div className="center-createAccount-container">
       <div className="center-createAccount-datePicker">
+        <div>
+          <SelectMeets 
+            selectedMeet={selectedMeet}
+            handleMeetChange={handleMeetChange}
+          />
+        </div>
+        <div>
         <Calender
           selectedDate={selectedDate}
           handleDateChange={handleDateChange}
-        />
+          />
+        </div>
       </div>
 
       <div className="center-createAccount-select">

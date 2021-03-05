@@ -5,61 +5,68 @@ import { useHistory } from 'react-router-dom';
 import CreateNewAccountModal from './createNewAccountModal';
 import { createNewAccountModalOpen } from '../store/actions/modalActions';
 
+interface group {
+  id: number;
+  User: Array<object>;
+  meetName: string;
+  totalcost: number;
+}
+
 const SelectAccountBox = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const userImage = useSelector(
     (state: RootState) => state.userStatus.userData?.thumbnail,
   );
-
+  const Allgroups = useSelector((state: RootState) => state.userStatus.groups);
   const createNewAccount = () => {
     dispatch(createNewAccountModalOpen());
   };
 
-  const onClickGroup = () => {
-    history.push('/accountpage');
+  const onClickGroup = (group: group) => {
+    history.push('/accountpage/' + group.id);
   };
   return (
     <>
       <CreateNewAccountModal></CreateNewAccountModal>
       <div className="SelectAccountBox">
-        <div className="oneAccountBox">
-          <div className="titleAccountBox">xx네 가계부</div>
-          <div className="SelectAccountMembers">
-            <div className="SelectOneMemberBox">
-              <img
-                className="SelectAccountMemberImg"
-                src={userImage}
-                alt="유저프로필"
-              ></img>
-              <div className="SelectAccountMemberName">멤버1</div>
-            </div>
-            <div className="SelectOneMemberBox">
-              <img
-                className="SelectAccountMemberImg"
-                src={userImage}
-                alt="유저프로필"
-              ></img>
-              <div className="SelectAccountMemberName">멤버1</div>
-            </div>
-            <div className="SelectOneMemberBox">
-              <img
-                className="SelectAccountMemberImg"
-                src={userImage}
-                alt="유저프로필"
-              ></img>
-              <div className="SelectAccountMemberName">멤버1</div>
-            </div>
-          </div>
-          <button onClick={onClickGroup} className="SelectAccountJoinBtn">
-            JOIN
-          </button>
-        </div>
+        {Allgroups.map((group: any) => (
+          <div className="oneAccountBox">
+            <div className="titleAccountBox">{group.meetName}</div>
+            <div className="SelectAccountMembers">
+              {group.Users.map((member: any) => (
+                <div className="SelectOneMemberBox">
+                  {member.img ? (
+                    <img
+                      className="SelectAccountMemberImg"
+                      src={member.img}
+                      alt="유저프로필"
+                    ></img>
+                  ) : (
+                    <div className="userProfileNav">
+                      {member.email.slice(0, 1).toUpperCase()}
+                    </div>
+                  )}
 
-        <div onClick={createNewAccount} className="AddAccountBox">
-          <AiOutlineUsergroupAdd></AiOutlineUsergroupAdd>
-          <div className="titleAddAccountBox">새 그룹 생성</div>
-        </div>
+                  <div className="SelectAccountMemberName">{member.email}</div>
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={() => onClickGroup(group)}
+              className="SelectAccountJoinBtn"
+            >
+              JOIN
+            </button>
+          </div>
+        ))}
+
+        {Allgroups.length < 4 ? (
+          <div onClick={createNewAccount} className="AddAccountBox">
+            <AiOutlineUsergroupAdd></AiOutlineUsergroupAdd>
+            <div className="titleAddAccountBox">새 그룹 생성</div>
+          </div>
+        ) : null}
       </div>
     </>
   );

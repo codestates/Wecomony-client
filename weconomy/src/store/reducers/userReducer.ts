@@ -1,4 +1,4 @@
-import { IS_LOGIN, SUCCESS_LOGIN, SAVE_USER_DATA, LOG_OUT_USER } from '../actions/constants'
+import { IS_LOGIN, SUCCESS_LOGIN, SAVE_USER_DATA, LOG_OUT_USER, GET_USERNOW_GROUP } from '../actions/constants'
 import { UserAction } from '../actions/userActions'
 
 
@@ -13,6 +13,7 @@ interface userObjType {
 interface Props {
   isLogin : boolean
   userData : userObjType | null
+  groups : Array<object> | null
 }
 
 const initialState = {
@@ -24,7 +25,8 @@ const initialState = {
     nickname : null,
     thumbnail : null,
     email : null
-  }
+  },
+  groups : null
 }
 
 const userReducer = (state: Props = initialState, action: any) => {
@@ -36,7 +38,6 @@ const userReducer = (state: Props = initialState, action: any) => {
         isLogin : true
       }
     case SAVE_USER_DATA :
-      console.log(action)
       return {
         ...state,
         userData: {
@@ -61,7 +62,14 @@ const userReducer = (state: Props = initialState, action: any) => {
           nickname : null,
           thumbnail : null,
           email : null
-        }
+        },
+        groups : null
+      }
+    case GET_USERNOW_GROUP : 
+    console.log(action.data)
+      return {
+        ...state,
+        groups : action.data
       }
     default:
       return state

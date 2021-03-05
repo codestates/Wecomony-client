@@ -4,7 +4,7 @@ $onepage : 100vh;
 
 .SelectAccount-Container {
   height:  100vh;
-  background-color: $mainBackGroundColor;
+  background-image: url("https://groobee.net/wp-content/uploads/2020/12/main1_low.png");
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,13 +23,14 @@ $onepage : 100vh;
   flex-direction: row;
   height: 100%;
   width: 100%;
+  justify-content: center;
   align-items: center;
 }
 
 .oneAccountBox {
-  width: 200px;
-  height: 300px;
-  background-color: $mainBackGroundColor;
+  width: 250px;
+  height: 360px;
+  background-color: white;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition-duration: 0.4s;
@@ -48,14 +49,15 @@ $onepage : 100vh;
 .AddAccountBox {
   cursor: pointer;
   position: relative;
-  width: 200px;
-  height: 300px;
+  width: 250px;
+  height: 360px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: $maincolor;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: white;
   font-size: 5rem;
   transition-duration: 0.4s;
   top: 0;
@@ -76,31 +78,34 @@ $onepage : 100vh;
   font-size: 1.5rem;
   color: black;
   text-align: center;
+  font-weight: 500;
 }
 
 .SelectAccountMembers {
   display: flex;
   flex-direction: column;
-  height: 170px;
+  height: 190px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .SelectAccountMemberName {
-
+  font-size: 12px;
 }
 
 .SelectAccountMemberImg {
 
-  width: 30px;
-  height: 30px;
-  margin-right: 30px;
-  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 40px;
   border : solid 2px $maincolor;
 }
 
 .SelectOneMemberBox {
   margin-top: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }

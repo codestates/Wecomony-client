@@ -1,9 +1,10 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
-import { successLogin, saveUserData } from '../actions/userActions';
+import { successLogin, saveUserData, getUserNowGroup } from '../actions/userActions';
 import { loginModalClose } from '../actions/modalActions';
 import axios from 'axios';
 import adduser from '../../graphQuery/adduser';
 import testHasUser from '../../graphQuery/testHasUser';
+import getUserGroups from '../../graphQuery/getUserGroups'
 
 const KaKaologOutURL =
   'https://kauth.kakao.com/oauth/logout?client_id=57a2e57336e3dd27788a358cdba2674f&logout_redirect_uri=http://localhost:3000/';
@@ -18,6 +19,8 @@ function* workerLogin(action: any) {
     action.data.profile.kakao_account.email,
     action.data.profile.properties.thumbnail_image,
   );
+  let groupData: Array<object> = []
+  
   const testHasUserQuery = testHasUser(action.data.profile.kakao_account.email);
   try {
     yield axios
@@ -34,15 +37,19 @@ function* workerLogin(action: any) {
             )
             .then((res) => {
               updateAction.data.id = res.data.data.userAdd.id;
-              put(saveUserData(updateAction.data));
-              put(successLogin());
-              put(loginModalClose());
             });
         } else {
-          console.log(res.data.data.userGet)
           updateAction.data.id = res.data.data.userGet[0].id;
         }
       });
+      const getUserGroupsQuery = getUserGroups(action.data.id)
+    yield axios.post('https://sench.projects1faker.com/graphql?query=' +
+    encodeURIComponent(getUserGroupsQuery)).then((res) => {
+      console.log(res.data.data.userGet[0])
+      groupData = res.data.data.userGet[0].Meets
+    
+    })
+    yield put(getUserNowGroup(groupData)) 
     yield put(saveUserData(updateAction.data));
     yield put(successLogin());
     yield put(loginModalClose());

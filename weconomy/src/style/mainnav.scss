@@ -5,11 +5,11 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3867d6;
+  background-color: white;
   padding: 8px 12px;
   position: fixed;
   width:100%;
-  z-index: 2;
+  z-index: 5;
   top: 0;
 }
 
@@ -24,7 +24,7 @@ $koreanFont : 'Noto Sans KR', sans-serif;
 .navbar__logo {
   font-family: 'Fredoka One', cursive;
   font-size: 32px;
-  color: #f1f2f6
+  color: $maincolor;
 }
 
 .navbar__logo:hover {
@@ -35,13 +35,15 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   display: flex;
   justify-content: space-between;
   list-style: none;
-  color: #f1f2f6;
+  color: $maincolor;
   padding-left: 0;
   width: 30%;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .navbar__menu li:hover {
-  background-color: #778beb;
+  // background-color: #778beb;
   border-radius: 40px;
   cursor: pointer;
 }
@@ -56,7 +58,7 @@ $koreanFont : 'Noto Sans KR', sans-serif;
 
 .navbar__handleLogin{
   display: flex;
-  color: #f1f2f6;
+  color: $maincolor;
   width: 5%;
   margin-right: 10px;
 }
@@ -68,7 +70,8 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   border: 0;
   outline: 0;
   border-radius: 10px;
-  color: $maincolor;
+  color: white;
+  background-color: $maincolor;
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -89,7 +92,7 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   width: 40px;
   height: 40px;
   border: 2px solid white;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   background-color: $maincolor2;
   color: white;
   font-weight: 500;
