@@ -3,16 +3,16 @@ const createNewContents = (value:any) => {
        const query = `mutation {
             contentAdd(Content:{
                 category: "${value.category}"
-                cost:"${value.cost}"
+                cost: ${Number(value.cost)}
                 desc:"${value.desc}"
                 upDown:"${value.upDown}"
                 dateTime:"${value.dateTime}"
-                meetId:"${value.meetId}"
-            })
+                meetId: ${Number(value.meetId)}
+            }) {
+                id
+            }
         }`
-
         return query
-
 }
 
 export default createNewContents;

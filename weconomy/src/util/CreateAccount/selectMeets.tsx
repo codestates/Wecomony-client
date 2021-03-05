@@ -3,6 +3,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/reducers';
+import getUserMeets from '../../graphQuery/getUserMeets';
 
 interface selects {
     selectedMeet: any;
@@ -11,6 +14,16 @@ interface selects {
 
 
 const SelectMeets:React.FC<selects> = ({selectedMeet, handleMeetChange}) => {
+
+  const userNow = useSelector((state:RootState) => state.userStatus.userData);
+
+  console.log(userNow);
+
+  const meetsQuery = getUserMeets(userNow!.id)
+
+  console.log(meetsQuery);
+
+
 
     return (
         <>

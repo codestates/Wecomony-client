@@ -6,6 +6,7 @@ $onepage : 100vh;
   height: $onepage;
   display: flex;
   flex-direction: column;
+
   background-color: $mainBackGroundColor;
   background-image: url("https://groobee.net/wp-content/uploads/2020/12/main1_low.png");
 }
@@ -19,7 +20,7 @@ $onepage : 100vh;
 
 .notice-Section {
   width: 100%;
-  height: 3vh;
+  height: 1vh;
   padding-left: 50px;
   padding-right: 50px;
   margin-top: 70px;
