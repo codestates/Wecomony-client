@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-import createNewContent from '../../graphQuery/createNewContent';
+import createNewContents from '../../graphQuery/createNewContent';
 
 
 function* workerCreateContent (action:any) {
-
-    yield console.log(action.value)
     
-    for (let i = 0; i < 4; i++) {
-        axios.post('https://sench.projects1faker.com/graphql?query=' +
-        encodeURIComponent(createNewContent(action.value[i]))
+
+    for (let i = 0; i < action.value.length; i++) {
+        yield axios.post('https://sench.projects1faker.com/graphql?query=' +
+        encodeURIComponent(createNewContents(action.value[i]))
+
         ).then(res => {
             console.log(res)
         })

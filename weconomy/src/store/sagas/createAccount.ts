@@ -28,7 +28,6 @@ function* workerCreateAccount(action: any){
           axios.post('https://sench.projects1faker.com/graphql?query=' +
           encodeURIComponent(getUserGroupsQuery)).then((res) => {
             groupData = res.data.data.userGet[0].Meets
-          
           })
         })
       })
