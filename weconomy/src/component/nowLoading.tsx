@@ -7,7 +7,7 @@ const NowLoading: React.FC = () => {
       <div className="insideLoading animate__animated animate__fadeIn">
         <img
           className="contentLoading"
-          src="https://ifh.cc/g/T5NaCz.gif"
+          src="https://ifh.cc/g/z5f4OT.gif"
           alt="로딩"
         ></img>
       </div>

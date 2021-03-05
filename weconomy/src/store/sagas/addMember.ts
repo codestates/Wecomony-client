@@ -22,24 +22,30 @@ function* workerAddMember(action: any) {
           err = '존재하지 않는 유저입니다';
         } else {
           const hasManyAccountQuery = hasManyAccount(res.data.data.userGet[0].id)
-          const userId = res.data.data.userGet[0].id
+          const userId = res.data.data.userGet
           axios.post('https://sench.projects1faker.com/graphql?query=' +
           encodeURIComponent(hasManyAccountQuery)).then((res) => {
-            console.log(res.data.data.userGet[0].Meets.length)
+            console.log(res.data.data.userGet[0].Meets.length, res ,'1단계')
             if(res.data.data.userGet[0].Meets.length >= 4) {
               console.log('hello')
               err = '해당 유저는 더 이상 가입 할 수 없는 유저입니다'
             } else {
               const body = {
-                userId : userId,
+                userId : userId[0].id,
                 meetId : action.data.groupId
               }
               axios.post('https://sench.projects1faker.com/multiMeetJoin', body).then((res) => {
-                const getUserGroupsQuery = getUserGroups(action.userId)
+                const getUserGroupsQuery = getUserGroups(action.data.userId)
+                console.log('2 단계')
                 axios.post('https://sench.projects1faker.com/graphql?query=' +
-                encodeURIComponent(getUserGroupsQuery))
-                console.log(res)
+                encodeURIComponent(getUserGroupsQuery)).then((res) => {
+                console.log(res, '확인하자')
                 groupData = res.data.data.userGet[0].Meets
+                console.log(res, groupData ,'3단계')
+
+                })
+                
+                
               })
             }
           })
