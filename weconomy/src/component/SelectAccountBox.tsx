@@ -2,7 +2,6 @@ import { AiOutlineUsergroupAdd } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/reducers';
 import { useHistory } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import CreateNewAccountModal from './createNewAccountModal';
 import { createNewAccountModalOpen } from '../store/actions/modalActions';
 
@@ -23,9 +22,7 @@ const SelectAccountBox = () => {
   const createNewAccount = () => {
     dispatch(createNewAccountModalOpen());
   };
-  useEffect(() => {
-    console.log(Allgroups);
-  });
+
   const onClickGroup = (group: group) => {
     history.push('/accountpage/' + group.id);
   };
