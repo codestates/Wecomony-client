@@ -29,10 +29,6 @@ const CreateAccount: React.FC<counter> = ({
     dateTime:string;
   }
 
-  interface valueProps {
-    value: Array<string | number>
-  }
-
   const dispatch = useDispatch()
 
   const [income1, setIncome1] = useState<props>({
@@ -114,7 +110,7 @@ const CreateAccount: React.FC<counter> = ({
     } else if (valid.error === "none") {
       dispatch(createSuccessModalOpen())
        const value = hasCreateValue(income1, income2, outcome1, outcome2, selectedDate)
-       
+
 
       setIncome1({
         ...income1,

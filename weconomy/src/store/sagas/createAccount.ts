@@ -14,7 +14,7 @@ function* workerCreateAccount(action: any){
     } else {
       axios.post('https://sench.projects1faker.com/graphql?query=' +
       encodeURIComponent(createNewAccountQuery)).then((res) => {
-        console.log(res.data.data.meetAdd.id)
+        console.log(res)
         const body = {
           userId : action.data.id,
           meetId : res.data.data.meetAdd.id
