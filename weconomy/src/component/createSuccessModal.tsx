@@ -12,11 +12,9 @@ const SuccessModal: React.FC = () => {
     );
   
     const dispatch = useDispatch();
-    const history = useHistory();
   
     const closeSuccessModal = () => {
       dispatch(createSuccessModalClose());
-      history.push('/createAccountPage');
     };
   
     return (
