@@ -103,10 +103,24 @@ $mainLogofont : 'Fredoka One', cursive;
   justify-content: space-between;
 }
 
+.LoadingOuter {
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(255, 255, 255);
+}
 .insideLoading {
   display: flex;
   justify-content: center;
-  margin: 200px auto;
+  margin: 300px auto;
+}
+
+.contentLoading {
+  width: 300px;
+
 }
 
 .loginModalClose {

@@ -46,8 +46,8 @@ const Nav: React.FC = () => {
   const userImage = useSelector(
     (state: RootState) => state.userStatus.userData?.thumbnail,
   );
-  const userName = useSelector(
-    (state: RootState) => state.userStatus.userData?.nickname,
+  const email = useSelector(
+    (state: RootState) => state.userStatus.userData?.email,
   );
 
   return (
@@ -76,7 +76,7 @@ const Nav: React.FC = () => {
       <div className="navbar__handleLogin">
         {isLogin ? (
           <>
-            {userImage ? (
+            {!userImage ? (
               <img
                 className="userProfileNav"
                 src={userImage}
@@ -85,7 +85,7 @@ const Nav: React.FC = () => {
               ></img>
             ) : (
               <div className="userProfileNav" onClick={onClickProfile}>
-                {userName.slice(0, 1)}
+                {email.slice(0, 1).toUpperCase()}
               </div>
             )}
             <div className="profileDropDown animate__animated animate__headShake">

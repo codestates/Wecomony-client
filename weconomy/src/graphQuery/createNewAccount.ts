@@ -1,8 +1,9 @@
 
-const createNewAccount = (name : string, cost : string) => {
+const createNewAccount = (id : number, name : string, cost : string) => {
   const changeToNum = Number(cost)
   const query =  `mutation {
     meetAdd(Meet:{
+      memberNumber ${id}
       meetName: "${name}"
       totalcost: ${changeToNum}
     }){

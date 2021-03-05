@@ -6,6 +6,13 @@ import { useState, useEffect } from 'react';
 import CreateNewAccountModal from './createNewAccountModal';
 import { createNewAccountModalOpen } from '../store/actions/modalActions';
 
+interface group {
+  id: number;
+  User: Array<object>;
+  meetName: string;
+  totalcost: number;
+}
+
 const SelectAccountBox = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -19,8 +26,8 @@ const SelectAccountBox = () => {
   useEffect(() => {
     console.log(Allgroups);
   });
-  const onClickGroup = () => {
-    history.push('/accountpage');
+  const onClickGroup = (group: group) => {
+    history.push('/accountpage/' + group.id);
   };
   return (
     <>
@@ -32,16 +39,26 @@ const SelectAccountBox = () => {
             <div className="SelectAccountMembers">
               {group.Users.map((member: any) => (
                 <div className="SelectOneMemberBox">
-                  <img
-                    className="SelectAccountMemberImg"
-                    src={member.img}
-                    alt="유저프로필"
-                  ></img>
+                  {member.img ? (
+                    <img
+                      className="SelectAccountMemberImg"
+                      src={member.img}
+                      alt="유저프로필"
+                    ></img>
+                  ) : (
+                    <div className="userProfileNav">
+                      {member.email.slice(0, 1).toUpperCase()}
+                    </div>
+                  )}
+
                   <div className="SelectAccountMemberName">{member.email}</div>
                 </div>
               ))}
             </div>
-            <button onClick={onClickGroup} className="SelectAccountJoinBtn">
+            <button
+              onClick={() => onClickGroup(group)}
+              className="SelectAccountJoinBtn"
+            >
               JOIN
             </button>
           </div>
