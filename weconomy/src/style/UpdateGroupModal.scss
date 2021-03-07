@@ -53,9 +53,10 @@ $mainLogofont : 'Fredoka One', cursive;
 
 .UpdateGroupModalBody {
   margin-top: 25px;
-  height: 40%;
+  height: 30%;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
@@ -79,4 +80,62 @@ $mainLogofont : 'Fredoka One', cursive;
   color: white;
   outline: 0;
   border: 0;
+}
+
+.DeleteGroupModalBtn {
+  height: 40%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: rgb(241, 88, 88);
+  border-radius: 5px;
+  color: white;
+  outline: 0;
+  border: 0;
+}
+
+.deleteGroupInput {
+  padding: 5px;
+  width: 75%;
+  height: 50%;
+  font-size: 1rem;
+}
+
+.deleteGroupBottom {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-left: 50px;
+padding-right: 50px;
+height: 35%;
+justify-content: space-around;
+}
+
+.deleteGroupBtn {
+  width:  85%;
+  height: 40%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: rgb(241, 88, 88);
+  border-radius: 5px;
+  color: white;
+  outline: 0;
+  border: 0;
+}
+
+.cancelDeleteGroupBtn {
+  width:  85%;
+  height: 40%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: $maincolor;
+  border-radius: 5px;
+  color: white;
+  outline: 0;
+  border: 0;
+}
+
+.deleteNotice {
+  font-size: 14px;
+  color: red;
+  font-weight: 500;
 }
