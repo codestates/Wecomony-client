@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { useHistory } from 'react-router';
 import { RootState } from '../store/reducers';
 import TextField from '@material-ui/core/TextField';
 import { RiCloseFill } from 'react-icons/ri';
 import { updateGroupModalClose } from '../store/actions/modalActions';
-import { updateGroupTotalcost } from '../store/actions/groupAction';
+import {
+  updateGroupTotalcost,
+  deleteAccount,
+} from '../store/actions/groupAction';
 import { useParams } from 'react-router-dom';
 
 interface ParamsId {
@@ -13,6 +17,7 @@ interface ParamsId {
 }
 
 const UpdateGroupModal = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const params: ParamsId = useParams();
 
@@ -73,7 +78,14 @@ const UpdateGroupModal = () => {
     if (deleteText !== `${groups[0].meetName} 삭제`) {
       return setDeleteErr('확인 문자와 일치하지 않습니다');
     } else {
-      console.log('삭제~');
+      let data = {
+        meetId: groups[0].id,
+        userId: userNow?.id,
+      };
+      console.log('삭제 시작');
+      dispatch(deleteAccount(data));
+      dispatch(updateGroupModalClose());
+      history.push('/');
     }
   };
 
