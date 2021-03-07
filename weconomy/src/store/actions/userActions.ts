@@ -29,4 +29,5 @@ export const getUserNowGroup = (data : Array<object>) => {
   return { type : GET_USERNOW_GROUP, data}
 }
 
+
 export type UserAction = | ReturnType<typeof isLogin> | ReturnType<typeof successLogin> | ReturnType<typeof tryLogin> | ReturnType<typeof saveUserData> | ReturnType<typeof logoutUser> | ReturnType<typeof getUserNowGroup>

@@ -1,4 +1,4 @@
-import { LOGIN_MODAL_OPEN, LOGIN_MODAL_CLOSE, REQUEST_LOGIN_MODAL_OPEN, REQUEST_LOGIN_MODAL_CLOSE, ASK_NONE_SAVE_MODAL_OPEN, ASK_NONE_SAVE_MODAL_CLOSE, CREATE_ERROR_MODAL_OPEN, CREATE_ERROR_MODAL_CLOSE, CREATE_SUCCESS_MODAL_OPEN, CREATE_SUCCESS_MODAL_CLOSE, CREATE_NEW_ACCOUNT_MODAL_OPEN, CREATE_NEW_ACCOUNT_MODAL_CLOSE, NOW_LOADING_ON, NOW_LOADING_OFF, ADD_MEMBER_MODAL_OPEN, ADD_MEMBER_MODAL_CLOSE, ADD_MEMBER_ERR } from '../actions/constants'
+import { LOGIN_MODAL_OPEN, LOGIN_MODAL_CLOSE, REQUEST_LOGIN_MODAL_OPEN, REQUEST_LOGIN_MODAL_CLOSE, ASK_NONE_SAVE_MODAL_OPEN, ASK_NONE_SAVE_MODAL_CLOSE, CREATE_ERROR_MODAL_OPEN, CREATE_ERROR_MODAL_CLOSE, CREATE_SUCCESS_MODAL_OPEN, CREATE_SUCCESS_MODAL_CLOSE, CREATE_NEW_ACCOUNT_MODAL_OPEN, CREATE_NEW_ACCOUNT_MODAL_CLOSE, NOW_LOADING_ON, NOW_LOADING_OFF, ADD_MEMBER_MODAL_OPEN, ADD_MEMBER_MODAL_CLOSE, ADD_MEMBER_ERR, UPDATE_GROUP_MODAL_OPEN, UPDATE_GROUP_MODAL_CLOSE, CREATE_NEW_ACCOUNT_ERR } from '../actions/constants'
 import { ModalAction } from '../actions/modalActions'
 
 
@@ -10,9 +10,11 @@ const initialState = {
   createSuccessModal: false,
   errorMessage: null,
   createNewAccountModal : false,
+  createNewAccountErr : null,
   nowLoading : false,
   addMemberModal : false,
   addMemberErr : null,
+  updateGroupModal : false
 }
 
 const modalReducer = (state = initialState, action: any) => {
@@ -78,6 +80,11 @@ const modalReducer = (state = initialState, action: any) => {
         ...state,
         createNewAccountModal : false
       }
+    case CREATE_NEW_ACCOUNT_ERR : 
+      return {
+        ...state,
+        createNewAccountErr : action.message
+      }
     case NOW_LOADING_ON :
       return {
         ...state,
@@ -102,6 +109,16 @@ const modalReducer = (state = initialState, action: any) => {
       return {
         ...state,
         addMemberErr : action.message
+      }
+    case UPDATE_GROUP_MODAL_OPEN : 
+      return {
+        ...state,
+        updateGroupModal : true
+      }
+    case UPDATE_GROUP_MODAL_CLOSE :
+      return {
+        ...state,
+        updateGroupModal : false
       }
   
       default:

@@ -1,5 +1,6 @@
 import { takeEvery, put, call, delay } from 'redux-saga/effects';
 import axios from 'axios';
+import { createNewAccountErr } from '../actions/modalActions'
 import { getUserNowGroup } from '../actions/userActions';
 import hasManyAccount from '../../graphQuery/hasManyAccount';
 import getUserGroups from '../../graphQuery/getUserGroups'
@@ -15,7 +16,6 @@ function* workerCreateAccount(action: any){
   encodeURIComponent(hasManyAccountQuery)).then((res) => {
 
     if(res.data.data.userGet[0].Meets.length >= 4){
-      console.log('더이상 생성 불가함')
       isCreate = false
     } else {
       axios.post('https://sench.projects1faker.com/graphql?query=' +

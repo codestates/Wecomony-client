@@ -14,6 +14,7 @@ interface Props {
   isLogin : boolean
   userData : userObjType | null
   groups : Array<object> | null
+  meets: Array<object> | null
 }
 
 const initialState = {
@@ -26,7 +27,8 @@ const initialState = {
     thumbnail : null,
     email : null
   },
-  groups : null
+  groups : null,
+  meets : null
 }
 
 const userReducer = (state: Props = initialState, action: any) => {
@@ -66,7 +68,6 @@ const userReducer = (state: Props = initialState, action: any) => {
         groups : null
       }
     case GET_USERNOW_GROUP : 
-    console.log(action.data)
       return {
         ...state,
         groups : action.data
