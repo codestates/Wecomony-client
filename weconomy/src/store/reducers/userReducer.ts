@@ -66,7 +66,6 @@ const userReducer = (state: Props = initialState, action: any) => {
         groups : null
       }
     case GET_USERNOW_GROUP : 
-    console.log(action.data)
       return {
         ...state,
         groups : action.data

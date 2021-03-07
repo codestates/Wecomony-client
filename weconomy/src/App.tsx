@@ -22,6 +22,7 @@ import './style/SuccessModal.scss';
 import './style/createNewAccountModal.scss';
 import './style/AddMemberModal.scss';
 import './style/test.scss';
+import './style/UpdateGroupModal.scss';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
