@@ -124,6 +124,7 @@ const CreateAccount: React.FC<counter> = ({
       dispatch(createSuccessModalOpen())
        const value = hasCreateValue(income1, income2, outcome1, outcome2, selectedDate, selectedMeet)
        dispatch(createNewContent(value))
+       console.log(value);
       setIncome1({
         ...income1,
         category:10,

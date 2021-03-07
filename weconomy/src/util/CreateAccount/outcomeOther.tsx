@@ -37,9 +37,9 @@ const OutcomeOther:React.FC<props> = ({outcomeCounter, outCounter, category, cat
         onChange={onChange}
         style={{ width: '150px', textAlign: 'center' }}
       >
-        <MenuItem value={10}>월급</MenuItem>
-        <MenuItem value={20}>잔돈</MenuItem>
-        <MenuItem value={30}>비상금</MenuItem>
+        <MenuItem value={"월급"}>월급</MenuItem>
+        <MenuItem value={"잔돈"}>잔돈</MenuItem>
+        <MenuItem value={"비상금"}>비상금</MenuItem>
       </Select>
       <FormHelperText>수입 항목을 골라주세요</FormHelperText>
     </div>
@@ -92,9 +92,9 @@ const OutcomeOther:React.FC<props> = ({outcomeCounter, outCounter, category, cat
       onChange={onChange2}
       style={{width: '150px',textAlign:'center'}}
     >
-      <MenuItem value={10}>월급</MenuItem>
-      <MenuItem value={20}>잔돈</MenuItem>
-      <MenuItem value={30}>비상금</MenuItem>
+      <MenuItem value={"월급"}>월급</MenuItem>
+      <MenuItem value={"잔돈"}>잔돈</MenuItem>
+      <MenuItem value={"비상금"}>비상금</MenuItem>
     </Select>
     <FormHelperText>수입 항목을 골라주세요</FormHelperText>
 
