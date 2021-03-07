@@ -5,6 +5,7 @@ import AccountSideBar from '../component/accountSideBar';
 import NowLoading from '../component/nowLoading';
 import Nav from '../component/nav';
 import AddMemberModal from '../component/addMemberModal';
+import UpdateGroupModal from '../component/updateGroupModal';
 import NotAMember from '../component/notAMember';
 import { RootState } from '../store/reducers';
 import useMedia from '../customhooks/useMedia';
@@ -43,6 +44,7 @@ const AccountPage: React.FC = () => {
       <Nav></Nav>
       {groupData.length === 0 ? <NotAMember></NotAMember> : null}
       <AddMemberModal></AddMemberModal>
+      <UpdateGroupModal></UpdateGroupModal>
       {!isLoading ? (
         <>
           {isMobile ? (

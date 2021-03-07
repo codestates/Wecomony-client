@@ -6,6 +6,7 @@ import { CgCrown } from 'react-icons/cg';
 import {
   addMemberModalOpen,
   addMemberErr,
+  updateGroupModalOpen,
 } from '../store/actions/modalActions';
 
 interface ParamsId {
@@ -18,6 +19,10 @@ const AccountSideBar = () => {
   const addMemberClick = (): void => {
     dispatch(addMemberErr(null));
     dispatch(addMemberModalOpen());
+  };
+
+  const updateGroupClick = () => {
+    dispatch(updateGroupModalOpen());
   };
 
   const members = useSelector((state: RootState) =>
@@ -74,7 +79,9 @@ const AccountSideBar = () => {
           </button>
         ) : null}
         {userNow?.id === members[0].memberNumber ? (
-          <button className="accountBtns">그룹 관리</button>
+          <button onClick={updateGroupClick} className="accountBtns">
+            그룹 관리
+          </button>
         ) : null}
         {userNow?.id !== members[0].memberNumber ? (
           <button className="accountBtns">그룹 탈퇴</button>

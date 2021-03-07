@@ -33,7 +33,9 @@ const CreateNewAccountModal = () => {
   const userNow = useSelector((state: RootState) => state.userStatus.userData);
 
   const onclickCreate = () => {
-    if (accountName.length > 10) {
+    if (accountName.length === 0 || cost.length === 0) {
+      return setErr('공백이 있습니다');
+    } else if (accountName.length > 10) {
       return setErr('이름은 10 자리를 넘을 수 없습니다');
     } else if (isNaN(Number(cost))) {
       return setErr('금액은 숫자만 입력 가능합니다');
