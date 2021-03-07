@@ -28,6 +28,7 @@ $onepage : 100vh;
   width: 100%;
   justify-content: center;
   align-items: center;
+  flex-flow: wrap;
 }
 
 .oneAccountBox {
@@ -93,13 +94,13 @@ $onepage : 100vh;
 }
 
 .SelectAccountMemberName {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .SelectAccountMemberImg {
 
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   margin-right: 20px;
   border-radius: 40px;
   border : solid 2px $maincolor;
@@ -111,8 +112,8 @@ $onepage : 100vh;
   justify-content: center;
   align-items: center;
   border-radius: 40px;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   margin-right: 20px;
   border: 2px solid $maincolor;
   font-size: 1.1rem;
@@ -148,12 +149,58 @@ $onepage : 100vh;
 }
 
 @media screen and (max-width: 768px) { 
-  .SelectAccountBox{
-    flex-direction: column;
+  .SelectAccount-Container{
+    height: 200vh;
+    justify-content: flex-start;
+    background-image: none;
+    background-color: #457AF7;
+  }
+  .SelectAccount-Contents {
+    margin-top: 30px;
+    width: 98%;
+  }
+  .oneAccountBox{
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 45vmax;
+    height: 43vmax;
+  }
+
+  .AddAccountBox {
+    width: 45vmax;
+    height: 43vmax;
 
   }
-  .SelectAccount-Contents{
-    flex-direction: column;
-    align-items: none;
+  .titleAccountBox {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+  }
+  .titleAddAccountBox {
+    margin-top: 50px;
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+  }
+  .SelectOneMemberBox {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  .SelectAccountMemberName {
+    font-size: 16px;
+  }
+
+  .SelectAccountMemberImg {
+    height: 4vmax;
+    width: 4vmax;
+  }
+
+  .SelectAccountMemberIcon {
+    height: 4vmax;
+    width: 4vmax;
   }
 }
