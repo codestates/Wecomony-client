@@ -11,7 +11,7 @@ body {
 }
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
-$onepage : 100vh; // 무조건 한 페이지
+$onepage : 100vh; 
 
 .mainContainer {
   height : 100%;
@@ -39,7 +39,7 @@ $onepage : 100vh; // 무조건 한 페이지
 
 
 @media (min-width: 770px){
-
+ 
 .section1 .MainTitle {
   font-size: 48px;
   line-height: 67px;
@@ -66,6 +66,7 @@ $onepage : 100vh; // 무조건 한 페이지
 }
 
 .mainTopBtn {
+  cursor:pointer;
   max-width: 307px;
   height: 70px;
   background: $maincolor;
@@ -95,6 +96,10 @@ $onepage : 100vh; // 무조건 한 페이지
 }
 
 @media (max-width: 769px){
+  .section1 {
+    background-color: white;
+  }
+
   .caculator {
     display: none;
   }

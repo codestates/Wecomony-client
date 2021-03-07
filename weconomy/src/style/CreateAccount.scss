@@ -1,0 +1,137 @@
+$maincolor : #1474F8;
+$mainBackGroundColor : #EFEFEF;
+$onepage : 100vh;
+
+
+.createAccount-container {
+    height: $onepage;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createAccount-content {
+    margin-top: 50px;
+    width: 60%;
+    height: 90%;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.center-createAccount-container {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.center-createAccount-datePicker{
+    flex-grow:1;
+    display:flex;
+    justify-content: space-around;
+}
+
+.center-createAccount-select {
+    display:flex;
+    flex-grow:5;
+    flex-direction: column;
+
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.center-createAccount-income {
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.income-other {
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f2f6;
+    margin-top:8px;
+}
+
+.income-title {
+    width:100%;
+    font-size: 36px;
+
+    margin-bottom:10px;
+}
+
+.outcome-other {
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f2f6;
+    margin-top:8px;
+}
+
+.outcome-title {
+    width:100%;
+    font-size: 36px;
+
+    margin-bottom:10px;
+}
+
+.center-createAccount-outcome {
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.center-createAccount-belowBtns {
+    flex-grow:1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.belowBtns-calculator {
+    display:flex;
+    background-color: $maincolor;
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    left: 3.5rem;
+    position: absolute;
+    bottom: 6rem;
+    font-size: 40px;
+    color: white;
+}
+
+.belowBtns-saveBtn {
+    width: 270px;
+    height: 80px;
+    font-size: 30px;
+}
+
+.outcome-addDiv {
+    display:flex;
+    padding: 12px;
+    padding-right: 16px;
+}
+
+.outcome-addDiv:Hover{
+    cursor: pointer;
+}
+
+.income-addDiv {
+    display:flex;
+    padding: 12px;
+    padding-right: 16px;
+}
+
+.income-addDiv:Hover{
+    cursor: pointer;
+}

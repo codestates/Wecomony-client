@@ -1,0 +1,159 @@
+$maincolor : #1474F8;
+$mainBackGroundColor : #EFEFEF;
+$maincolor2 : #EDA28F;
+$onepage : 100vh; 
+
+.SelectAccount-Container {
+  height:  100vh;
+  background-image: url("https://groobee.net/wp-content/uploads/2020/12/main1_low.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.SelectAccount-Contents {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 98vh;
+}
+
+.SelectAccountBox {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.oneAccountBox {
+  width: 250px;
+  height: 360px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition-duration: 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  margin-right: 30px;
+  top: 0;
+  &:hover{
+    top: -5px;
+    box-shadow: rgba(0, 0, 0, 0.486) 0px 10px 20px;
+  }
+}
+
+.AddAccountBox {
+  cursor: pointer;
+  position: relative;
+  width: 250px;
+  height: 360px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: $maincolor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  font-size: 5rem;
+  transition-duration: 0.4s;
+  top: 0;
+  &:hover{
+    top: -5px;
+    box-shadow: rgba(0, 0, 0, 0.486) 0px 10px 20px;
+  }
+}
+
+.titleAddAccountBox {
+  margin-top: 50px;
+  font-size: 1.5rem;
+  color: black;
+  text-align: center;
+}
+
+.titleAccountBox {
+  font-size: 1.5rem;
+  color: black;
+  text-align: center;
+  font-weight: 500;
+}
+
+.SelectAccountMembers {
+  display: flex;
+  flex-direction: column;
+  height: 190px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.SelectAccountMemberName {
+  font-size: 12px;
+}
+
+.SelectAccountMemberImg {
+
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 40px;
+  border : solid 2px $maincolor;
+}
+
+.SelectAccountMemberIcon {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border: 2px solid $maincolor;
+  font-size: 1.1rem;
+  background-color: $maincolor2;
+  color: white;
+  font-weight: 500;
+}
+
+.SelectOneMemberBox {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.SelectAccountJoinBtn {
+  &:hover {
+    background-color: #0951b4;
+  }
+  cursor: pointer;
+  transition-duration: 0.5s;
+  justify-self: flex-end;
+  background-color: $maincolor;
+  width: 100%;
+  height: 13%;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 5px;
+  outline: 0;
+}
+
+@media screen and (max-width: 768px) { 
+  .SelectAccountBox{
+    flex-direction: column;
+
+  }
+  .SelectAccount-Contents{
+    flex-direction: column;
+    align-items: none;
+  }
+}

@@ -28,14 +28,14 @@
 }
 
 .Down-Detail {
-  width: 5%;
-  background-color: red;
+  width: 2%;
+  background-color: rgb(253, 110, 110);
   border-radius: 5px;
 }
 
 .Up-Detail {
-  width: 5%;
-  background-color: lawngreen;
+  width: 2%;
+  background-color: #93ff93;
   border-radius: 5px;
 }
 
@@ -50,5 +50,9 @@
 
 .count-Detail {
   font-size: 1.1rem;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
+}
+
+.totalDetails {
+  font-family: 'Open Sans', sans-serif;
 }

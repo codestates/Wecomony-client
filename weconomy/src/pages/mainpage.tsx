@@ -2,18 +2,51 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { successLogin, tryLogin } from '../store/actions/userActions';
+import { requestLoginModalOpen } from '../store/actions/modalActions';
 import useMedia from '../customhooks/useMedia';
+import { useHistory } from 'react-router-dom';
+import { RootState } from '../store/reducers';
 import Nav from '../component/nav';
 import LoginModal from '../component/loginmodal';
 import RequestLoginModal from '../component/requestLoginModal';
+import AskNoneSaveModal from '../component/askNoneSave';
+import axios from 'axios';
 
 const MainPage: React.FC = () => {
-  const { isMobile } = useMedia();
+  const isLogin = useSelector((state: RootState) => state.userStatus.isLogin);
   const dispatch = useDispatch();
+  const history = useHistory();
+  const { isMobile } = useMedia();
 
-  useEffect(() => {
-    localStorage.removeItem('kakao_e3993c543a1cd3790143c7b6f2262e63');
-  });
+  useEffect(() => {});
+
+  const query = `query {
+    userGet{
+      email
+      groups {
+        id
+      }
+    }
+  }`;
+  axios.defaults.withCredentials = true;
+  const getuser = () => {
+    axios
+      .get(
+        'https://sench.projects1faker.com/graphql?query=' +
+          encodeURIComponent(query),
+      )
+      .then((res) => {
+        console.log(res);
+      });
+  };
+
+  const toAccountPage = () => {
+    if (isLogin) {
+      history.push('/selectaccount');
+    } else {
+      dispatch(requestLoginModalOpen());
+    }
+  };
 
   return (
     <>
@@ -21,6 +54,7 @@ const MainPage: React.FC = () => {
       <div className="mainContainer">
         <LoginModal></LoginModal>
         <RequestLoginModal></RequestLoginModal>
+        <AskNoneSaveModal></AskNoneSaveModal>
         <div className="section1">
           <div className="textBox">
             {isMobile ? <h1 className="MainTitleLogo">Weconomy</h1> : null}
@@ -47,9 +81,13 @@ const MainPage: React.FC = () => {
               </span>
             )}
             {isMobile ? (
-              <button className="mainMobileBtn">Weconomy 시작하기</button>
+              <button onClick={toAccountPage} className="mainMobileBtn">
+                Weconomy 시작하기
+              </button>
             ) : (
-              <button className="mainTopBtn">Weconomy 시작하기</button>
+              <button onClick={toAccountPage} className="mainTopBtn">
+                Weconomy 시작하기
+              </button>
             )}
           </div>
           <div className="imageBox">

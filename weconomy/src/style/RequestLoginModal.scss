@@ -1,11 +1,52 @@
+$maincolor : #1474F8;
+$mainLogofont : 'Fredoka One', cursive;
+
 .insideRequestLoginModal {
   width: 350px;
   height: 250px;
   position: relative;
   box-sizing: border-box;
   margin: 200px auto;
-  padding: 30px;
+  padding: 5px;
   border-radius: 10px;
   background-color:  white;
   box-shadow: 0 3px 7px rgb(0 0 0 / 30%);
 }
+
+.requestLoginModalTop {
+  color: $maincolor;
+  font-size: 2.5rem;
+  font-family: $mainLogofont;
+}
+
+.RequestLoginModalContents{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.loginModalBottom {
+  display: flex;
+  align-items: center;
+}
+
+.requestLoginBtn {
+  cursor: pointer;
+  background-color: $maincolor;
+  height: 60%;
+  width: 60%;
+  border-radius: 5px;
+  border : 0;
+  outline: 0;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.RequestLoginModalClose {
+  cursor: pointer;
+  position: absolute;
+  top : 1rem;
+  right: 1rem;
+ }

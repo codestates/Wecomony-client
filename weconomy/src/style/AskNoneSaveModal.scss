@@ -1,0 +1,58 @@
+$maincolor : #1474F8;
+$mainLogofont : 'Fredoka One', cursive;
+.insideAskNoneSaveModal {
+  width: 350px;
+  height: 250px;
+  position: relative;
+  box-sizing: border-box;
+  margin: 200px auto;
+  padding: 5px;
+  border-radius: 10px;
+  background-color:  white;
+  box-shadow: 0 3px 7px rgb(0 0 0 / 30%);
+}
+
+.askNoneSaveModalContents {
+  display:  flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 5px;
+}
+
+.askNoneSaveModalTop {
+  height: 40%;
+  display: flex;
+  align-items: center;
+  color: $maincolor;
+  font-size: 2rem;
+  font-family: $mainLogofont;
+}
+
+.askNoneSaveModalBottom {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.askNoneSaveLoginBtn {
+  cursor: pointer;
+  width: 80%;
+  height: 25%;
+  border: 0;
+  outline: 0;
+  background-color: $maincolor;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.askNoneSaveModalClose {
+  cursor: pointer;
+  position: absolute;
+  top : 1rem;
+  right: 1rem;
+ }
