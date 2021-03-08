@@ -73,8 +73,8 @@ const AccountGraph = () => {
               <Meter
                 type="circle"
                 value={CalculatorPercent(
-                  groupNow[0].totalcost - CalculationMonth(filterContentMonth),
                   groupNow[0].totalcost,
+                  groupNow[0].totalcost - CalculationMonth(filterContentMonth),
                 )}
                 size="small"
                 thickness="small"
@@ -83,9 +83,9 @@ const AccountGraph = () => {
               <Box direction="row" align="center" pad={{ bottom: 'xsmall' }}>
                 <Text size="xlarge" weight="bold">
                   {CalculatorPercent(
+                    groupNow[0].totalcost,
                     groupNow[0].totalcost -
                       CalculationMonth(filterContentMonth),
-                    groupNow[0].totalcost,
                   )}
                 </Text>
                 <Text size="small">%</Text>
@@ -100,12 +100,19 @@ const AccountGraph = () => {
               ? `이번 달 지출 금액 : ${threeComma(
                   CalculationMonth(filterContentMonth),
                 )} 원`
-              : 0}
+              : `최근 일주일 지출 금액 : ${threeComma(
+                  CalculationMonth(CalculationWeek(groupNow[0].Contents)),
+                )} 원`}
           </div>
           <div>
-            {`총 남은 금액 : ${threeComma(
-              groupNow[0].totalcost - CalculationMonth(filterContentMonth),
-            )} 원`}
+            {value === 0
+              ? `총 남은 금액 : ${threeComma(
+                  groupNow[0].totalcost - CalculationMonth(filterContentMonth),
+                )} 원`
+              : `총 남은 금액 : ${threeComma(
+                  groupNow[0].totalcost -
+                    CalculationMonth(CalculationWeek(groupNow[0].Contents)),
+                )} 원`}
           </div>
         </div>
       </div>
