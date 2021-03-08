@@ -42,33 +42,38 @@ const AccountPage: React.FC = () => {
   return (
     <>
       <Nav></Nav>
-      {groupData.length === 0 ? <NotAMember></NotAMember> : null}
-      <AddMemberModal></AddMemberModal>
-      <UpdateGroupModal></UpdateGroupModal>
-      {!isLoading ? (
+      {groupData.length === 0 ? (
+        <NotAMember></NotAMember>
+      ) : (
         <>
-          {isMobile ? (
-            <div className="Account-container">
-              <div className="notice-Section"></div>
+          <AddMemberModal></AddMemberModal>
+          <UpdateGroupModal></UpdateGroupModal>
+          {!isLoading ? (
+            <>
+              {isMobile ? (
+                <div className="Account-container">
+                  <div className="notice-Section"></div>
 
-              <AccountGraph></AccountGraph>
-              <div className="Account-container2">
-                <AccountByDay></AccountByDay>
-              </div>
-            </div>
+                  <AccountGraph></AccountGraph>
+                  <div className="Account-container2">
+                    <AccountByDay></AccountByDay>
+                  </div>
+                </div>
+              ) : (
+                <div className="Account-container">
+                  <div className="notice-Section"></div>
+                  <div className="content-Section">
+                    <AccountGraph></AccountGraph>
+                    <AccountByDay></AccountByDay>
+                    <AccountSideBar></AccountSideBar>
+                  </div>
+                </div>
+              )}
+            </>
           ) : (
-            <div className="Account-container">
-              <div className="notice-Section"></div>
-              <div className="content-Section">
-                <AccountGraph></AccountGraph>
-                <AccountByDay></AccountByDay>
-                <AccountSideBar></AccountSideBar>
-              </div>
-            </div>
+            <NowLoading></NowLoading>
           )}
         </>
-      ) : (
-        <NowLoading></NowLoading>
       )}
     </>
   );
