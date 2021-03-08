@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Box, DateInput, Grommet } from 'grommet';
-import { base } from 'grommet/themes';
 import 'date-fns';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
@@ -9,8 +7,27 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 import AccountDetail from './accountDetail';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../store/reducers';
+import { useParams } from 'react-router-dom';
+import { changeDetailDate } from '../store/actions/pageAction';
+import CalcullationDay from '../util/accountPage/CalculationDay';
+
+interface ParamsId {
+  id: string;
+}
+
+interface datas {
+  id: number;
+  upDown: string;
+  category: string;
+  desc: string;
+  cost: number;
+}
 
 const AccountByDay = () => {
+  const params: ParamsId = useParams();
+  const dispatch = useDispatch();
   const [value, setValue] = useState<string>();
   const onChange = (event: any) => {
     setValue(event.value);
@@ -20,9 +37,24 @@ const AccountByDay = () => {
     new Date(),
   );
 
+  const groupNow = useSelector((state: RootState) =>
+    state.userStatus.groups.filter((group: datas) => {
+      return group.id === Number(params.id);
+    }),
+  );
+  const dateNow = useSelector(
+    (state: RootState) => state.pageStatus?.detailDate,
+  );
+
+  const filterContent = groupNow[0].Contents.filter(
+    (content: any) =>
+      content?.dateTime === new Date(dateNow).toLocaleDateString(),
+  );
+
   const handleDateChange = (date: Date | null) => {
     console.log(date);
     setSelectedDate(date);
+    dispatch(changeDetailDate(date));
   };
 
   return (
@@ -51,9 +83,26 @@ const AccountByDay = () => {
         <AccountDetail></AccountDetail>
       </div>
       <div className="bottom-details-Account">
+        <div className="totalIncome">
+          <span className="TextTotalDetails">총 수입 : </span>
+          <span className="NumberTotalDetails">{`${CalcullationDay(
+            'income',
+            filterContent,
+          )} 원`}</span>
+        </div>
+        <div className="totalOutcome">
+          <span className="TextTotalDetails">총 지출 : </span>
+          <span className="NumberTotalDetails">{`${CalcullationDay(
+            'outcome',
+            filterContent,
+          )} 원`}</span>
+        </div>
         <div className="totalDetails">
           <span className="TextTotalDetails">Total : </span>
-          <span className="NumberTotalDetails"> 600000 원</span>
+          <span className="NumberTotalDetails">{`${CalcullationDay(
+            'total',
+            filterContent,
+          )} 원`}</span>
         </div>
       </div>
     </div>

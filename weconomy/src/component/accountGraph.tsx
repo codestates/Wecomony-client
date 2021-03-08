@@ -10,6 +10,10 @@ import LabelledChart from '../piececompo/LabelledChart';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/reducers';
 import { useParams } from 'react-router-dom';
+import CalculationMonth from '../util/accountPage/CalculationMonth';
+import threeComma from '../util/threeComma';
+import CalculatorPercent from '../util/accountPage/CalculatorPercent';
+import CalculationWeek from '../util/accountPage/CalculationWeek';
 
 const useStyles = makeStyles({
   root: {
@@ -34,6 +38,16 @@ const AccountGraph = () => {
     }),
   );
 
+  const filterContentMonth = groupNow[0].Contents.filter(
+    (content: any) =>
+      content?.dateTime.slice(5, 7) ===
+      new Date().toLocaleDateString().slice(5, 7),
+  );
+
+  useEffect(() => {
+    console.log(CalculationWeek(groupNow[0].Contents));
+  }, []);
+
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     console.log(newValue);
     setValue(newValue);
@@ -49,7 +63,7 @@ const AccountGraph = () => {
           variant="fullWidth"
         >
           <Tab label="월간" />
-          <Tab label="주간" />
+          <Tab label="최근 일주일" />
         </Tabs>
       </Paper>
       <div className="graphTop">
@@ -58,14 +72,21 @@ const AccountGraph = () => {
             <Stack anchor="center">
               <Meter
                 type="circle"
-                value={meterValue}
+                value={CalculatorPercent(
+                  groupNow[0].totalcost - CalculationMonth(filterContentMonth),
+                  groupNow[0].totalcost,
+                )}
                 size="small"
                 thickness="small"
                 color="#1474F8"
               />
               <Box direction="row" align="center" pad={{ bottom: 'xsmall' }}>
                 <Text size="xlarge" weight="bold">
-                  {meterValue}
+                  {CalculatorPercent(
+                    groupNow[0].totalcost -
+                      CalculationMonth(filterContentMonth),
+                    groupNow[0].totalcost,
+                  )}
                 </Text>
                 <Text size="small">%</Text>
               </Box>
@@ -73,9 +94,19 @@ const AccountGraph = () => {
           </Box>
         </Grommet>
         <div className="totalGraph">
-          <div>이번 달 가용 금액 {groupNow[0].totalcost}원</div>
-          <div>총 지출 금액 500,000원</div>
-          <div>총 남은 금액 500,000원</div>
+          <div>이번 달 가용 금액 : {threeComma(groupNow[0].totalcost)} 원</div>
+          <div>
+            {value === 0
+              ? `이번 달 지출 금액 : ${threeComma(
+                  CalculationMonth(filterContentMonth),
+                )} 원`
+              : 0}
+          </div>
+          <div>
+            {`총 남은 금액 : ${threeComma(
+              groupNow[0].totalcost - CalculationMonth(filterContentMonth),
+            )} 원`}
+          </div>
         </div>
       </div>
       {isMobile ? (

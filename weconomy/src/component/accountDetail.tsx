@@ -1,12 +1,37 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/reducers';
+import { useParams } from 'react-router-dom';
+
+interface ParamsId {
+  id: string;
+}
+
+interface datas {
+  id: number;
+  upDown: string;
+  category: string;
+  desc: string;
+  cost: number;
+}
 
 const AccountDetail = () => {
-  interface datas {
-    upDown: string;
-    category: string;
-    text: string;
-    count: number;
-  }
+  const params: ParamsId = useParams();
+
+  const groupNow = useSelector((state: RootState) =>
+    state.userStatus.groups.filter((group: datas) => {
+      return group.id === Number(params.id);
+    }),
+  );
+  const dateNow = useSelector(
+    (state: RootState) => state.pageStatus?.detailDate,
+  );
+
+  const filterContent = groupNow[0].Contents.filter(
+    (content: any) =>
+      content?.dateTime === new Date(dateNow).toLocaleDateString(),
+  );
+
   const [fakedata, setFakeData] = useState<any>([
     {
       upDown: 'down',
@@ -72,17 +97,17 @@ const AccountDetail = () => {
 
   return (
     <div className="details-container">
-      {fakedata.map((data: datas) => (
+      {filterContent.map((data: datas) => (
         <div className="OneContent">
-          {data.upDown === 'up' ? (
+          {data.upDown === 'income' ? (
             <div className="Up-Detail"></div>
           ) : (
             <div className="Down-Detail"></div>
           )}
           <div className="left-Detail">
             <div className="category-Detail">{data.category}</div>
-            <div className="text-Detail">{data.text}</div>
-            <div className="count-Detail">{`${data.count} 원`}</div>
+            <div className="text-Detail">{data.desc}</div>
+            <div className="count-Detail">{`${data.cost} 원`}</div>
           </div>
         </div>
       ))}
