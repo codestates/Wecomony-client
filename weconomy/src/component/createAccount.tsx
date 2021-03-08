@@ -7,12 +7,16 @@ import validCheck from '../util/CreateAccount/useValidCheck';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/reducers';
 import {
+  askNoneSaveModalClose,
+  askNoneSaveModalOpen,
   createErrorModalOpen,
   createSuccessModalOpen,
 } from '../store/actions/modalActions';
 import hasCreateValue from '../util/CreateAccount/hasCreateValue';
 import SelectMeets from '../util/CreateAccount/selectMeets';
 import { createNewContent } from '../store/actions/contentAction';
+import NonMember from '../util/CreateAccount/nonMember';
+import { useHistory } from 'react-router-dom';
 
 interface counter {
   inCounter: any;
@@ -41,6 +45,10 @@ const CreateAccount: React.FC<counter> = ({
   const userId = useSelector(
     (state: RootState) => state.userStatus.userData?.id,
   );
+
+  const isLogin = useSelector((state: RootState) => state.userStatus.isLogin);
+
+
   const [income1, setIncome1] = useState<props>({
     category: '월급',
     cost: null,
@@ -133,6 +141,7 @@ const CreateAccount: React.FC<counter> = ({
       outcome2,
       incomeCounter,
       outcomeCounter,
+      selectedMeet
     );
     if (valid.error !== 'none') {
       dispatch(createErrorModalOpen(valid.error));
@@ -176,14 +185,25 @@ const CreateAccount: React.FC<counter> = ({
     }
   };
 
+  const history = useHistory()
+
+  const save2 = () => {
+    dispatch(askNoneSaveModalOpen())
+  }
+
   return (
     <div className="center-createAccount-container">
       <div className="center-createAccount-datePicker">
         <div>
-          <SelectMeets
+          {isLogin ? (<SelectMeets
+            selectedMeet={selectedMeet}
+            handleMeetChange={handleMeetChange}
+          />) : (
+            <NonMember 
             selectedMeet={selectedMeet}
             handleMeetChange={handleMeetChange}
           />
+          ) }
         </div>
         <div>
           <Calender
@@ -229,9 +249,11 @@ const CreateAccount: React.FC<counter> = ({
 
       <div className="center-createAccount-belowBtns">
         <div className="belowBtns-save">
-          <button onClick={save} className="belowBtns-saveBtn">
-            저장하기
-          </button>
+          {isLogin ? (          <button onClick={save} className="belowBtns-saveBtn">
+                      저장하기
+          </button> ) : (       <button onClick={save2} className="belowBtns-saveBtn">
+                      저장하기
+          </button> )}
         </div>
       </div>
     </div>
