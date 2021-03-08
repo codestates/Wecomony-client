@@ -48,7 +48,10 @@ const AccountDetail = () => {
               <div className="cateIcon">{backMeIcon(data.category)}</div>
             </>
           ) : (
-            <div className="Down-Detail"></div>
+            <>
+              <div className="Down-Detail"></div>
+              <div className="cateIcon">{backMeIcon(data.category)}</div>
+            </>
           )}
           <div className="left-Detail">
             <div className="category-Detail">{data.category}</div>
