@@ -16,7 +16,6 @@ const CalculationMonth = (content: Array<datas>) => {
     }
   }
   return total
-
 }
 
 export default CalculationMonth

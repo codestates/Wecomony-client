@@ -29,6 +29,7 @@ const AccountDetail = () => {
       return group.id === Number(params.id);
     }),
   );
+  
   const dateNow = useSelector(
     (state: RootState) => state.pageStatus?.detailDate,
   );
