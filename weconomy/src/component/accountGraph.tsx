@@ -6,7 +6,6 @@ import useMedia from '../customhooks/useMedia';
 import { grommet } from 'grommet/themes';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import LabelledChart from '../piececompo/LabelledChart';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/reducers';
 import { useParams } from 'react-router-dom';
@@ -14,6 +13,8 @@ import CalculationMonth from '../util/accountPage/CalculationMonth';
 import threeComma from '../util/threeComma';
 import CalculatorPercent from '../util/accountPage/CalculatorPercent';
 import CalculationWeek from '../util/accountPage/CalculationWeek';
+import styled, { keyframes } from 'styled-components';
+import { IoThunderstorm } from 'react-icons/io5';
 
 const useStyles = makeStyles({
   root: {
@@ -52,6 +53,23 @@ const AccountGraph = () => {
     console.log(newValue);
     setValue(newValue);
   };
+
+
+
+  const sortingIncome = () => {
+    const reFilter = filterContentMonth.filter((content: any) =>
+    content.upDown === "income")
+
+    const mapping = reFilter.map((content: any) => {
+      return content.cost
+    })
+  }
+
+  console.log(sortingIncome())
+
+
+
+
   return (
     <div className="left-Account-Container">
       <Paper className={classes.root}>
@@ -117,29 +135,131 @@ const AccountGraph = () => {
         </div>
       </div>
       {isMobile ? (
-        <div className="graphBottom">
-          <Grommet theme={grommet}>
-            <Box pad="large" direction="row" gap="large">
-              <LabelledChart label="식비" value={300000} />
-              <LabelledChart label="공과금" value={100000} />
-              <LabelledChart label="유흥비" value={70000} />
-            </Box>
-          </Grommet>
-        </div>
+        <GraphBottom>
+        <GraphBottomContainer>
+            <GraphBottomFirst>월급</GraphBottomFirst>
+        </GraphBottomContainer>
+        <GraphBottomContainer>
+        <GraphBottomSecond>식비</GraphBottomSecond>
+        </GraphBottomContainer>
+        <GraphBottomContainer>
+        <GraphBottomThird>미용</GraphBottomThird>
+        </GraphBottomContainer>
+        <GraphBottomContainer>
+        <GraphBottomFourth>비상금</GraphBottomFourth>
+        </GraphBottomContainer>
+        </GraphBottom>
       ) : (
-        <div className="graphBottom">
-          <Grommet theme={grommet}>
-            <Box pad="small" direction="row" gap="large" align="center">
-              <LabelledChart label="식비" value={300000} />
-              <LabelledChart label="공과금" value={100000} />
-              <LabelledChart label="유흥비" value={70000} />
-              <LabelledChart label="기타" value={30000} />
-            </Box>
-          </Grommet>
-        </div>
+        <GraphBottom>
+        <GraphBottomContainer>
+            <GraphBottomFirst>월급</GraphBottomFirst>
+        </GraphBottomContainer>
+        <GraphBottomContainer>
+        <GraphBottomSecond>식비</GraphBottomSecond>
+        </GraphBottomContainer>
+        <GraphBottomContainer>
+        <GraphBottomThird>미용</GraphBottomThird>
+        </GraphBottomContainer>
+        <GraphBottomContainer>
+        <GraphBottomFourth>비상금</GraphBottomFourth>
+        </GraphBottomContainer>
+        </GraphBottom>
       )}
     </div>
   );
 };
+
+const GraphBottom = styled.div`
+padding-left: 50px;
+padding-right: 50px;
+width: 100%;
+background-color: white;
+border-top: 2px solid gray;
+padding: 10px;
+height: 40%;
+box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+`
+
+const GraphBottomContainer = styled.div`
+  position: relative;
+  list-style: none;
+  margin: 6% 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  &:before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: #dfe6e9;
+    border-radius: 1000px;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 0;
+    height: 15px;
+    border-radius: 1000px;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    }
+`;
+
+const firstWidth = keyframes`
+to {
+  width: 90%;
+}
+`;
+
+const secondWidth = keyframes`
+to {
+  width: 70%;
+}
+`;
+
+const thirdWidth = keyframes`
+to {
+  width: 70%;
+}
+`;
+
+const fourthWidth = keyframes`
+to {
+  width: 40%;
+}
+`;
+
+const GraphBottomFirst = styled(GraphBottomContainer)`
+  &:after {
+    animation-name: ${firstWidth};
+    background-color: #778beb;
+  }
+`;
+
+const GraphBottomSecond = styled(GraphBottomContainer)`
+  &:after {
+    animation-name: ${secondWidth};
+    background-color: #e17055;
+  }
+`;
+
+const GraphBottomThird = styled(GraphBottomContainer)`
+  &:after {
+    animation-name: ${thirdWidth};
+    background-color: #fdcb6e;
+  }
+`;
+
+const GraphBottomFourth = styled(GraphBottomContainer)`
+  &:after {
+    animation-name: ${fourthWidth};
+    background-color: #74b9ff;
+  }
+`;
 
 export default AccountGraph;
