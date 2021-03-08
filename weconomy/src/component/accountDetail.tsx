@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/reducers';
 import { useParams } from 'react-router-dom';
+import { IoFastFoodOutline } from 'react-icons/io5';
+import backMeIcon from '../util/accountPage/backMeIcon';
 
 interface ParamsId {
   id: string;
@@ -16,6 +18,10 @@ interface datas {
 }
 
 const AccountDetail = () => {
+  let icons = {
+    식비: <IoFastFoodOutline></IoFastFoodOutline>,
+  };
+
   const params: ParamsId = useParams();
 
   const groupNow = useSelector((state: RootState) =>
@@ -32,75 +38,15 @@ const AccountDetail = () => {
       content?.dateTime === new Date(dateNow).toLocaleDateString(),
   );
 
-  const [fakedata, setFakeData] = useState<any>([
-    {
-      upDown: 'down',
-      category: '식비',
-      text: '송탄 갈비집',
-      count: 20000,
-    },
-    {
-      upDown: 'down',
-      category: '공과금',
-      text: '아파트 관리비',
-      count: 130000,
-    },
-    {
-      upDown: 'up',
-      category: '급여',
-      text: '보너스',
-      count: 500000,
-    },
-    {
-      upDown: 'down',
-      category: '기타',
-      text: '냉장고 구입',
-      count: 430000,
-    },
-    {
-      upDown: 'down',
-      category: '공과금',
-      text: '아파트 관리비',
-      count: 130000,
-    },
-    {
-      upDown: 'up',
-      category: '급여',
-      text: '보너스',
-      count: 500000,
-    },
-    {
-      upDown: 'down',
-      category: '기타',
-      text: '냉장고 구입',
-      count: 430000,
-    },
-    {
-      upDown: 'down',
-      category: '공과금',
-      text: '아파트 관리비',
-      count: 130000,
-    },
-    {
-      upDown: 'up',
-      category: '급여',
-      text: '보너스',
-      count: 500000,
-    },
-    {
-      upDown: 'down',
-      category: '기타',
-      text: '냉장고 구입',
-      count: 430000,
-    },
-  ]);
-
   return (
     <div className="details-container">
       {filterContent.map((data: datas) => (
         <div className="OneContent">
           {data.upDown === 'income' ? (
-            <div className="Up-Detail"></div>
+            <>
+              <div className="Up-Detail"></div>
+              <div className="cateIcon">{backMeIcon(data.category)}</div>
+            </>
           ) : (
             <div className="Down-Detail"></div>
           )}
