@@ -32,7 +32,7 @@ const SelectMeets: React.FC<selects> = ({ selectedMeet, handleMeetChange }) => {
         onChange={handleMeetChange}
         style={{ width: '150px', textAlign: 'center' }}
       >
-        <MenuItem value="">
+        <MenuItem value="선택해주세요">
           <em>선택해주세요</em>
         </MenuItem>
         {loop}

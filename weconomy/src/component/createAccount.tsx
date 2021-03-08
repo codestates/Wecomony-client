@@ -50,7 +50,7 @@ const CreateAccount: React.FC<counter> = ({
 
 
   const [income1, setIncome1] = useState<props>({
-    category: '월급',
+    category: '선택해주세요',
     cost: null,
     desc: null,
     upDown: 'income',
@@ -60,7 +60,7 @@ const CreateAccount: React.FC<counter> = ({
   });
 
   const [income2, setIncome2] = useState<props>({
-    category: '월급',
+    category: '선택해주세요',
     cost: null,
     desc: null,
     upDown: 'income',
@@ -70,7 +70,7 @@ const CreateAccount: React.FC<counter> = ({
   });
 
   const [outcome1, setOutcome1] = useState<props>({
-    category: '월급',
+    category: '선택해주세요',
     cost: null,
     desc: null,
     upDown: 'outcome',
@@ -80,7 +80,7 @@ const CreateAccount: React.FC<counter> = ({
   });
 
   const [outcome2, setOutcome2] = useState<props>({
-    category: '월급',
+    category: '선택해주세요',
     cost: null,
     desc: null,
     upDown: 'outcome',
@@ -91,7 +91,7 @@ const CreateAccount: React.FC<counter> = ({
 
   const [selectedDate, setSelectedDate] = React.useState<Date>(new Date());
 
-  const [selectedMeet, setSelectedMeet] = React.useState<string>('');
+  const [selectedMeet, setSelectedMeet] = React.useState<string>('선택해주세요');
 
   const handleMeetChange = (event: any) => {
     setSelectedMeet(event.target.value);
@@ -141,7 +141,8 @@ const CreateAccount: React.FC<counter> = ({
       outcome2,
       incomeCounter,
       outcomeCounter,
-      selectedMeet
+      selectedMeet,
+      selectedDate
     );
     if (valid.error !== 'none') {
       dispatch(createErrorModalOpen(valid.error));
@@ -160,25 +161,25 @@ const CreateAccount: React.FC<counter> = ({
       console.log(value);
       setIncome1({
         ...income1,
-        category: 10,
+        category: "선택해주세요",
         cost: null,
         desc: null,
       });
       setIncome2({
         ...income2,
-        category: 10,
+        category: "선택해주세요",
         cost: null,
         desc: null,
       });
       setOutcome1({
         ...outcome1,
-        category: 10,
+        category: "선택해주세요",
         cost: null,
         desc: null,
       });
       setOutcome2({
         ...outcome2,
-        category: 10,
+        category: "선택해주세요",
         cost: null,
         desc: null,
       });
@@ -252,7 +253,7 @@ const CreateAccount: React.FC<counter> = ({
           {isLogin ? (          <button onClick={save} className="belowBtns-saveBtn">
                       저장하기
           </button> ) : (       <button onClick={save2} className="belowBtns-saveBtn">
-                      저장하기
+                      저장하기 
           </button> )}
         </div>
       </div>
