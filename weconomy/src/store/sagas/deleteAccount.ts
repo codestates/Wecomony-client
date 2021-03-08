@@ -5,9 +5,9 @@ import getUserGroups from '../../graphQuery/getUserGroups';
 import deleteGroup from '../../graphQuery/deleteGroup';
 
 function* workerDeleteAccount(action: any) {
-  console.log('hello delete');
+  yield console.log('hello delete');
   let isDelete = false;
-  const getUserGroupsQuery = getUserGroups(action.data.userID);
+  const getUserGroupsQuery = getUserGroups(action.data.userId);
   const deleteGroupQuery = deleteGroup(action.data.meetId);
   let groupData: Array<object> = [];
   const body = {
@@ -20,13 +20,13 @@ function* workerDeleteAccount(action: any) {
       axios
         .post(
           'https://sench.projects1faker.com/graphql?query=' +
-            encodeURIComponent(deleteGroupQuery),
+            encodeURIComponent(deleteGroupQuery)
         )
         .then(() => {
           axios
             .post(
               'https://sench.projects1faker.com/graphql?query=' +
-                encodeURIComponent(getUserGroupsQuery),
+                encodeURIComponent(getUserGroupsQuery)
             )
             .then((res) => {
               if (res.data.data.userGet.length === 0) {
@@ -39,8 +39,9 @@ function* workerDeleteAccount(action: any) {
             });
         });
     });
-  yield delay(100);
+  yield delay(500);
   if (isDelete) {
+    console.log(groupData)
     yield put(getUserNowGroup(groupData));
   }
 }
