@@ -16,7 +16,8 @@ import {
   loadingWorkerStart,
   nowLoadingOff,
 } from '../store/actions/modalActions';
-
+import UpdateContentModal from '../component/updateContentModal';
+import { getUserDataAgain } from '../store/actions/userActions';
 interface ParamsId {
   id: string;
 }
@@ -34,9 +35,11 @@ const AccountPage: React.FC = () => {
       return group.id === Number(params.id);
     }),
   );
+  const userData = useSelector((state: RootState) => state.userStatus.userData);
 
   useEffect(() => {
     dispatch(loadingWorkerStart());
+    dispatch(getUserDataAgain(userData?.id));
   }, []);
 
   return (
@@ -48,6 +51,7 @@ const AccountPage: React.FC = () => {
         <>
           <AddMemberModal></AddMemberModal>
           <UpdateGroupModal></UpdateGroupModal>
+          <UpdateContentModal></UpdateContentModal>
           {!isLoading ? (
             <>
               {isMobile ? (

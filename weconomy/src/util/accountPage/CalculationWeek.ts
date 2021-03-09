@@ -18,7 +18,6 @@ const CalculationWeek = (content : Array<datas>) => {
     arr.push(d.toLocaleDateString())
   }
     for(let i = 0; i < content.length; i++){
-      console.log(content[i], arr)
       if(arr.includes(content[i].dateTime)){
         returnArr.push(content[i])
       }

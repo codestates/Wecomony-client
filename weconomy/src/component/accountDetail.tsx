@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/reducers';
 import { useParams } from 'react-router-dom';
 import { IoFastFoodOutline } from 'react-icons/io5';
 import backMeIcon from '../util/accountPage/backMeIcon';
-
+import { updateContentModalOpen } from '../store/actions/modalActions';
+import threeComma from '../util/threeComma';
 interface ParamsId {
   id: string;
 }
@@ -18,10 +19,7 @@ interface datas {
 }
 
 const AccountDetail = () => {
-  let icons = {
-    식비: <IoFastFoodOutline></IoFastFoodOutline>,
-  };
-
+  const dispatch = useDispatch();
   const params: ParamsId = useParams();
 
   const groupNow = useSelector((state: RootState) =>
@@ -39,28 +37,40 @@ const AccountDetail = () => {
       content?.dateTime === new Date(dateNow).toLocaleDateString(),
   );
 
+  const onClickContent = (id: number) => {
+    dispatch(updateContentModalOpen(id));
+  };
+
   return (
     <div className="details-container">
-      {filterContent.map((data: datas) => (
-        <div className="OneContent">
-          {data.upDown === 'income' ? (
-            <>
-              <div className="Up-Detail"></div>
-              <div className="cateIcon">{backMeIcon(data.category)}</div>
-            </>
-          ) : (
-            <>
-              <div className="Down-Detail"></div>
-              <div className="cateIcon">{backMeIcon(data.category)}</div>
-            </>
-          )}
-          <div className="left-Detail">
-            <div className="category-Detail">{data.category}</div>
-            <div className="text-Detail">{data.desc}</div>
-            <div className="count-Detail">{`${data.cost} 원`}</div>
-          </div>
+      {filterContent.length === 0 ? (
+        <div className="emptyContents">
+          <div>가계가 비었습니다</div>
         </div>
-      ))}
+      ) : (
+        filterContent.map((data: datas) => (
+          <div className="OneContent" onClick={() => onClickContent(data.id)}>
+            {data.upDown === 'income' ? (
+              <>
+                <div className="Up-Detail"></div>
+                <div className="cateIcon">{backMeIcon(data.category)}</div>
+              </>
+            ) : (
+              <>
+                <div className="Down-Detail"></div>
+                <div className="cateIcon">{backMeIcon(data.category)}</div>
+              </>
+            )}
+            <div className="left-Detail">
+              <div className="category-Detail">{data.category}</div>
+              <div className="text-Detail">{data.desc}</div>
+              <div className="count-Detail">{`${threeComma(
+                data.cost,
+              )} 원`}</div>
+            </div>
+          </div>
+        ))
+      )}
     </div>
   );
 };

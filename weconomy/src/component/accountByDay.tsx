@@ -12,6 +12,7 @@ import { RootState } from '../store/reducers';
 import { useParams } from 'react-router-dom';
 import { changeDetailDate } from '../store/actions/pageAction';
 import CalcullationDay from '../util/accountPage/CalculationDay';
+import threeComma from '../util/threeComma';
 
 interface ParamsId {
   id: string;
@@ -85,23 +86,20 @@ const AccountByDay = () => {
       <div className="bottom-details-Account">
         <div className="totalIncome">
           <span className="TextTotalDetails">총 수입 : </span>
-          <span className="NumberTotalDetails">{`${CalcullationDay(
-            'income',
-            filterContent,
+          <span className="NumberTotalDetails">{`${threeComma(
+            CalcullationDay('income', filterContent),
           )} 원`}</span>
         </div>
         <div className="totalOutcome">
           <span className="TextTotalDetails">총 지출 : </span>
-          <span className="NumberTotalDetails">{`${CalcullationDay(
-            'outcome',
-            filterContent,
+          <span className="NumberTotalDetails">{`${threeComma(
+            CalcullationDay('outcome', filterContent),
           )} 원`}</span>
         </div>
         <div className="totalDetails">
           <span className="TextTotalDetails">Total : </span>
-          <span className="NumberTotalDetails">{`${CalcullationDay(
-            'total',
-            filterContent,
+          <span className="NumberTotalDetails">{`${threeComma(
+            CalcullationDay('total', filterContent),
           )} 원`}</span>
         </div>
       </div>
