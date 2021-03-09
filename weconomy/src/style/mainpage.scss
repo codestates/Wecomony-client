@@ -41,7 +41,7 @@ $onepage : 100vh;
 @media (min-width: 770px){
  
 .section1 .MainTitle {
-  font-size: 48px;
+  font-size: 2.9vmax;
   line-height: 67px;
   margin: 30px 0px;
   z-index:2;
@@ -49,7 +49,7 @@ $onepage : 100vh;
   }
 .section1 .MainDesc {
   margin: 50px 0px;
-  font-size: 30px;
+  font-size: 1.8vmax;
   font-weight: 500;
   z-index:2;
   font-family: 'Noto Sans KR', sans-serif;
@@ -59,10 +59,14 @@ $onepage : 100vh;
   color: $maincolor;
 }
 
-
+.WeconomyPoint {
+  font-family: 'Fredoka One', cursive;
+  color: #1474F8;
+  font-size: 2.1vmax;
+}
 
 .section1 .caculator{
-  height: 65vmin;
+  height: 35vmax;
 }
 
 .mainTopBtn {
@@ -104,6 +108,7 @@ $onepage : 100vh;
     display: none;
   }
   .section1 .MainTitleLogo {
+    font-family: 'Fredoka One', cursive;
     color: $maincolor;
     font-weight: 900;
     margin-bottom: 50px;
@@ -120,5 +125,10 @@ $onepage : 100vh;
     font-size: 24px;
     font-weight: 500;
 
+    }
+    .WeconomyPoint {
+      font-family: 'Fredoka One', cursive;
+      color: #1474F8;
+      font-size: 3vmax;
     }
 }

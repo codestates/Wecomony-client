@@ -4,6 +4,7 @@ import AccountPage from '../src/pages/accountpage';
 import HelpDeskPage from '../src/pages/helpDeskPage';
 import CreateAccountPage from '../src/pages/createAccountPage';
 import SelectAccount from '../src/pages/selectAccount';
+import Calculator from '../src/piececompo/caculrator/App/App';
 import './style/mainpage.scss';
 import './style/mainnav.scss';
 import './style/LoginModal.scss';
@@ -23,6 +24,7 @@ import './style/createNewAccountModal.scss';
 import './style/AddMemberModal.scss';
 import './style/test.scss';
 import './style/UpdateGroupModal.scss';
+import './style/UpdateContentModal.scss';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
@@ -35,6 +37,8 @@ const App: React.FC = () => {
         <Route exact path="/selectaccount" render={() => <SelectAccount />} />
         <Route exact path="/accountpage/:id" render={() => <AccountPage />} />
         <Route exact path="/helpdesk" render={() => <HelpDeskPage />} />
+        <Route exact path="/test" render={() => <Calculator />} />
+
         <Route
           exact
           path="/createAccountPage"

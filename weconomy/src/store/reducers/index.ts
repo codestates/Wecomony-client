@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import userReducer from './userReducer'
 import modalReducer from './modalReducer'
+import pageReducer from './pageReducer'
 
 const rootReducer = combineReducers({
   userStatus : userReducer,
-  modalStatus : modalReducer
+  modalStatus : modalReducer,
+  pageStatus : pageReducer
 })
 
 

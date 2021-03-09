@@ -71,13 +71,13 @@ const MainPage: React.FC = () => {
             )}
             {isMobile ? (
               <span className="MainDesc">
-                Weconomy와 함께 편리한 <span className="textPoint">가계부</span>
-                를 작성해보세요!
+                <span className="WeconomyPoint"> Weconomy</span>와 함께 편리한{' '}
+                <span className="textPoint">가계부</span>를 작성해보세요!
               </span>
             ) : (
               <span className="MainDesc animate__animated animate__fadeInDown">
-                Weconomy와 함께 편리한 <span className="textPoint">가계부</span>
-                를 작성해보세요!
+                <span className="WeconomyPoint">Weconomy</span>와 함께 편리한{' '}
+                <span className="textPoint">가계부</span>를 작성해보세요!
               </span>
             )}
             {isMobile ? (

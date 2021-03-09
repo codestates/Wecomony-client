@@ -24,9 +24,11 @@ const AddMemberModal = () => {
   const dispatch = useDispatch();
   const params: ParamsId = useParams();
   const [email, setEmail] = useState<string>('');
+
   const isOpen = useSelector(
     (state: RootState) => state.modalStatus.addMemberModal,
   );
+
   const isErr = useSelector(
     (state: RootState) => state.modalStatus.addMemberErr,
   );
@@ -34,7 +36,7 @@ const AddMemberModal = () => {
   const groups = useSelector((state: RootState) =>
     state.userStatus.groups.filter((group: any) => {
       return group.id === Number(params.id);
-    }),
+    })
   );
 
   const userNow = useSelector((state: RootState) => state.userStatus.userData);
