@@ -118,9 +118,15 @@ const OutcomeOther: React.FC<props> = ({
               <MenuItem value="선택해주세요">
                 <div>선택해주세요</div>
               </MenuItem>
-              <MenuItem value={'월급'}>월급</MenuItem>
-              <MenuItem value={'잔돈'}>잔돈</MenuItem>
-              <MenuItem value={'비상금'}>비상금</MenuItem>
+              <MenuItem value={'교통'}>교통</MenuItem>
+            <MenuItem value={'통신'}>통신</MenuItem>
+            <MenuItem value={'식비'}>식비</MenuItem>
+            <MenuItem value={'세금'}>세금</MenuItem>
+            <MenuItem value={'경조사'}>경조사</MenuItem>
+            <MenuItem value={'여행'}>여행</MenuItem>
+            <MenuItem value={'쇼핑'}>쇼핑</MenuItem>
+            <MenuItem value={'취미'}>취미</MenuItem>
+            <MenuItem value={'기타'}>기타</MenuItem>
             </Select>
             <FormHelperText></FormHelperText>
           </div>

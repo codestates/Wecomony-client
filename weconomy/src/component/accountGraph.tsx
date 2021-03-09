@@ -78,9 +78,33 @@ const AccountGraph = () => {
     return arr;
   };
 
-  const asdf: any = test();
+  const asdf:any = test();
 
-  console.log(asdf[0][0], asdf[0][1]);
+  console.log(asdf);
+
+  const calculate = () => {
+    let cost = 0;
+    for (let i = 0; i < asdf.length; i++) {
+      cost += asdf[i][1]
+    }
+    return cost;
+  }
+
+  const total = calculate()
+
+  const getPercent = () => {
+    let arr:any = [];
+    for (let i = 0; i < asdf.length; i++) {
+      arr.push(Math.round(asdf[i][1] / total * 100))
+    }
+    return arr;
+  }
+
+  const percent = getPercent();
+
+  console.log(percent);
+
+
 
   return (
     <div className="left-Account-Container">
@@ -216,7 +240,7 @@ const GraphBottomContainer = styled.div`
     width: 0;
     height: 15px;
     border-radius: 1000px;
-    animation-duration: 0.7s;
+    animation-duration: 1.2s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
   }
@@ -224,13 +248,13 @@ const GraphBottomContainer = styled.div`
 
 const firstWidth = keyframes`
 to {
-  width: 90%;
+  width: 92%;
 }
 `;
 
 const secondWidth = keyframes`
 to {
-  width: 70%;
+  width: 8%;
 }
 `;
 
