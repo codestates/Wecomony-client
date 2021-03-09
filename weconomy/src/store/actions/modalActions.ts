@@ -1,4 +1,4 @@
-import { IS_LOGIN_MODAL_OPEN, LOGIN_MODAL_OPEN, LOGIN_MODAL_CLOSE, REQUEST_LOGIN_MODAL_OPEN, REQUEST_LOGIN_MODAL_CLOSE, ASK_NONE_SAVE_MODAL_OPEN, ASK_NONE_SAVE_MODAL_CLOSE, CREATE_ERROR_MODAL_OPEN, CREATE_ERROR_MODAL_CLOSE, CREATE_SUCCESS_MODAL_OPEN, CREATE_SUCCESS_MODAL_CLOSE, CREATE_NEW_ACCOUNT_MODAL_OPEN, CREATE_NEW_ACCOUNT_MODAL_CLOSE, NOW_LOADING_ON, NOW_LOADING_OFF, LOADING_WORKER_START, ADD_MEMBER_MODAL_OPEN, ADD_MEMBER_MODAL_CLOSE, ADD_MEMBER_ERR ,UPDATE_GROUP_MODAL_OPEN, UPDATE_GROUP_MODAL_CLOSE, CREATE_NEW_ACCOUNT_ERR, UPDATE_CONTENT_MODAL_OPEN, UPDATE_CONTENT_MODAL_CLOSE} from './constants'
+import { IS_LOGIN_MODAL_OPEN, LOGIN_MODAL_OPEN, LOGIN_MODAL_CLOSE, REQUEST_LOGIN_MODAL_OPEN, REQUEST_LOGIN_MODAL_CLOSE, ASK_NONE_SAVE_MODAL_OPEN, ASK_NONE_SAVE_MODAL_CLOSE, CREATE_ERROR_MODAL_OPEN, CREATE_ERROR_MODAL_CLOSE, CREATE_SUCCESS_MODAL_OPEN, CREATE_SUCCESS_MODAL_CLOSE, CREATE_NEW_ACCOUNT_MODAL_OPEN, CREATE_NEW_ACCOUNT_MODAL_CLOSE, NOW_LOADING_ON, NOW_LOADING_OFF, LOADING_WORKER_START, ADD_MEMBER_MODAL_OPEN, ADD_MEMBER_MODAL_CLOSE, ADD_MEMBER_ERR ,UPDATE_GROUP_MODAL_OPEN, UPDATE_GROUP_MODAL_CLOSE, CREATE_NEW_ACCOUNT_ERR, UPDATE_CONTENT_MODAL_OPEN, UPDATE_CONTENT_MODAL_CLOSE, SEND_EMAIL_MODAL_OPEN, SEND_EMAIL_MODAL_CLOSE} from './constants'
 
 export const isLoginModalOpen = () => {
   return { type : IS_LOGIN_MODAL_OPEN }
@@ -96,4 +96,12 @@ export const updateContentModalClose =() => {
   return { type : UPDATE_CONTENT_MODAL_CLOSE }
 }
 
-export type ModalAction = | ReturnType<typeof isLoginModalOpen> | ReturnType<typeof loginModalOpen> | ReturnType<typeof loginModalClose> | ReturnType<typeof requestLoginModalOpen> | ReturnType<typeof requestLoginModalClose> | ReturnType<typeof askNoneSaveModalOpen> | ReturnType<typeof askNoneSaveModalClose> | ReturnType<typeof createErrorModalOpen> | ReturnType<typeof createErrorModalClose> | ReturnType<typeof createSuccessModalOpen> | ReturnType<typeof createSuccessModalClose> | ReturnType<typeof createNewAccountModalOpen> | ReturnType<typeof createSuccessModalClose> | ReturnType<typeof nowLoadingOn> | ReturnType<typeof nowLoadingOff> | ReturnType<typeof loadingWorkerStart> | ReturnType<typeof addMemberModalOpen> | ReturnType<typeof addMemberModalClose> | ReturnType<typeof addMemberErr> | ReturnType<typeof updateGroupModalOpen> | ReturnType<typeof updateGroupModalClose> | ReturnType<typeof createNewAccountErr> | ReturnType<typeof updateContentModalOpen> | ReturnType<typeof updateContentModalOpen>
+export const sendEmailModalOpen = () => {
+  return { type : SEND_EMAIL_MODAL_OPEN }
+}
+
+export const sendEmailModalClose = () => {
+  return { type : SEND_EMAIL_MODAL_CLOSE }
+}
+
+export type ModalAction = | ReturnType<typeof isLoginModalOpen> | ReturnType<typeof loginModalOpen> | ReturnType<typeof loginModalClose> | ReturnType<typeof requestLoginModalOpen> | ReturnType<typeof requestLoginModalClose> | ReturnType<typeof askNoneSaveModalOpen> | ReturnType<typeof askNoneSaveModalClose> | ReturnType<typeof createErrorModalOpen> | ReturnType<typeof createErrorModalClose> | ReturnType<typeof createSuccessModalOpen> | ReturnType<typeof createSuccessModalClose> | ReturnType<typeof createNewAccountModalOpen> | ReturnType<typeof createSuccessModalClose> | ReturnType<typeof nowLoadingOn> | ReturnType<typeof nowLoadingOff> | ReturnType<typeof loadingWorkerStart> | ReturnType<typeof addMemberModalOpen> | ReturnType<typeof addMemberModalClose> | ReturnType<typeof addMemberErr> | ReturnType<typeof updateGroupModalOpen> | ReturnType<typeof updateGroupModalClose> | ReturnType<typeof createNewAccountErr> | ReturnType<typeof updateContentModalOpen> | ReturnType<typeof updateContentModalOpen> | ReturnType<typeof sendEmailModalOpen> | ReturnType<typeof sendEmailModalClose>
