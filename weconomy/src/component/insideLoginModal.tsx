@@ -53,7 +53,7 @@ const InsideLoginModal: React.FC = () => {
 
 
               <GoogleLogin
-                clientId="399514775050-h7tmq0plq0aflb74gde7066pt91j9epe.apps.googleusercontent.com"
+                clientId="399514775050-mvr6j5johs1o278gc70jjtdpmsa5kok1.apps.googleusercontent.com"
                 render={(renderProps) => (
                   <button
                     onClick={renderProps.onClick}
