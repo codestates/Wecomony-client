@@ -15,6 +15,7 @@ import CalculatorPercent from '../util/accountPage/CalculatorPercent';
 import CalculationWeek from '../util/accountPage/CalculationWeek';
 import styled, { keyframes } from 'styled-components';
 import { IoThunderstorm } from 'react-icons/io5';
+import { formatISO9075 } from 'date-fns/esm';
 
 const useStyles = makeStyles({
   root: {
@@ -45,27 +46,41 @@ const AccountGraph = () => {
       content?.dateTime.slice(5, 7) ===
       new Date().toLocaleDateString().slice(5, 7),
   );
-
+  /*
   useEffect(() => {
     console.log(CalculationWeek(groupNow[0].Contents));
   }, []);
-
+*/
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-    console.log(newValue);
     setValue(newValue);
   };
 
-  const sortingIncome = () => {
+  const test = () => {
     const reFilter = filterContentMonth.filter(
-      (content: any) => content.upDown === 'income',
+      (content: any) => content.upDown === 'outcome',
     );
 
-    const mapping = reFilter.map((content: any) => {
-      return content.cost;
+    let obj: any = {};
+    let arr: Array<object | string> = [];
+
+    for (let i = 0; i < reFilter.length; i++) {
+      if (!obj[reFilter[i].category]) {
+        obj[reFilter[i].category] = 0;
+      }
+      obj[reFilter[i].category] += reFilter[i].cost;
+    }
+    for (let key in obj) {
+      arr.push([key, obj[key]]);
+    }
+    arr.sort((a: any, b: any) => {
+      return b[1] - a[1];
     });
+    return arr;
   };
 
-  console.log(sortingIncome());
+  const asdf: any = test();
+
+  console.log(asdf[0][0], asdf[0][1]);
 
   return (
     <div className="left-Account-Container">
