@@ -25,6 +25,7 @@
     "apexcharts": "^3.25.0",
     "axios": "^0.21.1",
     "date-fns": "^2.18.0",
+    "emailjs-com": "^2.6.4",
     "eslint-config-react-app": "^6.0.0",
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",

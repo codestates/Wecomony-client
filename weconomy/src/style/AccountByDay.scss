@@ -28,17 +28,42 @@ $mainBackGroundColor : #EFEFEF;
   height: 15%;
   background-color: $maincolor;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 }
 
 .totalDetails {
   background-color: rgb(255, 255, 255);
-  width: 80%;
+  width: 30%;
   height: 50%;
   display: flex;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.totalIncome {
+  width: 30%;
+  height: 50%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.totalOutcome {
+  width: 30%;
+  height: 50%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
@@ -46,12 +71,13 @@ $mainBackGroundColor : #EFEFEF;
 
 .TextTotalDetails {
   color: $maincolor;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   border-radius: 5px;
+  font-weight: 600;
 }
 
 .NumberTotalDetails {
-  font-size: 1.8rem;
+  font-size: 1vmax;
   font-variant-numeric: tabular-nums;
 }
 

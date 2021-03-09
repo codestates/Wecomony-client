@@ -12,6 +12,14 @@ const getUserGroups = (id : number) => {
             email
             img
           }
+          Contents{
+            id
+            category
+            cost
+            desc
+            upDown
+            dateTime
+          }
      }
      }
     }`

@@ -16,7 +16,8 @@ import {
   loadingWorkerStart,
   nowLoadingOff,
 } from '../store/actions/modalActions';
-
+import UpdateContentModal from '../component/updateContentModal';
+import { getUserDataAgain } from '../store/actions/userActions';
 interface ParamsId {
   id: string;
 }
@@ -34,41 +35,49 @@ const AccountPage: React.FC = () => {
       return group.id === Number(params.id);
     }),
   );
+  const userData = useSelector((state: RootState) => state.userStatus.userData);
 
   useEffect(() => {
     dispatch(loadingWorkerStart());
+    dispatch(getUserDataAgain(userData?.id));
   }, []);
 
   return (
     <>
       <Nav></Nav>
-      {groupData.length === 0 ? <NotAMember></NotAMember> : null}
-      <AddMemberModal></AddMemberModal>
-      <UpdateGroupModal></UpdateGroupModal>
-      {!isLoading ? (
+      {groupData.length === 0 ? (
+        <NotAMember></NotAMember>
+      ) : (
         <>
-          {isMobile ? (
-            <div className="Account-container">
-              <div className="notice-Section"></div>
+          <AddMemberModal></AddMemberModal>
+          <UpdateGroupModal></UpdateGroupModal>
+          <UpdateContentModal></UpdateContentModal>
+          {!isLoading ? (
+            <>
+              {isMobile ? (
+                <div className="Account-container">
+                  <div className="notice-Section"></div>
 
-              <AccountGraph></AccountGraph>
-              <div className="Account-container2">
-                <AccountByDay></AccountByDay>
-              </div>
-            </div>
+                  <AccountGraph></AccountGraph>
+                  <div className="Account-container2">
+                    <AccountByDay></AccountByDay>
+                  </div>
+                </div>
+              ) : (
+                <div className="Account-container">
+                  <div className="notice-Section"></div>
+                  <div className="content-Section">
+                    <AccountGraph></AccountGraph>
+                    <AccountByDay></AccountByDay>
+                    <AccountSideBar></AccountSideBar>
+                  </div>
+                </div>
+              )}
+            </>
           ) : (
-            <div className="Account-container">
-              <div className="notice-Section"></div>
-              <div className="content-Section">
-                <AccountGraph></AccountGraph>
-                <AccountByDay></AccountByDay>
-                <AccountSideBar></AccountSideBar>
-              </div>
-            </div>
+            <NowLoading></NowLoading>
           )}
         </>
-      ) : (
-        <NowLoading></NowLoading>
       )}
     </>
   );

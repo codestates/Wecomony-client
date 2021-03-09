@@ -8,6 +8,7 @@ import createNewAccount from '../../graphQuery/createNewAccount'
 
 function* workerCreateAccount(action: any){
   let isCreate = false
+  yield console.log('createWorkerStart')
   const hasManyAccountQuery = hasManyAccount(action.data.id)
   const getUserGroupsQuery = getUserGroups(action.data.id)
   const createNewAccountQuery = createNewAccount(action.data.id, action.data.meetName, action.data.totalcost)
@@ -30,12 +31,15 @@ function* workerCreateAccount(action: any){
           encodeURIComponent(getUserGroupsQuery)).then((res) => {
             groupData = res.data.data.userGet[0].Meets
             isCreate = true
+            console.log('원')
           })
         })
       })
     }
   })
-  yield delay(100)
+  console.log('투')
+  yield delay(500)
+  console.log('쓰리')
   if(isCreate){
     yield put(getUserNowGroup(groupData))
   } 

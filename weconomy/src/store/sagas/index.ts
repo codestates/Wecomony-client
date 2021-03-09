@@ -6,7 +6,11 @@ import workerLoading from './loading'
 import workerAddMember from './addMember'
 import workerUpdateTotalCost from './updateTotalCost'
 import workerDeleteAccount from './deleteAccount'
-import { TRY_LOGIN, CREATE_NEW_ACCOUNT, LOADING_WORKER_START, ADD_MEMEBER_WORKER_START, CREATE_NEW_CONTENT, UPDATE_GROUP_TOTAL_COST, DELETE_ACCOUNT } from '../actions/constants'
+import workerUpdateContent from './updateContent'
+import workerDeleteContent from './deleteContent'
+import workerGetUserData from './getUserData'
+import workerSendEmail from './sendEmail'
+import { TRY_LOGIN, CREATE_NEW_ACCOUNT, LOADING_WORKER_START, ADD_MEMEBER_WORKER_START, CREATE_NEW_CONTENT, UPDATE_GROUP_TOTAL_COST, DELETE_ACCOUNT, UPDATE_CONTENT, DELETE_CONTENT, GET_USER_DATA_AGAIN, SEND_EMAIL } from '../actions/constants'
 
 function* rootSaga(){
   yield takeEvery(TRY_LOGIN, workerLogin)
@@ -16,6 +20,10 @@ function* rootSaga(){
   yield takeEvery(ADD_MEMEBER_WORKER_START, workerAddMember)
   yield takeEvery(UPDATE_GROUP_TOTAL_COST, workerUpdateTotalCost)
   yield takeEvery(DELETE_ACCOUNT, workerDeleteAccount)
+  yield takeEvery(UPDATE_CONTENT, workerUpdateContent)
+  yield takeEvery(DELETE_CONTENT, workerDeleteContent)
+  yield takeEvery(GET_USER_DATA_AGAIN, workerGetUserData)
+  yield takeEvery(SEND_EMAIL, workerSendEmail)
 }
 
 export default rootSaga;
