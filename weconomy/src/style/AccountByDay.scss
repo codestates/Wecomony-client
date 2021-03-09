@@ -12,7 +12,22 @@ $mainBackGroundColor : #EFEFEF;
 .datePicker-Account {
   width: 100%;
   padding-left: 170px;
-  padding-right: 170px;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.seeDetail {
+  height: 50%;
+  width: 130px;
+  margin-left: 70px;
+  font-size: 0.9rem;
+  border: 0;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0);
+  &:hover {
+    color: $maincolor;
+  }
 }
 
 .center-details-Account {

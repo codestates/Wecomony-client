@@ -13,6 +13,7 @@ import { useParams } from 'react-router-dom';
 import { changeDetailDate } from '../store/actions/pageAction';
 import CalcullationDay from '../util/accountPage/CalculationDay';
 import threeComma from '../util/threeComma';
+import { seeDetailModalOpen } from '../store/actions/modalActions';
 
 interface ParamsId {
   id: string;
@@ -32,6 +33,10 @@ const AccountByDay = () => {
   const [value, setValue] = useState<string>();
   const onChange = (event: any) => {
     setValue(event.value);
+  };
+
+  const toSeeDetailModal = () => {
+    dispatch(seeDetailModalOpen());
   };
 
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(
@@ -79,6 +84,9 @@ const AccountByDay = () => {
             />
           </Grid>
         </MuiPickersUtilsProvider>
+        <button onClick={toSeeDetailModal} className="seeDetail">
+          출력 및 저장
+        </button>
       </div>
       <div className="center-details-Account">
         <AccountDetail></AccountDetail>

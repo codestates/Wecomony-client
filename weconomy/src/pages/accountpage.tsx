@@ -18,6 +18,7 @@ import {
 } from '../store/actions/modalActions';
 import UpdateContentModal from '../component/updateContentModal';
 import OutOfAccountModal from '../component/outOfAccountModal';
+import SeeDetailModal from '../component/seeDetailModal';
 import { getUserDataAgain } from '../store/actions/userActions';
 interface ParamsId {
   id: string;
@@ -55,6 +56,7 @@ const AccountPage: React.FC = () => {
           <UpdateGroupModal></UpdateGroupModal>
           <UpdateContentModal></UpdateContentModal>
           <OutOfAccountModal></OutOfAccountModal>
+          <SeeDetailModal></SeeDetailModal>
           {!isLoading ? (
             <>
               {isMobile ? (

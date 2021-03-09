@@ -10233,6 +10233,13 @@ react-ticker@^1.2.2:
   resolved "https://registry.yarnpkg.com/react-ticker/-/react-ticker-1.2.2.tgz#12cda5ff8266c6fe90ffcd8c58e12ba1596ddf24"
   integrity sha512-PXUujoPJvajxwOfosuuujlrBUrjgGp4FB4haWFOI25ujhMppW4SuLkiOdQ9AylrWN3yTHWdk2kbQWe3n9SjFGA==
 
+react-to-print@^2.12.3:
+  version "2.12.3"
+  resolved "https://registry.yarnpkg.com/react-to-print/-/react-to-print-2.12.3.tgz#1468f2c7ee92c097a80da29150352cd72c8906f2"
+  integrity sha512-JpjPh2WDo2nraxgyt5p3kHMMZZDs52uDcgJJi7BbgmE/j3v1RcTtr3s3uvDk82WRjLWggDm1Ro2J9/L9qkH4cQ==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-transition-group@^4.0.0, react-transition-group@^4.4.0:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.1.tgz#63868f9325a38ea5ee9535d828327f85773345c9"
