@@ -11,6 +11,7 @@ body {
 }
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
+$mainBackGroundColor2 : rgb(243, 246, 251);
 $onepage : 100vh; 
 
 .mainContainer {
@@ -71,19 +72,23 @@ $onepage : 100vh;
 
 .mainTopBtn {
   cursor:pointer;
-  max-width: 307px;
+  max-width: 310px;
   height: 70px;
   background: $maincolor;
   margin-top: 60px;
   border-radius: 5px;
-  padding: 17px;
+  padding: 20px;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   color: white;
   outline: 0;
   border: none;
-  
+  &:hover {
+    background-color: #efefef00;
+    border: 2px $maincolor solid;
+    color: $maincolor;
+  }
 }
 
 .mainMobileBtn{

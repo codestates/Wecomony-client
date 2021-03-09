@@ -1,0 +1,39 @@
+$maincolor : #1474F8;
+$mainBackGroundColor : #EFEFEF;
+$mainLogofont : 'Fredoka One', cursive;
+
+.outOfAccountModalBottom {
+  display:  flex;
+  flex-direction: column;
+  height: 30%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.conFirmOutBtn {
+  width: 70%;
+  height: 40%;
+  background-color: rgb(255, 96, 96);
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.cancelOutBtn {
+  width: 70%;
+  height: 40%;
+  background-color: $maincolor;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.noticeOut {
+  color: red;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
