@@ -33,11 +33,11 @@ const SelectMeets: React.FC<selects> = ({ selectedMeet, handleMeetChange }) => {
         style={{ width: '150px', textAlign: 'center' }}
       >
         <MenuItem value="선택해주세요">
-          <em>선택해주세요</em>
+          <div>선택해주세요</div>
         </MenuItem>
         {loop}
       </Select>
-      <FormHelperText>그룹을 선택해주세요</FormHelperText>
+      <FormHelperText></FormHelperText>
     </>
   );
 };

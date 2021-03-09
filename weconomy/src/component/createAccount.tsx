@@ -209,7 +209,7 @@ const CreateAccount: React.FC<counter> = ({
             />
           )}
         </div>
-        <div>
+        <div className="calender">
           <Calender
             selectedDate={selectedDate}
             handleDateChange={handleDateChange}

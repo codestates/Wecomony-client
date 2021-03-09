@@ -21,7 +21,7 @@ interface props {
   onChange: any;
   onChange2: any;
 }
-
+//
 const IncomeOther: React.FC<props> = ({
   inCounter,
   incomeCounter,
@@ -48,14 +48,14 @@ const IncomeOther: React.FC<props> = ({
             style={{ width: '150px', textAlign: 'center' }}
           >
             <MenuItem value="선택해주세요">
-              <em>선택해주세요</em>
+              <div>선택해주세요</div>
             </MenuItem>
             <MenuItem value={'월급'}>월급</MenuItem>
             <MenuItem value={'잔돈'}>잔돈</MenuItem>
             <MenuItem value={'비상금'}>비상금</MenuItem>
             <MenuItem value={'기타'}>기타</MenuItem>
           </Select>
-          <FormHelperText>수입 항목을 골라주세요</FormHelperText>
+          <FormHelperText></FormHelperText>
         </div>
         <div className="income-cost">
           <TextField
@@ -111,13 +111,13 @@ const IncomeOther: React.FC<props> = ({
               style={{ width: '150px', textAlign: 'center' }}
             >
               <MenuItem value="선택해주세요">
-                <em>선택해주세요</em>
+                <div>선택해주세요</div>
               </MenuItem>
               <MenuItem value={'월급'}>월급</MenuItem>
               <MenuItem value={'잔돈'}>잔돈</MenuItem>
               <MenuItem value={'비상금'}>비상금</MenuItem>
             </Select>
-            <FormHelperText>수입 항목을 골라주세요</FormHelperText>
+            <FormHelperText></FormHelperText>
           </div>
           <div className="income-cost">
             <TextField
