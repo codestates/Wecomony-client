@@ -21,7 +21,7 @@ interface props {
   onChange: any;
   onChange2: any;
 }
-
+//
 const IncomeOther: React.FC<props> = ({
   inCounter,
   incomeCounter,

@@ -8,7 +8,7 @@ import { TextField } from '@material-ui/core';
 import { IconButton } from '@material-ui/core';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { FaTrashAlt } from 'react-icons/fa';
-
+//
 interface props {
   outcomeCounter: number;
   outCounter: any;
