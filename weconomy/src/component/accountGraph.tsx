@@ -19,6 +19,7 @@ import { IoThunderstorm } from 'react-icons/io5';
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    borderRadius: 0,
   },
 });
 interface ParamsId {
@@ -54,21 +55,17 @@ const AccountGraph = () => {
     setValue(newValue);
   };
 
-
-
   const sortingIncome = () => {
-    const reFilter = filterContentMonth.filter((content: any) =>
-    content.upDown === "income")
+    const reFilter = filterContentMonth.filter(
+      (content: any) => content.upDown === 'income',
+    );
 
     const mapping = reFilter.map((content: any) => {
-      return content.cost
-    })
-  }
+      return content.cost;
+    });
+  };
 
-  console.log(sortingIncome())
-
-
-
+  console.log(sortingIncome());
 
   return (
     <div className="left-Account-Container">
@@ -136,33 +133,33 @@ const AccountGraph = () => {
       </div>
       {isMobile ? (
         <GraphBottom>
-        <GraphBottomContainer>
+          <GraphBottomContainer>
             <GraphBottomFirst>월급</GraphBottomFirst>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomSecond>식비</GraphBottomSecond>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomThird>미용</GraphBottomThird>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomFourth>비상금</GraphBottomFourth>
-        </GraphBottomContainer>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomSecond>식비</GraphBottomSecond>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomThird>미용</GraphBottomThird>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomFourth>비상금</GraphBottomFourth>
+          </GraphBottomContainer>
         </GraphBottom>
       ) : (
         <GraphBottom>
-        <GraphBottomContainer>
+          <GraphBottomContainer>
             <GraphBottomFirst>월급</GraphBottomFirst>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomSecond>식비</GraphBottomSecond>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomThird>미용</GraphBottomThird>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomFourth>비상금</GraphBottomFourth>
-        </GraphBottomContainer>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomSecond>식비</GraphBottomSecond>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomThird>미용</GraphBottomThird>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomFourth>비상금</GraphBottomFourth>
+          </GraphBottomContainer>
         </GraphBottom>
       )}
     </div>
@@ -170,15 +167,15 @@ const AccountGraph = () => {
 };
 
 const GraphBottom = styled.div`
-padding-left: 50px;
-padding-right: 50px;
-width: 100%;
-background-color: white;
-border-top: 2px solid gray;
-padding: 10px;
-height: 40%;
-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-`
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+  background-color: white;
+  border-top: 2px solid gray;
+  padding: 10px;
+  height: 40%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+`;
 
 const GraphBottomContainer = styled.div`
   position: relative;
@@ -207,7 +204,7 @@ const GraphBottomContainer = styled.div`
     animation-duration: 0.7s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
-    }
+  }
 `;
 
 const firstWidth = keyframes`
