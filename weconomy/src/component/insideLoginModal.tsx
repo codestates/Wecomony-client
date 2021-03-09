@@ -53,7 +53,7 @@ const InsideLoginModal: React.FC = () => {
 
 
               <GoogleLogin
-                clientId=""
+                clientId="769245377355-4ou4rusndrotmb3tv60brm3thnk9b6qo.apps.googleusercontent.com"
                 render={(renderProps) => (
                   <button
                     onClick={renderProps.onClick}
@@ -61,7 +61,7 @@ const InsideLoginModal: React.FC = () => {
                     className="googlebtn"
                   >
               <FaGoogle className="logoLoginbtns" />
-              구글    로그인
+              구글 로그인
                   </button>
                 )}
                 buttonText="Login"

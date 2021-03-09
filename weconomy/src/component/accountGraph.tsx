@@ -15,6 +15,7 @@ import CalculatorPercent from '../util/accountPage/CalculatorPercent';
 import CalculationWeek from '../util/accountPage/CalculationWeek';
 import styled, { keyframes } from 'styled-components';
 import { IoThunderstorm } from 'react-icons/io5';
+import { formatISO9075 } from 'date-fns/esm';
 
 const useStyles = makeStyles({
   root: {
@@ -44,31 +45,41 @@ const AccountGraph = () => {
       content?.dateTime.slice(5, 7) ===
       new Date().toLocaleDateString().slice(5, 7),
   );
-
+  /*
   useEffect(() => {
     console.log(CalculationWeek(groupNow[0].Contents));
   }, []);
-
+*/
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-    console.log(newValue);
     setValue(newValue);
   };
 
+  const test = () => {
+    const reFilter = filterContentMonth.filter(
+      (content: any) => content.upDown === 'outcome',
+    );
 
+    let obj: any = {};
+    let arr: Array<object | string> = [];
 
-  const sortingIncome = () => {
-    const reFilter = filterContentMonth.filter((content: any) =>
-    content.upDown === "income")
+    for (let i = 0; i < reFilter.length; i++) {
+      if (!obj[reFilter[i].category]) {
+        obj[reFilter[i].category] = 0;
+      }
+      obj[reFilter[i].category] += reFilter[i].cost;
+    }
+    for (let key in obj) {
+      arr.push([key, obj[key]]);
+    }
+    arr.sort((a: any, b: any) => {
+      return b[1] - a[1];
+    });
+    return arr;
+  };
 
-    const mapping = reFilter.map((content: any) => {
-      return content.cost
-    })
-  }
+  const asdf: any = test();
 
-  console.log(sortingIncome())
-
-
-
+  console.log(asdf[0][0], asdf[0][1]);
 
   return (
     <div className="left-Account-Container">
@@ -136,33 +147,33 @@ const AccountGraph = () => {
       </div>
       {isMobile ? (
         <GraphBottom>
-        <GraphBottomContainer>
-            <GraphBottomFirst>월급</GraphBottomFirst>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomSecond>식비</GraphBottomSecond>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomThird>미용</GraphBottomThird>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomFourth>비상금</GraphBottomFourth>
-        </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomFirst>{asdf[0][0]}</GraphBottomFirst>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomSecond>{asdf[1][0]}</GraphBottomSecond>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomThird></GraphBottomThird>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomFourth></GraphBottomFourth>
+          </GraphBottomContainer>
         </GraphBottom>
       ) : (
         <GraphBottom>
-        <GraphBottomContainer>
-            <GraphBottomFirst>월급</GraphBottomFirst>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomSecond>식비</GraphBottomSecond>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomThird>미용</GraphBottomThird>
-        </GraphBottomContainer>
-        <GraphBottomContainer>
-        <GraphBottomFourth>비상금</GraphBottomFourth>
-        </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomFirst>{asdf[0][0]}</GraphBottomFirst>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomSecond>{asdf[1][0]}</GraphBottomSecond>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomThird></GraphBottomThird>
+          </GraphBottomContainer>
+          <GraphBottomContainer>
+            <GraphBottomFourth></GraphBottomFourth>
+          </GraphBottomContainer>
         </GraphBottom>
       )}
     </div>
@@ -170,15 +181,15 @@ const AccountGraph = () => {
 };
 
 const GraphBottom = styled.div`
-padding-left: 50px;
-padding-right: 50px;
-width: 100%;
-background-color: white;
-border-top: 2px solid gray;
-padding: 10px;
-height: 40%;
-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-`
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+  background-color: white;
+  border-top: 2px solid gray;
+  padding: 10px;
+  height: 40%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+`;
 
 const GraphBottomContainer = styled.div`
   position: relative;
@@ -207,7 +218,7 @@ const GraphBottomContainer = styled.div`
     animation-duration: 0.7s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
-    }
+  }
 `;
 
 const firstWidth = keyframes`
