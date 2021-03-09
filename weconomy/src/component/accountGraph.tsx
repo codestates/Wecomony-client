@@ -20,6 +20,7 @@ import { formatISO9075 } from 'date-fns/esm';
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    borderRadius: 0,
   },
 });
 interface ParamsId {
@@ -148,31 +149,31 @@ const AccountGraph = () => {
       {isMobile ? (
         <GraphBottom>
           <GraphBottomContainer>
-            <GraphBottomFirst>{asdf[0][0]}</GraphBottomFirst>
+            <GraphBottomFirst>월급</GraphBottomFirst>
           </GraphBottomContainer>
           <GraphBottomContainer>
-            <GraphBottomSecond>{asdf[1][0]}</GraphBottomSecond>
+            <GraphBottomSecond>식비</GraphBottomSecond>
           </GraphBottomContainer>
           <GraphBottomContainer>
-            <GraphBottomThird></GraphBottomThird>
+            <GraphBottomThird>미용</GraphBottomThird>
           </GraphBottomContainer>
           <GraphBottomContainer>
-            <GraphBottomFourth></GraphBottomFourth>
+            <GraphBottomFourth>비상금</GraphBottomFourth>
           </GraphBottomContainer>
         </GraphBottom>
       ) : (
         <GraphBottom>
           <GraphBottomContainer>
-            <GraphBottomFirst>{asdf[0][0]}</GraphBottomFirst>
+            <GraphBottomFirst>월급</GraphBottomFirst>
           </GraphBottomContainer>
           <GraphBottomContainer>
-            <GraphBottomSecond>{asdf[1][0]}</GraphBottomSecond>
+            <GraphBottomSecond>식비</GraphBottomSecond>
           </GraphBottomContainer>
           <GraphBottomContainer>
-            <GraphBottomThird></GraphBottomThird>
+            <GraphBottomThird>미용</GraphBottomThird>
           </GraphBottomContainer>
           <GraphBottomContainer>
-            <GraphBottomFourth></GraphBottomFourth>
+            <GraphBottomFourth>비상금</GraphBottomFourth>
           </GraphBottomContainer>
         </GraphBottom>
       )}

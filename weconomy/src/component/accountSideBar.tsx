@@ -7,6 +7,7 @@ import {
   addMemberModalOpen,
   addMemberErr,
   updateGroupModalOpen,
+  outOfAccountModalOpen,
 } from '../store/actions/modalActions';
 
 interface ParamsId {
@@ -23,6 +24,10 @@ const AccountSideBar = () => {
 
   const updateGroupClick = () => {
     dispatch(updateGroupModalOpen());
+  };
+
+  const outAccountClick = () => {
+    dispatch(outOfAccountModalOpen());
   };
 
   const members = useSelector((state: RootState) =>
@@ -84,7 +89,9 @@ const AccountSideBar = () => {
           </button>
         ) : null}
         {userNow?.id !== members[0].memberNumber ? (
-          <button className="accountBtns">그룹 탈퇴</button>
+          <button onClick={outAccountClick} className="accountBtns">
+            그룹 탈퇴
+          </button>
         ) : null}
       </div>
     </nav>

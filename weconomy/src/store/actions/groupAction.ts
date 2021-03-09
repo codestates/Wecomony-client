@@ -1,4 +1,4 @@
-import { ADD_MEMEBER_WORKER_START, UPDATE_GROUP_TOTAL_COST, DELETE_ACCOUNT } from './constants'
+import { ADD_MEMEBER_WORKER_START, UPDATE_GROUP_TOTAL_COST, DELETE_ACCOUNT, OUT_OF_ACCOUNT } from './constants'
 
 interface data {
   userId : number,
@@ -17,6 +17,11 @@ interface deleteAccountType {
   userId : number 
 }
 
+interface outOfAccountType {
+  meetId : number,
+  userId : number 
+}
+
 export const addMemberWorkerStart = (data : data) => {
   return { type : ADD_MEMEBER_WORKER_START, data}
 }
@@ -29,4 +34,8 @@ export const deleteAccount = (data : deleteAccountType) => {
   return { type : DELETE_ACCOUNT, data}
 }
 
-export type GroupAction = | ReturnType<typeof addMemberWorkerStart> | ReturnType<typeof updateGroupTotalcost> | ReturnType<typeof deleteAccount>
+export const outOfAccount = (data: outOfAccountType) => {
+  return { type : OUT_OF_ACCOUNT, data }
+}
+
+export type GroupAction = | ReturnType<typeof addMemberWorkerStart> | ReturnType<typeof updateGroupTotalcost> | ReturnType<typeof deleteAccount> | ReturnType<typeof outOfAccount>
