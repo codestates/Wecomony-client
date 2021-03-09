@@ -48,7 +48,6 @@ const CreateAccount: React.FC<counter> = ({
 
   const isLogin = useSelector((state: RootState) => state.userStatus.isLogin);
 
-
   const [income1, setIncome1] = useState<props>({
     category: '선택해주세요',
     cost: null,
@@ -91,7 +90,9 @@ const CreateAccount: React.FC<counter> = ({
 
   const [selectedDate, setSelectedDate] = React.useState<Date>(new Date());
 
-  const [selectedMeet, setSelectedMeet] = React.useState<string>('선택해주세요');
+  const [selectedMeet, setSelectedMeet] = React.useState<string>(
+    '선택해주세요',
+  );
 
   const handleMeetChange = (event: any) => {
     setSelectedMeet(event.target.value);
@@ -142,7 +143,7 @@ const CreateAccount: React.FC<counter> = ({
       incomeCounter,
       outcomeCounter,
       selectedMeet,
-      selectedDate
+      selectedDate,
     );
     if (valid.error !== 'none') {
       dispatch(createErrorModalOpen(valid.error));
@@ -161,50 +162,52 @@ const CreateAccount: React.FC<counter> = ({
       console.log(value);
       setIncome1({
         ...income1,
-        category: "선택해주세요",
+        category: '선택해주세요',
         cost: null,
         desc: null,
       });
       setIncome2({
         ...income2,
-        category: "선택해주세요",
+        category: '선택해주세요',
         cost: null,
         desc: null,
       });
       setOutcome1({
         ...outcome1,
-        category: "선택해주세요",
+        category: '선택해주세요',
         cost: null,
         desc: null,
       });
       setOutcome2({
         ...outcome2,
-        category: "선택해주세요",
+        category: '선택해주세요',
         cost: null,
         desc: null,
       });
     }
   };
 
-  const history = useHistory()
+  const history = useHistory();
 
   const save2 = () => {
-    dispatch(askNoneSaveModalOpen())
-  }
+    dispatch(askNoneSaveModalOpen());
+  };
 
   return (
     <div className="center-createAccount-container">
       <div className="center-createAccount-datePicker">
         <div>
-          {isLogin ? (<SelectMeets
-            selectedMeet={selectedMeet}
-            handleMeetChange={handleMeetChange}
-          />) : (
-            <NonMember 
-            selectedMeet={selectedMeet}
-            handleMeetChange={handleMeetChange}
-          />
-          ) }
+          {isLogin ? (
+            <SelectMeets
+              selectedMeet={selectedMeet}
+              handleMeetChange={handleMeetChange}
+            />
+          ) : (
+            <NonMember
+              selectedMeet={selectedMeet}
+              handleMeetChange={handleMeetChange}
+            />
+          )}
         </div>
         <div>
           <Calender
@@ -250,11 +253,15 @@ const CreateAccount: React.FC<counter> = ({
 
       <div className="center-createAccount-belowBtns">
         <div className="belowBtns-save">
-          {isLogin ? (          <button onClick={save} className="belowBtns-saveBtn">
-                      저장하기
-          </button> ) : (       <button onClick={save2} className="belowBtns-saveBtn">
-                      저장하기 
-          </button> )}
+          {isLogin ? (
+            <button onClick={save} className="belowBtns-saveBtn">
+              저장하기
+            </button>
+          ) : (
+            <button onClick={save2} className="belowBtns-saveBtn">
+              저장하기
+            </button>
+          )}
         </div>
       </div>
     </div>

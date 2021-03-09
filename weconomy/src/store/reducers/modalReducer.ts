@@ -1,4 +1,4 @@
-import { LOGIN_MODAL_OPEN, LOGIN_MODAL_CLOSE, REQUEST_LOGIN_MODAL_OPEN, REQUEST_LOGIN_MODAL_CLOSE, ASK_NONE_SAVE_MODAL_OPEN, ASK_NONE_SAVE_MODAL_CLOSE, CREATE_ERROR_MODAL_OPEN, CREATE_ERROR_MODAL_CLOSE, CREATE_SUCCESS_MODAL_OPEN, CREATE_SUCCESS_MODAL_CLOSE, CREATE_NEW_ACCOUNT_MODAL_OPEN, CREATE_NEW_ACCOUNT_MODAL_CLOSE, NOW_LOADING_ON, NOW_LOADING_OFF, ADD_MEMBER_MODAL_OPEN, ADD_MEMBER_MODAL_CLOSE, ADD_MEMBER_ERR, UPDATE_GROUP_MODAL_OPEN, UPDATE_GROUP_MODAL_CLOSE, CREATE_NEW_ACCOUNT_ERR } from '../actions/constants'
+import { LOGIN_MODAL_OPEN, LOGIN_MODAL_CLOSE, REQUEST_LOGIN_MODAL_OPEN, REQUEST_LOGIN_MODAL_CLOSE, ASK_NONE_SAVE_MODAL_OPEN, ASK_NONE_SAVE_MODAL_CLOSE, CREATE_ERROR_MODAL_OPEN, CREATE_ERROR_MODAL_CLOSE, CREATE_SUCCESS_MODAL_OPEN, CREATE_SUCCESS_MODAL_CLOSE, CREATE_NEW_ACCOUNT_MODAL_OPEN, CREATE_NEW_ACCOUNT_MODAL_CLOSE, NOW_LOADING_ON, NOW_LOADING_OFF, ADD_MEMBER_MODAL_OPEN, ADD_MEMBER_MODAL_CLOSE, ADD_MEMBER_ERR, UPDATE_GROUP_MODAL_OPEN, UPDATE_GROUP_MODAL_CLOSE, CREATE_NEW_ACCOUNT_ERR, UPDATE_CONTENT_MODAL_OPEN, UPDATE_CONTENT_MODAL_CLOSE } from '../actions/constants'
 import { ModalAction } from '../actions/modalActions'
 
 
@@ -14,7 +14,9 @@ const initialState = {
   nowLoading : false,
   addMemberModal : false,
   addMemberErr : null,
-  updateGroupModal : false
+  updateGroupModal : false,
+  updateContentModal : false,
+  updateContentId : null
 }
 
 const modalReducer = (state = initialState, action: any) => {
@@ -119,6 +121,18 @@ const modalReducer = (state = initialState, action: any) => {
       return {
         ...state,
         updateGroupModal : false
+      }
+    case UPDATE_CONTENT_MODAL_OPEN : 
+      return {
+        ...state,
+        updateContentModal : true,
+        updateContentId : action.id
+      }
+    case UPDATE_CONTENT_MODAL_CLOSE :
+      return {
+        ...state,
+        updateContentModal : false,
+        updateContentId : null
       }
   
       default:

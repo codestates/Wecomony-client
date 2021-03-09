@@ -16,7 +16,7 @@ function* workerDeleteAccount(action: any) {
 
   yield axios
     .post('https://sench.projects1faker.com/meetDel', body)
-    .then(() => {
+    .then((res) => {
       axios
         .post(
           'https://sench.projects1faker.com/graphql?query=' +
@@ -41,7 +41,6 @@ function* workerDeleteAccount(action: any) {
     });
   yield delay(500);
   if (isDelete) {
-    console.log(groupData)
     yield put(getUserNowGroup(groupData));
   }
 }

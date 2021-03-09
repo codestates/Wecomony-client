@@ -3,6 +3,7 @@ import { takeEvery, put, call, delay } from 'redux-saga/effects';
 import createNewContents from '../../graphQuery/createNewContent';
 import getUserGroups from '../../graphQuery/getUserGroups';
 import { getUserNowGroup } from '../actions/userActions';
+import { createSuccessModalClose } from '../actions/modalActions'
 
 function* workerCreateContent(action: any) {
   const getUserGroupsQuery = getUserGroups(action.value[0].userId);
@@ -35,6 +36,9 @@ function* workerCreateContent(action: any) {
     });
   yield delay(100);
   yield put(getUserNowGroup(groupData));
+
+  yield delay(2000)
+  yield put(createSuccessModalClose())
 }
 
 export default workerCreateContent;

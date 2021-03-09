@@ -61,7 +61,6 @@ function* workerAddMember(action: any) {
     if (err.length > 0) {
       yield put(addMemberErr(err));
     } else {
-      console.log('추가 성공!');
       yield put(getUserNowGroup(groupData));
       yield put(addMemberModalClose());
     }
