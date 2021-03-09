@@ -41,7 +41,7 @@ const AccountSideBar = () => {
     <nav className="account__sidebar">
       <div className="sidebar_Top">{members[0].meetName}</div>
       <div className="account__profile">
-        {members[0].Users.reverse().map((member: any) => (
+        {members[0].Users.map((member: any) => (
           <div className="SideBarOneMemberBox">
             {member.img !== 'undefined' ? (
               <>
@@ -50,7 +50,9 @@ const AccountSideBar = () => {
                     <CgCrown />
                   </div>
                 ) : (
-                  <div className="iconAdmin"></div>
+                  <div className="iconAdminNone">
+                    <CgCrown />
+                  </div>
                 )}
                 <img
                   className="SidBarMemberImg"

@@ -1,4 +1,4 @@
-import { takeEvery, put, call } from 'redux-saga/effects';
+import { takeEvery, put, call, delay } from 'redux-saga/effects';
 import { successLogin, saveUserData, getUserNowGroup } from '../actions/userActions';
 import { loginModalClose } from '../actions/modalActions';
 import axios from 'axios';
@@ -50,6 +50,7 @@ function* workerLogin(action: any) {
       groupData = res.data.data.userGet[0].Meets
     
     })
+    yield delay(500)
     yield put(getUserNowGroup(groupData)) 
     yield put(saveUserData(updateAction.data));
     yield put(successLogin());
