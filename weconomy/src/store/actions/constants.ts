@@ -4,7 +4,7 @@ export const TRY_LOGIN = 'TRY_LOGIN'
 
 export const SIGN_UP_USER = 'SIGN_UP_USER'
 export const LOG_OUT_USER = 'LOG_OUT_USER'
-
+export const SIGN_OUT_USER = 'SIGN_OUT_USER'
 export const SAVE_USER_DATA = 'SAVE_USER_DATA'
 
 export const IS_LOGIN_MODAL_OPEN = 'IS_LOGIN_MODAL_OPEN'
