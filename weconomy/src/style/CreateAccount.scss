@@ -33,6 +33,12 @@ $onepage : 100vh;
     justify-content: space-around;
 }
 
+.calender {
+    display:flex;
+    position:relative;
+    top:-15%;
+}
+
 .center-createAccount-select {
     display:flex;
     flex-grow:5;

@@ -22,11 +22,11 @@ const NonMeber: React.FC<selects> = ({ selectedMeet, handleMeetChange }) => {
           onChange={handleMeetChange}
           style={{ width: '150px', textAlign: 'center' }}
         >
-          <MenuItem value="">
-            <em>선택해주세요</em>
+          <MenuItem value="선택해주세요">
+            <div>선택 해주세요</div>
           </MenuItem>
         </Select>
-        <FormHelperText>그룹을 선택해주세요</FormHelperText>
+        <FormHelperText></FormHelperText>
         </>
     )
 }
