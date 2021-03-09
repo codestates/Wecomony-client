@@ -89,12 +89,13 @@ $onepage : 100vh;
   display: flex;
   flex-direction: column;
   height: 190px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .SelectAccountMemberName {
-  font-size: 14px;
+  font-size: 12px;
+  width: 70%;
 }
 
 .SelectAccountMemberImg {
@@ -125,7 +126,7 @@ $onepage : 100vh;
 .SelectOneMemberBox {
   margin-top: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
