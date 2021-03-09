@@ -48,6 +48,7 @@ const UpdateContentModal = () => {
 
   const closeModal = () => {
     dispatch(updateContentModalClose());
+    setErr('');
   };
 
   const postUpdate = () => {
@@ -110,15 +111,26 @@ const UpdateContentModal = () => {
                     value={cost}
                     placeholder={threeComma(contentNow[0].cost)}
                   ></input>
-                  {err ? <div className="errMessage">{err}</div> : null}
+                  {err ? (
+                    <div className="errMessage">{err}</div>
+                  ) : (
+                    <div className="errMessage"></div>
+                  )}
                 </div>
                 <div className="UpdateContentModalBottom">
-                  <button onClick={postUpdate} className="updateContentBtn">
-                    수정
-                  </button>
-                  <button onClick={postDelete} className="deleteContentBtn">
-                    삭제
-                  </button>
+                  <div className="UCBtnTop">
+                    <button onClick={postUpdate} className="updateContentBtn">
+                      수정
+                    </button>
+                    <button onClick={postDelete} className="deleteContentBtn">
+                      삭제
+                    </button>
+                  </div>
+                  <div className="UCBtnBottom">
+                    <button onClick={closeModal} className="UCcancelButton">
+                      취소
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -7,6 +7,7 @@ import {
   addMemberModalOpen,
   addMemberErr,
   updateGroupModalOpen,
+  outOfAccountModalOpen,
 } from '../store/actions/modalActions';
 
 interface ParamsId {
@@ -25,6 +26,10 @@ const AccountSideBar = () => {
     dispatch(updateGroupModalOpen());
   };
 
+  const outAccountClick = () => {
+    dispatch(outOfAccountModalOpen());
+  };
+
   const members = useSelector((state: RootState) =>
     state.userStatus.groups.filter((group: any) => {
       return group.id === Number(params.id);
@@ -36,7 +41,7 @@ const AccountSideBar = () => {
     <nav className="account__sidebar">
       <div className="sidebar_Top">{members[0].meetName}</div>
       <div className="account__profile">
-        {members[0].Users.reverse().map((member: any) => (
+        {members[0].Users.map((member: any) => (
           <div className="SideBarOneMemberBox">
             {member.img !== 'undefined' ? (
               <>
@@ -45,7 +50,9 @@ const AccountSideBar = () => {
                     <CgCrown />
                   </div>
                 ) : (
-                  <div className="iconAdmin"></div>
+                  <div className="iconAdminNone">
+                    <CgCrown />
+                  </div>
                 )}
                 <img
                   className="SidBarMemberImg"
@@ -84,7 +91,9 @@ const AccountSideBar = () => {
           </button>
         ) : null}
         {userNow?.id !== members[0].memberNumber ? (
-          <button className="accountBtns">그룹 탈퇴</button>
+          <button onClick={outAccountClick} className="accountBtns">
+            그룹 탈퇴
+          </button>
         ) : null}
       </div>
     </nav>

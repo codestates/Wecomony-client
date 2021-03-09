@@ -9,6 +9,7 @@ $onepage : 100vh;
 
   background-color: $mainBackGroundColor;
   background-image: url("https://groobee.net/wp-content/uploads/2020/12/main1_low.png");
+  background-repeat: no-repeat;
 }
 
 .Account-container2 {
@@ -41,5 +42,8 @@ $onepage : 100vh;
     flex-direction: column;
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .Account-container {
+    background-image: none;
   }
 }

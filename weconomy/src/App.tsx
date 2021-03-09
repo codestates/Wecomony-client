@@ -25,6 +25,7 @@ import './style/AddMemberModal.scss';
 import './style/test.scss';
 import './style/UpdateGroupModal.scss';
 import './style/UpdateContentModal.scss';
+import './style/OutOfAccountModal.scss';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 

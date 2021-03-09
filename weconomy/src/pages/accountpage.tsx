@@ -17,6 +17,7 @@ import {
   nowLoadingOff,
 } from '../store/actions/modalActions';
 import UpdateContentModal from '../component/updateContentModal';
+import OutOfAccountModal from '../component/outOfAccountModal';
 import { getUserDataAgain } from '../store/actions/userActions';
 interface ParamsId {
   id: string;
@@ -40,6 +41,7 @@ const AccountPage: React.FC = () => {
   useEffect(() => {
     dispatch(loadingWorkerStart());
     dispatch(getUserDataAgain(userData?.id));
+    console.log(groupData, 'asdasd');
   }, []);
 
   return (
@@ -52,6 +54,7 @@ const AccountPage: React.FC = () => {
           <AddMemberModal></AddMemberModal>
           <UpdateGroupModal></UpdateGroupModal>
           <UpdateContentModal></UpdateContentModal>
+          <OutOfAccountModal></OutOfAccountModal>
           {!isLoading ? (
             <>
               {isMobile ? (
