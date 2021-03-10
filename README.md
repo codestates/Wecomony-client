@@ -1,9 +1,13 @@
 # About Us
-
+***
 ## Info
- ![Weconomy소개 GIF](https://ifh.cc/g/I89VLh.gif)  
+ ![Weconomy소개 GIF](https://ifh.cc/g/eCHW1s.gif)  
+***
 
 ## Tech
- ![Stack GIF](https://ifh.cc/g/KWdym0.gif)  
+ ![Stack GIF](https://ifh.cc/g/f5arB2.gif)  
+***
 
-## We are SenchBro
+## We are SenchBro!
+ ![Member](https://ifh.cc/g/zHbmz5.gif)
+ ***
