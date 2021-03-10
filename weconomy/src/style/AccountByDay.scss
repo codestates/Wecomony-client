@@ -55,7 +55,7 @@ $maincolor2 : #EDA28F;
 }
 
 .totalDetails {
-  width: 60%;
+  width: 70%;
   height: 100%;
   display: flex;
   padding-left: 50px;
@@ -67,7 +67,7 @@ $maincolor2 : #EDA28F;
 }
 
 .totalIncome {
-  width: 60%;
+  width: 70%;
   height: 40%;
   display: flex;
   padding-left: 50px;
@@ -79,7 +79,7 @@ $maincolor2 : #EDA28F;
 }
 
 .totalOutcome {
-  width: 60%;
+  width: 70%;
   height: 40%;
   display: flex;
   padding-left: 50px;
@@ -92,13 +92,13 @@ $maincolor2 : #EDA28F;
 
 .TextTotalDetails {
   color: black;
-  font-size: 35px;
+  font-size: 2vmax;
   border-radius: 5px;
   font-family: 'Jua', sans-serif;
 }
 
 .NumberTotalDetails {
-  font-size: 30px;
+  font-size: 2vmax;
   font-family: 'Jua', sans-serif;
   color: black;
 }
@@ -106,19 +106,19 @@ $maincolor2 : #EDA28F;
 .TextTotalInDetails {
   color: rgb(153, 153, 153);
   font-family: 'Jua', sans-serif;
-  font-size: 28px;
+  font-size: 1.5vmax;
 }
 
 .TextTotalOutDetails {
   color: rgb(153, 153, 153);
   font-family: 'Jua', sans-serif;
-  font-size: 28px;
+  font-size: 1.5vmax;
 }
 
 .NumberTotalInOutDetails {
   color: rgb(153, 153, 153);
   font-family: 'Jua', sans-serif;
-  font-size: 24px;
+  font-size: 1.5vmax;
 }
 
 @media (max-width: 769px){ 

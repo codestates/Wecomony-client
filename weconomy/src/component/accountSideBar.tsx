@@ -53,7 +53,7 @@ const AccountSideBar = () => {
                 <>
                   {members[0].memberNumber === member.id ? (
                     <div className="iconAdmin">
-                      <CgCrown />
+                      <div className="adminBlock"></div>
                     </div>
                   ) : (
                     <div className="iconAdminNone">

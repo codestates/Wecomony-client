@@ -11,7 +11,7 @@
   position: relative;
   display: flex;
   width: 100%;
-  height: 50px;
+  height: 3vmax;
   background-color: white;
   border-radius: 5px;
   justify-content: space-between;
@@ -49,18 +49,19 @@
 }
 
 .category-Detail {
-  font-size: 1.2rem;
+  font-size: 1vmax;
   width: 30%;
   font-family: 'Jua', sans-serif;
 }
 
 .text-Detail {
+  font-size: 1vmax;
   width: 30%;
   font-family: 'Jua', sans-serif;
 }
 
 .count-Detail {
-  font-size: 1.1rem;
+  font-size: 1vmax;
   font-family: 'Jua', sans-serif;
   width: 30%;
   text-align: end;
@@ -74,7 +75,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.4vmax;
 }
 
 .emptyContents {
