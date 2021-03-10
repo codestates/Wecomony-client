@@ -5,7 +5,7 @@
 ***
 
 ## Tech
- ![Stack GIF](https://ifh.cc/v/P1D4hK.mp4)  
+ ![Stack GIF](https://ifh.cc/g/kVdN0U.gif)  
 ***
 
 ## We are SenchBro!
