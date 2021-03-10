@@ -11,8 +11,10 @@ import { logoutUser, signOutUser } from '../store/actions/userActions';
 const MobileSidebar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const isLogin = useSelector((state: RootState) => state.userStatus.isLogin);
-  const userData = useSelector((state: RootState) => state.userStatus.userData);
+  const isLogin = useSelector((state: RootState) => state.userStatus?.isLogin);
+  const userData = useSelector(
+    (state: RootState) => state.userStatus?.userData,
+  );
   const userImage = useSelector(
     (state: RootState) => state.userStatus.userData?.thumbnail,
   );

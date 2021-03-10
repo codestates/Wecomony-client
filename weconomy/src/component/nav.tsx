@@ -20,8 +20,10 @@ const Nav: React.FC = () => {
   const openLoginModal = () => {
     dispatch(loginModalOpen());
   };
-  const isLogin = useSelector((state: RootState) => state.userStatus.isLogin);
-  const userData = useSelector((state: RootState) => state.userStatus.userData);
+  const isLogin = useSelector((state: RootState) => state.userStatus?.isLogin);
+  const userData = useSelector(
+    (state: RootState) => state.userStatus?.userData,
+  );
   const toAccountPage = () => {
     if (isLogin) {
       history.push('/selectaccount');

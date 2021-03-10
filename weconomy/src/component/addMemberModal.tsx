@@ -34,7 +34,7 @@ const AddMemberModal = () => {
   );
 
   const groups = useSelector((state: RootState) =>
-    state.userStatus.groups.filter((group: any) => {
+    state.userStatus.groups?.filter((group: any) => {
       return group.id === Number(params.id);
     }),
   );

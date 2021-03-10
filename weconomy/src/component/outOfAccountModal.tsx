@@ -17,7 +17,7 @@ const OutOfAccountModal: React.FC = () => {
   const params: ParamsId = useParams();
   const isOpen = useSelector(
     // createSuccessModal 의 상태를 불러옴
-    (state: RootState) => state.modalStatus.outOfAccountModal,
+    (state: RootState) => state.modalStatus?.outOfAccountModal,
   );
 
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const OutOfAccountModal: React.FC = () => {
     dispatch(outOfAccountModalClose());
   };
 
-  const userNow = useSelector((state: RootState) => state.userStatus.userData);
+  const userNow = useSelector((state: RootState) => state.userStatus?.userData);
 
   const confirmOut = () => {
     let data = {

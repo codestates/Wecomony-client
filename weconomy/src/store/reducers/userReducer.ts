@@ -78,7 +78,10 @@ const userReducer = (state: Props = initialState, action: any) => {
         userData : {
           ...state.userData,
           id : action.data.id,
-          thumbnail : action.data.imageUrl,
+          access_token : action.data.response.access_token,
+          refresh_token : action.data.response.refresh_token,
+          nickname : action.data.profile.properties.nickname,
+          thumbnail : action.data.profile.properties.thumbnail_image,
           email :  action.data.email
         }
       }
