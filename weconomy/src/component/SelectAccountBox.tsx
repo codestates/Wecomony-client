@@ -20,7 +20,7 @@ const SelectAccountBox = () => {
   const userImage = useSelector(
     (state: RootState) => state.userStatus.userData?.thumbnail,
   );
-  const Allgroups = useSelector((state: RootState) => state.userStatus.groups);
+  const Allgroups = useSelector((state: RootState) => state.userStatus?.groups);
   const createNewAccount = () => {
     dispatch(createNewAccountModalOpen());
   };

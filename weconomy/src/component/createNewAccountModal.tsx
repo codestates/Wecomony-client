@@ -30,7 +30,7 @@ const CreateNewAccountModal = () => {
     (state: RootState) => state.modalStatus.createNewAccountModal,
   );
 
-  const userNow = useSelector((state: RootState) => state.userStatus.userData);
+  const userNow = useSelector((state: RootState) => state.userStatus?.userData);
 
   const onclickCreate = () => {
     if (accountName.length === 0 || cost.length === 0) {

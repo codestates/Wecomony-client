@@ -27,14 +27,14 @@ const UpdateContentModal = () => {
     setCost(e.target.value);
   };
 
-  const userNow = useSelector((state: RootState) => state.userStatus.userData);
+  const userNow = useSelector((state: RootState) => state.userStatus?.userData);
 
   const isOpen = useSelector(
-    (state: RootState) => state.modalStatus.updateContentModal,
+    (state: RootState) => state.modalStatus?.updateContentModal,
   );
 
   const contentId = useSelector(
-    (state: RootState) => state.modalStatus.updateContentId,
+    (state: RootState) => state.modalStatus?.updateContentId,
   );
 
   const groups = useSelector((state: RootState) =>

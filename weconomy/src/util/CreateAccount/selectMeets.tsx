@@ -12,15 +12,12 @@ interface selects {
 }
 
 const SelectMeets: React.FC<selects> = ({ selectedMeet, handleMeetChange }) => {
+  const userNow = useSelector((state: RootState) => state.userStatus?.groups);
 
-  const userNow = useSelector((state: RootState) => state.userStatus.groups);
+  const loop = userNow.map((res: any) => {
+    return <MenuItem value={`${res.id}`}>{`${res.meetName}`}</MenuItem>;
+  });
 
-  const loop = userNow.map((res:any) => {
-    return (
-        <MenuItem value={`${res.id}`}>{`${res.meetName}`}</MenuItem>
-    )
-  })
-  
   return (
     <>
       <InputLabel id="demo-simple-select-helper-label">그룹 목록</InputLabel>

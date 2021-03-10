@@ -43,7 +43,7 @@ const CreateAccount: React.FC<counter> = ({
 
   const dispatch = useDispatch();
   const userId = useSelector(
-    (state: RootState) => state.userStatus.userData?.id,
+    (state: RootState) => state.userStatus?.userData?.id,
   );
 
   const isLogin = useSelector((state: RootState) => state.userStatus.isLogin);
