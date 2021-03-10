@@ -1,5 +1,9 @@
-# Wecomony-client
+# About Us
 
-![Weconomy소개 GIF](https://ifh.cc/g/I89VLh.gif)
+## Info
+ ![Weconomy소개 GIF](https://ifh.cc/g/I89VLh.gif)  
 
-![Stack GIF](https://ifh.cc/g/KWdym0.gif)
+## Tech
+ ![Stack GIF](https://ifh.cc/g/KWdym0.gif)  
+
+## We are SenchBro
