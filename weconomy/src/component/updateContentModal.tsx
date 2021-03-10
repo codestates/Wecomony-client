@@ -65,6 +65,8 @@ const UpdateContentModal = () => {
         desc: desc,
         cost: cost,
       };
+      setDesc('');
+      setCost('');
       dispatch(updateContent(data));
     }
   };
@@ -74,6 +76,8 @@ const UpdateContentModal = () => {
       userId: userNow?.id,
       contentId: contentId,
     };
+    setDesc('');
+    setCost('');
     dispatch(deleteContent(data));
   };
 

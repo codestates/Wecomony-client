@@ -32,8 +32,8 @@ const StyleScreen = styled.div`
 `;
 
 const StyledDisplay = styled.div`
-  background-color: #393939;
-  color: #fff;
+  background-color: #f7f7f7;
+  color: black;
   padding: 1.5em 1em;
 `;
 

@@ -123,6 +123,7 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   flex-direction: column;
   align-items: center;
   width:100%;
+  height: 20%;
 }
 .sidebar__profile {
   display:none;
@@ -181,6 +182,22 @@ $koreanFont : 'Noto Sans KR', sans-serif;
 .showDropDown {
   display: block;
 }
+
+.mobileSidbarLoginBtn {
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border: 0;
+  outline: 0;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.userProfileSideBar {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
 @media screen and (max-width: 768px) {
   .sidebar {
     display: none;
@@ -201,17 +218,20 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   }
 
   .sidebar.active {
-    display:block;
+    display:flex;
+    flex-direction: column;
     position: fixed;
     align-items: center;
     transform: translateX(0px);
     transition: all 0.3s ease-in-out 0s;
-    background-color: #dcdde1;
+    background-color: $maincolor;
     z-index:1;
   }
   
   .sidebar__profile.active {
     display:flex;
+    width: 100%;
+    justify-content: center;
   }
 
   .sidebar__image {
@@ -219,6 +239,7 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   }
 
   .sidebar__menu.active {
+    color: white;
     display:flex;
     font-size: 1.5rem;
     transform: translateX(0px);

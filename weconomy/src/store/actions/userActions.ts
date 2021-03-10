@@ -1,4 +1,4 @@
-import { IS_LOGIN, SUCCESS_LOGIN, TRY_LOGIN, SAVE_USER_DATA, SIGN_UP_USER, LOG_OUT_USER, GET_USERNOW_GROUP, GET_USER_DATA_AGAIN } from './constants'
+import { IS_LOGIN, SUCCESS_LOGIN, TRY_LOGIN, SAVE_USER_DATA, SIGN_UP_USER, LOG_OUT_USER, GET_USERNOW_GROUP, GET_USER_DATA_AGAIN ,SIGN_OUT_USER } from './constants'
 
 
 export const isLogin = () => {
@@ -33,5 +33,9 @@ export const getUserDataAgain = (userId : number) => {
   return { type : GET_USER_DATA_AGAIN, userId}
 }
 
+export const signOutUser = (userId : number) => {
+  return { type : SIGN_OUT_USER, userId }
+}
 
-export type UserAction = | ReturnType<typeof isLogin> | ReturnType<typeof successLogin> | ReturnType<typeof tryLogin> | ReturnType<typeof saveUserData> | ReturnType<typeof logoutUser> | ReturnType<typeof getUserNowGroup> | ReturnType<typeof getUserDataAgain>
+
+export type UserAction = | ReturnType<typeof isLogin> | ReturnType<typeof successLogin> | ReturnType<typeof tryLogin> | ReturnType<typeof saveUserData> | ReturnType<typeof logoutUser> | ReturnType<typeof getUserNowGroup> | ReturnType<typeof getUserDataAgain> | ReturnType<typeof signOutUser>

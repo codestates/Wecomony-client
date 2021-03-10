@@ -32,23 +32,22 @@ const colorToCss = (color: ButtonProps['color']) => {
       `;
     case 'dark':
       return css`
-        background-color: #272727;
+        background-color: #fff;
         color: #c5830d;
-
         &:hover,
         &:focus {
-          background-color: #1a1a1a;
+          background-color: #ddd8d8;
         }
       `;
   }
 
   return css`
-    background-color: #2e2e2e;
-    color: #fff;
+    background-color: #fff;
+    color: #1574f8;
 
     &:hover,
     &:focus {
-      background-color: #212121;
+      background-color: #ddd8d8;
     }
   `;
 };

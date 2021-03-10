@@ -6,7 +6,6 @@ $mainBackGroundColor : #EFEFEF;
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-right: 2px gray solid;
 }
 
 .graphTop{
@@ -20,12 +19,11 @@ $mainBackGroundColor : #EFEFEF;
 }
 
 .totalGraph {
-  padding: 20px;
-  border-left: solid 3px black;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   color: rgba(0, 0, 0, 0.815);
+  font-size: 19px;
 }
 
 .graphBottom {
@@ -33,6 +31,7 @@ $mainBackGroundColor : #EFEFEF;
   background-color: white;
   border-top: 2px solid gray;
   padding: 3%;
+
   height: 40%;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
@@ -77,5 +76,10 @@ $mainBackGroundColor : #EFEFEF;
     width: 100%;
     margin-bottom: 20px;
     height: 90vh;
+  }
+
+  .totalGraph {
+    padding: 2px;
+    font-size: 12px;
   }
 }

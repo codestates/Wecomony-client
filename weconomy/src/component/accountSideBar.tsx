@@ -3,12 +3,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/reducers';
 import { useParams } from 'react-router-dom';
 import { CgCrown } from 'react-icons/cg';
+import { GoGear } from 'react-icons/go';
+import { ImExit } from 'react-icons/im';
+import { GrBook } from 'react-icons/gr';
+
 import {
   addMemberModalOpen,
   addMemberErr,
   updateGroupModalOpen,
   outOfAccountModalOpen,
 } from '../store/actions/modalActions';
+import { AiOutlineUserAdd } from 'react-icons/ai';
 
 interface ParamsId {
   id: string;
@@ -39,60 +44,65 @@ const AccountSideBar = () => {
   const userNow = useSelector((state: RootState) => state.userStatus.userData);
   return (
     <nav className="account__sidebar">
-      <div className="sidebar_Top">{members[0].meetName}</div>
+      <div className="sidebar_Top">
+        <GrBook className="SidaBookIcon"></GrBook>
+        {members[0].meetName}
+      </div>
       <div className="account__profile">
         {members[0].Users.map((member: any) => (
-          <div className="SideBarOneMemberBox">
-            {member.img !== 'undefined' ? (
-              <>
-                {members[0].memberNumber === member.id ? (
-                  <div className="iconAdmin">
-                    <CgCrown />
+          <>
+            <div className="SideBarOneMemberBox">
+              {member.img !== 'undefined' ? (
+                <>
+                  {members[0].memberNumber === member.id ? (
+                    <div className="iconAdmin">
+                      <CgCrown />
+                    </div>
+                  ) : (
+                    <div className="iconAdminNone">
+                      <CgCrown />
+                    </div>
+                  )}
+                  <img
+                    className="SidBarMemberImg"
+                    src={member.img}
+                    alt="유저프로필"
+                  ></img>
+                </>
+              ) : (
+                <>
+                  {members[0].memberNumber === member.id ? (
+                    <div className="iconAdmin">
+                      <CgCrown />
+                    </div>
+                  ) : (
+                    <div className="iconAdmin"></div>
+                  )}
+                  <div className="SidebarMemberIcon">
+                    {member.email.slice(0, 1).toUpperCase()}
                   </div>
-                ) : (
-                  <div className="iconAdminNone">
-                    <CgCrown />
-                  </div>
-                )}
-                <img
-                  className="SidBarMemberImg"
-                  src={member.img}
-                  alt="유저프로필"
-                ></img>
-              </>
-            ) : (
-              <>
-                {members[0].memberNumber === member.id ? (
-                  <div className="iconAdmin">
-                    <CgCrown />
-                  </div>
-                ) : (
-                  <div className="iconAdmin"></div>
-                )}
-                <div className="SidebarMemberIcon">
-                  {member.email.slice(0, 1).toUpperCase()}
-                </div>
-              </>
-            )}
-            <div className="SideBarMemberName">{member.email}</div>
-          </div>
+                </>
+              )}
+              <div className="SideBarMemberName">{member.email}</div>
+            </div>
+          </>
         ))}
+        {members[0].Users.length < 4 ? (
+          <div onClick={addMemberClick} className="SideBarAddMemberBox">
+            <AiOutlineUserAdd />
+          </div>
+        ) : null}
       </div>
 
       <div className="account__handleGroup">
-        {members[0].Users.length < 4 ? (
-          <button onClick={addMemberClick} className="accountBtns">
-            멤버 초대
-          </button>
-        ) : null}
         {userNow?.id === members[0].memberNumber ? (
           <button onClick={updateGroupClick} className="accountBtns">
-            그룹 관리
+            <GoGear></GoGear>
           </button>
         ) : null}
         {userNow?.id !== members[0].memberNumber ? (
           <button onClick={outAccountClick} className="accountBtns">
-            그룹 탈퇴
+            <ImExit></ImExit>
           </button>
         ) : null}
       </div>

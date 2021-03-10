@@ -34,16 +34,20 @@ function* workerLogin(action: any) {
         } else {
           updateAction.data.id = res.data.data.userGet[0].id;
         }
+
+
+
       });
-      const getUserGroupsQuery = getUserGroups(action.data.id)
-      // 여기서 action.data.id 가져오면 될 듯
+      
+    yield delay(100)
+    const getUserGroupsQuery = getUserGroups(updateAction.data.id)
     yield axios.post('https://sench.projects1faker.com/graphql?query=' +
     encodeURIComponent(getUserGroupsQuery)).then((res) => {
       console.log(res.data.data.userGet[0])
       groupData = res.data.data.userGet[0].Meets
     
     })
-    yield delay(500)
+    yield delay(100)
     yield put(getUserNowGroup(groupData)) 
     yield put(saveUserData(updateAction.data));
     yield put(successLogin());
