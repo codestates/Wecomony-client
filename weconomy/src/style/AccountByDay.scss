@@ -35,7 +35,7 @@ $maincolor2 : #EDA28F;
 }
 
 .center-details-Account {
-  height: 75%;
+  height: 65%;
   overflow-y: auto;
   width: 100%;
   display: flex;
@@ -55,7 +55,7 @@ $maincolor2 : #EDA28F;
 .totalDetails {
   background-color: $maincolor;
   width: 45%;
-  height: 20%;
+  height: 30%;
   display: flex;
   padding-left: 50px;
   padding-right: 10px;
@@ -66,9 +66,9 @@ $maincolor2 : #EDA28F;
 }
 
 .totalIncome {
-  width: 35%;
-  height: 20%;
-  background-color: rgb(255, 255, 255);
+  width: 45%;
+  height: 40%;
+  background-color: rgb(255, 73, 73);
   display: flex;
   padding-left: 50px;
   padding-right: 10px;
@@ -79,9 +79,9 @@ $maincolor2 : #EDA28F;
 }
 
 .totalOutcome {
-  width: 35%;
-  height: 20%;
-  background-color: rgb(255, 255, 255);
+  width: 45%;
+  height: 40%;
+  background-color: rgb(27, 255, 95);
   display: flex;
   padding-left: 50px;
   padding-right: 10px;
@@ -92,8 +92,8 @@ $maincolor2 : #EDA28F;
 }
 
 .TextTotalDetails {
-  color: white;
-  font-size: 20px;
+  color: black;
+  font-size: 30px;
   border-radius: 5px;
   font-family: 'Jua', sans-serif;
 }
@@ -107,17 +107,18 @@ $maincolor2 : #EDA28F;
 .TextTotalInDetails {
   color: rgb(127, 204, 12);
   font-family: 'Jua', sans-serif;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .TextTotalOutDetails {
   color: rgb(248, 52, 52);
   font-family: 'Jua', sans-serif;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .NumberTotalInOutDetails {
   font-family: 'Jua', sans-serif;
+  font-size: 24px;
 }
 
 @media (max-width: 769px){ 

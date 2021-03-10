@@ -159,25 +159,51 @@ const AccountGraph = () => {
           </Box>
         </Grommet>
         <div className="totalGraph">
-          <div>이번 달 가용 금액 : {threeComma(groupNow[0].totalcost)} 원</div>
-          <div>
-            {value === 0
-              ? `이번 달 지출 금액 : ${threeComma(
-                  CalculationMonth(filterContentMonth),
-                )} 원`
-              : `최근 일주일 지출 금액 : ${threeComma(
-                  CalculationMonth(CalculationWeek(groupNow[0].Contents)),
-                )} 원`}
+          <div className="totalMonthTopGraph">
+            <div>이번 달 가용 금액 : </div>
+            <div>{threeComma(groupNow[0].totalcost)} 원</div>
           </div>
           <div>
-            {value === 0
-              ? `총 남은 금액 : ${threeComma(
-                  groupNow[0].totalcost - CalculationMonth(filterContentMonth),
-                )} 원`
-              : `총 남은 금액 : ${threeComma(
-                  groupNow[0].totalcost -
+            {value === 0 ? (
+              <div className="totalMonthTopGraph">
+                <div>이번 달 지출 금액 : </div>
+                <div>{threeComma(CalculationMonth(filterContentMonth))} 원</div>
+              </div>
+            ) : (
+              <div className="totalMonthTopGraph">
+                <div>최근 일주일 지출 금액 : </div>
+                <div>
+                  {threeComma(
                     CalculationMonth(CalculationWeek(groupNow[0].Contents)),
-                )} 원`}
+                  )}
+                  원
+                </div>
+              </div>
+            )}
+          </div>
+          <div>
+            {value === 0 ? (
+              <div className="totalMonthTopGraph">
+                <div>총 남은 금액 : </div>
+                <div>
+                  {threeComma(
+                    groupNow[0].totalcost -
+                      CalculationMonth(filterContentMonth),
+                  )}{' '}
+                  원
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div>총 남은 금액 : </div>
+                <div>
+                  {threeComma(
+                    groupNow[0].totalcost -
+                      CalculationMonth(CalculationWeek(groupNow[0].Contents)),
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
