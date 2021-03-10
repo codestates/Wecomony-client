@@ -36,13 +36,14 @@ const SelectAccountBox = () => {
           <div className="oneAccountBox">
             <div className="titleAccountBox">{group.meetName}</div>
             <div className="SelectAccountMembers">
-              {group.Users.map((member: any) => (
+              {group.Users.map((member: any, index:any) => (
                 <div className="SelectOneMemberBox">
                   {member.img !== 'undefined' ? (
                     <img
                       className="SelectAccountMemberImg"
                       src={member.img}
                       alt="유저프로필"
+                      key={index}
                     ></img>
                   ) : (
                     <div className="SelectAccountMemberIcon">
