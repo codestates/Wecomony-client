@@ -21,9 +21,10 @@ $mainBackGroundColor : #EFEFEF;
 
 
 .totalMonthTopGraph {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-
+}
 .circular {
   width: 200px;
 
@@ -35,6 +36,7 @@ $mainBackGroundColor : #EFEFEF;
   justify-content: space-evenly;
   color: rgba(0, 0, 0, 0.815);
   font-size: 19px;
+  width: 50%;
 }
 
 .graphBottom {
