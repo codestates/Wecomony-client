@@ -52,6 +52,14 @@ $mainBackGroundColor : #EFEFEF;
   box-sizing: border-box; animation: stack 1s 1;
 }
 
+.graphBottomError {
+  display:flex;
+  font-size: 24px;
+  justify-content: center;
+  text-align:center;
+  padding: 25% 0;
+}
+
 @keyframes stack {
   0% {
     width: 0;
