@@ -83,8 +83,6 @@ const AccountGraph = () => {
   const filterIncome:any = filterIncomes();
 
 
-  console.log(filterIncome);
-
   const calculateAll = () => {
     let cost = 0;
     for (let i = 0; i < filterIncome.length; i++) {
@@ -99,19 +97,11 @@ const AccountGraph = () => {
     let arr:any = [];
     for (let i = 0; i < filterIncome.length; i++) {
       arr.push(Math.round(filterIncome[i][1] / total * 100))
-  const total = calculate();
-
-  const getPercent = () => {
-    let arr: any = [];
-    for (let i = 0; i < asdf.length; i++) {
-      arr.push(Math.round((asdf[i][1] / total) * 100));
     }
     return arr;
-  };
+  }
 
   const percent = getPercent();
-
-  console.log(percent);
 
 
   let colorArr = ["#c44569", "#f3a683","#f5cd79", "#9c88ff"]
@@ -193,72 +183,15 @@ const AccountGraph = () => {
       </div>
       {isMobile ? (
         <div className="graphBottom">
-          <div className="graphBottomContainer">월급</div>
-          <div className="graphBottomContainer">월급</div>
-          <div className="graphBottomContainer">월급</div>
-          <div className="graphBottomContainer">월급</div>
+        {arr.length === 0 ? (<div className="graphBottomError">가계 데이터가 부족합니다</div>) : (arr)}
         </div>
       ) : (
         <div className="graphBottom">
-        {arr}
+        {arr.length === 0 ? (<div className="graphBottomError">가계 데이터가 부족합니다</div>) : (arr)}
         </div>
       )}
     </div>
   );
 };
-/*
-const GraphBottom = styled.div`
-  padding-left: 50px;
-  padding-right: 50px;
-  width: 100%;
-  background-color: white;
-  border-top: solid rgba(240, 240, 240, 0.054) 2px;
-  padding: 10px;
-  height: 40%;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-`;
 
-const GraphBottomContainer = styled.div`
-  position: relative;
-  list-style: none;
-  margin: 6% 0;
-  font-weight: 500;
-  text-transform: uppercase;
-  &:before {
-    content: '';
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    width: 100%;
-    height: 15px;
-    background-color: #dfe6e9;
-    border-radius: 1000px;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    width: 0;
-    height: 15px;
-    border-radius: 1000px;
-    animation-duration: 1.2s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-  }
-`;
-
-
-const GraphBottomFirst = styled(GraphBottomContainer)`
-
-  ${props => {
-    if (props) {
-      return `  &:after {
-        animation-name: ${props.value};
-        background-color: #778beb;
-      }`
-    }
-  }}
-`;
-*/
 export default AccountGraph;
