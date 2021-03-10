@@ -14,8 +14,8 @@ interface selects {
 const SelectMeets: React.FC<selects> = ({ selectedMeet, handleMeetChange }) => {
   const userNow = useSelector((state: RootState) => state.userStatus?.groups);
 
-  const loop = userNow.map((res: any) => {
-    return <MenuItem value={`${res.id}`}>{`${res.meetName}`}</MenuItem>;
+  const loop = userNow.map((res: any, index:any) => {
+    return <MenuItem key={index} value={`${res.id}`}>{`${res.meetName}`}</MenuItem>;
   });
 
   return (
