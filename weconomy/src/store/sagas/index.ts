@@ -12,7 +12,8 @@ import workerGetUserData from './getUserData'
 import workerSendEmail from './sendEmail'
 import workerOutOfAccount from './outOfAccount'
 import workerSighOutUser from './sighOutUser'
-import { TRY_LOGIN, CREATE_NEW_ACCOUNT, LOADING_WORKER_START, ADD_MEMEBER_WORKER_START, CREATE_NEW_CONTENT, UPDATE_GROUP_TOTAL_COST, DELETE_ACCOUNT, UPDATE_CONTENT, DELETE_CONTENT, GET_USER_DATA_AGAIN, SEND_EMAIL, OUT_OF_ACCOUNT, SIGN_OUT_USER } from '../actions/constants'
+import workerGoogleLogin from './tryGoogleLogin'
+import { TRY_LOGIN, CREATE_NEW_ACCOUNT, LOADING_WORKER_START, ADD_MEMEBER_WORKER_START, CREATE_NEW_CONTENT, UPDATE_GROUP_TOTAL_COST, DELETE_ACCOUNT, UPDATE_CONTENT, DELETE_CONTENT, GET_USER_DATA_AGAIN, SEND_EMAIL, OUT_OF_ACCOUNT, SIGN_OUT_USER, SAVE_USER_GOOGLE } from '../actions/constants'
 
 function* rootSaga(){
   yield takeEvery(TRY_LOGIN, workerLogin)
@@ -28,6 +29,7 @@ function* rootSaga(){
   yield takeEvery(SEND_EMAIL, workerSendEmail)
   yield takeEvery(OUT_OF_ACCOUNT, workerOutOfAccount)
   yield takeEvery(SIGN_OUT_USER, workerSighOutUser)
+  yield takeEvery(SAVE_USER_GOOGLE, workerGoogleLogin)
 }
 
 
