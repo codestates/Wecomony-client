@@ -6,20 +6,13 @@ import adduser from '../../graphQuery/adduser';
 import testHasUser from '../../graphQuery/testHasUser';
 import getUserGroups from '../../graphQuery/getUserGroups'
 
-const KaKaologOutURL =
-  'https://kauth.kakao.com/oauth/logout?client_id=57a2e57336e3dd27788a358cdba2674f&logout_redirect_uri=http://localhost:3000/';
-const KaKaologinURL =
-  '"https://kauth.kakao.com/oauth/authorize?client_id=57a2e57336e3dd27788a358cdba2674f&redirect_uri=http://localhost:3000/&response_type=code"';
-const KaKaoSignOutURL =
-  'https://localhost:3000/v1/user/deregister?user_id=1642236625&referrer_type=UNLINK_FROM_APPS';
-
 function* workerLogin(action: any) {
   const updateAction = Object.assign(action);
   const adduserQuery = adduser(
     action.data.profile.kakao_account.email,
     action.data.profile.properties.thumbnail_image,
   );
-  let groupData: Array<object> = []
+  let groupData: Array<object> = [];
   
   const testHasUserQuery = testHasUser(action.data.profile.kakao_account.email);
   try {

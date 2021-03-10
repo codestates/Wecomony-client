@@ -216,15 +216,18 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   .navbar__handleLogin {
     display: none;
   }
+
   .sidebar.active {
     display:flex;
     flex-direction: column;
     position: fixed;
+    align-items: center;
     transform: translateX(0px);
     transition: all 0.3s ease-in-out 0s;
     background-color: $maincolor;
     z-index:1;
   }
+  
   .sidebar__profile.active {
     display:flex;
     width: 100%;
@@ -246,7 +249,6 @@ $koreanFont : 'Noto Sans KR', sans-serif;
     display:flex;
     font-size: 1.5rem;
     margin-top : 300px;
-
   }
 
   .navbar__toogleBtn{
