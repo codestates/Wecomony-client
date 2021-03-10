@@ -98,6 +98,19 @@ const MainPage: React.FC = () => {
             ></img>
           </div>
         </div>
+        <div className="section2">
+          <div className="TopSection2">
+            <div className="LeftTopSection2"></div>
+            <div className="RightTopSection2"></div>
+          </div>
+          <div className="BottomSection2">
+            <div className="LeftBottomSection2"></div>
+            <div className="RightBottomSection2"></div>
+          </div>
+        </div>
+        <div className="section3"></div>
+        <div className="section4"></div>
+        <div className="section5"></div>
       </div>
     </>
   );

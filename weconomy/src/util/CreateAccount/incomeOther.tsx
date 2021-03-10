@@ -6,8 +6,8 @@ import Select from '@material-ui/core/Select';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { TextField } from '@material-ui/core';
 import { IconButton } from '@material-ui/core';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FiPlusSquare } from 'react-icons/fi';
+import { FiMinusSquare } from 'react-icons/fi';
 
 interface props {
   inCounter: any;
@@ -40,12 +40,13 @@ const IncomeOther: React.FC<props> = ({
         <div className="income-category">
           <InputLabel id="demo-simple-select-helper-label">카테고리</InputLabel>
           <Select
+            className="selecCate"
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
             name="category"
             value={category || ''}
             onChange={onChange}
-            style={{ width: '150px', textAlign: 'center' }}
+            style={{ textAlign: 'center' }}
           >
             <MenuItem value="선택해주세요">
               <div>선택해주세요</div>
@@ -91,7 +92,7 @@ const IncomeOther: React.FC<props> = ({
             color="primary"
             aria-label="add to shopping cart"
           >
-            <AddShoppingCartIcon />
+            <FiPlusSquare />
           </IconButton>
         </div>
       </div>
@@ -103,12 +104,13 @@ const IncomeOther: React.FC<props> = ({
               카테고리
             </InputLabel>
             <Select
+              className="selecCate"
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
               name="category"
               value={category2 || ''}
               onChange={onChange2}
-              style={{ width: '150px', textAlign: 'center' }}
+              style={{ textAlign: 'center' }}
             >
               <MenuItem value="선택해주세요">
                 <div>선택해주세요</div>
@@ -146,9 +148,13 @@ const IncomeOther: React.FC<props> = ({
             />
           </div>
           <div className="income-addBtn">
-            <div className="income-addDiv">
-              <FaTrashAlt onClick={() => inCounter('down')}></FaTrashAlt>
-            </div>
+            <IconButton
+              onClick={() => inCounter('down')}
+              color="primary"
+              aria-label="add to shopping cart"
+            >
+              <FiMinusSquare />
+            </IconButton>
           </div>
         </div>
       ) : null}

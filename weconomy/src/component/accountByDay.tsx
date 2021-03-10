@@ -14,6 +14,7 @@ import { changeDetailDate } from '../store/actions/pageAction';
 import CalcullationDay from '../util/accountPage/CalculationDay';
 import threeComma from '../util/threeComma';
 import { seeDetailModalOpen } from '../store/actions/modalActions';
+import { FcPrint } from 'react-icons/fc';
 
 interface ParamsId {
   id: string;
@@ -85,7 +86,7 @@ const AccountByDay = () => {
           </Grid>
         </MuiPickersUtilsProvider>
         <button onClick={toSeeDetailModal} className="seeDetail">
-          출력 및 저장
+          <FcPrint />
         </button>
       </div>
       <div className="center-details-Account">
@@ -93,22 +94,22 @@ const AccountByDay = () => {
       </div>
       <div className="bottom-details-Account">
         <div className="totalIncome">
-          <span className="TextTotalDetails">총 수입 : </span>
-          <span className="NumberTotalDetails">{`${threeComma(
+          <span className="TextTotalInDetails">수입 : </span>
+          <span className="NumberTotalInOutDetails">{`₩ ${threeComma(
             CalcullationDay('income', filterContent),
-          )} 원`}</span>
+          )}`}</span>
         </div>
         <div className="totalOutcome">
-          <span className="TextTotalDetails">총 지출 : </span>
-          <span className="NumberTotalDetails">{`${threeComma(
+          <span className="TextTotalOutDetails">지출 : </span>
+          <span className="NumberTotalInOutDetails">{`₩ ${threeComma(
             CalcullationDay('outcome', filterContent),
-          )} 원`}</span>
+          )}`}</span>
         </div>
         <div className="totalDetails">
-          <span className="TextTotalDetails">Total : </span>
-          <span className="NumberTotalDetails">{`${threeComma(
+          <span className="TextTotalDetails">합계 : </span>
+          <span className="NumberTotalDetails">{`₩ ${threeComma(
             CalcullationDay('total', filterContent),
-          )} 원`}</span>
+          )}`}</span>
         </div>
       </div>
     </div>
