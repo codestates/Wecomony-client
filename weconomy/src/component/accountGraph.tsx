@@ -104,13 +104,20 @@ const AccountGraph = () => {
 
   const percent = getPercent();
 
+  useEffect(() => {
+    console.log(arr2);
+  }, [])
+
 
   let colorArr = ["#c44569", "#f3a683","#f5cd79", "#9c88ff"]
 
-    let arr:any = [];
+    let arr2:any = [];
 
     for (let i = 0; i < filterIncome.length; i++) {
-      arr.push([<>
+      if (arr2.length > 3) {
+        break;
+      }
+      arr2.push([<>
       <div className="graphBottomName">{filterIncome[i][0]}</div>
       <div className="graphBottomBar">
       <span style={{"width": `${percent[i]}%`, "background": `${colorArr[i]}`}}></span>
@@ -157,8 +164,7 @@ const AccountGraph = () => {
                 <div>
                   {threeComma(
                     CalculationMonth(CalculationWeek(groupNow[0].Contents)),
-                  )}
-                  원
+                  )} 원
                 </div>
               </div>
             )}
@@ -176,13 +182,13 @@ const AccountGraph = () => {
                 </div>
               </div>
             ) : (
-              <div>
+              <div className="totalMonthTopGraph">
                 <div>총 남은 금액 : </div>
                 <div>
                   {threeComma(
                     groupNow[0].totalcost -
                       CalculationMonth(CalculationWeek(groupNow[0].Contents)),
-                  )}
+                  )} 원
                 </div>
               </div>
             )}
@@ -190,7 +196,7 @@ const AccountGraph = () => {
         </div>
       </div>
         <div className="graphBottom">
-        {arr.length === 0 ? (<div className="graphBottomError"><div>가계 데이터가 부족합니다</div></div>) : (arr)}
+        {arr2.length === 0 ? (<div className="graphBottomError"><div>가계 데이터가 부족합니다</div></div>) : (arr2)}
         </div>
     </div>
   );

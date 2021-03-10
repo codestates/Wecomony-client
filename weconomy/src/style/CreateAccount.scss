@@ -69,19 +69,12 @@ $maincolor2 : #EDA28F;
 }
 
 .income-category {
-    margin-top: -3px;
+    margin-top: -5px;
 }
 
-.income-cost {
-    margin-top: 4px;
-}
-
-.income-desc{
-    margin-top: 4px;
-}
 
 .outcome-category {
-    margin-top: -3px;
+    margin-top: -5px;
 }
 
 .income-title {
@@ -221,6 +214,10 @@ $maincolor2 : #EDA28F;
         outline: 0;
         background-color: $maincolor;
         color: white;
+    }
+
+    .outcome-category {
+        width: 40%;
     }
     
 }
