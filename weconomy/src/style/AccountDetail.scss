@@ -1,7 +1,7 @@
 .details-container {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 100%;
   padding: 5px;
 }
@@ -17,7 +17,8 @@
   justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   margin-bottom: 30px;
-
+  top: 0;
+  transition-duration: 0.3s;
   &:hover{
     top: -2px;
   
@@ -46,17 +47,21 @@
 }
 
 .category-Detail {
-  font-weight: 700;
   font-size: 1.2rem;
+  width: 30%;
+  font-family: 'Jua', sans-serif;
 }
 
 .text-Detail {
-
+  width: 30%;
+  font-family: 'Jua', sans-serif;
 }
 
 .count-Detail {
   font-size: 1.1rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Jua', sans-serif;
+  width: 30%;
+  text-align: end;
 }
 
 .totalDetails {
@@ -77,4 +82,16 @@
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+}
+
+@media (max-width: 769px){ 
+
+  .text-Detail {
+    font-size: 14px;
+  }
+  
+  .count-Detail {
+    font-size: 14px;
+   
+  }
 }

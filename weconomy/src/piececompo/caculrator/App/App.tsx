@@ -11,6 +11,7 @@ const StyledApp = styled.div`
   font-size: 16px;
   width: 100%;
   max-width: 320px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 
 export const Calculator: FunctionComponent = () => {

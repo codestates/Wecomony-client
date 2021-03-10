@@ -78,33 +78,31 @@ const AccountGraph = () => {
     return arr;
   };
 
-  const asdf:any = test();
+  const asdf: any = test();
 
   console.log(asdf);
 
   const calculate = () => {
     let cost = 0;
     for (let i = 0; i < asdf.length; i++) {
-      cost += asdf[i][1]
+      cost += asdf[i][1];
     }
     return cost;
-  }
+  };
 
-  const total = calculate()
+  const total = calculate();
 
   const getPercent = () => {
-    let arr:any = [];
+    let arr: any = [];
     for (let i = 0; i < asdf.length; i++) {
-      arr.push(Math.round(asdf[i][1] / total * 100))
+      arr.push(Math.round((asdf[i][1] / total) * 100));
     }
     return arr;
-  }
+  };
 
   const percent = getPercent();
 
   console.log(percent);
-
-
 
   return (
     <div className="left-Account-Container">
@@ -132,7 +130,7 @@ const AccountGraph = () => {
                 )}
                 size="small"
                 thickness="small"
-                color="#1474F8"
+                color="#9fd8df"
               />
               <Box direction="row" align="center" pad={{ bottom: 'xsmall' }}>
                 <Text size="xlarge" weight="bold">
@@ -210,7 +208,7 @@ const GraphBottom = styled.div`
   padding-right: 50px;
   width: 100%;
   background-color: white;
-  border-top: 2px solid gray;
+  border-top: solid rgba(240, 240, 240, 0.054) 2px;
   padding: 10px;
   height: 40%;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;

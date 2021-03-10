@@ -3,7 +3,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
+  font-family: 'Jua', sans-serif;
 }
 body {
   margin: 0;
@@ -29,6 +29,7 @@ $onepage : 100vh;
   padding-left: 50px;
   padding-right: 50px;
 }
+
 
 
 .section1 .textBox {
@@ -104,6 +105,76 @@ $onepage : 100vh;
   z-index:1;
 }
 
+.section2 {
+background-color: rgb(243, 246, 251);
+height: $onepage;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+padding-left: 50px;
+padding-right: 50px;
+}
+
+.TopSection2 {
+height: 40%;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+}
+
+.BottomSection2 {
+height: 40%;
+background-color: $mainBackGroundColor;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+
+}
+
+.LeftTopSection2 {
+  height: 90%;
+  width: 43.5%;
+  border-radius: 10px;
+  background-color: gray;
+  background-image: url('https://ifh.cc/g/MNkYdx.png');
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.RightTopSection2 {
+  height: 90%;
+  width: 50%;
+  background-color: gray;
+}
+
+.LeftBottomSection2{
+  height: 90%;
+  width: 60%;
+  background-color: gray;
+}
+
+.RightBottomSection2{
+  height: 90%;
+  width: 30%;
+  background-color: gray;
+}
+
+.section3 {
+  background-color: rgb(255, 202, 105);
+  height: $onepage;
+
+}
+.section4 {
+background-color: rgb(255, 255, 134);
+height: $onepage;
+}
+.section5 {
+  background-color: rgb(130, 255, 130);
+  height: $onepage;
+
+}
+
 @media (max-width: 769px){
   .section1 {
     background-color: white;
@@ -137,3 +208,5 @@ $onepage : 100vh;
       font-size: 3vmax;
     }
 }
+
+

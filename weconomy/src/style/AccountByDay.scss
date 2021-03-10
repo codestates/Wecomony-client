@@ -1,27 +1,31 @@
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
+$maincolor2 : #EDA28F;
 
 .center-Account-container {
   width: 40%;
   display: flex;
   flex-direction: column;
+  // justify-content: space-between;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .datePicker-Account {
   width: 100%;
-  padding-left: 170px;
-  padding-right: 50px;
+  padding-left: 30px;
+  padding-right: 40px;
   display: flex;
   align-items: center;
+  height: 10%;
 }
 
 .seeDetail {
-  height: 50%;
-  width: 130px;
-  margin-left: 70px;
-  font-size: 0.9rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 300px;
+  font-size: 2.5rem;
   border: 0;
   outline: 0;
   background-color: rgba(0, 0, 0, 0);
@@ -31,7 +35,7 @@ $mainBackGroundColor : #EFEFEF;
 }
 
 .center-details-Account {
-  height: 85%;
+  height: 75%;
   overflow-y: auto;
   width: 100%;
   display: flex;
@@ -40,60 +44,80 @@ $mainBackGroundColor : #EFEFEF;
 }
 
 .bottom-details-Account {
-  height: 15%;
-  background-color: $maincolor;
+  height: 25%;
+  // background-color: $maincolor;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
 .totalDetails {
-  background-color: rgb(255, 255, 255);
-  width: 30%;
-  height: 50%;
+  background-color: $maincolor;
+  width: 85%;
+  height: 20%;
   display: flex;
-  padding-left: 10px;
+  padding-left: 50px;
   padding-right: 10px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .totalIncome {
-  width: 30%;
-  height: 50%;
+  width: 85%;
+  height: 20%;
   background-color: rgb(255, 255, 255);
   display: flex;
-  padding-left: 10px;
+  padding-left: 50px;
   padding-right: 10px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .totalOutcome {
-  width: 30%;
-  height: 50%;
+  width: 85%;
+  height: 20%;
   background-color: rgb(255, 255, 255);
   display: flex;
-  padding-left: 10px;
+  padding-left: 50px;
   padding-right: 10px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .TextTotalDetails {
-  color: $maincolor;
-  font-size: 1.2rem;
+  color: white;
+  font-size: 20px;
   border-radius: 5px;
-  font-weight: 600;
+  font-family: 'Jua', sans-serif;
 }
 
 .NumberTotalDetails {
-  font-size: 1vmax;
-  font-variant-numeric: tabular-nums;
+  font-size: 20px;
+  font-family: 'Jua', sans-serif;
+  color: white;
+}
+
+.TextTotalInDetails {
+  color: rgb(127, 204, 12);
+  font-family: 'Jua', sans-serif;
+  font-size: 20px;
+}
+
+.TextTotalOutDetails {
+  color: rgb(248, 52, 52);
+  font-family: 'Jua', sans-serif;
+  font-size: 20px;
+}
+
+.NumberTotalInOutDetails {
+  font-family: 'Jua', sans-serif;
 }
 
 @media (max-width: 769px){ 
@@ -109,5 +133,9 @@ $mainBackGroundColor : #EFEFEF;
     width: 100%;
     padding-left: 70px;
     padding-right: 70px;
+  }
+
+  .seeDetail {
+    display:  none;
   }
 }

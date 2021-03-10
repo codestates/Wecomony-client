@@ -255,11 +255,11 @@ const CreateAccount: React.FC<counter> = ({
         <div className="belowBtns-save">
           {isLogin ? (
             <button onClick={save} className="belowBtns-saveBtn">
-              저장하기
+              작성
             </button>
           ) : (
             <button onClick={save2} className="belowBtns-saveBtn">
-              저장하기
+              작성
             </button>
           )}
         </div>

@@ -4,6 +4,8 @@ import { RootState } from '../store/reducers';
 import { useHistory } from 'react-router-dom';
 import CreateNewAccountModal from './createNewAccountModal';
 import { createNewAccountModalOpen } from '../store/actions/modalActions';
+import { BiBookmarkPlus } from 'react-icons/bi';
+import { BiBookAdd } from 'react-icons/bi';
 
 interface group {
   id: number;
@@ -52,19 +54,21 @@ const SelectAccountBox = () => {
                 </div>
               ))}
             </div>
-            <button
-              onClick={() => onClickGroup(group)}
-              className="SelectAccountJoinBtn"
-            >
-              JOIN
-            </button>
+            <div className="SelectAccountBotttom">
+              <button
+                onClick={() => onClickGroup(group)}
+                className="SelectAccountJoinBtn"
+              >
+                들어가기
+              </button>
+            </div>
           </div>
         ))}
 
         {Allgroups.length < 4 ? (
           <div onClick={createNewAccount} className="AddAccountBox">
-            <AiOutlineUsergroupAdd></AiOutlineUsergroupAdd>
-            <div className="titleAddAccountBox">새 그룹 생성</div>
+            <BiBookAdd></BiBookAdd>
+            <div className="titleAddAccountBox">새 가계부 생성</div>
           </div>
         ) : null}
       </div>
