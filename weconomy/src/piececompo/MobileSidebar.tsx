@@ -22,19 +22,7 @@ const MobileSidebar = () => {
 
   return (
     <nav className="sidebar">
-      <div className="sidebar__profile">
-        {userImage ? (
-          <img
-            className="userProfileSideBar"
-            src={userImage}
-            alt="유저프로필"
-          ></img>
-        ) : (
-          <div className="userProfileSideBar">
-            {email.slice(0, 1).toUpperCase()}
-          </div>
-        )}
-      </div>
+      <div className="sidebar__profile"></div>
       <ul className="sidebar__menu">
         <li className="sideBtns">가계부 작성하기</li>
         <li className="sideBtns">내 가계부</li>
