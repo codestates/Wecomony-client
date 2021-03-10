@@ -32,9 +32,31 @@ $mainBackGroundColor : #EFEFEF;
   width: 100%;
   background-color: white;
   border-top: 2px solid gray;
-  padding: 10px;
+  padding: 3%;
   height: 40%;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.graphBottomBar {
+  position: flex;
+  list-style: none;
+  background-color:#ccc;
+  border-radius:40px;
+  margin: 2.5% 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.graphBottomBar span {
+  display:block; height: 15px; line-height: 40px;
+  text-align:right; border-radius: 40px;
+  box-sizing: border-box; animation: stack 1s 1;
+}
+
+@keyframes stack {
+  0% {
+    width: 0;
+  }
 }
 
 .titleBottomGraph{

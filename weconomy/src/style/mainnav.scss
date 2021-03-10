@@ -199,14 +199,17 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   .navbar__handleLogin {
     display: none;
   }
+
   .sidebar.active {
     display:block;
     position: fixed;
+    align-items: center;
     transform: translateX(0px);
     transition: all 0.3s ease-in-out 0s;
     background-color: #dcdde1;
     z-index:1;
   }
+  
   .sidebar__profile.active {
     display:flex;
   }
@@ -216,7 +219,6 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   }
 
   .sidebar__menu.active {
- 
     display:flex;
     font-size: 1.5rem;
     transform: translateX(0px);
@@ -226,7 +228,6 @@ $koreanFont : 'Noto Sans KR', sans-serif;
     display:flex;
     font-size: 1.5rem;
     margin-top : 300px;
-
   }
 
   .navbar__toogleBtn{

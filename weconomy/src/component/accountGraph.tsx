@@ -17,6 +17,7 @@ import styled, { keyframes } from 'styled-components';
 import { IoThunderstorm } from 'react-icons/io5';
 import { formatISO9075 } from 'date-fns/esm';
 
+
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
@@ -55,7 +56,7 @@ const AccountGraph = () => {
     setValue(newValue);
   };
 
-  const test = () => {
+  const filterIncomes = () => {
     const reFilter = filterContentMonth.filter(
       (content: any) => content.upDown === 'outcome',
     );
@@ -78,24 +79,24 @@ const AccountGraph = () => {
     return arr;
   };
 
-  const asdf:any = test();
+  const filterIncome:any = filterIncomes();
 
-  console.log(asdf);
+  console.log(filterIncome);
 
-  const calculate = () => {
+  const calculateAll = () => {
     let cost = 0;
-    for (let i = 0; i < asdf.length; i++) {
-      cost += asdf[i][1]
+    for (let i = 0; i < filterIncome.length; i++) {
+      cost += filterIncome[i][1]
     }
     return cost;
   }
 
-  const total = calculate()
+  const total = calculateAll()
 
   const getPercent = () => {
     let arr:any = [];
-    for (let i = 0; i < asdf.length; i++) {
-      arr.push(Math.round(asdf[i][1] / total * 100))
+    for (let i = 0; i < filterIncome.length; i++) {
+      arr.push(Math.round(filterIncome[i][1] / total * 100))
     }
     return arr;
   }
@@ -103,6 +104,27 @@ const AccountGraph = () => {
   const percent = getPercent();
 
   console.log(percent);
+
+  /*
+  #c44569
+  #f3a683
+  #f5cd79
+  #9c88ff
+  */
+
+  let colorArr = ["#c44569", "#f3a683","#f5cd79", "#9c88ff"]
+
+    let arr:any = [];
+
+    for (let i = 0; i < filterIncome.length; i++) {
+      arr.push([<>
+      <div className="graphBottomName">{filterIncome[i][0]}</div>
+      <div className="graphBottomBar">
+      <span style={{"width": `${percent[i]}%`, "background": `${colorArr[i]}`}}></span>
+      </div>
+      </>])
+    }
+
 
 
 
@@ -171,40 +193,21 @@ const AccountGraph = () => {
         </div>
       </div>
       {isMobile ? (
-        <GraphBottom>
-          <GraphBottomContainer>
-            <GraphBottomFirst>월급</GraphBottomFirst>
-          </GraphBottomContainer>
-          <GraphBottomContainer>
-            <GraphBottomSecond>식비</GraphBottomSecond>
-          </GraphBottomContainer>
-          <GraphBottomContainer>
-            <GraphBottomThird>미용</GraphBottomThird>
-          </GraphBottomContainer>
-          <GraphBottomContainer>
-            <GraphBottomFourth>비상금</GraphBottomFourth>
-          </GraphBottomContainer>
-        </GraphBottom>
+        <div className="graphBottom">
+          <div className="graphBottomContainer">월급</div>
+          <div className="graphBottomContainer">월급</div>
+          <div className="graphBottomContainer">월급</div>
+          <div className="graphBottomContainer">월급</div>
+        </div>
       ) : (
-        <GraphBottom>
-          <GraphBottomContainer>
-            <GraphBottomFirst>월급</GraphBottomFirst>
-          </GraphBottomContainer>
-          <GraphBottomContainer>
-            <GraphBottomSecond>식비</GraphBottomSecond>
-          </GraphBottomContainer>
-          <GraphBottomContainer>
-            <GraphBottomThird>미용</GraphBottomThird>
-          </GraphBottomContainer>
-          <GraphBottomContainer>
-            <GraphBottomFourth>비상금</GraphBottomFourth>
-          </GraphBottomContainer>
-        </GraphBottom>
+        <div className="graphBottom">
+        {arr}
+        </div>
       )}
     </div>
   );
 };
-
+/*
 const GraphBottom = styled.div`
   padding-left: 50px;
   padding-right: 50px;
@@ -246,56 +249,17 @@ const GraphBottomContainer = styled.div`
   }
 `;
 
-const firstWidth = keyframes`
-to {
-  width: 92%;
-}
-`;
-
-const secondWidth = keyframes`
-to {
-  width: 8%;
-}
-`;
-
-const thirdWidth = keyframes`
-to {
-  width: 70%;
-}
-`;
-
-const fourthWidth = keyframes`
-to {
-  width: 40%;
-}
-`;
 
 const GraphBottomFirst = styled(GraphBottomContainer)`
-  &:after {
-    animation-name: ${firstWidth};
-    background-color: #778beb;
-  }
-`;
 
-const GraphBottomSecond = styled(GraphBottomContainer)`
-  &:after {
-    animation-name: ${secondWidth};
-    background-color: #e17055;
-  }
+  ${props => {
+    if (props) {
+      return `  &:after {
+        animation-name: ${props.value};
+        background-color: #778beb;
+      }`
+    }
+  }}
 `;
-
-const GraphBottomThird = styled(GraphBottomContainer)`
-  &:after {
-    animation-name: ${thirdWidth};
-    background-color: #fdcb6e;
-  }
-`;
-
-const GraphBottomFourth = styled(GraphBottomContainer)`
-  &:after {
-    animation-name: ${fourthWidth};
-    background-color: #74b9ff;
-  }
-`;
-
+*/
 export default AccountGraph;
