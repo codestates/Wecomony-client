@@ -30,14 +30,16 @@ const AccountPage: React.FC = () => {
   const { isMobile } = useMedia();
 
   const isLoading = useSelector(
-    (state: RootState) => state.modalStatus.nowLoading,
+    (state: RootState) => state.modalStatus?.nowLoading,
   );
   const groupData = useSelector((state: RootState) =>
-    state.userStatus.groups.filter((group: any) => {
+    state.userStatus?.groups.filter((group: any) => {
       return group.id === Number(params.id);
     }),
   );
-  const userData = useSelector((state: RootState) => state.userStatus.userData);
+  const userData = useSelector(
+    (state: RootState) => state.userStatus?.userData,
+  );
 
   useEffect(() => {
     dispatch(loadingWorkerStart());

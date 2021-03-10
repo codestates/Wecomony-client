@@ -27,7 +27,7 @@ const UpdateGroupModal = () => {
   const [deleteText, setDeleteText] = useState<string>('');
   const [deleteErr, setDeleteErr] = useState<string>('');
   const isOpen = useSelector(
-    (state: RootState) => state.modalStatus.updateGroupModal,
+    (state: RootState) => state.modalStatus?.updateGroupModal,
   );
 
   const getAccountCost = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,9 +42,9 @@ const UpdateGroupModal = () => {
     setErr('');
     dispatch(updateGroupModalClose());
   };
-  const userNow = useSelector((state: RootState) => state.userStatus.userData);
+  const userNow = useSelector((state: RootState) => state.userStatus?.userData);
   const groups = useSelector((state: RootState) =>
-    state.userStatus.groups.filter((group: any) => {
+    state.userStatus?.groups.filter((group: any) => {
       return group.id === Number(params.id);
     }),
   );

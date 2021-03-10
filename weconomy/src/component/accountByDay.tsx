@@ -44,7 +44,7 @@ const AccountByDay = () => {
   );
 
   const groupNow = useSelector((state: RootState) =>
-    state.userStatus.groups.filter((group: datas) => {
+    state.userStatus.groups?.filter((group: datas) => {
       return group.id === Number(params.id);
     }),
   );

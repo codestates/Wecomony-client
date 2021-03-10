@@ -27,7 +27,7 @@ const SeeDetailModal: React.FC = () => {
   const dispatch = useDispatch();
 
   const isOpen = useSelector(
-    (state: RootState) => state.modalStatus.seeDetailModal,
+    (state: RootState) => state.modalStatus?.seeDetailModal,
   );
 
   const closeSeeDetailModal = () => {
@@ -41,7 +41,7 @@ const SeeDetailModal: React.FC = () => {
   });
 
   const groupNow = useSelector((state: RootState) =>
-    state.userStatus.groups.filter((group: datas) => {
+    state.userStatus.groups?.filter((group: datas) => {
       return group.id === Number(params.id);
     }),
   );

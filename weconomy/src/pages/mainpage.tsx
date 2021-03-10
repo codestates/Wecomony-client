@@ -13,32 +13,14 @@ import AskNoneSaveModal from '../component/askNoneSave';
 import axios from 'axios';
 
 const MainPage: React.FC = () => {
-  const isLogin = useSelector((state: RootState) => state.userStatus.isLogin);
+  const isLogin = useSelector((state: RootState) => state.userStatus?.isLogin);
   const dispatch = useDispatch();
   const history = useHistory();
   const { isMobile } = useMedia();
 
   useEffect(() => {});
 
-  const query = `query {
-    userGet{
-      email
-      groups {
-        id
-      }
-    }
-  }`;
   axios.defaults.withCredentials = true;
-  const getuser = () => {
-    axios
-      .get(
-        'https://sench.projects1faker.com/graphql?query=' +
-          encodeURIComponent(query),
-      )
-      .then((res) => {
-        console.log(res);
-      });
-  };
 
   const toAccountPage = () => {
     if (isLogin) {
