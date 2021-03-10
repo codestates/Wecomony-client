@@ -11,6 +11,8 @@ $koreanFont : 'Noto Sans KR', sans-serif;
     border-left: solid rgba(240, 240, 240, 0.575) 1px;
     margin-bottom: 1px;
     padding: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 
 .sidebar_Top {
@@ -59,7 +61,7 @@ $koreanFont : 'Noto Sans KR', sans-serif;
 .account__handleGroup {
     display:flex;
     flex-direction:row;
-    justify-content: flex-end;
+    // justify-content: flex-end;
     align-items: flex-end;
     height: 20%;
 }
@@ -72,9 +74,9 @@ $koreanFont : 'Noto Sans KR', sans-serif;
     border: 0;
     outline: 0;
     background-color:   white ;
-    color : rgb(199, 199, 199);
+    color : rgb(141, 140, 140);
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .SideBarOneMemberBox {

@@ -9,6 +9,8 @@ $maincolor2 : #EDA28F;
   // justify-content: space-between;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .datePicker-Account {
@@ -53,9 +55,8 @@ $maincolor2 : #EDA28F;
 }
 
 .totalDetails {
-  background-color: $maincolor;
-  width: 45%;
-  height: 30%;
+  width: 60%;
+  height: 100%;
   display: flex;
   padding-left: 50px;
   padding-right: 10px;
@@ -66,9 +67,8 @@ $maincolor2 : #EDA28F;
 }
 
 .totalIncome {
-  width: 45%;
+  width: 60%;
   height: 40%;
-  background-color: rgb(255, 73, 73);
   display: flex;
   padding-left: 50px;
   padding-right: 10px;
@@ -79,9 +79,8 @@ $maincolor2 : #EDA28F;
 }
 
 .totalOutcome {
-  width: 45%;
+  width: 60%;
   height: 40%;
-  background-color: rgb(27, 255, 95);
   display: flex;
   padding-left: 50px;
   padding-right: 10px;
@@ -93,30 +92,31 @@ $maincolor2 : #EDA28F;
 
 .TextTotalDetails {
   color: black;
-  font-size: 30px;
+  font-size: 35px;
   border-radius: 5px;
   font-family: 'Jua', sans-serif;
 }
 
 .NumberTotalDetails {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Jua', sans-serif;
-  color: white;
+  color: black;
 }
 
 .TextTotalInDetails {
-  color: rgb(127, 204, 12);
+  color: rgb(153, 153, 153);
   font-family: 'Jua', sans-serif;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .TextTotalOutDetails {
-  color: rgb(248, 52, 52);
+  color: rgb(153, 153, 153);
   font-family: 'Jua', sans-serif;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .NumberTotalInOutDetails {
+  color: rgb(153, 153, 153);
   font-family: 'Jua', sans-serif;
   font-size: 24px;
 }
