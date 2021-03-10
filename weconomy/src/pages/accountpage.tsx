@@ -72,9 +72,9 @@ const AccountPage: React.FC = () => {
                 <div className="Account-container">
                   <div className="notice-Section"></div>
                   <div className="content-Section">
+                    <AccountSideBar></AccountSideBar>
                     <AccountGraph></AccountGraph>
                     <AccountByDay></AccountByDay>
-                    <AccountSideBar></AccountSideBar>
                   </div>
                 </div>
               )}

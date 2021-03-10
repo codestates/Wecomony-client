@@ -1,4 +1,4 @@
-import { IS_LOGIN, SUCCESS_LOGIN, TRY_LOGIN, SAVE_USER_DATA, SIGN_UP_USER, LOG_OUT_USER, GET_USERNOW_GROUP, GET_USER_DATA_AGAIN ,SIGN_OUT_USER } from './constants'
+import { IS_LOGIN, SUCCESS_LOGIN, TRY_LOGIN, SAVE_USER_DATA, SIGN_UP_USER, LOG_OUT_USER, GET_USERNOW_GROUP, GET_USER_DATA_AGAIN ,SIGN_OUT_USER, TRY_GOOGLE_LOGIN, SAVE_USER_GOOGLE } from './constants'
 
 
 export const isLogin = () => {
@@ -7,6 +7,14 @@ export const isLogin = () => {
 
 export const tryLogin = (data: object) => {
   return { type : TRY_LOGIN, data: data }
+}
+
+export const tryGoogleLogin = (data: object) => {
+  return { type : TRY_GOOGLE_LOGIN, data }
+}
+
+export const saveUserGoogle = (data: object) => {
+  return { type : SAVE_USER_GOOGLE, data }
 }
 
 export const successLogin = () => {
@@ -38,4 +46,4 @@ export const signOutUser = (userId : number) => {
 }
 
 
-export type UserAction = | ReturnType<typeof isLogin> | ReturnType<typeof successLogin> | ReturnType<typeof tryLogin> | ReturnType<typeof saveUserData> | ReturnType<typeof logoutUser> | ReturnType<typeof getUserNowGroup> | ReturnType<typeof getUserDataAgain> | ReturnType<typeof signOutUser>
+export type UserAction = | ReturnType<typeof isLogin> | ReturnType<typeof successLogin> | ReturnType<typeof tryLogin> | ReturnType<typeof saveUserData> | ReturnType<typeof logoutUser> | ReturnType<typeof getUserNowGroup> | ReturnType<typeof getUserDataAgain> | ReturnType<typeof signOutUser> | ReturnType<typeof saveUserGoogle> | ReturnType<typeof tryGoogleLogin>

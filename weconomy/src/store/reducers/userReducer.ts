@@ -1,4 +1,4 @@
-import { IS_LOGIN, SUCCESS_LOGIN, SAVE_USER_DATA, LOG_OUT_USER, GET_USERNOW_GROUP } from '../actions/constants'
+import { IS_LOGIN, SUCCESS_LOGIN, SAVE_USER_DATA, LOG_OUT_USER, GET_USERNOW_GROUP, SAVE_USER_GOOGLE } from '../actions/constants'
 import { UserAction } from '../actions/userActions'
 
 
@@ -71,6 +71,16 @@ const userReducer = (state: Props = initialState, action: any) => {
       return {
         ...state,
         groups : action.data
+      }
+    case SAVE_USER_GOOGLE : 
+      return {
+        ...state,
+        userData : {
+          ...state.userData,
+          id : action.data.id,
+          thumbnail : action.data.imageUrl,
+          email :  action.data.email
+        }
       }
     default:
       return state

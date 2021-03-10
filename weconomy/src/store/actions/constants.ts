@@ -1,6 +1,8 @@
 export const IS_LOGIN = 'IS_LOGIN';
 export const SUCCESS_LOGIN = 'SUCCESS_LOGIN';
 export const TRY_LOGIN = 'TRY_LOGIN'
+export const TRY_GOOGLE_LOGIN = 'TRY_GOOGLE_LOGIN'
+export const SAVE_USER_GOOGLE = 'SAVE_USER_GOOGLE'
 
 export const SIGN_UP_USER = 'SIGN_UP_USER'
 export const LOG_OUT_USER = 'LOG_OUT_USER'
@@ -69,6 +71,8 @@ export const OUT_OF_ACCOUNT_MODAL_CLOSE = "OUT_OF_ACCOUNT_MODAL_CLOSE"
 
 export const SEE_DETAIL_MODAL_OPEN = "SEE_DETAIL_MODAL_OPEN"
 export const SEE_DETAIL_MODAL_CLOSE = "SEE_DETAIL_MODAL_CLOSE"
+
+
 
 
 
