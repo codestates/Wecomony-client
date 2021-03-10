@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { RiCloseFill } from 'react-icons/ri';
 import { BsFillChatFill } from 'react-icons/bs';
-import { tryLogin } from '../store/actions/userActions';
+import { tryLogin, tryGoogleLogin } from '../store/actions/userActions';
 import { loginModalClose } from '../store/actions/modalActions';
 import { useDispatch } from 'react-redux';
 import KaKaoLogin from 'react-kakao-login';
@@ -22,7 +22,7 @@ const InsideLoginModal: React.FC = () => {
   };
 
   const responseGoogle = (response: any) => {
-    console.log(response);
+    dispatch(tryGoogleLogin(response.profileObj));
   };
 
   return (
@@ -51,24 +51,23 @@ const InsideLoginModal: React.FC = () => {
               </div>
             </KaKaoLogin>
 
-
-              <GoogleLogin
-                clientId="399514775050-mvr6j5johs1o278gc70jjtdpmsa5kok1.apps.googleusercontent.com"
-                render={(renderProps) => (
-                  <button
-                    onClick={renderProps.onClick}
-                    disabled={renderProps.disabled}
-                    className="googlebtn"
-                  >
-              <FaGoogle className="logoLoginbtns" />
-              구글 로그인
-                  </button>
-                )}
-                buttonText="Login"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={'single_host_origin'}
-              />
+            <GoogleLogin
+              clientId="399514775050-mvr6j5johs1o278gc70jjtdpmsa5kok1.apps.googleusercontent.com"
+              render={(renderProps) => (
+                <button
+                  onClick={renderProps.onClick}
+                  disabled={renderProps.disabled}
+                  className="googlebtn"
+                >
+                  <FaGoogle className="logoLoginbtns" />
+                  구글 로그인
+                </button>
+              )}
+              buttonText="Login"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={'single_host_origin'}
+            />
           </div>
         </div>
       </div>

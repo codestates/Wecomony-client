@@ -15,8 +15,8 @@
   background-color: white;
   border-radius: 5px;
   justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.007) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 0.3px inset;
+  margin-bottom: 16px;
   top: 0;
   transition-duration: 0.3s;
   &:hover{
@@ -37,13 +37,15 @@
 .Down-Detail {
   width: 2%;
   background-color: rgb(253, 110, 110);
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .Up-Detail {
   width: 2%;
   background-color: #93ff93;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .category-Detail {

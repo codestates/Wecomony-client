@@ -14,8 +14,7 @@ import { changeDetailDate } from '../store/actions/pageAction';
 import CalcullationDay from '../util/accountPage/CalculationDay';
 import threeComma from '../util/threeComma';
 import { seeDetailModalOpen } from '../store/actions/modalActions';
-import { FcPrint } from 'react-icons/fc';
-
+import { IoPrint } from 'react-icons/io5';
 interface ParamsId {
   id: string;
 }
@@ -86,7 +85,7 @@ const AccountByDay = () => {
           </Grid>
         </MuiPickersUtilsProvider>
         <button onClick={toSeeDetailModal} className="seeDetail">
-          <FcPrint />
+          <IoPrint />
         </button>
       </div>
       <div className="center-details-Account">

@@ -44,10 +44,7 @@ const AccountSideBar = () => {
   const userNow = useSelector((state: RootState) => state.userStatus.userData);
   return (
     <nav className="account__sidebar">
-      <div className="sidebar_Top">
-        <GrBook className="SidaBookIcon"></GrBook>
-        {members[0].meetName}
-      </div>
+      <div className="sidebar_Top">{members[0].meetName}</div>
       <div className="account__profile">
         {members[0].Users.map((member: any) => (
           <>

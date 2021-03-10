@@ -40,7 +40,7 @@ $maincolor2 : #EDA28F;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 30px;
+  padding: 18px;
 }
 
 .bottom-details-Account {
@@ -49,12 +49,12 @@ $maincolor2 : #EDA28F;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .totalDetails {
   background-color: $maincolor;
-  width: 85%;
+  width: 45%;
   height: 20%;
   display: flex;
   padding-left: 50px;
@@ -62,11 +62,11 @@ $maincolor2 : #EDA28F;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  // box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .totalIncome {
-  width: 85%;
+  width: 35%;
   height: 20%;
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -75,11 +75,11 @@ $maincolor2 : #EDA28F;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  // box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .totalOutcome {
-  width: 85%;
+  width: 35%;
   height: 20%;
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -88,7 +88,7 @@ $maincolor2 : #EDA28F;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  // box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .TextTotalDetails {
