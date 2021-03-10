@@ -23,7 +23,7 @@ $koreanFont : 'Noto Sans KR', sans-serif;
     // background-color: $maincolor;
     justify-content: space-evenly;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.8vmax;
     font-family: 'Jua', sans-serif;
     color: black;
     font-weight: 700;
@@ -86,6 +86,7 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   height: 17%;
   width: 100%;
   padding: 10px;
+  padding-left: 0;
   background-color: $maincolor2;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -129,10 +130,10 @@ $koreanFont : 'Noto Sans KR', sans-serif;
 
 
 .SidBarMemberImg {
-  width: 40px;
-  height: 40px;
+  width: 2.5vmax;
+  height: 2.5vmax;
   margin-right: 20px;
-  border-radius: 40px;
+  border-radius: 2.5vmax;
   border : solid 2px $maincolor;
 }
 
@@ -143,17 +144,23 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   background-color: $maincolor;
   font-size: 1.2rem;
   font-weight: 600;
-  width: 40px;
-  height: 40px;
+  width: 2.5vmax;
+  height: 2.5vmax;
   margin-right: 20px;
-  border-radius: 40px;
-  border : solid 2px white;
+  border-radius: 2.5vmax;
+  border : solid 2px rgb(255, 255, 255);
   color: white;
 }
 
+.adminBlock {
+  height: 58px;
+  width: 7px;
+  background-color: rgb(217, 255, 2);
+}
+
 .SideBarMemberName {
-    font-size: 14px;
-    color: white;
+    font-size: 0.8vmax;
+    color: rgb(255, 255, 255);
     font-weight: 600;
     width: 60%;
   }
