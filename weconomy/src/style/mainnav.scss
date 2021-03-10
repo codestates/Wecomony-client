@@ -290,6 +290,18 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   .navbar__logo {
     font-size: 25px;
   }
+
+  .mobileSidebarLoginBtn {
+    height: 35%;
+    width: 70%;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: white;
+    background-color:#EDA28F;;
+  }
 }
 
 
