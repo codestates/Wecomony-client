@@ -16,6 +16,8 @@ import CalculationWeek from '../util/accountPage/CalculationWeek';
 import styled, { keyframes } from 'styled-components';
 import { IoThunderstorm } from 'react-icons/io5';
 import { formatISO9075 } from 'date-fns/esm';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 const useStyles = makeStyles({
   root: {
@@ -36,7 +38,7 @@ const AccountGraph = () => {
   const meterValue = 50;
 
   const groupNow = useSelector((state: RootState) =>
-    state.userStatus.groups?.filter((group: any) => {
+    state.userStatus.groups.filter((group: any) => {
       return group.id === Number(params.id);
     }),
   );
@@ -78,44 +80,43 @@ const AccountGraph = () => {
     return arr;
   };
 
-  const filterIncome: any = filterIncomes();
+
+  const filterIncome:any = filterIncomes();
+
 
   const calculateAll = () => {
     let cost = 0;
     for (let i = 0; i < filterIncome.length; i++) {
-      cost += filterIncome[i][1];
+      cost += filterIncome[i][1]
     }
     return cost;
   };
 
-  const total = calculateAll();
+  const total = calculateAll()
 
   const getPercent = () => {
-    let arr: any = [];
+    let arr:any = [];
     for (let i = 0; i < filterIncome.length; i++) {
-      arr.push(Math.round((filterIncome[i][1] / total) * 100));
+      arr.push(Math.round(filterIncome[i][1] / total * 100))
     }
     return arr;
-  };
+  }
 
   const percent = getPercent();
 
-  let colorArr = ['#c44569', '#f3a683', '#f5cd79', '#9c88ff'];
 
-  let arr: any = [];
+  let colorArr = ["#c44569", "#f3a683","#f5cd79", "#9c88ff"]
 
-  for (let i = 0; i < filterIncome.length; i++) {
-    arr.push([
-      <>
-        <div className="graphBottomName">{filterIncome[i][0]}</div>
-        <div className="graphBottomBar">
-          <span
-            style={{ width: `${percent[i]}%`, background: `${colorArr[i]}` }}
-          ></span>
-        </div>
-      </>,
-    ]);
-  }
+    let arr:any = [];
+
+    for (let i = 0; i < filterIncome.length; i++) {
+      arr.push([<>
+      <div className="graphBottomName">{filterIncome[i][0]}</div>
+      <div className="graphBottomBar">
+      <span style={{"width": `${percent[i]}%`, "background": `${colorArr[i]}`}}></span>
+      </div>
+      </>])
+    }
 
   return (
     <div className="left-Account-Container">
@@ -132,72 +133,65 @@ const AccountGraph = () => {
         </Tabs>
       </Paper>
       <div className="graphTop">
-        <Grommet theme={grommet}>
-          <Box align="center" pad="large" background="none">
-            <Stack anchor="center">
-              <Meter
-                type="circle"
-                value={CalculatorPercent(
+      <CircularProgressbar value={CalculatorPercent(
                   groupNow[0].totalcost,
                   groupNow[0].totalcost - CalculationMonth(filterContentMonth),
-                )}
-                size="small"
-                thickness="small"
-                color="#9fd8df"
-              />
-              <Box direction="row" align="center" pad={{ bottom: 'xsmall' }}>
-                <Text size="xlarge" weight="bold">
-                  {CalculatorPercent(
-                    groupNow[0].totalcost,
-                    groupNow[0].totalcost -
-                      CalculationMonth(filterContentMonth),
-                  )}
-                </Text>
-                <Text size="small">%</Text>
-              </Box>
-            </Stack>
-          </Box>
-        </Grommet>
+                )} strokeWidth = {7} text={`${CalculatorPercent(
+                  groupNow[0].totalcost,
+                  groupNow[0].totalcost - CalculationMonth(filterContentMonth),
+                )}%`} className="circular"/>
         <div className="totalGraph">
-          <div>이번 달 가용 금액 : {threeComma(groupNow[0].totalcost)} 원</div>
-          <div>
-            {value === 0
-              ? `이번 달 지출 금액 : ${threeComma(
-                  CalculationMonth(filterContentMonth),
-                )} 원`
-              : `최근 일주일 지출 금액 : ${threeComma(
-                  CalculationMonth(CalculationWeek(groupNow[0].Contents)),
-                )} 원`}
+          <div className="totalMonthTopGraph">
+            <div>이번 달 가용 금액 : </div>
+            <div>{threeComma(groupNow[0].totalcost)} 원</div>
           </div>
           <div>
-            {value === 0
-              ? `총 남은 금액 : ${threeComma(
-                  groupNow[0].totalcost - CalculationMonth(filterContentMonth),
-                )} 원`
-              : `총 남은 금액 : ${threeComma(
-                  groupNow[0].totalcost -
+            {value === 0 ? (
+              <div className="totalMonthTopGraph">
+                <div>이번 달 지출 금액 : </div>
+                <div>{threeComma(CalculationMonth(filterContentMonth))} 원</div>
+              </div>
+            ) : (
+              <div className="totalMonthTopGraph">
+                <div>최근 일주일 지출 금액 : </div>
+                <div>
+                  {threeComma(
                     CalculationMonth(CalculationWeek(groupNow[0].Contents)),
-                )} 원`}
+                  )}
+                  원
+                </div>
+              </div>
+            )}
+          </div>
+          <div>
+            {value === 0 ? (
+              <div className="totalMonthTopGraph">
+                <div>총 남은 금액 : </div>
+                <div>
+                  {threeComma(
+                    groupNow[0].totalcost -
+                      CalculationMonth(filterContentMonth),
+                  )}{' '}
+                  원
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div>총 남은 금액 : </div>
+                <div>
+                  {threeComma(
+                    groupNow[0].totalcost -
+                      CalculationMonth(CalculationWeek(groupNow[0].Contents)),
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
-      {isMobile ? (
         <div className="graphBottom">
-          {arr.length === 0 ? (
-            <div className="graphBottomError">가계 데이터가 부족합니다</div>
-          ) : (
-            arr
-          )}
+        {arr.length === 0 ? (<div className="graphBottomError"><div>가계 데이터가 부족합니다</div></div>) : (arr)}
         </div>
-      ) : (
-        <div className="graphBottom">
-          {arr.length === 0 ? (
-            <div className="graphBottomError">가계 데이터가 부족합니다</div>
-          ) : (
-            arr
-          )}
-        </div>
-      )}
     </div>
   );
 };
