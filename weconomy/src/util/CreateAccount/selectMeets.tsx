@@ -20,7 +20,7 @@ const SelectMeets: React.FC<selects> = ({ selectedMeet, handleMeetChange }) => {
 
   return (
     <>
-      <InputLabel id="demo-simple-select-helper-label">그룹 목록</InputLabel>
+      <InputLabel id="demo-simple-select-helper-label">가계부 목록</InputLabel>
       <Select
         labelId="demo-simple-select-helper-label"
         id="demo-simple-select-helper"

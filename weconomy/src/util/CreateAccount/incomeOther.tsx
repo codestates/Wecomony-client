@@ -51,7 +51,7 @@ const IncomeOther: React.FC<props> = ({
             <MenuItem value="선택해주세요">
               <div>선택해주세요</div>
             </MenuItem>
-            <MenuItem value={'월급'}>월급</MenuItem>
+            <MenuItem value={'급여'}>급여</MenuItem>
             <MenuItem value={'잔돈'}>잔돈</MenuItem>
             <MenuItem value={'비상금'}>비상금</MenuItem>
             <MenuItem value={'기타'}>기타</MenuItem>
@@ -115,9 +115,10 @@ const IncomeOther: React.FC<props> = ({
               <MenuItem value="선택해주세요">
                 <div>선택해주세요</div>
               </MenuItem>
-              <MenuItem value={'월급'}>월급</MenuItem>
+              <MenuItem value={'급여'}>급여</MenuItem>
               <MenuItem value={'잔돈'}>잔돈</MenuItem>
               <MenuItem value={'비상금'}>비상금</MenuItem>
+              <MenuItem value={'기타'}>기타</MenuItem>
             </Select>
             <FormHelperText></FormHelperText>
           </div>

@@ -83,7 +83,13 @@ const MainPage: React.FC = () => {
         <div className="section2">
           <div className="TopSection2">
             <div className="LeftTopSection2"></div>
-            <div className="RightTopSection2"></div>
+            <div className="RightTopSection2">
+              <div className="RightTopSection2-1">월간, 주간, 일간</div>
+              <div className="RightTopSection2-2">
+                모든 <span className="pointText2">가계</span>가
+              </div>
+              <div className="RightTopSection2-3">한 눈에 보이는 구조</div>
+            </div>
           </div>
           <div className="BottomSection2">
             <div className="LeftBottomSection2"></div>
