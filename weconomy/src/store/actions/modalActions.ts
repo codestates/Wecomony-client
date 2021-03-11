@@ -28,6 +28,8 @@ import {
   OUT_OF_ACCOUNT_MODAL_CLOSE,
   SEE_DETAIL_MODAL_OPEN,
   SEE_DETAIL_MODAL_CLOSE,
+  OUT_OF_USER_MODAL_CLOSE,
+  OUT_OF_USER_MODAL_OPEN
 }  from './constants'
 
 export const isLoginModalOpen = () => {
@@ -140,6 +142,14 @@ export const outOfAccountModalOpen = () => {
 
 export const outOfAccountModalClose = () => {
   return { type : OUT_OF_ACCOUNT_MODAL_CLOSE }
+}
+
+export const outOfUserModalOpen = () => {
+  return { type : OUT_OF_USER_MODAL_OPEN }
+}
+
+export const outOfUserModalClose = () => {
+  return { type : OUT_OF_USER_MODAL_CLOSE }
 }
 
 export const seeDetailModalOpen = () => {

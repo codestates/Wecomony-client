@@ -12,6 +12,7 @@ $mainLogofont : 'Fredoka One', cursive;
 }
 
 .conFirmOutBtn {
+  cursor: pointer;
   width: 70%;
   height: 40%;
   background-color: rgb(255, 96, 96);
@@ -22,6 +23,7 @@ $mainLogofont : 'Fredoka One', cursive;
   font-weight: 500;
 }
 .cancelOutBtn {
+  cursor: pointer;
   width: 70%;
   height: 40%;
   background-color: $maincolor;
