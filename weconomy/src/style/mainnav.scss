@@ -51,6 +51,9 @@ $koreanFont : 'Noto Sans KR', sans-serif;
 .navBtns {
   padding: px;
 }
+.fa-bars {
+  color: $maincolor2;
+}
 
 .navBtns:hover {
   cursor: pointer;

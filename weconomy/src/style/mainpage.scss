@@ -5,10 +5,7 @@
   margin: 0;
   font-family: 'Jua', sans-serif;
 }
-body {
-  margin: 0;
-  font-family: 'Source Sans Pro';
-}
+
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
 $mainBackGroundColor2 : rgb(243, 246, 251);
@@ -106,7 +103,7 @@ $onepage : 100vh;
 }
 
 .section2 {
-background-color: $mainBackGroundColor;
+background-color: $mainBackGroundColor2;
 height: $onepage;
 display: flex;
 flex-direction: column;
@@ -121,10 +118,13 @@ display: flex;
 flex-direction: row;
 justify-content: space-around;
 align-items: center;
+padding-left: 100px;
 }
 
 .BottomSection2 {
 height: 40vh;
+padding-right: 150px;
+padding-left: 10px;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
@@ -133,12 +133,12 @@ align-items: center;
 }
 
 .LeftTopSection2 {
-  height: 100%;
-  width: 39%;
+  height: 40vh;
+  width: 36vw;
   border-radius: 10px;
   background-size: cover;
   background-image: url('../img/accountPage3.png');
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 
@@ -152,16 +152,35 @@ align-items: center;
 }
 
 .RightTopSection2-1 {
-  font-size: 3rem;
+  font-size: 2.7rem;
   line-height: 80px;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 .RightTopSection2-2 {
-  font-size: 3rem;
+  font-size: 2.7rem;
   line-height: 80px;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 .RightTopSection2-3 {
-  font-size: 3rem;
+  font-size: 2.7rem;
   line-height: 80px;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.LeftBottomSection2-1 {
+  font-size: 2.7rem;
+  line-height: 80px;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.LeftBottomSection2-2 {
+  font-size: 1.5rem;
+  line-height: 80px;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .pointText2 {
@@ -170,25 +189,51 @@ align-items: center;
 
 .LeftBottomSection2{
   height: 90%;
-  width: 60%;
-
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .RightBottomSection2{
-  height: 100%;
-  width: 20%;
+  height: 40vh;
+  width:  11vw;
   border-radius: 10px;
   background-color: gray;
   background-size: cover;
-  background-image: url('../img/accountPage2.png');
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background-image: url('../img/accountPage4.png');
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 .section3 {
-  background-color: rgb(255, 202, 105);
+  background-color: rgb(255, 255, 255);
   height: $onepage;
-
+  display: flex;
+  padding-left: 200px;
+  padding-right: 200px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.leftSection3 {
+  width: 22vw;
+  height: 75vh;
+  background-size: cover;
+  background-image: url('../img/iphone.png');
+}
+
+.rightSection3 {
+  width: 30vw;
+  height: 50vh;
+  background-color: $maincolor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .section4 {
 background-color: rgb(255, 255, 134);
 height: $onepage;

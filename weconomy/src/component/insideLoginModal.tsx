@@ -65,7 +65,7 @@ const InsideLoginModal: React.FC = () => {
               )}
               buttonText="Login"
               onSuccess={responseGoogle}
-              onFailure={responseGoogle}
+              onFailure={() => {}}
               cookiePolicy={'single_host_origin'}
             />
           </div>
