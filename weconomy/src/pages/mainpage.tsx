@@ -103,7 +103,7 @@ const MainPage: React.FC = () => {
               data-aos="fade-down"
               data-aos-duration="1500"
             >
-              <div className="RightTopSection2-1">월간 주간 일간</div>
+              <div className="RightTopSection2-1">월간, 주간, 일간</div>
               <div className="RightTopSection2-2">
                 모든 <span className="pointText2">가계</span>가
               </div>
@@ -132,17 +132,18 @@ const MainPage: React.FC = () => {
           </div>
         </div>
         <div className="section3">
-          <div className="rightSection3">
+          <div className="leftSection3">
             <div className="rightSection3-1">언제 어디서든,</div>
             <div className="rightSection3-2">빠르고 쉬운 가계부 관리</div>
             <div className="rightSection3-3">
-              <span>Weconomy</span>는 언제 어디서든 가계부 관리를 할 수 있도록
+              <span className="WeconomyPoint2">Weconomy</span>는 언제 어디서든
+              가계부 관리를 할 수 있도록
             </div>
             <div className="rightSection3-4">
               PC웹과 모바일웹을 모두 지원합니다.
             </div>
           </div>
-          <div className="leftSection3"></div>
+          <div className="rightSection3"></div>
         </div>
         <div className="section4"></div>
         <div className="section5"></div>

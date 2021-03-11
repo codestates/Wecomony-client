@@ -10,6 +10,7 @@ $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
 $mainBackGroundColor2 : rgb(243, 246, 251);
 $onepage : 100vh; 
+$mainfont2 : 'Noto Sans KR', sans-serif;
 
 .mainContainer {
   height : 100%;
@@ -45,6 +46,7 @@ $onepage : 100vh;
   margin: 30px 0px;
   z-index:2;
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
   }
 .section1 .MainDesc {
   margin: 50px 0px;
@@ -52,6 +54,7 @@ $onepage : 100vh;
   font-weight: 500;
   z-index:2;
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
   }
 }
 .section1 .textPoint{
@@ -154,32 +157,33 @@ align-items: center;
 .RightTopSection2-1 {
   font-size: 2.7rem;
   line-height: 80px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
 }
 .RightTopSection2-2 {
   font-size: 2.7rem;
   line-height: 80px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
 }
 .RightTopSection2-3 {
   font-size: 2.7rem;
   line-height: 80px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
 .LeftBottomSection2-1 {
   font-size: 2.7rem;
   line-height: 80px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
 .LeftBottomSection2-2 {
   font-size: 1.5rem;
   line-height: 80px;
+  font-weight: 300;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -210,28 +214,54 @@ align-items: center;
   background-color: rgb(255, 255, 255);
   height: $onepage;
   display: flex;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 230px;
+  padding-right: 230px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
-.leftSection3 {
-  width: 22vw;
-  height: 75vh;
+.rightSection3 {
+  width: 18vw;
+  height: 62vh;
   background-size: cover;
   background-image: url('../img/iphone.png');
 }
 
-.rightSection3 {
-  width: 30vw;
+.leftSection3 {
+  width: 40vw;
   height: 50vh;
-  background-color: $maincolor;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+}
+
+.rightSection3-1 {
+  font-family: $mainfont2;
+  font-size: 2.5vmax;
+  font-weight: 500;
+}
+.rightSection3-2 {
+  font-family: $mainfont2;
+  font-size: 2.5vmax;
+  font-weight: 500;
+  line-height: 80px;
+}
+.rightSection3-3 {
+  font-family: $mainfont2;
+  font-size: 1.5vmax;
+  line-height: 80px;
+  font-weight: 300;
+}
+.rightSection3-4 {
+  font-family: $mainfont2;
+  font-size: 1.5vmax;
+  font-weight: 300;
+}
+
+.WeconomyPoint2 {
+  color: $maincolor;
 }
 
 .section4 {
@@ -255,7 +285,6 @@ height: $onepage;
   .section1 .MainTitleLogo {
     font-family: 'Fredoka One', cursive;
     color: $maincolor;
-    font-weight: 900;
     margin-bottom: 50px;
     font-size: 3rem;
   }
