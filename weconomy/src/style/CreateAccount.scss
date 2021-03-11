@@ -152,7 +152,6 @@ $maincolor2 : #EDA28F;
     }
 }
 
-
 .belowBtns-saveBtn {
     width: 270px;
     height: 80px;
@@ -187,8 +186,8 @@ $maincolor2 : #EDA28F;
 
 .calculatorOuter {
     background-color: white;
-    width: 300px;
     position: absolute;
+    width: 33vh;
     left: 1rem;
     bottom: 14rem;
 }
@@ -236,6 +235,10 @@ $maincolor2 : #EDA28F;
 
     .outcome-category {
         width: 40%;
+    }
+
+    .calculatorOuter {
+        display: none;
     }
     
 }
