@@ -130,9 +130,34 @@ $maincolor2 : #EDA28F;
     color: white;
     transition-duration: 0.4s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    animation-name: blinkbtn;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    a
     &:hover {
         background-color: #ec7455;
     }
+}
+
+@keyframes blinkbtn {
+    0% {
+        background-color: maincolor2;
+      }
+      25% {
+        background-color: #ff633b;
+      }
+
+      50% {
+        background-color: maincolor2;
+      }
+      75% {
+        background-color: #ff633b;
+      }
+
+    100% {
+        background-color: maincolor2;
+    }
+ 
 }
 
 .belowBtns-saveBtn {
@@ -169,8 +194,8 @@ $maincolor2 : #EDA28F;
 
 .calculatorOuter {
     background-color: white;
-    width: 300px;
     position: absolute;
+    width: 33vh;
     left: 1rem;
     bottom: 14rem;
 
@@ -218,6 +243,10 @@ $maincolor2 : #EDA28F;
 
     .outcome-category {
         width: 40%;
+    }
+
+    .calculatorOuter {
+        display: none;
     }
     
 }
