@@ -18,6 +18,7 @@ import { IoThunderstorm } from 'react-icons/io5';
 import { formatISO9075 } from 'date-fns/esm';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import CountUp from 'react-countup';
 
 const useStyles = makeStyles({
   root: {
@@ -80,50 +81,51 @@ const AccountGraph = () => {
     return arr;
   };
 
-
-  const filterIncome:any = filterIncomes();
-
+  const filterIncome: any = filterIncomes();
 
   const calculateAll = () => {
     let cost = 0;
     for (let i = 0; i < filterIncome.length; i++) {
-      cost += filterIncome[i][1]
+      cost += filterIncome[i][1];
     }
     return cost;
   };
 
-  const total = calculateAll()
+  const total = calculateAll();
 
   const getPercent = () => {
-    let arr:any = [];
+    let arr: any = [];
     for (let i = 0; i < filterIncome.length; i++) {
-      arr.push(Math.round(filterIncome[i][1] / total * 100))
+      arr.push(Math.round((filterIncome[i][1] / total) * 100));
     }
     return arr;
-  }
+  };
 
   const percent = getPercent();
 
   useEffect(() => {
     console.log(arr2);
-  }, [])
+  }, []);
 
+  let colorArr = ['#c44569', '#f3a683', '#f5cd79', '#9c88ff'];
 
-  let colorArr = ["#c44569", "#f3a683","#f5cd79", "#9c88ff"]
+  let arr2: any = [];
 
-    let arr2:any = [];
-
-    for (let i = 0; i < filterIncome.length; i++) {
-      if (arr2.length > 3) {
-        break;
-      }
-      arr2.push([<>
-      <div className="graphBottomName">{filterIncome[i][0]}</div>
-      <div className="graphBottomBar">
-      <span style={{"width": `${percent[i]}%`, "background": `${colorArr[i]}`}}></span>
-      </div>
-      </>])
+  for (let i = 0; i < filterIncome.length; i++) {
+    if (arr2.length > 3) {
+      break;
     }
+    arr2.push([
+      <>
+        <div className="graphBottomName">{filterIncome[i][0]}</div>
+        <div className="graphBottomBar">
+          <span
+            style={{ width: `${percent[i]}%`, background: `${colorArr[i]}` }}
+          ></span>
+        </div>
+      </>,
+    ]);
+  }
 
   return (
     <div className="left-Account-Container">
@@ -140,31 +142,53 @@ const AccountGraph = () => {
         </Tabs>
       </Paper>
       <div className="graphTop">
-      <CircularProgressbar value={CalculatorPercent(
-                  groupNow[0].totalcost,
-                  groupNow[0].totalcost - CalculationMonth(filterContentMonth),
-                )} strokeWidth = {7} text={`${CalculatorPercent(
-                  groupNow[0].totalcost,
-                  groupNow[0].totalcost - CalculationMonth(filterContentMonth),
-                )}%`} className="circular"/>
+        <CircularProgressbar
+          value={CalculatorPercent(
+            groupNow[0].totalcost,
+            groupNow[0].totalcost - CalculationMonth(filterContentMonth),
+          )}
+          strokeWidth={7}
+          text={`${CalculatorPercent(
+            groupNow[0].totalcost,
+            groupNow[0].totalcost - CalculationMonth(filterContentMonth),
+          )}%`}
+          className="circular"
+        />
         <div className="totalGraph">
           <div className="totalMonthTopGraph">
             <div>이번 달 가용 금액 : </div>
-            <div>{threeComma(groupNow[0].totalcost)} 원</div>
+            <div>
+              <CountUp
+                separator=","
+                duration={1.4}
+                end={groupNow[0].totalcost}
+              />{' '}
+              원
+            </div>
           </div>
           <div>
             {value === 0 ? (
               <div className="totalMonthTopGraph">
                 <div>이번 달 지출 금액 : </div>
-                <div>{threeComma(CalculationMonth(filterContentMonth))} 원</div>
+                <div>
+                  <CountUp
+                    separator=","
+                    duration={1.4}
+                    end={CalculationMonth(filterContentMonth)}
+                  />{' '}
+                  원
+                </div>
               </div>
             ) : (
               <div className="totalMonthTopGraph">
                 <div>최근 일주일 지출 금액 : </div>
                 <div>
-                  {threeComma(
-                    CalculationMonth(CalculationWeek(groupNow[0].Contents)),
-                  )} 원
+                  <CountUp
+                    separator=","
+                    duration={1.7}
+                    end={Number(CalculationWeek(groupNow[0].Contents))}
+                  />{' '}
+                  원
                 </div>
               </div>
             )}
@@ -174,10 +198,14 @@ const AccountGraph = () => {
               <div className="totalMonthTopGraph">
                 <div>총 남은 금액 : </div>
                 <div>
-                  {threeComma(
-                    groupNow[0].totalcost -
-                      CalculationMonth(filterContentMonth),
-                  )}{' '}
+                  <CountUp
+                    separator=","
+                    duration={1.7}
+                    end={
+                      groupNow[0].totalcost -
+                      CalculationMonth(filterContentMonth)
+                    }
+                  />{' '}
                   원
                 </div>
               </div>
@@ -188,16 +216,23 @@ const AccountGraph = () => {
                   {threeComma(
                     groupNow[0].totalcost -
                       CalculationMonth(CalculationWeek(groupNow[0].Contents)),
-                  )} 원
+                  )}{' '}
+                  원
                 </div>
               </div>
             )}
           </div>
         </div>
       </div>
-        <div className="graphBottom">
-        {arr2.length === 0 ? (<div className="graphBottomError"><div>가계 데이터가 부족합니다</div></div>) : (arr2)}
-        </div>
+      <div className="graphBottom">
+        {arr2.length === 0 ? (
+          <div className="graphBottomError">
+            <div>가계 데이터가 부족합니다</div>
+          </div>
+        ) : (
+          arr2
+        )}
+      </div>
     </div>
   );
 };

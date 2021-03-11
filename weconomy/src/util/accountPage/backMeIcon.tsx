@@ -9,7 +9,7 @@ import { BiFootball } from 'react-icons/bi';
 import { BiEnvelope } from 'react-icons/bi';
 import { RiCoinsLine } from 'react-icons/ri';
 import { RiMoneyDollarBoxLine } from 'react-icons/ri';
-import { FiStopCircle } from "react-icons/fi"
+import { FiStopCircle } from 'react-icons/fi';
 
 const backMeIcon = (category: string) => {
   if (category === '식비') {
@@ -30,7 +30,7 @@ const backMeIcon = (category: string) => {
     return <BiFootball />;
   } else if (category === '기타') {
     return <FiStopCircle />;
-  } else if (category === '월급') {
+  } else if (category === '급여') {
     return <BiEnvelope />;
   } else if (category === '잔돈') {
     return <RiCoinsLine />;

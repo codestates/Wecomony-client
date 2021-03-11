@@ -81,12 +81,11 @@ $koreanFont : 'Noto Sans KR', sans-serif;
 .SideBarOneMemberBox {
   margin-top: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   height: 17%;
   width: 100%;
-  padding: 10px;
-  padding-left: 0;
+  
   background-color: $maincolor2;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -114,19 +113,9 @@ $koreanFont : 'Noto Sans KR', sans-serif;
   }
 }
 
-.iconAdmin {
-    width: 12%;
-    color: rgb(255, 255, 0);
-    font-weight: 700;
-    font-size: 1.5rem;
-}
 
-.iconAdminNone{
-    width: 12%;
-    color: rgba(255, 255, 0, 0);
-    font-weight: 700;
-    font-size: 1.5rem;
-}
+
+
 
 
 .SidBarMemberImg {
@@ -153,9 +142,19 @@ $koreanFont : 'Noto Sans KR', sans-serif;
 }
 
 .adminBlock {
-  height: 58px;
-  width: 7px;
-  background-color: rgb(217, 255, 2);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 100%;
+  width: 4%;
+  background-color: rgb(255, 208, 0);
+}
+
+.adminBlockNone {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 100%;
+  width: 3%;
+  background-color: rgba(217, 255, 2, 0);
 }
 
 .SideBarMemberName {

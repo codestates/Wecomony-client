@@ -106,7 +106,7 @@ $onepage : 100vh;
 }
 
 .section2 {
-background-color: rgb(243, 246, 251);
+background-color: $mainBackGroundColor;
 height: $onepage;
 display: flex;
 flex-direction: column;
@@ -116,7 +116,7 @@ padding-right: 50px;
 }
 
 .TopSection2 {
-height: 40%;
+height: 40vh;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
@@ -124,8 +124,7 @@ align-items: center;
 }
 
 .BottomSection2 {
-height: 40%;
-background-color: $mainBackGroundColor;
+height: 40vh;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
@@ -134,30 +133,55 @@ align-items: center;
 }
 
 .LeftTopSection2 {
-  height: 90%;
-  width: 43.5%;
+  height: 100%;
+  width: 39%;
   border-radius: 10px;
-  background-color: gray;
-  background-image: url('https://ifh.cc/g/MNkYdx.png');
+  background-size: cover;
+  background-image: url('../img/accountPage3.png');
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+
 
 .RightTopSection2 {
   height: 90%;
   width: 50%;
-  background-color: gray;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.RightTopSection2-1 {
+  font-size: 3rem;
+  line-height: 80px;
+}
+.RightTopSection2-2 {
+  font-size: 3rem;
+  line-height: 80px;
+}
+.RightTopSection2-3 {
+  font-size: 3rem;
+  line-height: 80px;
+}
+
+.pointText2 {
+  color: $maincolor;
 }
 
 .LeftBottomSection2{
   height: 90%;
   width: 60%;
-  background-color: gray;
+
 }
 
 .RightBottomSection2{
-  height: 90%;
-  width: 30%;
+  height: 100%;
+  width: 20%;
+  border-radius: 10px;
   background-color: gray;
+  background-size: cover;
+  background-image: url('../img/accountPage2.png');
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .section3 {

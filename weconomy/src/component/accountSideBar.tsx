@@ -52,13 +52,9 @@ const AccountSideBar = () => {
               {member.img !== 'undefined' ? (
                 <>
                   {members[0].memberNumber === member.id ? (
-                    <div className="iconAdmin">
-                      <div className="adminBlock"></div>
-                    </div>
+                    <div className="adminBlock"></div>
                   ) : (
-                    <div className="iconAdminNone">
-                      <CgCrown />
-                    </div>
+                    <div className="adminBlockNone"></div>
                   )}
                   <img
                     className="SidBarMemberImg"
@@ -69,11 +65,9 @@ const AccountSideBar = () => {
               ) : (
                 <>
                   {members[0].memberNumber === member.id ? (
-                    <div className="iconAdmin">
-                      <CgCrown />
-                    </div>
+                    <div className="adminBlock"></div>
                   ) : (
-                    <div className="iconAdmin"></div>
+                    <div className="adminBlockNone"></div>
                   )}
                   <div className="SidebarMemberIcon">
                     {member.email.slice(0, 1).toUpperCase()}
