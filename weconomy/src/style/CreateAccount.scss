@@ -115,8 +115,18 @@ $maincolor2 : #EDA28F;
     justify-content: center;
 }
 
+@keyframes big {
+    from {
+        background-color: $maincolor2
+    }
+    to {
+        background-color: #ec542e
+    }
+  }
+
 .belowBtns-calculator {
     display:flex;
+    cursor: pointer;
     background-color: $maincolor2;
     width: 80px;
     height: 80px;
@@ -130,34 +140,16 @@ $maincolor2 : #EDA28F;
     color: white;
     transition-duration: 0.4s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    animation-name: blinkbtn;
-    animation-duration: 4s;
-    animation-iteration-count: 2;
-    a
+    animation-name: big;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: 8;
+    animation-direction: alternate;
+    animation-fill-mode: none;
+    animation-play-state: running;
     &:hover {
-        background-color: #ec7455;
+        background-color: #ec542e;
     }
-}
-
-@keyframes blinkbtn {
-    0% {
-        background-color: maincolor2;
-      }
-      25% {
-        background-color: #ff633b;
-      }
-
-      50% {
-        background-color: maincolor2;
-      }
-      75% {
-        background-color: #ff633b;
-      }
-
-    100% {
-        background-color: maincolor2;
-    }
- 
 }
 
 .belowBtns-saveBtn {
@@ -198,8 +190,8 @@ $maincolor2 : #EDA28F;
     width: 33vh;
     left: 1rem;
     bottom: 14rem;
-
 }
+
 
 .selecCate {
     width: 150px;
