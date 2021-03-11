@@ -12,6 +12,8 @@ import MobileSidebar from '../piececompo/MobileSidebar';
 import removeDropDown from '../util/Nav/dropDown';
 import NavToggleBtnSet from '../util/Nav/NavToggleBtnSet';
 import onClickProfile from '../util/Nav/onClickProfile';
+import { outOfUserModalOpen } from '../store/actions/modalActions';
+import OutOfUserModal from '../component/outOfUserModal'
 
 const Nav: React.FC = () => {
   window.onclick = removeDropDown;
@@ -46,8 +48,7 @@ const Nav: React.FC = () => {
   };
 
   const toSignOutUser = () => {
-    toLogOutUser();
-    dispatch(signOutUser(userData?.id));
+    dispatch(outOfUserModalOpen())
   };
 
   const userImage = useSelector(
@@ -111,7 +112,7 @@ const Nav: React.FC = () => {
         )}
       </div>
       <MobileSidebar></MobileSidebar>
-
+      <OutOfUserModal></OutOfUserModal>
       <div onClick={NavToggleBtnSet} className="navbar__toogleBtn">
         <i className="fas fa-bars"></i>
       </div>
