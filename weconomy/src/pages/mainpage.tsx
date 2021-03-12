@@ -167,8 +167,10 @@ const MainPage: React.FC = () => {
             data-aos-easing="linear"
             data-aos-duration="1500"
           >
-            <div className="rightSection3-1">언제 어디서든,</div>
+            <div className="rightSection3-1">언제 어디서든</div>
             <div className="rightSection3-2">빠르고 쉬운 가계부 관리</div>
+            <br></br>
+            <br></br>
             <div className="rightSection3-3">
               <span className="WeconomyPoint2">Weconomy</span>는 언제 어디서든
               가계부 관리를 할 수 있도록
@@ -184,8 +186,8 @@ const MainPage: React.FC = () => {
           />
         </div>
 
-
         <div className="section4">
+
           <div data-aos="fade-zoom-in"
      data-aos-easing="ease-in-back"
      data-aos-duration="500"
@@ -248,7 +250,30 @@ const MainPage: React.FC = () => {
               Weconomy에서 가계부를 작성하고 있습니다.
             </div>
           </div>
-          <div className="BottomSection5"></div>
+          <div className="BottomSection5">
+            <div
+              className="BottomSection5-textBox"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1500"
+            >
+              <div className="BottomSection5-textBox-1">
+                당신이 알찬 소비를 하고 싶은 사람이라면
+              </div>
+              <div className="BottomSection5-textBox-2">
+                틀림없이 Weconomy을 좋아하게 될 거예요.
+              </div>
+              <div className="BottomSection5-textBox-3">
+                지금 바로 시작해봐요!
+              </div>
+            </div>
+            <button onClick={toAccountPage} className="BottomSection5-Btn">
+              시작하기
+            </button>
+          </div>
+          <div className="FootSection5">
+            <div>2021 ⓒCopyright 센치한 형제들</div>
+          </div>
         </div>
       </div>
     </>

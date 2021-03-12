@@ -252,7 +252,7 @@ align-items: center;
 }
 
 .leftSection3 {
-  width: 40vw;
+  width: 36vw;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -444,28 +444,77 @@ align-items: center;
 
 .BottomSection5 {
   background-color: $mainBackGroundColor2;
-  height: 70%;
+  height: 50%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.BottomSection5-textBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8vmax;
+  line-height: 3vmax;
+  font-family: $mainfont2;
+  font-weight: 500;
+}
+
+.BottomSection5-Btn {
+  width: 14vmax;
+  height: 4vmax;
+  font-size: 1.5vmax;
+  border: 0;
+  outline: 0;
+  background-color: $maincolor;
+  color: white;
+  &:hover {
+    background-color: #efefef00;
+    border: 2px $maincolor solid;
+    color: $maincolor;
+  }
+}
+
+.FootSection5 {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vmax;
 }
 
 .TopSection5-1 {
  font-family: $mainfont2;
  font-weight: 300;
- font-size: 48px;
+ font-size: 36px;
 }
 
 .TopSection5-2 {
   font-family: $mainfont2;
   font-weight: 300;
-  font-size: 48px;
+  font-size: 32px;
   line-height: 100px;
 }
 
 .numberUser {
-  font-size: 64px;
+  font-size: 50px;
   font-family: $mainfont2;
   font-weight: 500;
   color: #1474F8;
+}
+
+.BottomSection5-textBox-1 {
+  font-family: $mainfont2;
+}
+.BottomSection5-textBox-2 {
+  font-family: $mainfont2;
+}
+.BottomSection5-textBox-3 {
+  font-family: $mainfont2;
 }
 
 @media (max-width: 769px){
@@ -575,8 +624,8 @@ align-items: center;
     }
     .rightSection3{
       margin-top: 100px;
-      width: 40vw;
-      height: 40vh;
+      width: 50vw;
+      height: 38vh;
       
     }
     .leftSection3 {
@@ -596,6 +645,10 @@ align-items: center;
     .WeconomyPoint2 {
       font-size: 20px;
     }
+
+    .TopSection5  {
+      height: 25%;
+    } 
     .TopSection5-1 {
       font-family: $mainfont2;
       font-weight: 300;
