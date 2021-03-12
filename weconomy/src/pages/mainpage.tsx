@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { successLogin, tryLogin } from '../store/actions/userActions';
 import { requestLoginModalOpen } from '../store/actions/modalActions';
 import useMedia from '../customhooks/useMedia';
+import useScroll from '../customhooks/useScroll';
 import { useHistory } from 'react-router-dom';
 import { RootState } from '../store/reducers';
 import Nav from '../component/nav';
@@ -13,6 +14,9 @@ import AskNoneSaveModal from '../component/askNoneSave';
 import axios from 'axios';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { FaChevronUp } from 'react-icons/fa';
+import CountUp from 'react-countup';
+
 AOS.init();
 
 const MainPage: React.FC = () => {
@@ -20,8 +24,11 @@ const MainPage: React.FC = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { isMobile } = useMedia();
+  const { y } = useScroll();
 
-  useEffect(() => {});
+  useEffect(() => {
+    console.log(y);
+  }, [y]);
 
   axios.defaults.withCredentials = true;
 
@@ -33,6 +40,10 @@ const MainPage: React.FC = () => {
     }
   };
 
+  const toUpPage = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <Nav></Nav>
@@ -40,6 +51,16 @@ const MainPage: React.FC = () => {
         <LoginModal></LoginModal>
         <RequestLoginModal></RequestLoginModal>
         <AskNoneSaveModal></AskNoneSaveModal>
+        {y > 400 ? (
+          <button
+            className="goToUpBtn"
+            data-aos="fade-down"
+            data-aos-duration="2000"
+            onClick={toUpPage}
+          >
+            <FaChevronUp></FaChevronUp>
+          </button>
+        ) : null}
         <div className="section1">
           <div className="textBox">
             {isMobile ? <h1 className="MainTitleLogo">Weconomy</h1> : null}
@@ -52,7 +73,7 @@ const MainPage: React.FC = () => {
               <h1
                 className="MainTitle"
                 data-aos="fade-down"
-                data-aos-duration="1500"
+                data-aos-duration="2000"
               >
                 아직도 <span className="textPoint">가계부</span>가 멀게만
                 느껴지시나요?
@@ -93,14 +114,18 @@ const MainPage: React.FC = () => {
         </div>
         <div className="section2">
           <div className="TopSection2">
-            <div
+            <img
+              src="https://ifh.cc/g/aAHq4F.jpg"
               className="LeftTopSection2"
               data-aos="fade-right"
+              data-aos-easing="linear"
               data-aos-duration="1500"
-            ></div>
+              alt="이미지1"
+            />
             <div
               className="RightTopSection2"
               data-aos="fade-down"
+              data-aos-easing="linear"
               data-aos-duration="1500"
             >
               <div className="RightTopSection2-1">월간, 주간, 일간</div>
@@ -112,27 +137,36 @@ const MainPage: React.FC = () => {
           </div>
           <div className="BottomSection2">
             <div
-              className="LeftBottomSection2"
+              className="leftBottomSection2"
               data-aos="fade-down"
+              data-aos-easing="linear"
               data-aos-duration="1500"
             >
               <div className="LeftBottomSection2-1">
                 아직도 혼자 작성하시나요?
               </div>
               <div className="LeftBottomSection2-2">
-                <span className="WeconomyPoint">Weconomy</span>에서는 구성원과
+                <span className="WeconomyPoint2">Weconomy</span>에서는 구성원과
                 함께 관리할 수 있습니다!
               </div>
             </div>
-            <div
+            <img
+              src="https://ifh.cc/g/dNWDtD.png"
               className="RightBottomSection2"
               data-aos="fade-left"
+              data-aos-easing="linear"
               data-aos-duration="1500"
-            ></div>
+              alt="이미지2"
+            />
           </div>
         </div>
         <div className="section3">
-          <div className="leftSection3">
+          <div
+            className="leftSection3"
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+          >
             <div className="rightSection3-1">언제 어디서든,</div>
             <div className="rightSection3-2">빠르고 쉬운 가계부 관리</div>
             <div className="rightSection3-3">
@@ -143,10 +177,38 @@ const MainPage: React.FC = () => {
               PC웹과 모바일웹을 모두 지원합니다.
             </div>
           </div>
-          <div className="rightSection3"></div>
+          <img
+            className="rightSection3"
+            src="https://ifh.cc/g/CNiejQ.png"
+            alt="iphone"
+          />
         </div>
         <div className="section4"></div>
-        <div className="section5"></div>
+        <div className="section5">
+          <div className="TopSection5">
+            <div className="TopSection5-1">
+              매일{' '}
+              <span
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+                className="numberUser"
+              >
+                <CountUp
+                  separator=","
+                  duration={1.4}
+                  start={100000}
+                  end={106575}
+                />
+              </span>
+              명이
+            </div>
+            <div className="TopSection5-2">
+              Weconomy에서 가계부를 작성하고 있습니다.
+            </div>
+          </div>
+          <div className="BottomSection5"></div>
+        </div>
       </div>
     </>
   );
