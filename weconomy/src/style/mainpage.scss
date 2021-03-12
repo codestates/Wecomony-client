@@ -4,12 +4,18 @@
   padding: 0;
   margin: 0;
   font-family: 'Jua', sans-serif;
+  
+}
+html {
+  scroll-behavior: smooth;
 }
 
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
 $mainBackGroundColor2 : rgb(243, 246, 251);
 $onepage : 100vh; 
+$maincolor2 : #EDA28F;
+$mainfont2 : 'Noto Sans KR', sans-serif;
 
 .mainContainer {
   height : 100%;
@@ -44,7 +50,8 @@ $onepage : 100vh;
   line-height: 67px;
   margin: 30px 0px;
   z-index:2;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: $mainfont2;
+  font-weight: 300;
   }
 .section1 .MainDesc {
   margin: 50px 0px;
@@ -52,6 +59,7 @@ $onepage : 100vh;
   font-weight: 500;
   z-index:2;
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
   }
 }
 .section1 .textPoint{
@@ -61,7 +69,7 @@ $onepage : 100vh;
 .WeconomyPoint {
   font-family: 'Fredoka One', cursive;
   color: #1474F8;
-  font-size: 2.1vmax;
+  font-size: 2vmax;
 }
 
 .section1 .caculator{
@@ -88,6 +96,26 @@ $onepage : 100vh;
     color: $maincolor;
   }
 }
+
+.goToUpBtn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: $maincolor2;
+  position: fixed;
+  right: 3rem;
+  bottom: 5rem;
+  border: 0;
+  outline: 0;
+  font-size: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
 
 .mainMobileBtn{
   position: fixed;
@@ -118,7 +146,6 @@ display: flex;
 flex-direction: row;
 justify-content: space-around;
 align-items: center;
-padding-left: 100px;
 }
 
 .BottomSection2 {
@@ -137,54 +164,56 @@ align-items: center;
   width: 36vw;
   border-radius: 10px;
   background-size: cover;
-  background-image: url('../img/accountPage3.png');
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 
 .RightTopSection2 {
-  height: 90%;
+  height: 50%;
   width: 50%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
+  padding-left: 100px;
 }
 
 .RightTopSection2-1 {
-  font-size: 2.7rem;
+  font-size: 3.3vh;
   line-height: 80px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
 }
 .RightTopSection2-2 {
-  font-size: 2.7rem;
+  font-size: 3.3vh;
   line-height: 80px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
 }
 .RightTopSection2-3 {
-  font-size: 2.7rem;
+  font-size: 3.3vh;
   line-height: 80px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
 .LeftBottomSection2-1 {
-  font-size: 2.7rem;
+  font-size: 3.3vh;
   line-height: 80px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
 .LeftBottomSection2-2 {
-  font-size: 1.5rem;
+  font-size: 2.3vh;
   line-height: 80px;
+  font-weight: 300;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
 .pointText2 {
   color: $maincolor;
+
 }
 
 .LeftBottomSection2{
@@ -193,7 +222,7 @@ align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
+  align-items: flex-start;
 }
 
 .RightBottomSection2{
@@ -202,7 +231,6 @@ align-items: center;
   border-radius: 10px;
   background-color: gray;
   background-size: cover;
-  background-image: url('../img/accountPage4.png');
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
@@ -210,28 +238,54 @@ align-items: center;
   background-color: rgb(255, 255, 255);
   height: $onepage;
   display: flex;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 230px;
+  padding-right: 230px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
-.leftSection3 {
-  width: 22vw;
-  height: 75vh;
+.rightSection3 {
+  width: 18vw;
+  height: 62vh;
   background-size: cover;
-  background-image: url('../img/iphone.png');
 }
 
-.rightSection3 {
-  width: 30vw;
+.leftSection3 {
+  width: 40vw;
   height: 50vh;
-  background-color: $maincolor;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+}
+
+.rightSection3-1 {
+  font-family: $mainfont2;
+  font-size: 2.5vmax;
+  font-weight: 500;
+}
+.rightSection3-2 {
+  font-family: $mainfont2;
+  font-size: 2.5vmax;
+  font-weight: 500;
+  line-height: 80px;
+}
+.rightSection3-3 {
+  font-family: $mainfont2;
+  font-size: 1.5vmax;
+  line-height: 80px;
+  font-weight: 300;
+}
+.rightSection3-4 {
+  font-family: $mainfont2;
+  font-size: 1.5vmax;
+  font-weight: 300;
+}
+
+.WeconomyPoint2 {
+  color: $maincolor;
+  font-size: 2rem;
 }
 
 .section4 {
@@ -319,11 +373,47 @@ align-items: center;
 
 
 .section5 {
-  background-color: rgb(130, 255, 130);
+  background-color: white;
   height: $onepage;
 
 }
 
+
+.TopSection5 {
+  height: 30%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.BottomSection5 {
+  background-color: $mainBackGroundColor2;
+  height: 70%;
+  width: 100%;
+}
+
+.TopSection5-1 {
+ font-family: $mainfont2;
+ font-weight: 300;
+ font-size: 48px;
+}
+
+.TopSection5-2 {
+  font-family: $mainfont2;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 100px;
+}
+
+.numberUser {
+  font-size: 64px;
+  font-family: $mainfont2;
+  font-weight: 500;
+  color: #1474F8;
+}
 
 @media (max-width: 769px){
   .section1 {
@@ -336,7 +426,6 @@ align-items: center;
   .section1 .MainTitleLogo {
     font-family: 'Fredoka One', cursive;
     color: $maincolor;
-    font-weight: 900;
     margin-bottom: 50px;
     font-size: 3rem;
   }
@@ -344,19 +433,141 @@ align-items: center;
   font-size: 33px;
   line-height: 45px;
   white-space: pre-line;
-
+    font-family: $mainfont2;
   }
   .section1 .MainDesc {
     margin: 50px 0px;
     font-size: 24px;
     font-weight: 500;
-
+    font-family: $mainfont2;
     }
     .WeconomyPoint {
       font-family: 'Fredoka One', cursive;
       color: #1474F8;
       font-size: 3vmax;
     }
+
+    .section2 {
+      height: 170vh;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      justify-content: space-around;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .TopSection2 {
+      flex-direction: column;
+    }
+    .BottomSection2 {
+      
+      flex-direction: column-reverse;
+    }
+    .LeftTopSection2 {
+      height: 40vh;
+      width: 90vw;
+      border-radius: 10px;
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    }
+
+    .RightTopSection2 {
+      margin-top: 50px;
+      width: 90%;
+      height: 50vh;
+      padding-left: 0;
+    }
+    .RightTopSection2-1 {
+      font-size: 24px;
+      line-height: 50px;
+    }
+    .RightTopSection2-2 {
+      font-size: 24px;
+      line-height: 50px;
+    }
+    .RightTopSection2-3{
+      font-size: 24px;
+      line-height: 50px;
+    }
+    .BottomSection2 {
+      padding-right: 0;
+      justify-content: space-between;
+    }
+    
+    .RightBottomSection2 {
+      width: 40%;
+      margin-bottom: 50px;
+    }
+    .LeftBottomSection2{
+      height: 40%;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .LeftBottomSection2-1 {
+      text-align: center;
+      font-size: 24px;
+    }
+    .LeftBottomSection2-2 {
+      text-align: center;
+      font-size: 18px;
+      line-height: 50px
+    }
+    .section3 {
+      flex-direction: column-reverse;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .rightSection3{
+      margin-top: 100px;
+      width: 40vw;
+      height: 40vh;
+      
+    }
+    .leftSection3 {
+      width: 90vw;
+      align-items: center;
+    }
+    .rightSection3-1 {
+      font-size: 22px;
+      text-align: center;
+    }
+    .rightSection3-2 {
+      font-size: 22px
+    }
+    .rightSection3-3 {
+      font-size: 16px
+    }
+    .WeconomyPoint2 {
+      font-size: 20px;
+    }
+    .TopSection5-1 {
+      font-family: $mainfont2;
+      font-weight: 300;
+      font-size: 24px;
+     }
+     
+     .TopSection5-2 {
+       font-family: $mainfont2;
+       font-weight: 300;
+       font-size: 24px;
+       line-height: 100px;
+     }
+     
+     .numberUser {
+       font-size: 36px;
+       font-family: $mainfont2;
+       font-weight: 500;
+       color: #1474F8;
+     }
+     .goToUpBtn {
+       width: 50px;
+       height: 50px;
+       bottom: 9rem;
+     }
+    
 }
 
 

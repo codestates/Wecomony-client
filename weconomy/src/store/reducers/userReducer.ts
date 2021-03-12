@@ -1,5 +1,6 @@
 import { IS_LOGIN, SUCCESS_LOGIN, SAVE_USER_DATA, LOG_OUT_USER, GET_USERNOW_GROUP, SAVE_USER_GOOGLE } from '../actions/constants'
 import { UserAction } from '../actions/userActions'
+import { Reducer } from 'redux';
 
 
 interface userObjType {
@@ -13,7 +14,7 @@ interface userObjType {
 interface Props {
   isLogin : boolean
   userData : userObjType | null
-  groups : Array<object> | null
+  groups : any
   meets: Array<object> | null
 }
 
@@ -27,11 +28,11 @@ const initialState = {
     thumbnail : null,
     email : null
   },
-  groups : null,
+  groups : [],
   meets : null
 }
 
-const userReducer = (state: Props = initialState, action: any) => {
+const userReducer: Reducer = (state = initialState, action) => {
   switch (action.type) {
 
     case SUCCESS_LOGIN :
@@ -65,7 +66,7 @@ const userReducer = (state: Props = initialState, action: any) => {
           thumbnail : null,
           email : null
         },
-        groups : null
+        groups : []
       }
     case GET_USERNOW_GROUP : 
       return {
@@ -78,10 +79,7 @@ const userReducer = (state: Props = initialState, action: any) => {
         userData : {
           ...state.userData,
           id : action.data.id,
-          access_token : action.data.response.access_token,
-          refresh_token : action.data.response.refresh_token,
-          nickname : action.data.profile.properties.nickname,
-          thumbnail : action.data.profile.properties.thumbnail_image,
+          thumbnail : action.data.imageUrl,
           email :  action.data.email
         }
       }
