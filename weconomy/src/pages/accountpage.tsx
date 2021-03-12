@@ -50,7 +50,7 @@ const AccountPage: React.FC = () => {
   return (
     <>
       <Nav></Nav>
-      {groupData.length === 0 ? (
+      {groupData.length < 1 ? (
         <NotAMember></NotAMember>
       ) : (
         <>

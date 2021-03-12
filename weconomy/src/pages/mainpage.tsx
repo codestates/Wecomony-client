@@ -167,8 +167,10 @@ const MainPage: React.FC = () => {
             data-aos-easing="linear"
             data-aos-duration="1500"
           >
-            <div className="rightSection3-1">언제 어디서든,</div>
+            <div className="rightSection3-1">언제 어디서든</div>
             <div className="rightSection3-2">빠르고 쉬운 가계부 관리</div>
+            <br></br>
+            <br></br>
             <div className="rightSection3-3">
               <span className="WeconomyPoint2">Weconomy</span>는 언제 어디서든
               가계부 관리를 할 수 있도록
@@ -184,40 +186,49 @@ const MainPage: React.FC = () => {
           />
         </div>
 
-
         <div className="section4">
           <div className="section4-mainDesc">
-            <span className="section4-descSpan" >Weconomy </span> 는 어떤 가계부인가요?
+            <span className="section4-descSpan">Weconomy </span> 는 어떤
+            가계부인가요?
           </div>
 
           <div className="section4-userReview1">
+            <div className="section4-userInfo1">
+              <img
+                src="https://ifh.cc/g/GkNvwz.png"
+                className="section4-userProfile"
+              ></img>
+              <img
+                src="https://ifh.cc/g/MO0P27.png"
+                className="section4-userRate"
+              ></img>
+              <span className="section4-userName">메이슨</span>
+            </div>
 
-              <div className="section4-userInfo1">
-              <img src= "https://ifh.cc/g/GkNvwz.png" className="section4-userProfile"></img>
-                <img src= "https://ifh.cc/g/MO0P27.png" className="section4-userRate"></img>
-                <span className="section4-userName">메이슨</span>
-              </div>
-              
-
-                <div className="secton4-userComment1">
-                사회초년생으로써 올바른 경제 습관을 미리 길러야 겠다는 생각이 들었는데 위코노미를
-                사용하면서 효과적으로 공부할 수 있었어요!
-                </div>
+            <div className="secton4-userComment1">
+              사회초년생으로써 올바른 경제 습관을 미리 길러야 겠다는 생각이
+              들었는데 위코노미를 사용하면서 효과적으로 공부할 수 있었어요!
+            </div>
           </div>
 
           <div className="section4-userReview2">
+            <div className="secton4-userComment2">
+              친구들과 펜션으로 놀러갈 때 회비에 대한 수입, 지출 내역을 함께
+              공유하면서 효율적으로 관리하고 싶었는데 위코노미를 통해 잘 해결할
+              수 있었어요!
+            </div>
 
-          <div className="secton4-userComment2">
-                친구들과 펜션으로 놀러갈 때 회비에 대한 수입, 지출 내역을 함께 공유하면서 
-                효율적으로 관리하고 싶었는데 위코노미를 통해 잘 해결할 수 있었어요!
-                </div>
-
-              <div className="section4-userInfo2">
-              <img src="https://ifh.cc/g/Y7W7mM.png" className="section4-userProfile"></img>
-                <img src= "https://ifh.cc/g/MO0P27.png"className="section4-userRate"></img>
-                <div className="section4-userName">로렌스</div>
-              </div>
-
+            <div className="section4-userInfo2">
+              <img
+                src="https://ifh.cc/g/Y7W7mM.png"
+                className="section4-userProfile"
+              ></img>
+              <img
+                src="https://ifh.cc/g/MO0P27.png"
+                className="section4-userRate"
+              ></img>
+              <div className="section4-userName">로렌스</div>
+            </div>
           </div>
         </div>
         <div className="section5">
@@ -243,7 +254,30 @@ const MainPage: React.FC = () => {
               Weconomy에서 가계부를 작성하고 있습니다.
             </div>
           </div>
-          <div className="BottomSection5"></div>
+          <div className="BottomSection5">
+            <div
+              className="BottomSection5-textBox"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1500"
+            >
+              <div className="BottomSection5-textBox-1">
+                당신이 알찬 소비를 하고 싶은 사람이라면
+              </div>
+              <div className="BottomSection5-textBox-2">
+                틀림없이 Weconomy을 좋아하게 될 거예요.
+              </div>
+              <div className="BottomSection5-textBox-3">
+                지금 바로 시작해봐요!
+              </div>
+            </div>
+            <button onClick={toAccountPage} className="BottomSection5-Btn">
+              시작하기
+            </button>
+          </div>
+          <div className="FootSection5">
+            <div>2021 ⓒCopyright 센치한 형제들</div>
+          </div>
         </div>
       </div>
     </>
