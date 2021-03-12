@@ -247,7 +247,7 @@ const MainPage: React.FC = () => {
               명이
             </div>
             <div className="TopSection5-2">
-              Weconomy에서 가계부를 작성하고 있습니다.
+            <span data-aos="zoom-in" className="section4-descSpan2" >Weconomy</span> 에서 가계부를 작성하고 있습니다.
             </div>
           </div>
           <div className="BottomSection5">
@@ -258,13 +258,11 @@ const MainPage: React.FC = () => {
               data-aos-duration="1500"
             >
               <div className="BottomSection5-textBox-1">
-                당신이 알찬 소비를 하고 싶은 사람이라면
+              <span data-aos="zoom-in" className="section4-descSpan2" >Weconomy</span> 와 함께 시작하는 올바른 금융 습관
               </div>
-              <div className="BottomSection5-textBox-2">
-                틀림없이 Weconomy을 좋아하게 될 거예요.
-              </div>
+              <br></br>
               <div className="BottomSection5-textBox-3">
-                지금 바로 시작해봐요!
+                지금 바로 시작할까요?
               </div>
             </div>
             <button onClick={toAccountPage} className="BottomSection5-Btn">
