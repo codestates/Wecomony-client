@@ -13,8 +13,8 @@ $onepage : 100vh;
 
 .mainContainer {
   height : 100%;
-  background-color : blue;
 }
+
 .section1 {
   height : $onepage;
   background-color : $mainBackGroundColor;
@@ -235,14 +235,95 @@ align-items: center;
 }
 
 .section4 {
-background-color: rgb(255, 255, 134);
-height: $onepage;
+  background-color: $mainBackGroundColor2;
+  height: $onepage;
+  display: flex;
+  position:relative;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 50px;
+  padding-right: 50px;
 }
+
+.section4-mainDesc {
+  display:flex;
+  justify-content: center;
+  font-size: 2.7rem;
+  position:absolute;
+  top:6%;
+  right: 28.5%;
+}
+
+.section4-descSpan {
+  font-family: 'Fredoka One', cursive;
+  color: #1474F8;
+  font-size:3.5vmax;
+}
+
+.section4-userInfo1{
+  display:flex;
+  flex-direction: column ;
+}
+
+.section4-userInfo2{
+  display:flex;
+  flex-direction: column ;
+  width:200%;
+}
+
+.section4-userComment1 {
+  width:50%;
+}
+
+.section4-userName {
+  width: 15%;
+}
+
+.section4-userReview {
+  height: 40vh;
+  display:flex;
+}
+
+.section4-userRate {
+  width: 20%;
+}
+
+.section4-userProfile {
+  width: 20%;
+}
+
+.section4-userReview1 {
+  height: 30%;
+  width: 50%;
+  position:absolute;
+  bottom:10%;
+  right:50%;
+  display:flex;
+  background-color: wheat;
+  justify-content: space-around;
+}
+
+
+.section4-userReview2 {
+  height: 30%;
+  width: 50%;
+  display:flex;
+  position:absolute;
+  justify-content: space-between;
+  top:25%;
+  left:50%;
+  background-color: pink;
+}
+
+
+
+
 .section5 {
   background-color: rgb(130, 255, 130);
   height: $onepage;
 
 }
+
 
 @media (max-width: 769px){
   .section1 {

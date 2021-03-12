@@ -144,7 +144,42 @@ const MainPage: React.FC = () => {
           </div>
           <div className="leftSection3"></div>
         </div>
-        <div className="section4"></div>
+
+        <div className="section4">
+          <div className="section4-mainDesc">
+            <span className="section4-descSpan" >Weconomy </span> 는 어떤 가계부인가요?
+          </div>
+
+          <div className="section4-userReview1">
+
+              <div className="section4-userInfo1">
+              <img src= "https://ifh.cc/g/GkNvwz.png" className="section4-userProfile"></img>
+                <img src= "https://ifh.cc/g/MO0P27.png" className="section4-userRate"></img>
+                <span className="section4-userName">메이슨</span>
+              </div>
+              
+
+                <div className="secton4-userComment1">
+                사회초년생으로써 올바른 경제 습관을 미리 길러야 겠다는 생각이 들었는데 위코노미를
+                사용하면서 효과적으로 공부할 수 있었어요!
+                </div>
+          </div>
+
+          <div className="section4-userReview2">
+
+          <div className="secton4-userComment2">
+                친구들과 펜션으로 놀러갈 때 회비에 대한 수입, 지출 내역을 함께 공유하면서 
+                효율적으로 관리하고 싶었는데 위코노미를 통해 잘 해결할 수 있었어요!
+                </div>
+
+              <div className="section4-userInfo2">
+              <img src="https://ifh.cc/g/Y7W7mM.png" className="section4-userProfile"></img>
+                <img src= "https://ifh.cc/g/MO0P27.png"className="section4-userRate"></img>
+                <div className="section4-userName">로렌스</div>
+              </div>
+
+          </div>
+        </div>
         <div className="section5"></div>
       </div>
     </>
