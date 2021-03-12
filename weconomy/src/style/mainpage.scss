@@ -302,71 +302,124 @@ align-items: center;
 .section4-mainDesc {
   display:flex;
   justify-content: center;
-  font-size: 2.7rem;
-  position:absolute;
-  top:6%;
-  right: 28.5%;
+  font-size: 4.0rem;
+  text-align:center;
+  align-items:center;
+  font-family: $mainfont2;
 }
+
 
 .section4-descSpan {
   font-family: 'Fredoka One', cursive;
   color: #1474F8;
-  font-size:3.5vmax;
+  height:80%;
 }
 
 .section4-userInfo1{
+  width: 20%;
   display:flex;
   flex-direction: column ;
+  justify-content : center;
+  align-items: center;
 }
 
 .section4-userInfo2{
   display:flex;
   flex-direction: column ;
-  width:200%;
+  justify-content: center;
+  align-items: center;
+  width:20%;
 }
 
-.section4-userComment1 {
-  width:50%;
+.leftBottom-section4 {
+  width:  43%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  font-family: $mainfont2;
+  font-size: 1.5vmax;
+  line-height: 2.5vmax;
+  background-color: white;
+  border-radius: 10px;
+  padding : 1.5vmax;
 }
+
+.rightBottom-section4 {
+  width: 41%;
+  height: 100%;
+  display: flex;
+  font-size:1.5vmax;
+  flex-direction: column;
+  justify-content:center;
+  font-family: $mainfont2;
+  line-height: 2.5vmax;
+  background-color: white;
+  border-radius: 10px;
+  padding : 1.5vmax;
+}
+
+.rightBottom-section4-1{
+  font-family: $mainfont2;
+  color:#353b48
+}
+
+.rightBottom-section4-2{
+  font-family: $mainfont2;
+  color:#353b48
+}
+.rightBottom-section4-3{
+  font-family: $mainfont2;
+  color:#353b48
+}
+
+.leftBottom-section4-1{
+  font-family: $mainfont2;
+  color:#353b48
+}
+.leftBottom-section4-2{
+  font-family: $mainfont2;
+  color:#353b48
+}
+.leftBottom-section4-3{
+  font-family: $mainfont2;
+  color:#353b48
+}
+
+
 
 .section4-userName {
-  width: 15%;
+  width: 20%;
+  text-align: center;
+  font-size: 1.2vmax;
+  color: #4b6584;
+  margin-top: 0.5vmax;
 }
 
-.section4-userReview {
-  height: 40vh;
-  display:flex;
-}
+
 
 .section4-userRate {
-  width: 20%;
+  width: 40%;
+  margin-top: 0.5vmax;
 }
 
 .section4-userProfile {
-  width: 20%;
+  width: 40%;
 }
 
 .section4-userReview1 {
-  height: 30%;
-  width: 50%;
-  position:absolute;
-  bottom:10%;
-  right:50%;
+  height: 20%;
+  // width: 50%;
   display:flex;
-  background-color: wheat;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 
 .section4-userReview2 {
-  height: 30%;
-  width: 50%;
+  height: 20%;
+  // width: 50%;
   display:flex;
-  position:absolute;
-  justify-content: space-between;
-  top:25%;
-  left:50%;
-  background-color: pink;
+  justify-content: flex-end;
 }
 
 
@@ -567,6 +620,147 @@ align-items: center;
        height: 50px;
        bottom: 9rem;
      }
+
+     .section4 {
+      background-color: $mainBackGroundColor2;
+      height: $onepage;
+      display: flex;
+      position:relative;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    
+    .section4-mainDesc {
+      display:flex;
+      width:100%;
+      align-items:center;
+      text-align:center;
+      height: 5%;
+      justify-content: center;
+      font-size: 1.6vmax;
+      font-family: $mainfont2;
+    }
+    
+    
+    .section4-descSpan {
+      font-family: 'Fredoka One', cursive;
+      color: #1474F8;
+      font-size: 1.6vmax;
+      height:40%;
+    }
+    
+    .section4-userInfo1{
+      width: 50%;
+      display:flex;
+      flex-direction: column ;
+      justify-content : center;
+      align-items: center;
+    }
+    
+    .section4-userInfo2{
+      display:flex;
+      flex-direction: column ;
+      justify-content: center;
+      align-items: center;
+      width:50%;
+    }
+    
+    .leftBottom-section4 {
+      width:  80%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      font-family: $mainfont2;
+      font-size: 1.1vmax;
+      line-height: 2.5vmax;
+      background-color: white;
+      border-radius: 10px;
+      padding : 1.5vmax;
+    }
+    
+    .rightBottom-section4 {
+      width: 90%;
+      height: 80%;
+      display: flex;
+      font-size:1.1vmax;
+      flex-direction: column;
+      justify-content:center;
+      font-family: $mainfont2;
+      line-height: 2.5vmax;
+      background-color: white;
+      border-radius: 10px;
+      padding : 1.3vmax;
+    }
+    
+    .rightBottom-section4-1{
+      font-family: $mainfont2;
+      color:#353b48
+    }
+    
+    .rightBottom-section4-2{
+      font-family: $mainfont2;
+      color:#353b48
+    }
+    .rightBottom-section4-3{
+      font-family: $mainfont2;
+      color:#353b48
+    }
+    
+    .leftBottom-section4-1{
+      font-family: $mainfont2;
+      color:#353b48
+    }
+    .leftBottom-section4-2{
+      font-family: $mainfont2;
+      color:#353b48
+    }
+    .leftBottom-section4-3{
+      font-family: $mainfont2;
+      color:#353b48
+    }
+    
+    
+    
+    .section4-userName {
+      width: 20%;
+      text-align: center;
+      font-size: 1.2vmax;
+      color: #4b6584;
+      margin-top: 0.5vmax;
+    }
+    
+    
+    
+    .section4-userRate {
+      width: 40%;
+      margin-top: 0.5vmax;
+    }
+    
+    .section4-userProfile {
+      width: 40%;
+    }
+    
+    .section4-userReview1 {
+      height: 20%;
+      // width: 50%;
+      display:flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    
+    .section4-userReview2 {
+      height: 20%;
+      // width: 50%;
+      display:flex;
+      justify-content: flex-end;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
     
 }
 
