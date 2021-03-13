@@ -1,0 +1,163 @@
+$maincolor : #1474F8;
+$mainBackGroundColor : #EFEFEF;
+$mainLogofont : 'Fredoka One', cursive;
+
+.seeDetailModalOuter{
+  z-index: 6;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.seeDetailModalInner {
+  width: 600px;
+  height: 750px;
+  position: relative;
+  box-sizing: border-box;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color:  white;
+  box-shadow: 0 3px 7px rgb(0 0 0 / 30%);
+}
+
+.seeDetailModalContents {
+  display:  flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+}
+
+.printArea {
+  height: 90%;
+}
+
+.seeDetailModalClose {
+  position: absolute;
+  top : 1rem;
+  right: 1rem;
+}
+
+.seeDetailTop {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.seeDetailBody {
+  width: 100%;
+  height: 80%;
+  padding: 20px;
+}
+
+.seeDetailBottom {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.TitleSeeDetail {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.seeDetailBtn {
+  width: 30%;
+  height: 70%;
+  border: 0;
+  outline: 0;
+  background-color: $maincolor;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.accountNameSeeDetail {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.dateSeeDetail {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 500;
+}
+
+.innerDescSeedetail {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.seeDetailIncome {
+  margin-bottom: 10px;
+  height: 45%;
+}
+
+.seeDetailIncomeTitle {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(50, 182, 50);
+}
+
+.seeDetailOutcome {
+  margin-bottom: 10px;
+  height: 45%;
+}
+
+.seeDetailOutcomeTitle {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(236, 97, 97);
+}
+
+.oneContentSeeDetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+}
+
+.contentsSeeDetail {
+  margin-bottom: 30px;
+}
+
+.seeDetailTotal {
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: end;
+}
+
+.seeDetailModalTitle{
+  font-size: 3rem;
+  font-family: $mainLogofont;
+  color: $maincolor;
+}
+
+.seeDetailCate {
+width: 20%;
+font-weight: 600;
+}
+
+.seeDetailCost {
+width: 30%;
+text-align:end;
+}
+
+.seeDetailDesc {
+  width: 30%;
+  text-align: end;
+}

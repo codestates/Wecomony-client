@@ -7,7 +7,9 @@ import { RootState } from '../store/reducers';
 
 const SelectAccount = () => {
   const dispatch = useDispatch();
-  const userData = useSelector((state: RootState) => state.userStatus.userData);
+  const userData = useSelector(
+    (state: RootState) => state.userStatus?.userData,
+  );
 
   useEffect(() => {
     dispatch(getUserDataAgain(userData?.id));

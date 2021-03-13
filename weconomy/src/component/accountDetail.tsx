@@ -23,11 +23,11 @@ const AccountDetail = () => {
   const params: ParamsId = useParams();
 
   const groupNow = useSelector((state: RootState) =>
-    state.userStatus.groups.filter((group: datas) => {
+    state.userStatus.groups?.filter((group: datas) => {
       return group.id === Number(params.id);
     }),
   );
-  
+
   const dateNow = useSelector(
     (state: RootState) => state.pageStatus?.detailDate,
   );

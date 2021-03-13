@@ -5,7 +5,7 @@ import workerLogin from './login';
 
 function* workerLoading() {
   yield put(nowLoadingOn())
-  yield delay(3000)
+  yield delay(1500)
   yield put(nowLoadingOff())
 }
 

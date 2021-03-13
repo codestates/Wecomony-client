@@ -3,7 +3,7 @@ $mainBackGroundColor : #EFEFEF;
 $mainLogofont : 'Fredoka One', cursive;
 
 .LoginModalOuter {
-  z-index: 3;
+  z-index: 5;
   position: fixed;
   top: 0;
   right: 0;
@@ -115,11 +115,11 @@ $mainLogofont : 'Fredoka One', cursive;
 .insideLoading {
   display: flex;
   justify-content: center;
-  margin: 300px auto;
+  margin: 200px auto;
 }
 
 .contentLoading {
-  width: 300px;
+  width: 500px;
 
 }
 

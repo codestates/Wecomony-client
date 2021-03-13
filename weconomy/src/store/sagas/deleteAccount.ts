@@ -4,7 +4,17 @@ import { getUserNowGroup } from '../actions/userActions';
 import getUserGroups from '../../graphQuery/getUserGroups';
 import deleteGroup from '../../graphQuery/deleteGroup';
 
-function* workerDeleteAccount(action: any) {
+interface dataType {
+  userId : number
+  meetId: number
+}
+
+interface actionType {
+  type : string;
+  data : dataType
+}
+
+function* workerDeleteAccount(action: actionType) {
   yield console.log('hello delete');
   let isDelete = false;
   const getUserGroupsQuery = getUserGroups(action.data.userId);

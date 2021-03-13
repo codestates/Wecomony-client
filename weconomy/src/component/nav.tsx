@@ -7,11 +7,13 @@ import {
   requestLoginModalOpen,
   askNoneSaveModalOpen,
 } from '../store/actions/modalActions';
-import { logoutUser } from '../store/actions/userActions';
+import { logoutUser, signOutUser } from '../store/actions/userActions';
 import MobileSidebar from '../piececompo/MobileSidebar';
 import removeDropDown from '../util/Nav/dropDown';
 import NavToggleBtnSet from '../util/Nav/NavToggleBtnSet';
 import onClickProfile from '../util/Nav/onClickProfile';
+import { outOfUserModalOpen } from '../store/actions/modalActions';
+import OutOfUserModal from '../component/outOfUserModal'
 
 const Nav: React.FC = () => {
   window.onclick = removeDropDown;
@@ -20,8 +22,10 @@ const Nav: React.FC = () => {
   const openLoginModal = () => {
     dispatch(loginModalOpen());
   };
-  const isLogin = useSelector((state: RootState) => state.userStatus.isLogin);
-
+  const isLogin = useSelector((state: RootState) => state.userStatus?.isLogin);
+  const userData = useSelector(
+    (state: RootState) => state.userStatus?.userData,
+  );
   const toAccountPage = () => {
     if (isLogin) {
       history.push('/selectaccount');
@@ -41,6 +45,10 @@ const Nav: React.FC = () => {
   const toLogOutUser = () => {
     dispatch(logoutUser());
     history.push('/');
+  };
+
+  const toSignOutUser = () => {
+    dispatch(outOfUserModalOpen())
   };
 
   const userImage = useSelector(
@@ -92,7 +100,9 @@ const Nav: React.FC = () => {
               <button onClick={toLogOutUser} className="btnInProfileDroptop">
                 로그아웃
               </button>
-              <button className="btnInProfileDrop">회원탈퇴</button>
+              <button onClick={toSignOutUser} className="btnInProfileDrop">
+                회원탈퇴
+              </button>
             </div>
           </>
         ) : (
@@ -102,7 +112,7 @@ const Nav: React.FC = () => {
         )}
       </div>
       <MobileSidebar></MobileSidebar>
-
+      <OutOfUserModal></OutOfUserModal>
       <div onClick={NavToggleBtnSet} className="navbar__toogleBtn">
         <i className="fas fa-bars"></i>
       </div>

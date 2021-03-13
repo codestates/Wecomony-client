@@ -6,8 +6,8 @@ import Select from '@material-ui/core/Select';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { TextField } from '@material-ui/core';
 import { IconButton } from '@material-ui/core';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FiPlusSquare } from 'react-icons/fi';
+import { FiMinusSquare } from 'react-icons/fi';
 
 interface props {
   inCounter: any;
@@ -21,7 +21,7 @@ interface props {
   onChange: any;
   onChange2: any;
 }
-
+//
 const IncomeOther: React.FC<props> = ({
   inCounter,
   incomeCounter,
@@ -40,22 +40,23 @@ const IncomeOther: React.FC<props> = ({
         <div className="income-category">
           <InputLabel id="demo-simple-select-helper-label">카테고리</InputLabel>
           <Select
+            className="selecCate"
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
             name="category"
             value={category || ''}
             onChange={onChange}
-            style={{ width: '150px', textAlign: 'center' }}
+            style={{ textAlign: 'center' }}
           >
             <MenuItem value="선택해주세요">
-              <em>선택해주세요</em>
+              <div>선택해주세요</div>
             </MenuItem>
-            <MenuItem value={'월급'}>월급</MenuItem>
+            <MenuItem value={'급여'}>급여</MenuItem>
             <MenuItem value={'잔돈'}>잔돈</MenuItem>
             <MenuItem value={'비상금'}>비상금</MenuItem>
             <MenuItem value={'기타'}>기타</MenuItem>
           </Select>
-          <FormHelperText>수입 항목을 골라주세요</FormHelperText>
+          <FormHelperText></FormHelperText>
         </div>
         <div className="income-cost">
           <TextField
@@ -91,7 +92,7 @@ const IncomeOther: React.FC<props> = ({
             color="primary"
             aria-label="add to shopping cart"
           >
-            <AddShoppingCartIcon />
+            <FiPlusSquare />
           </IconButton>
         </div>
       </div>
@@ -103,21 +104,23 @@ const IncomeOther: React.FC<props> = ({
               카테고리
             </InputLabel>
             <Select
+              className="selecCate"
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
               name="category"
               value={category2 || ''}
               onChange={onChange2}
-              style={{ width: '150px', textAlign: 'center' }}
+              style={{ textAlign: 'center' }}
             >
               <MenuItem value="선택해주세요">
-                <em>선택해주세요</em>
+                <div>선택해주세요</div>
               </MenuItem>
-              <MenuItem value={'월급'}>월급</MenuItem>
+              <MenuItem value={'급여'}>급여</MenuItem>
               <MenuItem value={'잔돈'}>잔돈</MenuItem>
               <MenuItem value={'비상금'}>비상금</MenuItem>
+              <MenuItem value={'기타'}>기타</MenuItem>
             </Select>
-            <FormHelperText>수입 항목을 골라주세요</FormHelperText>
+            <FormHelperText></FormHelperText>
           </div>
           <div className="income-cost">
             <TextField
@@ -146,9 +149,13 @@ const IncomeOther: React.FC<props> = ({
             />
           </div>
           <div className="income-addBtn">
-            <div className="income-addDiv">
-              <FaTrashAlt onClick={() => inCounter('down')}></FaTrashAlt>
-            </div>
+            <IconButton
+              onClick={() => inCounter('down')}
+              color="primary"
+              aria-label="add to shopping cart"
+            >
+              <FiMinusSquare />
+            </IconButton>
           </div>
         </div>
       ) : null}

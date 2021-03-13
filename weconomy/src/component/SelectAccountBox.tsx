@@ -4,6 +4,8 @@ import { RootState } from '../store/reducers';
 import { useHistory } from 'react-router-dom';
 import CreateNewAccountModal from './createNewAccountModal';
 import { createNewAccountModalOpen } from '../store/actions/modalActions';
+import { BiBookmarkPlus } from 'react-icons/bi';
+import { BiBookAdd } from 'react-icons/bi';
 
 interface group {
   id: number;
@@ -18,7 +20,7 @@ const SelectAccountBox = () => {
   const userImage = useSelector(
     (state: RootState) => state.userStatus.userData?.thumbnail,
   );
-  const Allgroups = useSelector((state: RootState) => state.userStatus.groups);
+  const Allgroups = useSelector((state: RootState) => state.userStatus?.groups);
   const createNewAccount = () => {
     dispatch(createNewAccountModalOpen());
   };
@@ -34,13 +36,14 @@ const SelectAccountBox = () => {
           <div className="oneAccountBox">
             <div className="titleAccountBox">{group.meetName}</div>
             <div className="SelectAccountMembers">
-              {group.Users.map((member: any) => (
+              {group.Users.map((member: any, index:any) => (
                 <div className="SelectOneMemberBox">
                   {member.img !== 'undefined' ? (
                     <img
                       className="SelectAccountMemberImg"
                       src={member.img}
                       alt="유저프로필"
+                      key={index}
                     ></img>
                   ) : (
                     <div className="SelectAccountMemberIcon">
@@ -52,19 +55,21 @@ const SelectAccountBox = () => {
                 </div>
               ))}
             </div>
-            <button
-              onClick={() => onClickGroup(group)}
-              className="SelectAccountJoinBtn"
-            >
-              JOIN
-            </button>
+            <div className="SelectAccountBotttom">
+              <button
+                onClick={() => onClickGroup(group)}
+                className="SelectAccountJoinBtn"
+              >
+                들어가기
+              </button>
+            </div>
           </div>
         ))}
 
         {Allgroups.length < 4 ? (
           <div onClick={createNewAccount} className="AddAccountBox">
-            <AiOutlineUsergroupAdd></AiOutlineUsergroupAdd>
-            <div className="titleAddAccountBox">새 그룹 생성</div>
+            <BiBookAdd></BiBookAdd>
+            <div className="titleAddAccountBox">새 가계부 생성</div>
           </div>
         ) : null}
       </div>

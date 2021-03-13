@@ -43,7 +43,7 @@ const CreateAccount: React.FC<counter> = ({
 
   const dispatch = useDispatch();
   const userId = useSelector(
-    (state: RootState) => state.userStatus.userData?.id,
+    (state: RootState) => state.userStatus?.userData?.id,
   );
 
   const isLogin = useSelector((state: RootState) => state.userStatus.isLogin);
@@ -209,7 +209,7 @@ const CreateAccount: React.FC<counter> = ({
             />
           )}
         </div>
-        <div>
+        <div className="calender">
           <Calender
             selectedDate={selectedDate}
             handleDateChange={handleDateChange}
@@ -255,11 +255,11 @@ const CreateAccount: React.FC<counter> = ({
         <div className="belowBtns-save">
           {isLogin ? (
             <button onClick={save} className="belowBtns-saveBtn">
-              저장하기
+              작성
             </button>
           ) : (
             <button onClick={save2} className="belowBtns-saveBtn">
-              저장하기
+              작성
             </button>
           )}
         </div>

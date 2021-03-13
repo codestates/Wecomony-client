@@ -5,6 +5,7 @@ $onepage : 100vh;
 
 .SelectAccount-Container {
   height:  100vh;
+  background-size: cover;
   background-image: url("https://groobee.net/wp-content/uploads/2020/12/main1_low.png");
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@ $onepage : 100vh;
 .SelectAccount-Contents {
   display: flex;
   flex-direction: row;
-  width: 70%;
+  width: 75%;
   height: 98vh;
 }
 
@@ -35,15 +36,16 @@ $onepage : 100vh;
   width: 250px;
   height: 360px;
   background-color: white;
-  padding: 20px;
+  // padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition-duration: 0.4s;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
   margin-right: 30px;
   top: 0;
+  border-radius: 5px;
   &:hover{
     top: -5px;
     box-shadow: rgba(0, 0, 0, 0.486) 0px 10px 20px;
@@ -64,6 +66,7 @@ $onepage : 100vh;
   background-color: white;
   font-size: 5rem;
   transition-duration: 0.4s;
+  border-radius: 5px;
   top: 0;
   &:hover{
     top: -5px;
@@ -79,22 +82,32 @@ $onepage : 100vh;
 }
 
 .titleAccountBox {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   font-size: 1.5rem;
   color: black;
   text-align: center;
   font-weight: 500;
+  background-color: #345FBB;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Jua', sans-serif;
 }
 
 .SelectAccountMembers {
   display: flex;
   flex-direction: column;
   height: 190px;
-  padding-left: 10px;
+  padding-left: 30px;
   padding-right: 10px;
 }
 
 .SelectAccountMemberName {
-  font-size: 14px;
+  font-size: 12px;
+  width: 70%;
 }
 
 .SelectAccountMemberImg {
@@ -125,10 +138,18 @@ $onepage : 100vh;
 .SelectOneMemberBox {
   margin-top: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
+.SelectAccountBotttom {
+  height: 16%;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 10px;
+}
+
 
 .SelectAccountJoinBtn {
   &:hover {
@@ -139,7 +160,7 @@ $onepage : 100vh;
   justify-self: flex-end;
   background-color: $maincolor;
   width: 100%;
-  height: 13%;
+  height: 100%;
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -163,17 +184,17 @@ $onepage : 100vh;
     margin-right: 0;
     margin-bottom: 20px;
     width: 45vmax;
-    height: 43vmax;
+    height: 44vmax;
   }
 
   .AddAccountBox {
     width: 45vmax;
-    height: 43vmax;
+    height: 44vmax;
 
   }
   .titleAccountBox {
     font-size: 2rem;
-    color: black;
+    color: white;
     text-align: center;
     font-weight: 500;
   }
