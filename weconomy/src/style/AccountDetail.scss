@@ -90,11 +90,19 @@
 @media (max-width: 769px){ 
 
   .text-Detail {
-    font-size: 14px;
+    font-size: 1.6vmax;
   }
   
   .count-Detail {
-    font-size: 14px;
-   
+    font-size: 1.6vmax;
+  }
+  .OneContent {
+    height: 4vmax;
+  }
+  .category-Detail {
+    font-size: 1.6vmax;
+  }
+  .cateIcon {
+    font-size: 2vmax;
   }
 }

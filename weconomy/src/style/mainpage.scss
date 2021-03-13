@@ -8,6 +8,9 @@
 }
 html {
   scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 $maincolor : #1474F8;
@@ -237,6 +240,7 @@ align-items: center;
 .section3 {
   background-color: rgb(255, 255, 255);
   height: $onepage;
+  width: 100%;
   display: flex;
   padding-left: 230px;
   padding-right: 230px;
@@ -292,7 +296,6 @@ align-items: center;
   background-color: $mainBackGroundColor2;
   height: $onepage;
   display: flex;
-  position:relative;
   flex-direction: column;
   justify-content: space-around;
   padding-left: 50px;
@@ -302,7 +305,7 @@ align-items: center;
 .section4-mainDesc {
   display:flex;
   justify-content: center;
-  font-size: 4.0rem;
+  font-size: 2.5vmax;
   text-align:center;
   align-items:center;
   font-family: $mainfont2;
@@ -343,6 +346,7 @@ align-items: center;
   background-color: white;
   border-radius: 10px;
   padding : 1.5vmax;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .rightBottom-section4 {
@@ -357,6 +361,7 @@ align-items: center;
   background-color: white;
   border-radius: 10px;
   padding : 1.5vmax;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .rightBottom-section4-1{
@@ -624,14 +629,14 @@ align-items: center;
     }
     .section3 {
       flex-direction: column-reverse;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
+      height: 140vh;
     }
     .rightSection3{
       margin-top: 100px;
-      width: 50vw;
-      height: 38vh;
-      
+      width: 60vw;
+      height: 60vh;
     }
     .leftSection3 {
       width: 90vw;
@@ -683,7 +688,6 @@ align-items: center;
       background-color: $mainBackGroundColor2;
       height: $onepage;
       display: flex;
-      position:relative;
       flex-direction: column;
       justify-content: space-around;
       padding-left: 50px;
@@ -697,7 +701,7 @@ align-items: center;
       text-align:center;
       height: 5%;
       justify-content: center;
-      font-size: 1.6vmax;
+      font-size: 2.2vmax;
       font-family: $mainfont2;
     }
     
@@ -705,7 +709,7 @@ align-items: center;
     .section4-descSpan {
       font-family: 'Fredoka One', cursive;
       color: #1474F8;
-      font-size: 1.6vmax;
+      font-size: 2.4vmax;
       height:40%;
     }
     
@@ -715,6 +719,7 @@ align-items: center;
       flex-direction: column ;
       justify-content : center;
       align-items: center;
+      margin-bottom: 30px;
     }
     
     .section4-userInfo2{
@@ -723,34 +728,35 @@ align-items: center;
       justify-content: center;
       align-items: center;
       width:50%;
+      margin-bottom: 30px;
     }
     
     .leftBottom-section4 {
-      width:  80%;
+      width:  95%;
       height: 80%;
       display: flex;
       flex-direction: column;
       justify-content:center;
       font-family: $mainfont2;
-      font-size: 1.1vmax;
-      line-height: 2.5vmax;
+      font-size: 1.5vmax;
+      line-height: 4vmax;
       background-color: white;
       border-radius: 10px;
       padding : 1.5vmax;
     }
     
     .rightBottom-section4 {
-      width: 90%;
+      width: 95%;
       height: 80%;
       display: flex;
-      font-size:1.1vmax;
+      font-size:1.5vmax;
       flex-direction: column;
       justify-content:center;
       font-family: $mainfont2;
-      line-height: 2.5vmax;
       background-color: white;
       border-radius: 10px;
       padding : 1.3vmax;
+      line-height: 4vmax;
     }
     
     .rightBottom-section4-1{
@@ -802,7 +808,7 @@ align-items: center;
     }
     
     .section4-userReview1 {
-      height: 20%;
+      height: 35%;
       // width: 50%;
       display:flex;
       justify-content: flex-start;
@@ -812,14 +818,24 @@ align-items: center;
     
     
     .section4-userReview2 {
-      height: 20%;
+      height: 35%;
       // width: 50%;
       display:flex;
       justify-content: flex-end;
       flex-direction: column-reverse;
       align-items: center;
     }
-    
+
+    .BottomSection5-textBox {
+      font-size: 2.5vmax;
+    }
+
+    .BottomSection5-Btn {
+      width: 40vw;
+      height: 8vh;
+      font-size: 2.3vmax;
+    }
+
 }
 
 
