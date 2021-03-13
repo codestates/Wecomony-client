@@ -6,10 +6,10 @@ import { ImCoinDollar } from 'react-icons/im';
 import { RiGroupLine } from 'react-icons/ri';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiFootball } from 'react-icons/bi';
-import { MdLocalPostOffice } from 'react-icons/md';
-import { GiMoneyStack } from 'react-icons/gi';
+import { BiEnvelope } from 'react-icons/bi';
 import { RiCoinsLine } from 'react-icons/ri';
 import { RiMoneyDollarBoxLine } from 'react-icons/ri';
+import { FiStopCircle } from 'react-icons/fi';
 
 const backMeIcon = (category: string) => {
   if (category === '식비') {
@@ -29,9 +29,9 @@ const backMeIcon = (category: string) => {
   } else if (category === '취미') {
     return <BiFootball />;
   } else if (category === '기타') {
-    return <MdLocalPostOffice />;
-  } else if (category === '월급') {
-    return <GiMoneyStack />;
+    return <FiStopCircle />;
+  } else if (category === '급여') {
+    return <BiEnvelope />;
   } else if (category === '잔돈') {
     return <RiCoinsLine />;
   } else if (category === '비상금') {

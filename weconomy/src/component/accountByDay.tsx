@@ -13,7 +13,8 @@ import { useParams } from 'react-router-dom';
 import { changeDetailDate } from '../store/actions/pageAction';
 import CalcullationDay from '../util/accountPage/CalculationDay';
 import threeComma from '../util/threeComma';
-
+import { seeDetailModalOpen } from '../store/actions/modalActions';
+import { IoPrint } from 'react-icons/io5';
 interface ParamsId {
   id: string;
 }
@@ -34,12 +35,16 @@ const AccountByDay = () => {
     setValue(event.value);
   };
 
+  const toSeeDetailModal = () => {
+    dispatch(seeDetailModalOpen());
+  };
+
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(
     new Date(),
   );
 
   const groupNow = useSelector((state: RootState) =>
-    state.userStatus.groups.filter((group: datas) => {
+    state.userStatus?.groups.filter((group: datas) => {
       return group.id === Number(params.id);
     }),
   );
@@ -79,28 +84,31 @@ const AccountByDay = () => {
             />
           </Grid>
         </MuiPickersUtilsProvider>
+        <button onClick={toSeeDetailModal} className="seeDetail">
+          <IoPrint />
+        </button>
       </div>
       <div className="center-details-Account">
         <AccountDetail></AccountDetail>
       </div>
       <div className="bottom-details-Account">
         <div className="totalIncome">
-          <span className="TextTotalDetails">총 수입 : </span>
-          <span className="NumberTotalDetails">{`${threeComma(
+          <span className="TextTotalInDetails">수입 : </span>
+          <span className="NumberTotalInOutDetails">{`₩ ${threeComma(
             CalcullationDay('income', filterContent),
-          )} 원`}</span>
+          )}`}</span>
         </div>
         <div className="totalOutcome">
-          <span className="TextTotalDetails">총 지출 : </span>
-          <span className="NumberTotalDetails">{`${threeComma(
+          <span className="TextTotalOutDetails">지출 : </span>
+          <span className="NumberTotalInOutDetails">{`₩ ${threeComma(
             CalcullationDay('outcome', filterContent),
-          )} 원`}</span>
+          )}`}</span>
         </div>
         <div className="totalDetails">
-          <span className="TextTotalDetails">Total : </span>
-          <span className="NumberTotalDetails">{`${threeComma(
+          <span className="TextTotalDetails">합계 : </span>
+          <span className="NumberTotalDetails">{`₩ ${threeComma(
             CalcullationDay('total', filterContent),
-          )} 원`}</span>
+          )}`}</span>
         </div>
       </div>
     </div>

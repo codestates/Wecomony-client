@@ -27,14 +27,14 @@ const UpdateContentModal = () => {
     setCost(e.target.value);
   };
 
-  const userNow = useSelector((state: RootState) => state.userStatus.userData);
+  const userNow = useSelector((state: RootState) => state.userStatus?.userData);
 
   const isOpen = useSelector(
-    (state: RootState) => state.modalStatus.updateContentModal,
+    (state: RootState) => state.modalStatus?.updateContentModal,
   );
 
   const contentId = useSelector(
-    (state: RootState) => state.modalStatus.updateContentId,
+    (state: RootState) => state.modalStatus?.updateContentId,
   );
 
   const groups = useSelector((state: RootState) =>
@@ -48,6 +48,7 @@ const UpdateContentModal = () => {
 
   const closeModal = () => {
     dispatch(updateContentModalClose());
+    setErr('');
   };
 
   const postUpdate = () => {
@@ -64,6 +65,8 @@ const UpdateContentModal = () => {
         desc: desc,
         cost: cost,
       };
+      setDesc('');
+      setCost('');
       dispatch(updateContent(data));
     }
   };
@@ -73,6 +76,8 @@ const UpdateContentModal = () => {
       userId: userNow?.id,
       contentId: contentId,
     };
+    setDesc('');
+    setCost('');
     dispatch(deleteContent(data));
   };
 
@@ -110,15 +115,26 @@ const UpdateContentModal = () => {
                     value={cost}
                     placeholder={threeComma(contentNow[0].cost)}
                   ></input>
-                  {err ? <div className="errMessage">{err}</div> : null}
+                  {err ? (
+                    <div className="errMessage">{err}</div>
+                  ) : (
+                    <div className="errMessage"></div>
+                  )}
                 </div>
                 <div className="UpdateContentModalBottom">
-                  <button onClick={postUpdate} className="updateContentBtn">
-                    수정
-                  </button>
-                  <button onClick={postDelete} className="deleteContentBtn">
-                    삭제
-                  </button>
+                  <div className="UCBtnTop">
+                    <button onClick={postUpdate} className="updateContentBtn">
+                      수정
+                    </button>
+                    <button onClick={postDelete} className="deleteContentBtn">
+                      삭제
+                    </button>
+                  </div>
+                  <div className="UCBtnBottom">
+                    <button onClick={closeModal} className="UCcancelButton">
+                      취소
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

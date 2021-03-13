@@ -49,7 +49,7 @@ const HelpDeskPage = () => {
         <AskNoneSaveModal></AskNoneSaveModal>
         <SendEmailModal></SendEmailModal>
         <div className="HelpDesk-input-Container">
-          <h1 className="HelpDesk-Title">어떻게 도와드릴까요?</h1>
+          <h1 className="HelpDesk-Title">무엇을 도와드릴까요?</h1>
           <div className="HelpDesk-Buckit">
             <TextField
               id="outlined-multiline-flexible"

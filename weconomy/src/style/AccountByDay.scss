@@ -1,84 +1,125 @@
 $maincolor : #1474F8;
 $mainBackGroundColor : #EFEFEF;
+$maincolor2 : #EDA28F;
 
 .center-Account-container {
   width: 40%;
   display: flex;
   flex-direction: column;
+  // justify-content: space-between;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .datePicker-Account {
   width: 100%;
-  padding-left: 170px;
-  padding-right: 170px;
+  padding-left: 30px;
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  height: 10%;
+}
+
+.seeDetail {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 300px;
+  font-size: 2.5rem;
+  border: 0;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0);
+  &:hover {
+    color: $maincolor;
+  }
 }
 
 .center-details-Account {
-  height: 85%;
+  height: 65%;
   overflow-y: auto;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 30px;
+  padding: 18px;
 }
 
 .bottom-details-Account {
-  height: 15%;
-  background-color: $maincolor;
+  height: 25%;
+  // background-color: $maincolor;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
+  padding-right: 20px;
 }
 
 .totalDetails {
-  background-color: rgb(255, 255, 255);
-  width: 30%;
-  height: 50%;
+  width: 70%;
+  height: 100%;
   display: flex;
-  padding-left: 10px;
+  padding-left: 50px;
   padding-right: 10px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+  // box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .totalIncome {
-  width: 30%;
-  height: 50%;
-  background-color: rgb(255, 255, 255);
+  width: 70%;
+  height: 40%;
   display: flex;
-  padding-left: 10px;
+  padding-left: 50px;
   padding-right: 10px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+  // box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .totalOutcome {
-  width: 30%;
-  height: 50%;
-  background-color: rgb(255, 255, 255);
+  width: 70%;
+  height: 40%;
   display: flex;
-  padding-left: 10px;
+  padding-left: 50px;
   padding-right: 10px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+  // box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .TextTotalDetails {
-  color: $maincolor;
-  font-size: 1.2rem;
+  color: black;
+  font-size: 2vmax;
   border-radius: 5px;
-  font-weight: 600;
+  font-family: 'Jua', sans-serif;
 }
 
 .NumberTotalDetails {
-  font-size: 1vmax;
-  font-variant-numeric: tabular-nums;
+  font-size: 2vmax;
+  font-family: 'Jua', sans-serif;
+  color: black;
+}
+
+.TextTotalInDetails {
+  color: rgb(153, 153, 153);
+  font-family: 'Jua', sans-serif;
+  font-size: 1.5vmax;
+}
+
+.TextTotalOutDetails {
+  color: rgb(153, 153, 153);
+  font-family: 'Jua', sans-serif;
+  font-size: 1.5vmax;
+}
+
+.NumberTotalInOutDetails {
+  color: rgb(153, 153, 153);
+  font-family: 'Jua', sans-serif;
+  font-size: 1.5vmax;
 }
 
 @media (max-width: 769px){ 
@@ -94,5 +135,45 @@ $mainBackGroundColor : #EFEFEF;
     width: 100%;
     padding-left: 70px;
     padding-right: 70px;
+  }
+
+  .seeDetail {
+    display:  none;
+  }
+  .totalDetails {
+    width: 90%;
+  }
+  .totalIncome {
+    width: 90%;
+   
+  }
+  
+  .totalOutcome {
+    width: 90%;
+  }
+
+  .TextTotalDetails {
+    font-size: 4vmax;
+
+  }
+  
+  .NumberTotalDetails {
+    font-size: 4vmax;
+
+  }
+  
+  .TextTotalInDetails {
+    font-size: 3vmax;
+
+  }
+  
+  .TextTotalOutDetails {
+
+    font-size: 3vmax;
+  }
+  
+  .NumberTotalInOutDetails {
+
+    font-size: 3vmax;
   }
 }

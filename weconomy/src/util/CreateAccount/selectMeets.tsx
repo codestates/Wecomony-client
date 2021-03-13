@@ -12,18 +12,15 @@ interface selects {
 }
 
 const SelectMeets: React.FC<selects> = ({ selectedMeet, handleMeetChange }) => {
+  const userNow = useSelector((state: RootState) => state.userStatus?.groups);
 
-  const userNow = useSelector((state: RootState) => state.userStatus.groups);
+  const loop = userNow.map((res: any, index:any) => {
+    return <MenuItem key={index} value={`${res.id}`}>{`${res.meetName}`}</MenuItem>;
+  });
 
-  const loop = userNow.map((res:any) => {
-    return (
-        <MenuItem value={`${res.id}`}>{`${res.meetName}`}</MenuItem>
-    )
-  })
-  
   return (
     <>
-      <InputLabel id="demo-simple-select-helper-label">그룹 목록</InputLabel>
+      <InputLabel id="demo-simple-select-helper-label">가계부 목록</InputLabel>
       <Select
         labelId="demo-simple-select-helper-label"
         id="demo-simple-select-helper"
@@ -33,11 +30,11 @@ const SelectMeets: React.FC<selects> = ({ selectedMeet, handleMeetChange }) => {
         style={{ width: '150px', textAlign: 'center' }}
       >
         <MenuItem value="선택해주세요">
-          <em>선택해주세요</em>
+          <div>선택해주세요</div>
         </MenuItem>
         {loop}
       </Select>
-      <FormHelperText>그룹을 선택해주세요</FormHelperText>
+      <FormHelperText></FormHelperText>
     </>
   );
 };

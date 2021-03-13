@@ -34,9 +34,9 @@ const AddMemberModal = () => {
   );
 
   const groups = useSelector((state: RootState) =>
-    state.userStatus.groups.filter((group: any) => {
+    state.userStatus.groups?.filter((group: any) => {
       return group.id === Number(params.id);
-    })
+    }),
   );
 
   const userNow = useSelector((state: RootState) => state.userStatus.userData);
@@ -48,6 +48,7 @@ const AddMemberModal = () => {
   const closeModal = () => {
     dispatch(addMemberErr(null));
     dispatch(addMemberModalClose());
+    setEmail('');
   };
 
   const clickAddMember = () => {
@@ -65,6 +66,7 @@ const AddMemberModal = () => {
         email: email,
       };
       dispatch(addMemberWorkerStart(data));
+      setEmail('');
     } else {
       dispatch(addMemberErr('이미 가입된 유저입니다'));
     }

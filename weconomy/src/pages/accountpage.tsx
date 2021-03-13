@@ -17,6 +17,8 @@ import {
   nowLoadingOff,
 } from '../store/actions/modalActions';
 import UpdateContentModal from '../component/updateContentModal';
+import OutOfAccountModal from '../component/outOfAccountModal';
+import SeeDetailModal from '../component/seeDetailModal';
 import { getUserDataAgain } from '../store/actions/userActions';
 interface ParamsId {
   id: string;
@@ -28,30 +30,35 @@ const AccountPage: React.FC = () => {
   const { isMobile } = useMedia();
 
   const isLoading = useSelector(
-    (state: RootState) => state.modalStatus.nowLoading,
+    (state: RootState) => state.modalStatus?.nowLoading,
   );
   const groupData = useSelector((state: RootState) =>
-    state.userStatus.groups.filter((group: any) => {
+    state.userStatus?.groups.filter((group: any) => {
       return group.id === Number(params.id);
     }),
   );
-  const userData = useSelector((state: RootState) => state.userStatus.userData);
+  const userData = useSelector(
+    (state: RootState) => state.userStatus?.userData,
+  );
 
   useEffect(() => {
     dispatch(loadingWorkerStart());
     dispatch(getUserDataAgain(userData?.id));
+    console.log(groupData, 'asdasd');
   }, []);
 
   return (
     <>
       <Nav></Nav>
-      {groupData.length === 0 ? (
+      {groupData.length < 1 ? (
         <NotAMember></NotAMember>
       ) : (
         <>
           <AddMemberModal></AddMemberModal>
           <UpdateGroupModal></UpdateGroupModal>
           <UpdateContentModal></UpdateContentModal>
+          <OutOfAccountModal></OutOfAccountModal>
+          <SeeDetailModal></SeeDetailModal>
           {!isLoading ? (
             <>
               {isMobile ? (
@@ -67,9 +74,9 @@ const AccountPage: React.FC = () => {
                 <div className="Account-container">
                   <div className="notice-Section"></div>
                   <div className="content-Section">
+                    <AccountSideBar></AccountSideBar>
                     <AccountGraph></AccountGraph>
                     <AccountByDay></AccountByDay>
-                    <AccountSideBar></AccountSideBar>
                   </div>
                 </div>
               )}

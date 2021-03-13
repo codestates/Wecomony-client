@@ -10,7 +10,6 @@ function* workerAddMember(action: any) {
   const testHasUserQuery = testHasUser(action.data.email);
   let err: string = '';
   let groupData: Array<object> = [];
-  try {
     yield axios
       .post(
         'https://sench.projects1faker.com/graphql?query=' +
@@ -57,15 +56,13 @@ function* workerAddMember(action: any) {
             });
         }
       });
-    yield delay(100);
+    yield delay(500);
     if (err.length > 0) {
       yield put(addMemberErr(err));
     } else {
       yield put(getUserNowGroup(groupData));
       yield put(addMemberModalClose());
     }
-  } finally {
-  }
 }
 
 export default workerAddMember;
