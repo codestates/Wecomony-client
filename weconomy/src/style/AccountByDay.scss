@@ -140,4 +140,40 @@ $maincolor2 : #EDA28F;
   .seeDetail {
     display:  none;
   }
+  .totalDetails {
+    width: 90%;
+  }
+  .totalIncome {
+    width: 90%;
+   
+  }
+  
+  .totalOutcome {
+    width: 90%;
+  }
+
+  .TextTotalDetails {
+    font-size: 4vmax;
+
+  }
+  
+  .NumberTotalDetails {
+    font-size: 4vmax;
+
+  }
+  
+  .TextTotalInDetails {
+    font-size: 3vmax;
+
+  }
+  
+  .TextTotalOutDetails {
+
+    font-size: 3vmax;
+  }
+  
+  .NumberTotalInOutDetails {
+
+    font-size: 3vmax;
+  }
 }
