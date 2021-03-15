@@ -145,6 +145,7 @@ padding-right: 50px;
 
 .TopSection2 {
 height: 40vh;
+padding-left: 100px;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
@@ -153,7 +154,7 @@ align-items: center;
 
 .BottomSection2 {
 height: 40vh;
-padding-right: 150px;
+padding-right: 100px;
 padding-left: 10px;
 display: flex;
 flex-direction: row;
@@ -163,9 +164,10 @@ align-items: center;
 }
 
 .LeftTopSection2 {
-  height: 40vh;
-  width: 36vw;
+  height: 41vh;
+  width: 32vw;
   border-radius: 10px;
+  
   background-size: cover;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
@@ -230,7 +232,7 @@ align-items: center;
 
 .RightBottomSection2{
   height: 40vh;
-  width:  11vw;
+  width:  10vw;
   border-radius: 10px;
   background-color: gray;
   background-size: cover;
@@ -250,7 +252,7 @@ align-items: center;
 }
 
 .rightSection3 {
-  width: 18vw;
+  width: 16vw;
   height: 62vh;
   background-size: cover;
 }
@@ -341,7 +343,7 @@ align-items: center;
   flex-direction: column;
   justify-content:center;
   font-family: $mainfont2;
-  font-size: 1.5vmax;
+  font-size: 1.3vmax;
   line-height: 2.5vmax;
   background-color: white;
   border-radius: 10px;
@@ -353,7 +355,7 @@ align-items: center;
   width: 41%;
   height: 100%;
   display: flex;
-  font-size:1.5vmax;
+  font-size:1.3vmax;
   flex-direction: column;
   justify-content:center;
   font-family: $mainfont2;
@@ -437,7 +439,7 @@ align-items: center;
 
 .section5 {
   background-color: white;
-  height: $onepage;
+  height: 150vh;
 
 }
 
@@ -494,7 +496,7 @@ align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5vmax;
+  font-size: 1vmax;
 }
 
 .TopSection5-1 {
@@ -570,6 +572,10 @@ align-items: center;
 
     .TopSection2 {
       flex-direction: column;
+
+        padding-left: 0;
+      
+
     }
     .BottomSection2 {
       
